@@ -1,0 +1,678 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>《Kubernetes权威指南》1.3案例部署及问题解决.md · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="安装%20Dashboard.md" />
+    
+    
+    <link rel="prev" href="Kubernetes%201.6.1%20kubeadm%20集群安装.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">前言</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">笔记</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Kubenetes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Kubernetes%201.14%20开启%20IPVS.md">
+            
+                <span>
+            
+                    
+                    Kubernetes 1.14 开启 IPVS.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Kubernetes%201.14%20kubeadm%20集群安装.md">
+            
+                <span>
+            
+                    
+                    Kubernetes 1.14 kubeadm 集群安装.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Kubernetes%201.6.1%20kubeadm%20集群安装.md">
+            
+                <span>
+            
+                    
+                    Kubernetes 1.6.1 kubeadm 集群安装.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.4" data-path="《Kubernetes权威指南》1.3案例部署及问题解决.html">
+            
+                <a href="《Kubernetes权威指南》1.3案例部署及问题解决.html">
+            
+                    
+                    《Kubernetes权威指南》1.3案例部署及问题解决.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="安装%20Dashboard.md">
+            
+                <span>
+            
+                    
+                    安装 Dashboard.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="问题%20-%20kubectl%20create%20一直处于%20ContainerCreating%20状态.md">
+            
+                <span>
+            
+                    
+                    问题 - kubectl create 一直处于 ContainerCreating 状态.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="kubeadm%20安装%20k8s%20集群.md">
+            
+                <span>
+            
+                    
+                    kubeadm 安装 k8s 集群.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Git/GitHub%20上同步%20Fork%20的代码.md">
+            
+                <span>
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../Git/GitHub%20上同步%20Fork%20的代码.md">
+            
+                <span>
+            
+                    
+                    GitHub 上同步 Fork 的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Golang/channel.html">
+            
+                <a href="../Golang/channel.html">
+            
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Golang/channel.html">
+            
+                <a href="../Golang/channel.html">
+            
+                    
+                    channel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >《Kubernetes权威指南》1.3案例部署及问题解决.md</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x73AF;&#x5883;">&#x73AF;&#x5883;</h1>
+<table>
+<thead>
+<tr>
+<th>&#x8F6F;&#x4EF6;</th>
+<th>&#x7248;&#x672C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CentOS</td>
+<td>7.6</td>
+</tr>
+<tr>
+<td>kubernetes</td>
+<td>1.5.2</td>
+</tr>
+<tr>
+<td>etcd</td>
+<td>3.3.11</td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h1>
+<blockquote>
+<p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x662F;&#x7528;&#x7684;&#x662F;&#x963F;&#x91CC;&#x4E91; yum &#x6E90;&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</li>
+</ul>
+<pre><code>[root@k8s1 ~]# systemctl disable firewalld &amp;&amp; systemctl stop firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+</code></pre><ul>
+<li>&#x5B89;&#x88C5; Kubernetes</li>
+</ul>
+<pre><code>[root@k8s1 ~]# yum -y install etcd kubernetes
+</code></pre><ul>
+<li><p>&#x4FEE;&#x6539; Docker &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5C06; <code>/etc/sysconfig/docker</code> &#x4E2D; <code>OPTIONS</code> &#x9009;&#x9879;&#x7684;&#x503C;&#x66F4;&#x6539;&#x4E3A; <code>--selinux-enabled=false --insecure-registry gcr.io</code></p>
+</li>
+<li><p>&#x5C06; Kubernetes apiserver &#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>/etc/kubernetes/apiserver</code> &#x4E2D; <code>--admission-control</code> &#x503C;&#x7684; <code>ServiceAccount</code> &#x53BB;&#x6389;</p>
+</li>
+<li><p>&#x6309;&#x987A;&#x5E8F;&#x542F;&#x52A8;&#x670D;&#x52A1;</p>
+</li>
+</ul>
+<pre><code>[root@k8s1 ~]# systemctl start etcd
+[root@k8s1 ~]# systemctl start docker
+[root@k8s1 ~]# systemctl start kube-apiserver
+[root@k8s1 ~]# systemctl start kube-controller-manager
+[root@k8s1 ~]# systemctl start kube-scheduler
+[root@k8s1 ~]# systemctl start kubelet
+[root@k8s1 ~]# systemctl start kube-proxy
+</code></pre><p>&#x3000;&#x3000;&#x81F3;&#x6B64;&#xFF0C;&#x4E00;&#x4E2A;&#x5355;&#x673A;&#x7248;&#x7684; Kubernetes &#x7B97;&#x662F;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x4E86;&#x3002;</p>
+<h1 id="&#x521B;&#x5EFA;-mysql-&#x670D;&#x52A1;">&#x521B;&#x5EFA; MySQL &#x670D;&#x52A1;</h1>
+<h2 id="&#x521B;&#x5EFA;-rc">&#x521B;&#x5EFA; RC</h2>
+<ul>
+<li>&#x9996;&#x5148;&#x4E3A; MySQL &#x521B;&#x5EFA;&#x4E00;&#x4E2A; RC &#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF1A;<code>mysql-rc.yaml</code>&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>apiVersion: v1
+# &#x526F;&#x672C;&#x63A7;&#x5236;&#x5668; RC
+kind: ReplicationController
+metadata:
+  # RC &#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5168;&#x5C40;&#x552F;&#x4E00;
+  name: mysql
+spec:
+  # &#x671F;&#x5F85;&#x521B;&#x5EFA;&#x7684; Pod &#x4E2A;&#x6570;
+  replicas: 1
+  selector:
+    # &#x9009;&#x62E9;&#x7B26;&#x5408;&#x62E5;&#x6709;&#x6B64;&#x6807;&#x7B7E;&#x7684; Pod
+    app: mysql
+  # &#x6839;&#x636E;&#x6A21;&#x677F;&#x4E0B;&#x5B9A;&#x4E49;&#x7684;&#x4FE1;&#x606F;&#x521B;&#x5EFA; Pod
+  template:
+    metadata:
+      labels:
+        # Pod &#x62E5;&#x6709;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5BF9;&#x5E94;&#x4E0A;&#x8FB9; RC &#x7684; selector
+        app: mysql
+    # &#x5B9A;&#x4E49; Pod &#x7EC6;&#x5219;
+    spec:
+      # Pod &#x5185;&#x5BB9;&#x5668;&#x7684;&#x5B9A;&#x4E49;
+      containers:
+        # &#x5BB9;&#x5668;&#x540D;&#x79F0;
+        - name: mysql
+          # &#x4F7F;&#x7528;&#x7684;&#x955C;&#x50CF;
+          image: mysql:5.6
+          ports:
+            # &#x66B4;&#x9732;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
+            - containerPort: 3306
+          # &#x6CE8;&#x5165;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: &quot;123456&quot;
+</code></pre><blockquote>
+<p>&#x3000;&#x3000;&#x6CE8;&#x610F;&#x4E0A;&#x8FB9;&#x7684; MySQL &#x955C;&#x50CF;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>5.6</code> &#x7248;&#x672C;&#xFF0C;&#x4E66;&#x4E2D;&#x4F5C;&#x8005;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x955C;&#x50CF; tag&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; latest&#xFF0C;&#x5728;&#x4F5C;&#x8005;&#x51FA;&#x4E66;&#x65F6;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#xFF0C;latest &#x5DF2;&#x7ECF;&#x90FD;&#x662F; MySQL 8.x &#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x540E;&#x8FB9;&#x542F;&#x52A8;&#x7684; <code>myweb</code> &#x65F6;&#x6570;&#x636E;&#x5E93;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x4F1A;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x5904;&#x6307;&#x5B9A; 5.6&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x4F7F;&#x7528;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x521B;&#x5EFA; RC&#xFF1A;</li>
+</ul>
+<pre><code>[root@k8s1 1.3]# kubectl create -f mysql-rc.yaml
+replicationcontroller &quot;mysql&quot; created
+[root@k8s1 1.3]# kubectl get rc
+NAME      DESIRED   CURRENT   READY     AGE
+mysql     1         1         0         14s
+[root@k8s1 1.3]# kubectl get pod
+NAME          READY     STATUS              RESTARTS   AGE
+mysql-mctdm   0/1       ContainerCreating   0          16s
+</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x770B;&#x5230;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A; RC &#x548C;&#x4E00;&#x4E2A; Pod&#xFF0C;RC &#x6CA1;&#x6709; READY&#xFF0C;Pod &#x4E5F;&#x6CA1;&#x6709; Running&#x3002;&#x6BD5;&#x7ADF;&#x521A;&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;&#xFF0C;&#x8981;&#x7A0D;&#x7B49;&#x7247;&#x523B;&#xFF0C;&#x8FD8;&#x8981;&#x62C9;&#x53D6;&#x955C;&#x50CF;&#x4E0D;&#x662F;&#x3002;</p>
+<p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x5C31;&#x5B58;&#x5728;&#x4E86;&#x4E00;&#x4E2A;&#x5751;&#xFF0C;&#x6211;&#x7B49;&#x4E86;&#x534A;&#x5929;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#xFF0C;&#x5F00;&#x59CB;&#x89C9;&#x5F97;&#x4E0D;&#x5BF9;&#x52B2;&#x4E86;&#x3002;&#x67E5;&#x770B; Pod &#x6267;&#x884C;&#x7684;&#x8BE6;&#x60C5;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl describe po mysql-mctdm
+Name:        mysql-mctdm
+Namespace:    default
+Node:        127.0.0.1/127.0.0.1
+Start Time:    Sat, 13 Apr 2019 09:56:21 -0400
+Labels:        app=mysql
+Status:        Pending
+IP:
+Controllers:    ReplicationController/mysql
+Containers:
+  mysql:
+    Container ID:
+    Image:        mysql:5.6
+    Image ID:
+    Port:        3306/TCP
+    State:        Waiting
+      Reason:        ContainerCreating
+    Ready:        False
+    Restart Count:    0
+    Volume Mounts:    &lt;none&gt;
+    Environment Variables:
+      MYSQL_ROOT_PASSWORD:    123456
+Conditions:
+  Type        Status
+  Initialized     True
+  Ready     False
+  PodScheduled     True
+No volumes.
+QoS Class:    BestEffort
+Tolerations:    &lt;none&gt;
+Events:
+  FirstSeen    LastSeen    Count    From            SubObjectPath    Type        Reason        Message
+  ---------    --------    -----    ----            -------------    --------    ------        -------
+  2m        2m        1    {default-scheduler }            Normal        Scheduled    Successfully assigned mysql-mctdm to 127.0.0.1
+  2m        1m        4    {kubelet 127.0.0.1}            Warning        FailedSync    Error syncing pod, skipping: failed to &quot;StartContainer&quot; for &quot;POD&quot; with ErrImagePull: &quot;image pull failed for registry.access.redhat.com/rhel7/pod-infrastructure:latest, this may be because there are no credentials on this request.  details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)&quot;
+
+  1m    7s    7    {kubelet 127.0.0.1}        Warning    FailedSync    Error syncing pod, skipping: failed to &quot;StartContainer&quot; for &quot;POD&quot; with ImagePullBackOff: &quot;Back-off pulling image \&quot;registry.access.redhat.com/rhel7/pod-infrastructure:latest\&quot;&quot;
+</code></pre><p>&#x3000;&#x3000;&#x4E0B;&#x9762;&#x7684;&#x4FE1;&#x606F;&#x4E2D;&#x8BF4;&#x62C9;&#x53D6;&#x666F;&#x8C61; <code>registry.access.redhat.com/rhel7/pod-infrastructure:latest</code> &#x51FA;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x770B;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x8BC1;&#x4E66;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x67E5;&#x770B;&#x8FD9;&#x4E2A;&#x8BC1;&#x4E66;&#x8DEF;&#x5F84;&#xFF0C;&#x53D1;&#x73B0;&#x662F;&#x4E2A;&#x8F6F;&#x8FDE;&#x63A5;&#xFF0C;&#x5728;&#x67E5;&#x770B;&#x8FDE;&#x63A5;&#x76EE;&#x5F55;&#xFF0C;&#x53D1;&#x73B0;&#x7A7A;&#x7684;&#x3002;</p>
+<pre><code>[root@k8s1 1.3]# ll /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt
+lrwxrwxrwx 1 root root 27 4&#x6708;  13 09:38 /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt -&gt; /etc/rhsm/ca/redhat-uep.pem
+[root@k8s1 1.3]# ll /etc/rhsm/ca/
+&#x603B;&#x7528;&#x91CF; 0
+</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x597D;&#x4E86;<a href="http://pencil-file.oss-cn-hangzhou.aliyuncs.com/blogger/redhat-uep.pem" target="_blank">&#x8BC1;&#x4E66;&#x6587;&#x4EF6;</a>&#x3002;&#x653E;&#x5165; <code>/etc/rhsm/ca/</code> &#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x5728;&#x4E3B;&#x52A8;&#x53BB; pull &#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest
+</code></pre><p>&#x3000;&#x3000;&#x7531;&#x4E8E;&#x5730;&#x5740;&#x5728;&#x56FD;&#x5916;&#xFF0C;&#x62C9;&#x53D6;&#x6BD4;&#x8F83;&#x6162;&#x3002;&#x4E4B;&#x540E;&#x5220;&#x9664;&#x539F;&#x6765;&#x7684; RC&#xFF0C;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl delete -f mysql-rc.yaml
+replicationcontroller &quot;mysql&quot; deleted
+[root@k8s1 1.3]# kubectl create -f mysql-rc.yaml
+replicationcontroller &quot;mysql&quot; created
+</code></pre><p>&#x3000;&#x3000;&#x53BB;&#x5199;&#x4E24;&#x4E2A; Bug&#xFF0C;&#x7B49;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>[root@k8s1 1.3]# kubectl get rc
+NAME      DESIRED   CURRENT   READY     AGE
+mysql     1         1         1         5m
+[root@k8s1 1.3]# kubectl get pods
+NAME          READY     STATUS    RESTARTS   AGE
+mysql-rjvt2   1/1       Running   0          5m
+</code></pre><p>&#x3000;&#x3000;OK&#xFF0C;MySQL RC &#x5B8C;&#x6BD5;&#x4E86;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;-service">&#x521B;&#x5EFA; Service</h2>
+<p>&#x3000;&#x3000;&#x4E0A;&#x4E00;&#x6B65;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x4E00;&#x4E2A; RC&#xFF0C;&#x8FD9;&#x91CC;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684; Kubernetes Service&#x3002;MySQL &#x5B9A;&#x4E49;&#x6587;&#x4EF6; <code>mysql-svc.yaml</code> &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl create -f mysql-svc.yaml
+service &quot;mysql&quot; created
+[root@k8s1 1.3]# kubectl get services
+NAME         CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+kubernetes   10.254.0.1      &lt;none&gt;        443/TCP    44m
+mysql        10.254.152.96   &lt;none&gt;        3306/TCP   9s
+</code></pre><h1 id="&#x521B;&#x5EFA;-tomcat-&#x670D;&#x52A1;">&#x521B;&#x5EFA; Tomcat &#x670D;&#x52A1;</h1>
+<h2 id="&#x521B;&#x5EFA;-rc">&#x521B;&#x5EFA; RC</h2>
+<ul>
+<li>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; RC &#x6587;&#x4EF6; <code>myweb-rc.yaml</code>&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myweb
+spec:
+  replicas: 5
+  selector:
+    app: myweb
+  template:
+    metadata:
+      name: myweb
+      labels:
+        app: myweb
+    spec:
+      containers:
+        - name: myweb
+          image: kubeguide/tomcat-app:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MYSQL_SERVICE_HOST
+              value: &apos;mysql&apos;
+            - name: MYSQL_SERVICE_PORT
+              value: &apos;3306&apos;
+</code></pre><p>&#x3000;&#x3000;&#x4E0A;&#x9762;&#x6587;&#x4EF6;&#x4E2D;&#x5DF2;&#x7528;&#x4E86; <code>MYSQL_SERVICE_HOST</code>&#x3001;<code>MYSQL_SERVICE_PORT</code> &#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;<code>mysql</code> &#x6B63;&#x5F0F;&#x4E0A;&#x6587;&#x4E2D;&#x5B9A;&#x4E49;&#x7684; MySQL &#x670D;&#x52A1;&#x540D;&#x3002;&#x5F00;&#x59CB;&#x521B;&#x5EFA;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl create -f myweb-rc.yaml
+replicationcontroller &quot;myweb&quot; created
+</code></pre><p>&#x3000;&#x3000;&#x7A0D;&#x7B49;&#x7247;&#x523B;&#xFF0C;&#x542F;&#x52A8;&#x5B8C;&#x6BD5;&#x3002;</p>
+<pre><code>[root@k8s1 1.3]# kubectl get rc
+NAME      DESIRED   CURRENT   READY     AGE
+mysql     1         1         1         5m
+myweb     5         5         5         3m
+[root@k8s1 1.3]# kubectl get pods
+NAME          READY     STATUS    RESTARTS   AGE
+mysql-5bgtm   1/1       Running   0          5m
+myweb-7r3vq   1/1       Running   0          3m
+myweb-bkh54   1/1       Running   0          3m
+myweb-chv0s   1/1       Running   0          3m
+myweb-d9kgm   1/1       Running   0          3m
+myweb-zm5tn   1/1       Running   0          3m
+</code></pre><h2 id="&#x521B;&#x5EFA;-service">&#x521B;&#x5EFA; Service</h2>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: myweb
+spec:
+  selector:
+    app: myweb
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30001
+</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x6CE8;&#x610F; <code>type: NodePort</code> &#x548C; <code>nodePort: 30001</code>&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x540D; Service &#x5F00;&#x542F;&#x4E86; NodePort &#x65B9;&#x5F0F;&#x7684;&#x5916;&#x7F51;&#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#xFF0C;&#x5728; Kubernetes &#x96C6;&#x7FA4;&#x4E4B;&#x5916;&#xFF0C;&#x6BD4;&#x5982;&#x4ECE;&#x672C;&#x673A;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x865A;&#x62DF;&#x673A;&#x6216;&#x8005;&#x4E91;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684; 30001 &#x7AEF;&#x53E3;&#xFF0C;&#x8FDB;&#x800C;&#x6620;&#x5C04;&#x5230; <code>myweb</code> Service &#x7684; 8080 &#x7AEF;&#x53E3;&#x3002;&#x521B;&#x5EFA;&#x4E4B;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl get services
+NAME         CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes   10.254.0.1       &lt;none&gt;        443/TCP          1h
+mysql        10.254.152.96    &lt;none&gt;        3306/TCP         29m
+myweb        10.254.180.147   &lt;nodes&gt;       8080:30001/TCP   11s
+</code></pre><h1 id="&#x8BBF;&#x95EE;&#x7F51;&#x9875;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;">&#x8BBF;&#x95EE;&#x7F51;&#x9875;&#x53D1;&#x73B0;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;</h1>
+<ul>
+<li>&#x8BBF;&#x95EE;&#x4E0D;&#x901A;</li>
+</ul>
+<p><img src="https://pencil.file.lynchj.com/blogger/20190413230714.png" alt=""></p>
+<p>&#x3000;&#x3000;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x5F00;&#x542F; <code>ip forward</code>&#xFF0C;&#x5F00;&#x542F;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# echo &quot;net.ipv4.ip_forward=1&quot; &gt;&gt; /etc/sysctl.conf
+[root@k8s1 1.3]# sysctl -p
+</code></pre><ul>
+<li>&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x62A5;&#x9519;</li>
+</ul>
+<p><img src="https://pencil.file.lynchj.com/blogger/20190413231226.png" alt=""></p>
+<p>&#x3000;&#x3000;&#x67E5;&#x770B;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;&#xFF1A;</p>
+<p><img src="https://pencil.file.lynchj.com/blogger/20190413231159.png" alt=""></p>
+<p>&#x3000;&#x3000;&#x53D1;&#x73B0;&#x662F; mysql &#x8FD9;&#x4E2A; host &#x627E;&#x4E0D;&#x5230;&#xFF08;&#x627E;&#x4E0D;&#x5230;&#x7684;&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x91CC;&#x8FD8;&#x6CA1;&#x6709;&#x6D89;&#x53CA;&#x5230; k8s &#x7684; DNS &#x6A21;&#x5757;&#xFF09;&#x3002;&#x8FD9;&#x91CC;&#x624B;&#x52A8;&#x914D;&#x7F6E;&#x4E86;&#x4E0B;&#xFF1A;</p>
+<pre><code>[root@k8s1 1.3]# kubectl get services
+NAME         CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGEKub
+kubernetes   10.254.0.1       &lt;none&gt;        443/TCP          1h
+mysql        10.254.152.96    &lt;none&gt;        3306/TCP         46m
+myweb        10.254.180.147   &lt;nodes&gt;       8080:30001/TCP   17m
+[root@k8s1 1.3]# kubectl exec -it myweb-7r3vq bash
+root@myweb-7r3vq:/usr/local/tomcat# echo &quot;10.254.152.96 mysql&quot; &gt;&gt; /etc/hosts
+</code></pre><blockquote>
+<p>&#x3000;&#x3000;&#x6CE8;&#x610F;&#xFF1A;</p>
+<blockquote>
+<p>&#x3000;&#x3000;1. &#x6211;&#x8FD9;&#x91CC;&#x7684; MySQL Service &#x865A;&#x62DF; IP &#x662F; <code>10.254.152.96</code>&#x3002;
+&#x3000;&#x3000;2. &#x6BCF;&#x4E2A; myweb Pod &#x90FD;&#x8FDB;&#x884C;&#x4E00;&#x8FB9;&#x3002;</p>
+</blockquote>
+</blockquote>
+<p>&#x3000;&#x3000;&#x518D;&#x8BBF;&#x95EE;&#x65E0;&#x95EE;&#x9898;&#xFF1A;</p>
+<p><img src="https://pencil.file.lynchj.com/blogger/20190413232009.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Kubernetes%201.6.1%20kubeadm%20集群安装.md" class="navigation navigation-prev " aria-label="Previous page: Kubernetes 1.6.1 kubeadm 集群安装.md">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="安装%20Dashboard.md" class="navigation navigation-next " aria-label="Next page: 安装 Dashboard.md">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"《Kubernetes权威指南》1.3案例部署及问题解决.md","level":"2.1.4","depth":2,"next":{"title":"安装 Dashboard.md","level":"2.1.5","depth":2,"path":"Kubernetes/安装%20Dashboard.md","ref":"Kubernetes/安装%20Dashboard.md","articles":[]},"previous":{"title":"Kubernetes 1.6.1 kubeadm 集群安装.md","level":"2.1.3","depth":2,"path":"Kubernetes/Kubernetes%201.6.1%20kubeadm%20集群安装.md","ref":"Kubernetes/Kubernetes%201.6.1%20kubeadm%20集群安装.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.md","mtime":"2019-04-30T10:09:15.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T10:09:34.951Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
