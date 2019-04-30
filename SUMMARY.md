@@ -6,7 +6,7 @@
 
 ## 笔记
 
-* [Kubenetes](Kubernetes/Kubenetes.md)
+* [Kubenetes](Kubernetes/readme.md)
     * [Kubernetes 1.14 开启 IPVS.md](Kubernetes/Kubernetes%201.14%20开启%20IPVS.md)
     * [Kubernetes 1.14 kubeadm 集群安装.md](Kubernetes/Kubernetes%201.14%20kubeadm%20集群安装.md)
     * [Kubernetes 1.6.1 kubeadm 集群安装.md](Kubernetes/Kubernetes%201.6.1%20kubeadm%20集群安装.md)
