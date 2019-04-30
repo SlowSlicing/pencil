@@ -1,12 +1,10 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Eureka,参数调优
 [toc]
 
-> &emsp;&emsp;主要说明一下比较重要、常用的 Server 和 Client 的参数。
+> 　　主要说明一下比较重要、常用的 Server 和 Client 的参数。
 
 # Client 端
 
-&emsp;&emsp;大致分为：基本参数、定时任务参数、Http参数。
+　　大致分为：基本参数、定时任务参数、Http参数。
 
 ## 基本参数 
 
@@ -18,13 +16,13 @@ Spring Cloud,Eureka,参数调优
 
 ## Http 参数
 
-&emsp;&emsp;Eureka Client 底层使用 HttpClient 与 Eureka Server 进行通信。
+　　Eureka Client 底层使用 HttpClient 与 Eureka Server 进行通信。
 
 ![Http 参数](http://img.lynchj.com/7072f71bc6fc478cb76c943bb84c847d.png)
 
 # Server 端
 
-&emsp;&emsp;大致分为：基本参数、Response Cache 参数、Peer 相关参数、Http 参数。
+　　大致分为：基本参数、Response Cache 参数、Peer 相关参数、Http 参数。
 
 ## 基本参数
 
@@ -32,7 +30,7 @@ Spring Cloud,Eureka,参数调优
 
 ## Response Cache 参数
 
-&emsp;&emsp;Eureka Server 为了提升自身 REST API 接口的性能，提供了两个缓存：一个是基于 ConcurrentMap 的 readOnlyCacheMap，一个是基于 Guava Cache 的 readWriteCacheMap。
+　　Eureka Server 为了提升自身 REST API 接口的性能，提供了两个缓存：一个是基于 ConcurrentMap 的 readOnlyCacheMap，一个是基于 Guava Cache 的 readWriteCacheMap。
 
 ![Response Cache 参数](http://img.lynchj.com/296079fb9ce44ec9a4b11f11a72b41f2.png)
 
@@ -57,13 +55,13 @@ Eureka Server 需要与其他 peer 节点进行通信，复制实例信息，其
 
 ## 解决之道
 
-&emsp;&emsp;对于第一个问题，Eureka Server 并不是强一致的，因此 registry 中会存留过期的实例信息，这里头有几个原因：
+　　对于第一个问题，Eureka Server 并不是强一致的，因此 registry 中会存留过期的实例信息，这里头有几个原因：
 
 * 应用实例异常挂掉，没能在挂掉之前告知 Eureka Server 要下线掉该服务实例信息。这个就需要依赖 Eureka Server 的 EvictionTask 去剔除。
 * 应用实例下线时有告知 Eureka Server 下线，但是由于 Eureka Server 的 REST API 有 response cache，因此需要等待缓存过期才能更新。
 * Eureka Server 由于开启并引入了 SELF PRESERVATION 模式，导致 registry 的信息不会因为过期而被剔除掉，直到退出 SELF PRESERVATION 模式。
 
-&emsp;&emsp;针对 Client 下线没有通知 Eureka Server 的问题，可以调整 EvictionTask 的调度频率，比如下面配置将调度间隔从默认的 60 秒，调整为 5 秒：
+　　针对 Client 下线没有通知 Eureka Server 的问题，可以调整 EvictionTask 的调度频率，比如下面配置将调度间隔从默认的 60 秒，调整为 5 秒：
 
 ```
 eureka:
@@ -73,7 +71,7 @@ eureka:
     eviction-interval-timer-in-ms: 5000
 ```
 
-&emsp;&emsp;针对 response cache 的问题，可以根据情况考虑关闭 readOnlyCacheMap：
+　　针对 response cache 的问题，可以根据情况考虑关闭 readOnlyCacheMap：
 
 ```
 eureka:
@@ -82,7 +80,7 @@ eureka:
     use-read-only-response-cache: false
 ```
 
-&emsp;&emsp;或者调整 readWriteCacheMap 的过期时间：
+　　或者调整 readWriteCacheMap 的过期时间：
 
 ```
 eureka:
@@ -92,7 +90,7 @@ eureka:
     response-cache-auto-expiration-in-seconds: 60
 ```
 
-&emsp;&emsp;针对 SELF PRESERVATION 的问题，在测试环境可以将 `enable-self-preservation`
+　　针对 SELF PRESERVATION 的问题，在测试环境可以将 `enable-self-preservation`
 设置为 false：
 
 ```
@@ -105,19 +103,19 @@ eureka:
     enable-self-preservation: true
 ```
 
-&emsp;&emsp;如果关闭的话会提示：
+　　如果关闭的话会提示：
 
 ```
 RENEWALS ARE LESSER THAN THE THRESHOLD. THE SELF PRESERVATION MODE IS TURNED OFF.THIS MAY NOT PROTECT INSTANCE EXPIRY IN CASE OF NETWORK/OTHER PROBLEMS.
 ```
 
-&emsp;&emsp;或者：
+　　或者：
 
 ```
 THE SELF PRESERVATION MODE IS TURNED OFF.THIS MAY NOT PROTECT INSTANCE EXPIRY IN CASE OF NETWORK/OTHER PROBLEMS.
 ```
 
-&emsp;&emsp;针对新服务上线，Eureka Client 获取不及时的问题，在测试环境，可以适当提高 Client 端拉取 Server 注册信息的频率，例如下面将默认的30秒改为5秒：
+　　针对新服务上线，Eureka Client 获取不及时的问题，在测试环境，可以适当提高 Client 端拉取 Server 注册信息的频率，例如下面将默认的30秒改为5秒：
 
 ```
 eureka:
@@ -126,7 +124,7 @@ eureka:
     registry-fetch-interval-seconds: 5
 ```
 
-&emsp;&emsp;在实际生产过程中，经常会有网络抖动等问题造成服务实例与 Eureka Server的心跳未能如期保持，但是服务实例本身是健康的，这个时候如果按照租约剔除机制剔除的话，会造成误判，如果大范围误判的话，可能会导致整个服务注册列表的大部分注册信息被删除，从而没有可用服务。Eureka 为了解决这个问题引入了 SELF PRESERVATION 机制，当最近一分钟接收到的续约的次数小于等于指定阈值的话，则关闭租约失效剔除，禁止定时任务剔除失效的实例，从而保护注册信息。对于开发测试环境，开启这个机制有时候反而会影响系统的持续集成，因此可以通过如下参数关闭该机制。
+　　在实际生产过程中，经常会有网络抖动等问题造成服务实例与 Eureka Server的心跳未能如期保持，但是服务实例本身是健康的，这个时候如果按照租约剔除机制剔除的话，会造成误判，如果大范围误判的话，可能会导致整个服务注册列表的大部分注册信息被删除，从而没有可用服务。Eureka 为了解决这个问题引入了 SELF PRESERVATION 机制，当最近一分钟接收到的续约的次数小于等于指定阈值的话，则关闭租约失效剔除，禁止定时任务剔除失效的实例，从而保护注册信息。对于开发测试环境，开启这个机制有时候反而会影响系统的持续集成，因此可以通过如下参数关闭该机制。
 
 ```
 eureka:
@@ -138,7 +136,7 @@ eureka:
     enable-self-preservation: false
 ```
 
-&emsp;&emsp;在生产环境中可以把 renewalPercentThreshold 及 leaseRenewalIntervalInSeconds 参数调小一点，进而提高触发 SELF PRESERVATION 机制的门槛，比如：
+　　在生产环境中可以把 renewalPercentThreshold 及 leaseRenewalIntervalInSeconds 参数调小一点，进而提高触发 SELF PRESERVATION 机制的门槛，比如：
 
 ```
 eureka:

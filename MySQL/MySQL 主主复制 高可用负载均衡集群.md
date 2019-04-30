@@ -1,5 +1,3 @@
-MySQL
-MySQL,主主复制,负载均衡,HAProxy,Keepalived
 [toc]
 
 > 搭建环境：
@@ -10,19 +8,19 @@ MySQL,主主复制,负载均衡,HAProxy,Keepalived
 
 # MySQL 安装
 
-&emsp;&emsp;安装笔记参考[MySQL Yum 存储库安装](https://blog.csdn.net/wo18237095579/article/details/80585486)，此处不再浪费“墨水”。两台机器按照相同步骤安装完成即可。
+　　安装笔记参考[MySQL Yum 存储库安装](https://blog.csdn.net/wo18237095579/article/details/80585486)，此处不再浪费“墨水”。两台机器按照相同步骤安装完成即可。
 
 # 主主复制
 
-&emsp;&emsp;什么叫主主复制？就是两个 MySQL 都能读能写，数据记录通过二进制传达给对方从而保持数据的一致性。
+　　什么叫主主复制？就是两个 MySQL 都能读能写，数据记录通过二进制传达给对方从而保持数据的一致性。
 
 > 192.168.117.139 主从复制 + 192.168.117.140 主从复制 == 192.168.117.139、192.168.117.140 主主复制）
 
-&emsp;&emsp;因此主主复制中必须要解决的事情就是自增主键的问题。如果 `MySQL1` 主键 id 增加到 999 了，此时二进制数据还没到达 MySQL2，那么 MySQL2 恰好要插入数据，那么新数据主键 id 也是 999，那不就是乱套了么！解决这一问题我们可以直接更改MySQL中的配置文件即可。
+　　因此主主复制中必须要解决的事情就是自增主键的问题。如果 `MySQL1` 主键 id 增加到 999 了，此时二进制数据还没到达 MySQL2，那么 MySQL2 恰好要插入数据，那么新数据主键 id 也是 999，那不就是乱套了么！解决这一问题我们可以直接更改MySQL中的配置文件即可。
 
 ### 修改配置文件
 
-&emsp;&emsp;如果按照上方笔记安装的话，MySQL 配置文件在：`/etc/my.cnf`
+　　如果按照上方笔记安装的话，MySQL 配置文件在：`/etc/my.cnf`
 
 ```
 # 192.168.117.139 服务器
@@ -51,19 +49,19 @@ auto_increment_offset=2
 replicate-do-db=aa
 ```
 
-&emsp;&emsp;配置好后重启 MySQL
+　　配置好后重启 MySQL
 
 ```
 systemctl restart mysqld
 ```
 
-> &emsp;&emsp;**注意：**如果使用的是虚拟机，进行的克隆，因为是整个系统的 "Copy" ，所以 MySQL 的 auto.cnf 文件中的 `server-uuid` 会相同，在后面主主复制操作时会出错，记得修改，两个不一样即可。auto.cnf 地址：`/var/lib/mysql/auto.cnf`
+> 　　**注意：**如果使用的是虚拟机，进行的克隆，因为是整个系统的 "Copy" ，所以 MySQL 的 auto.cnf 文件中的 `server-uuid` 会相同，在后面主主复制操作时会出错，记得修改，两个不一样即可。auto.cnf 地址：`/var/lib/mysql/auto.cnf`
 
 ### 配置 192.168.117.139 的主从复制
 
 #### 创建 MySQL 用户
 
-&emsp;&emsp;在 `192.168.117.139` 的 MySQL 上创建 `192.168.117.140` MySQL 登录使用 MySQL 用户并授予`从复制权限`（反之同样来一遍）。
+　　在 `192.168.117.139` 的 MySQL 上创建 `192.168.117.140` MySQL 登录使用 MySQL 用户并授予`从复制权限`（反之同样来一遍）。
 
 ```
 # 创建 MySQL 用户
@@ -93,7 +91,7 @@ mysql> show master status;
 
 #### 告知 192.168.117.140 主 MySQL 二进制文件名与位置
 
-&emsp;&emsp;在 `192.168.117.140` 上的 MySQL 中执行
+　　在 `192.168.117.140` 上的 MySQL 中执行
 
 * 
 ```
@@ -168,7 +166,7 @@ Master_SSL_Verify_Server_Cert: No
 1 row in set (0.00 sec)
 ```
 
-&emsp;&emsp;**上面几个关键点注意：**
+　　**上面几个关键点注意：**
 
 * **Master_Host:** 主库地址
 * **Master_User:** 连接主库使用的 用户
@@ -178,11 +176,11 @@ Master_SSL_Verify_Server_Cert: No
 * **Slave_SQL_Running:** 负责自己的 Slave MySQL 进行状态，需要为 `Yes` 方可
 * **Replicate_Do_DB:** 同步的 DB
 
-> &emsp;&emsp;至此，192.168.117.139 的主从复制配置成功。这些操作在 192.168.117.140 上再做一遍即可完成**主主复制**
+> 　　至此，192.168.117.139 的主从复制配置成功。这些操作在 192.168.117.140 上再做一遍即可完成**主主复制**
 
 ### 查看主主复制效果
 
-&emsp;&emsp;这里使用 Navicat 视图工具随便添加一点数据
+　　这里使用 Navicat 视图工具随便添加一点数据
 
 * 192.168.117.139 上新增 demo 表
 
@@ -204,23 +202,23 @@ Master_SSL_Verify_Server_Cert: No
 
 ### HAProxy
 
-&emsp;&emsp;HAProxy 是一个开源的高性能的反向代理或者说是负载均衡服务软件之一，它支持双机热备、虚拟主机、基于TCP和HTTP应用代理等功能。其配置简单，而且拥有很好的对服务器节点的健康检查功能（相当于 keepalived 健康检查），当其代理的后端服务器出现故障时，HAProxy 会自动的将该故障服务器摘除，当服务器的故障恢复后 HAProxy 还会自动将 RS 服务器。
+　　HAProxy 是一个开源的高性能的反向代理或者说是负载均衡服务软件之一，它支持双机热备、虚拟主机、基于TCP和HTTP应用代理等功能。其配置简单，而且拥有很好的对服务器节点的健康检查功能（相当于 keepalived 健康检查），当其代理的后端服务器出现故障时，HAProxy 会自动的将该故障服务器摘除，当服务器的故障恢复后 HAProxy 还会自动将 RS 服务器。
 
-&emsp;&emsp;HAProxy 特别适用于那些负载特大的 web 站点，这些站点通常又需要会话保持或七层处理。HAProxy 运行在当前的硬件上，完全可以支持数以万计的并发连接。并且它的运行模式使得它可以很简单安全的整合进您当前的架构中， 同时可以保护你的 web 服务器不被暴露到网络上。
+　　HAProxy 特别适用于那些负载特大的 web 站点，这些站点通常又需要会话保持或七层处理。HAProxy 运行在当前的硬件上，完全可以支持数以万计的并发连接。并且它的运行模式使得它可以很简单安全的整合进您当前的架构中， 同时可以保护你的 web 服务器不被暴露到网络上。
 
-&emsp;&emsp;HAProxy 软件引入了 frontend，backend 的功能，frontend（acl规则匹配）可以根据任意HTTP请求头做规则匹配，然后把请求定向到相关的 backend（server pools等待前端把请求转过来的服务器组）。通过 frontend 和 backup，我们可以很容易的实现 HAProxy 的`7层代理功能`，HAProxy 是一款不可多得的优秀代理服务软件。
+　　HAProxy 软件引入了 frontend，backend 的功能，frontend（acl规则匹配）可以根据任意HTTP请求头做规则匹配，然后把请求定向到相关的 backend（server pools等待前端把请求转过来的服务器组）。通过 frontend 和 backup，我们可以很容易的实现 HAProxy 的`7层代理功能`，HAProxy 是一款不可多得的优秀代理服务软件。
 
 ### Keepalived
 
-&emsp;&emsp;Keepalived 是以 `VRRP协议` 为实现基础的，VRRP 全称 Virtual Router Redundancy Protocol，即虚拟路由冗余协议。
+　　Keepalived 是以 `VRRP协议` 为实现基础的，VRRP 全称 Virtual Router Redundancy Protocol，即虚拟路由冗余协议。
 
-&emsp;&emsp;虚拟路由冗余协议，可以认为是实现路由器高可用的协议，即将N台提供相同功能的路由器组成一个路由器组，这个组里面有一个 Master 和多个 Backup，Master 上面有一个对外提供服务的 `vip`（该路由器所在局域网内其他机器的默认路由为该 `vip`），Master 会发组播，当 Backup 收不到 `vrrp` 包时就认为 Master 宕掉了，这时就需要根据 `VRRP` 的优先级来选举一个 Backup 当 Master。这样的话就可以保证路由器的高可用了。
+　　虚拟路由冗余协议，可以认为是实现路由器高可用的协议，即将N台提供相同功能的路由器组成一个路由器组，这个组里面有一个 Master 和多个 Backup，Master 上面有一个对外提供服务的 `vip`（该路由器所在局域网内其他机器的默认路由为该 `vip`），Master 会发组播，当 Backup 收不到 `vrrp` 包时就认为 Master 宕掉了，这时就需要根据 `VRRP` 的优先级来选举一个 Backup 当 Master。这样的话就可以保证路由器的高可用了。
 
-&emsp;&emsp;Keepalived 主要有三个模块，分别是 `core`、`check` 和 `vrrp`。`core模块`为 Keepalived 的核心，负责主进程的启动、维护以及全局配置文件的加载和解析。`check`负责健康检查，包括常见的各种检查方式。`vrrp`模块是来实现`VRRP协议`的。
+　　Keepalived 主要有三个模块，分别是 `core`、`check` 和 `vrrp`。`core模块`为 Keepalived 的核心，负责主进程的启动、维护以及全局配置文件的加载和解析。`check`负责健康检查，包括常见的各种检查方式。`vrrp`模块是来实现`VRRP协议`的。
 
 # 中间件的安装与配置（HAProxy、Keepalived）
 
-&emsp;&emsp;我这里全部都采用 yum 安装方式，源使用的是阿里云。
+　　我这里全部都采用 yum 安装方式，源使用的是阿里云。
 
 ### HAProxy 安装
 
@@ -232,9 +230,9 @@ Master_SSL_Verify_Server_Cert: No
 
 #### 配置
 
-&emsp;&emsp;配置文件路径：`/etc/haproxy/haproxy.cfg`
+　　配置文件路径：`/etc/haproxy/haproxy.cfg`
 
-&emsp;&emsp;添加关于 MySQL 的配置信息
+　　添加关于 MySQL 的配置信息
 
 ```
 [root@localhost ~]# vim /etc/haproxy/haproxy.cfg
@@ -313,13 +311,13 @@ listen proxy-mysql
 
 #### 启动 HAProxy
 
-&emsp;&emsp;重启 HAProxy 
+　　重启 HAProxy 
 
 ```
 [root@localhost ~]# systemctl restart haproxy
 ```
 
-&emsp;&emsp;**启动失败，查看错误信息如下：**
+　　**启动失败，查看错误信息如下：**
 
 ```
 [root@localhost ~]# tail -f /var/log/messages
@@ -353,7 +351,7 @@ root       5048   1146  0 05:37 pts/0    00:00:00 grep --color=auto haproxy
 
 ![负载状态](http://img.lynchj.com/60f0cd0ba38647ae9e84e8441b4bbe8b.png)
 
-> &emsp;&emsp;安装 HAProxy 的步骤在 `192.168.117.140` 上做相同步骤即可。
+> 　　安装 HAProxy 的步骤在 `192.168.117.140` 上做相同步骤即可。
 
 ### Keepalived 安装
 
@@ -365,9 +363,9 @@ root       5048   1146  0 05:37 pts/0    00:00:00 grep --color=auto haproxy
 
 #### 配置
 
-&emsp;&emsp;配置文件路径：`/etc/keepalived/keepalived.conf`
+　　配置文件路径：`/etc/keepalived/keepalived.conf`
 
-&emsp;&emsp;配置 Keepalived
+　　配置 Keepalived
 
 ```
 ! Configuration File for keepalived
@@ -406,7 +404,7 @@ vrrp_instance VI_1 {   #VI_1 是自定义的名称；
 
 ```
 
-&emsp;&emsp;几个点，说明下：
+　　几个点，说明下：
 
 * **state：**如果是主机的话，值要写成 `MASTER`，备机写成 `BACKUP`
 * **interface：**物理机网卡名称，我的这个虚拟机上的现有网卡名称是 `ens33`
@@ -415,7 +413,7 @@ vrrp_instance VI_1 {   #VI_1 是自定义的名称；
 
 #### 编写脚本文件
 
-&emsp;&emsp;脚本文件是为了检测 HAProxy 程序是否还在正常运行，两秒钟检测一次，如果程序已经挂掉，则把当前主 Keepalived 一同挂掉，这样就可以让备机接管 `VIP`（虚拟IP），达到高可用的目的。
+　　脚本文件是为了检测 HAProxy 程序是否还在正常运行，两秒钟检测一次，如果程序已经挂掉，则把当前主 Keepalived 一同挂掉，这样就可以让备机接管 `VIP`（虚拟IP），达到高可用的目的。
 
 ```
 [root@localhost ~]# vim /etc/keepalived/chk.sh
@@ -428,7 +426,7 @@ fi
 [root@localhost ~]# chmod 777 /etc/keepalived/chk.sh
 ```
 
-> &emsp;&emsp;此处检测程序较为简单，比较保险的做法可以参考：多次检测负载的服务是否正常可接受访问，如多次访问失败则停止主 Keepalive。
+> 　　此处检测程序较为简单，比较保险的做法可以参考：多次检测负载的服务是否正常可接受访问，如多次访问失败则停止主 Keepalive。
 
 
 #### 启动 Keepalived
@@ -452,9 +450,9 @@ fi
        valid_lft forever preferred_lft forever
 ```
 
-&emsp;&emsp;可以看到，上方`ens33`网卡下有一个新增的 ip，**inet 192.168.117.111/32 scope global ens33**
+　　可以看到，上方`ens33`网卡下有一个新增的 ip，**inet 192.168.117.111/32 scope global ens33**
 
-> &emsp;&emsp;安装 Keepalived 的步骤在 `192.168.117.140` 上做相同步骤即可。
+> 　　安装 Keepalived 的步骤在 `192.168.117.140` 上做相同步骤即可。
 
 # 测试
 
@@ -583,7 +581,7 @@ public class User {
 
 ### 测试
 
-&emsp;&emsp;我这里是用 JMeter 进行测试，以 `每秒两条线程请求` 的频率进行存储数据，中间会手动杀死主设备上的 HAProxy，观察 Keepalived 的 VIP 是否已经`飘到`备用设备上并且程序是否会自动切换。
+　　我这里是用 JMeter 进行测试，以 `每秒两条线程请求` 的频率进行存储数据，中间会手动杀死主设备上的 HAProxy，观察 Keepalived 的 VIP 是否已经`飘到`备用设备上并且程序是否会自动切换。
 
 ![JMeter 测试](http://img.lynchj.com/9df8e3ffea504bfbb4521154ef35534e.png)
 
@@ -591,7 +589,7 @@ public class User {
 
 ![控制台输出结果](http://img.lynchj.com/400be3c6048f4882abd9f09418173985.png)
 
-&emsp;&emsp;中间手动 kill 掉了主机上的 HAProxy，出现了错误信息呢，在之后又继续新增操作。
+　　中间手动 kill 掉了主机上的 HAProxy，出现了错误信息呢，在之后又继续新增操作。
 
 * 此时查看备机的 IP 信息如下：
 

@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,超时
 * 使用 serviceId 时配置超时：
 
 ```

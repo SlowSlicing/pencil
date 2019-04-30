@@ -1,12 +1,10 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,GET Parameter
-&emsp;&emsp;Spring MVC 是支持 GET/POST 多参数传递的，但是 Feign 并没有实现所有的 Spring MVC 的功能，暂时是不支持 GET  的 POJO 传递方法。一般的解决办法有一下三种：
+　　Spring MVC 是支持 GET/POST 多参数传递的，但是 Feign 并没有实现所有的 Spring MVC 的功能，暂时是不支持 GET  的 POJO 传递方法。一般的解决办法有一下三种：
 
 * 把 POJO 拆散成一个一个单独的属性放在方法参数里。
 * 把方法参数变成 Map 传递。
 * 使用 GET 传递 `@Requestbody`，但此方式违反 RESTFul 规范。
 
-&emsp;&emsp;以上三种方法都是可以的，这里要使用的方法是 Feign 的 RequestInterceptor 进行统一的处理，当检测到请求方法为 GET 时，把请求体里面的内容重新拼装成请求参数的形式。
+　　以上三种方法都是可以的，这里要使用的方法是 Feign 的 RequestInterceptor 进行统一的处理，当检测到请求方法为 GET 时，把请求体里面的内容重新拼装成请求参数的形式。
 
 1. 消费者的 Controller
 
@@ -106,7 +104,7 @@ public class FeignGetInterceptorController {
 }
 ```
 
-&emsp;&emsp;没有加拦截器之前，请求 GET 方式，会报如下错误：
+　　没有加拦截器之前，请求 GET 方式，会报如下错误：
 
 ![报错](http://img.lynchj.com/1fa82699472c435984e46cbf6a166ffb.png)
 

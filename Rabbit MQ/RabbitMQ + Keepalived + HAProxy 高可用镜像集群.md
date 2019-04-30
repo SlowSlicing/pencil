@@ -1,5 +1,3 @@
-Rabbit MQ
-RabbitMQ,Keepalived,HAProxy
 #### 最终结构图：
 ![RabbitMQ + Keepalived + HAProxy 高可用镜像集群结构图.png](https://upload-images.jianshu.io/upload_images/2860514-fae356d7b37dae44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -59,7 +57,7 @@ RabbitMQ镜像集群是通过在RabbitMQ服务器配置相应的规则，把交�
 [root@rabbit1 tmp] systemctl status rabbitmq-server.service
 ```
 
-**&emsp;&emsp;可能启动失败，查看目录 `cat /var/log/rabbitmq/rabbit@host201-sasl.log` 出错信息：**
+**　　可能启动失败，查看目录 `cat /var/log/rabbitmq/rabbit@host201-sasl.log` 出错信息：**
 
 ```
 =INFO REPORT==== 21-Nov-2018::15:26:41 ===
@@ -81,11 +79,11 @@ Stack trace:
     {init,do_boot,3,[]}]
 ```
 
-&emsp;&emsp;下载 rabbitmq_delayed_message_exchange 插件解决，[下载地址](http://www.rabbitmq.com/community-plugins.html)：
+　　下载 rabbitmq_delayed_message_exchange 插件解决，[下载地址](http://www.rabbitmq.com/community-plugins.html)：
 
-&emsp;&emsp;Linux：`wget https://dl.bintray.com/rabbitmq/community-plugins/3.6.x/rabbitmq_delayed_message_exchange/rabbitmq_delayed_message_exchange-20171215-3.6.x.zip`
+　　Linux：`wget https://dl.bintray.com/rabbitmq/community-plugins/3.6.x/rabbitmq_delayed_message_exchange/rabbitmq_delayed_message_exchange-20171215-3.6.x.zip`
 
-&emsp;&emsp;解压到指定路径下重启即可，路径：`/usr/lib/rabbitmq/lib/rabbitmq_server-版本/plugins/`
+　　解压到指定路径下重启即可，路径：`/usr/lib/rabbitmq/lib/rabbitmq_server-版本/plugins/`
 
 * 安装Web管理插件
 ```
@@ -390,4 +388,4 @@ fi
 
 **参考资料：**
 > https://www.cnblogs.com/saneri/p/7798251.html  
-不对之处，请指出
+>> 不对之处，请指出

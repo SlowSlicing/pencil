@@ -1,12 +1,10 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Eureka
 [toc]
 
 # 简介
 
 ## Eureka
 
-&emsp;&emsp;Eureka 是 Netfix 公司开源的一款服务发现组件，该组件提供的服务发现可以为负载均衡、Failover 等提供支持，如下图所示。Eureka 包括 Eureka Server 及 Eureka Client。Eureka Server 提供 REST 服务，而 Eureka Client 则是使用 Java（其他语言亦可） 编写的客户端，用于简化与 Eureka Server 的交互。
+　　Eureka 是 Netfix 公司开源的一款服务发现组件，该组件提供的服务发现可以为负载均衡、Failover 等提供支持，如下图所示。Eureka 包括 Eureka Server 及 Eureka Client。Eureka Server 提供 REST 服务，而 Eureka Client 则是使用 Java（其他语言亦可） 编写的客户端，用于简化与 Eureka Server 的交互。
 
 ![Eureka 简图](http://img.lynchj.com/e9aa47e9c27a45f5818ae510d65b1f31.png)
 
@@ -14,11 +12,11 @@ Spring Cloud,Eureka
 
 ![技术选型](http://img.lynchj.com/bff4ecc9d9184e2681c1fd778a3a8290.png)
 
-&emsp;&emsp;从列表看，有很多服务发现组件可以选择，针对AP及CP问题，这里主要选取了 Eureka 及 Consul 为代表来阐述。关于 Eureka 及 Consul 的区别，Consul 的官方文档有一个很好的[阐述](https://www.consul.io/intro/vs/eureka.html)，具体如下：
+　　从列表看，有很多服务发现组件可以选择，针对AP及CP问题，这里主要选取了 Eureka 及 Consul 为代表来阐述。关于 Eureka 及 Consul 的区别，Consul 的官方文档有一个很好的[阐述](https://www.consul.io/intro/vs/eureka.html)，具体如下：
 
-&emsp;&emsp;Eureka Server 端采用的是 `P2P 的复制模式`，但是它不保证复制操作一定能成功，因此它提供的是一个最终一致性的服务实例视图；Client 端在 Server 端的注册信息有一个带期限的租约，一旦 Server 端在指定期间没有收到 Client 端发送的心跳，则 Server 端会认为 Client 端注册的服务是不健康的，定时任务会将其从注册表中删除。 Consul 与 Eureka 不同，Consul 采用 `Raft` 算法，可以提供强一致性的保证，Consul 的 agent 相当于 Netfix Ribbon + Netfix Eureka Client，而且对应用来说相对透明，同时相对于 Eureka 这种集中式的心跳检测机制，Consul 的 agent 可以参与到基于 gossip 协议的健康检查，分散了 Server 端的心跳检测压力。除此之外 Consul 为多数据中心提供了开箱即用的原生支持等。
+　　Eureka Server 端采用的是 `P2P 的复制模式`，但是它不保证复制操作一定能成功，因此它提供的是一个最终一致性的服务实例视图；Client 端在 Server 端的注册信息有一个带期限的租约，一旦 Server 端在指定期间没有收到 Client 端发送的心跳，则 Server 端会认为 Client 端注册的服务是不健康的，定时任务会将其从注册表中删除。 Consul 与 Eureka 不同，Consul 采用 `Raft` 算法，可以提供强一致性的保证，Consul 的 agent 相当于 Netfix Ribbon + Netfix Eureka Client，而且对应用来说相对透明，同时相对于 Eureka 这种集中式的心跳检测机制，Consul 的 agent 可以参与到基于 gossip 协议的健康检查，分散了 Server 端的心跳检测压力。除此之外 Consul 为多数据中心提供了开箱即用的原生支持等。
 
-&emsp;&emsp;那么基于什么考虑因素可以选择 Eureka 呢？主要有如下几点：
+　　那么基于什么考虑因素可以选择 Eureka 呢？主要有如下几点：
 
 * 选择 AP 而不是 CP。
 * 如果团队是 Java 语言体系的，则偏好 Java 语言开发的，技术体系上比较同意，出问题也好排查修复，对组件的掌控力较强，方便扩展维护。
@@ -149,7 +147,7 @@ Spring Cloud,Eureka
 </project>
 ```
 
-&emsp;&emsp;此父级工程主要引入一下常用依赖、Spring Cloud 的依赖管理等。
+　　此父级工程主要引入一下常用依赖、Spring Cloud 的依赖管理等。
 
 ## 2. 创建 Eureka Server Module
 
@@ -242,7 +240,7 @@ eureka:
     enable-self-preservation: false
 ```
 
-&emsp;&emsp;启动项目访问注册中心地址 `http://localhost:8761/` 可看到如下：
+　　启动项目访问注册中心地址 `http://localhost:8761/` 可看到如下：
 
 ![Eureak Server UI](http://img.lynchj.com/ab5c410278ce480894dca2905dc8d931.png)
 
@@ -252,7 +250,7 @@ eureka:
 
 ## 3. 创建 Eureka Client 
 
-&emsp;&emsp;这里的 Eureka Client 是一个注册到 Eureka Server 的服务，在业务环境中可能是我们的 Order 模块、也可能是我们的 Goods 模块，我这里这里就以 `demo-order` 命名了
+　　这里的 Eureka Client 是一个注册到 Eureka Server 的服务，在业务环境中可能是我们的 Order 模块、也可能是我们的 Goods 模块，我这里这里就以 `demo-order` 命名了
 
 * 新建 demo-order 模块作为 Eureka Client 
 

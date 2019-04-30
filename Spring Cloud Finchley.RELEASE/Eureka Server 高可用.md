@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Eureka,高可用,Spring Cloud
 [toc]
 
-> &emsp;&emsp;Eureka Server 的高可用就是通过启动多个 Eureka Server 注册中心，让他们之间进行相互注册，达到共享注册信息的目的。这样就会都持有一份注册信息，即使其中一台挂掉了，其他的 Eureka Server 还在正常工作
+> 　　Eureka Server 的高可用就是通过启动多个 Eureka Server 注册中心，让他们之间进行相互注册，达到共享注册信息的目的。这样就会都持有一份注册信息，即使其中一台挂掉了，其他的 Eureka Server 还在正常工作
 
 # Eureka Server 配置
 
@@ -163,7 +161,7 @@ eureka:
 
 ## 启动
 
-&emsp;&emsp; 其他两个注册中心相同
+　　 其他两个注册中心相同
 
 ![Eureka Server Peer1](http://img.lynchj.com/80bfc6198da44b24a153453dbad19242.png)
 

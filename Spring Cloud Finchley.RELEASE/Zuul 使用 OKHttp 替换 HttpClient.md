@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,OKHttp
 1. 引入依赖
 
 ```

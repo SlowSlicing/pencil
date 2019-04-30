@@ -1,10 +1,8 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Eureka Server REST API
 [toc]
 
 # REST API 介绍
 
-&emsp;&emsp;Eureka 在 GitHub 的 wiki 上专门写了一篇[《 Eureka REST operations》](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)来介绍 Eureka Server 的 REST API 接口，Spring Cloud Netfix Eureka 跟 Spring Boot 适配之后，提供的 REST API 与原始的 REST API 有一点点不同，其路径中的 `{version}` 值固定为 `eureka`，其他的变化不大，如下图所示：
+　　Eureka 在 GitHub 的 wiki 上专门写了一篇[《 Eureka REST operations》](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)来介绍 Eureka Server 的 REST API 接口，Spring Cloud Netfix Eureka 跟 Spring Boot 适配之后，提供的 REST API 与原始的 REST API 有一点点不同，其路径中的 `{version}` 值固定为 `eureka`，其他的变化不大，如下图所示：
 
 ![Eureka Server REST API](http://img.lynchj.com/0b82c6b1486d47d5a900c3fcc8f7a481.png)
 
@@ -40,7 +38,7 @@ Spring Cloud,Eureka Server REST API
 
 * `http://localhost:8761/eureka/apps/demo-order2`
 
-&emsp;&emsp;请求体参数（XML 格式）：
+　　请求体参数（XML 格式）：
 
 ```
 <instance>
@@ -67,7 +65,7 @@ Spring Cloud,Eureka Server REST API
 
 ![注册新应用实例](http://img.lynchj.com/d8a86e8432df4d3599fa77bf5eb171dd.png)
 
-&emsp;&emsp;请求体参数（JSON 格式）：
+　　请求体参数（JSON 格式）：
 
 ```
 {

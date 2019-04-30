@@ -1,24 +1,22 @@
-MySQL
-MySQL,用户,授权
-[TOC]
+[toc]
 
 # 用户管理
 
 ## 创建用户
 
-&emsp;&emsp;**命令：**
+　　**命令：**
 
 ```
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 ```
 
-&emsp;&emsp;**说明：**
+　　**说明：**
 
 * **username：**你将创建的用户名
 * **host：**指定该用户在哪个主机上可以登陆，如果是本地用户可用 localhost，**如果想让该用户可以从任意远程主机登陆，可以使用通配符`%`**
 * **password：**该用户的登陆密码，密码可以为空（视`密码策略如何设置`而定，我这里不允许为空），如果为空则该用户可以不需要密码登陆服务器
 
-&emsp;&emsp;**例：**
+　　**例：**
 
 ```
 CREATE USER 'test1'@'localhost' IDENTIFIED BY 'Aa123456.';
@@ -66,19 +64,19 @@ flush privileges;
 
 ## 设置权限
 
-&emsp;&emsp;**命令：**
+　　**命令：**
 
 ```
 GRANT privileges ON databasename.tablename TO 'username'@'host'
 ```
 
-&emsp;&emsp;**说明：**
+　　**说明：**
 
 * **privileges：**用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL
 * **databasename：**数据库名
 * **tablename：**表名，如果要授予该用户对所有数据库和表的相应操作权限则可用*表示，如*.*
 
-&emsp;&emsp;**例子：**
+　　**例子：**
 
 ```
 GRANT SELECT, INSERT ON test.user TO 'test1'@'localhost';
@@ -86,9 +84,9 @@ GRANT ALL ON *.* TO 'test2'@'192.168.1.111';
 GRANT ALL ON maindataplus.* TO 'test3'@'%';
 ```
 
-&emsp;&emsp;**注意：**
+　　**注意：**
 
-&emsp;&emsp;用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令：
+　　用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令：
 
 ```
 GRANT privileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTION;
@@ -98,23 +96,23 @@ GRANT privileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTIO
 
 ## 撤销权限
 
-&emsp;&emsp;**命令：**
+　　**命令：**
 
 ```
 REVOKE privilege ON databasename.tablename FROM 'username'@'host';
 ```
 
-&emsp;&emsp;**说明：**
+　　**说明：**
 
-&emsp;&emsp;privilege, databasename, tablename：同授权部分
+　　privilege, databasename, tablename：同授权部分
 
-&emsp;&emsp;**例：**
+　　**例：**
 
 ```
 REVOKE INSERT ON mysql.user FROM 'test3'@'%';
 ```
 
-&emsp;&emsp;**注意：**
+　　**注意：**
 
 * GRANT，REVOKE 用户权限后，该用户只有重新连接 MySQL 数据库，权限才能生效。
 

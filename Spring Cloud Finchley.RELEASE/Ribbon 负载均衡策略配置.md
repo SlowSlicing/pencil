@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Ribbon,负载均衡策略
 [toc]
 
-&emsp;&emsp;这个负载策略配置说白了就是让 Ribbon 这个客户端负载均衡器怎么进行访问服务提供者列表。是轮流访问？随机访问？权重？等。
+　　这个负载策略配置说白了就是让 Ribbon 这个客户端负载均衡器怎么进行访问服务提供者列表。是轮流访问？随机访问？权重？等。
 
 # Ribbon 的负载均衡策略
 
@@ -44,11 +42,11 @@ public class RibbonGlobalLoadBalancingConfiguration {
 
 # 基于注解的针对单个服务的 Ribbon 负载均衡策略
 
-&emsp;&emsp;这里把上一步的的全局配置给删掉。
+　　这里把上一步的的全局配置给删掉。
 
 ## 注解方式
 
-&emsp;&emsp;增加一个针对单个服务的 Ribbon 负载聚恒策略配置类：
+　　增加一个针对单个服务的 Ribbon 负载聚恒策略配置类：
 
 ```
 /**
@@ -76,7 +74,7 @@ public class RibbonRandomLoadBalancingConfiguration {
 
 * **IClientConfig：**针对客户端的配置管理器。
 
-&emsp;&emsp;在主启动类上方做针对单个服务的负载均衡策略：
+　　在主启动类上方做针对单个服务的负载均衡策略：
 
 ```
 /** 配置针对单个服务的 Ribbon 负载均衡策略 **/
@@ -93,7 +91,7 @@ public class RibbonRandomLoadBalancingConfiguration {
 
 ## 配置文件方式
 
-&emsp;&emsp;我个人也不太喜欢上方的那种注解方式针对单个服务的负载均衡策略，下面是配置文件的方式：
+　　我个人也不太喜欢上方的那种注解方式针对单个服务的负载均衡策略，下面是配置文件的方式：
 
 * **<client name>.ribbon.***
 
@@ -105,7 +103,7 @@ demo-goods:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 ```
 
-&emsp;&emsp;结果：
+　　结果：
 
 ![结果](http://img.lynchj.com/2c93b92db74b4120a28e9776ac85b963.gif)
 

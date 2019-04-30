@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,修改请求体
 * 样例代码：
 
 ```

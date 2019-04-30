@@ -1,15 +1,15 @@
 [toc]
-&emsp;&emsp;以下是实验所要达到的一个目的：
+　　以下是实验所要达到的一个目的：
 
 ![两个容器相连](http://img.lynchj.com/b5c4a9b0b63e446d9d09b57cfed8d417.png)
 
 # 实验环境
 
-&emsp;&emsp;在同一台宿主机上启动两个 Container，一个是自制 Spring Boot 项目，一个是官方的 Redis 镜像。
+　　在同一台宿主机上启动两个 Container，一个是自制 Spring Boot 项目，一个是官方的 Redis 镜像。
 
 ## Redis
 
-&emsp;&emsp;直接使用官方 Redis 镜像启动即可，如下：
+　　直接使用官方 Redis 镜像启动即可，如下：
 
 ```
 docker run -it --name redis-test --rm redis
@@ -17,7 +17,7 @@ docker run -it --name redis-test --rm redis
 
 ## Spring Boot 项目
 
-&emsp;&emsp;在 Spring Boot 项目中，有一个 Controller 如下：
+　　在 Spring Boot 项目中，有一个 Controller 如下：
 
 ```
 @RestController
@@ -36,7 +36,7 @@ public class RedisTestController {
 }
 ```
 
-&emsp;&emsp;配置文件如下：
+　　配置文件如下：
 
 ```
 spring:
@@ -44,7 +44,7 @@ spring:
     host: redis-test
 ```
 
-&emsp;&emsp;Dockerfile 如下：
+　　Dockerfile 如下：
 
 ```
 FROM java:8
@@ -53,7 +53,7 @@ WORKDIR /jar
 CMD ["java", "-jar", "spring-boot-demo-0.0.1-SNAPSHOT.jar"]
 ```
 
-&emsp;&emsp;构建镜像并启动：
+　　构建镜像并启动：
 
 ```
 # 构建镜像
@@ -63,8 +63,8 @@ docker build -t spring-boot-redis-demo:0.1 .
 docker run --rm -it --name web1 --link redis-test spring-boot-redis-demo:0.1
 ```
 
-&emsp;&emsp;**`--link` 指定了对应的 Container**
+　　**`--link` 指定了对应的 Container**
 
-&emsp;&emsp;尝试访问：
+　　尝试访问：
 
 ![访问](http://img.lynchj.com/75406163dfad4d8b9b3f6b88be93d5bf.gif)

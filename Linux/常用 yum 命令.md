@@ -1,5 +1,3 @@
-Linux
-RHEL,CenTOS,yum
 | 命令 | 说明  |
 | --- | --- |
 | yum repolist all | 列出所有仓库 |

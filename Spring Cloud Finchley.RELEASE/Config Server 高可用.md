@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Config Server,高可用
 [toc]
 
-&emsp;&emsp;这里对 Config Server 的高可用配置是结合 Eureka 进行的，客户端通过 Ribbon 进行负载均衡访问 Config Server。
+　　这里对 Config Server 的高可用配置是结合 Eureka 进行的，客户端通过 Ribbon 进行负载均衡访问 Config Server。
 
 ![架构图](http://img.lynchj.com/ff656245e39b414498c37a5fa8c18736.png)
 

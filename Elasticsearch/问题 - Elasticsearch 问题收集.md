@@ -1,10 +1,8 @@
-Elasticsearch
-Elasticsearch,问题,ERROR
-> &emsp;&emsp;此篇记录在使用 Elasticsearch 过程中遇到的问题
+> 　　此篇记录在使用 Elasticsearch 过程中遇到的问题
 
 * **org.elasticsearch.bootstrap.StartupException: java.lang.RuntimeException: can not run elasticsearch as root**
 
-&emsp;&emsp;这是由于 Elasticsearch 处于安全考虑，不予许使用超级管理员 root 进行启动，只需建立一个 Elasticsearch 使用的用户即可
+　　这是由于 Elasticsearch 处于安全考虑，不予许使用超级管理员 root 进行启动，只需建立一个 Elasticsearch 使用的用户即可
 
 ```
 # 添加用户
@@ -18,7 +16,7 @@ Elasticsearch,问题,ERROR
 
 * **Exception in thread "main" java.nio.file.AccessDeniedException: /usr/local/elasticsearch-6.4.0/config/jvm.options**
 
-&emsp;&emsp;再上一个问题新建 es 用户之后，切换到 es 用户启动出现此错，原因是此用户没有 Elasticsearch 安装目录的权限，这里还需要切换回 root 用户给与 es 用户权限才可。
+　　再上一个问题新建 es 用户之后，切换到 es 用户启动出现此错，原因是此用户没有 Elasticsearch 安装目录的权限，这里还需要切换回 root 用户给与 es 用户权限才可。
 
 ```
 [es@elasticsearch-1 root]$ exit
@@ -29,11 +27,11 @@ exit
 
 * **外部网络访问**
 
-&emsp;&emsp;Elasticsearch 默认只能进行本地访问，如果想进行外网访问，可以更改配置文件 `$ES_HOME/config/elasticsearch.yml` 中的参数 `network.host` 为 `0.0.0.0` 即可。
+　　Elasticsearch 默认只能进行本地访问，如果想进行外网访问，可以更改配置文件 `$ES_HOME/config/elasticsearch.yml` 中的参数 `network.host` 为 `0.0.0.0` 即可。
 
 * **max virtual memory areas vm.maxmapcount [65530] is too low**
 
-&emsp;&emsp;最大虚拟内存过低，使用 root 权限更改即可。
+　　最大虚拟内存过低，使用 root 权限更改即可。
 
 ```
 [es@elasticsearch-1 elasticsearch-6.4.0]$ sudo sysctl -w vm.max_map_count=262144
@@ -58,15 +56,15 @@ es hard nproc 4096
 
 * **system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk**
 
-&emsp;&emsp;Centos 6 不支持 `SecComp`，而 ES6 默认 `bootstrap.sys temcall_filter` 为 true 
+　　Centos 6 不支持 `SecComp`，而 ES6 默认 `bootstrap.sys temcall_filter` 为 true 
 
 ```
 [es@elasticsearch-1 elasticsearch-6.4.0]$ vim config/elasticsearch.yml  
 ```
 
-&emsp;&emsp;在 `elasticsearch.yml` 中配置 `bootstrap.system_call_filter` 为 false，但是默认是没有这个配置项的，所以。。。注意要在 `Memory` 下面: 
+　　在 `elasticsearch.yml` 中配置 `bootstrap.system_call_filter` 为 false，但是默认是没有这个配置项的，所以。。。注意要在 `Memory` 下面: 
 
-&emsp;&emsp;取消 `bootstrap.memory_lock` 的注释，添加 `bootstrap.system_call_filter` 配置
+　　取消 `bootstrap.memory_lock` 的注释，添加 `bootstrap.system_call_filter` 配置
 
 ```
 bootstrap.memory_lock: false

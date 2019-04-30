@@ -1,18 +1,16 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Hystrix,入门
-@[toc]
+[toc]
 
 ![Hystrix]( https://img-blog.csdnimg.cn/20181027225101876.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dvMTgyMzcwOTU1Nzk=,size_27,color_FFFFFF,t_70 )
 
 # 简介
 
-&emsp;&emsp;官方是这么说的：
+　　官方是这么说的：
 
-> &emsp;&emsp;Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
+> 　　Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.
 
-&emsp;&emsp;大致意思是：** Hystrix是一个延迟和容错库，旨在隔离远程系统、服务和第三方库，阻止级联故障，在复杂的分布式系统中实现恢复能力。**
+　　大致意思是：** Hystrix是一个延迟和容错库，旨在隔离远程系统、服务和第三方库，阻止级联故障，在复杂的分布式系统中实现恢复能力。**
 
-&emsp;&emsp;白话就是：**防止在微服务系统中，多个服务之间相互调用产生的一系列错误问题。正确的处理掉这些问题，不能让问题从底层服务一直传递到顶层。比如：A -> B -> C -> D，这样一条服务调用链，如果D出问题了，不能让这个问题一直传递到A去，在C服务上就给处理掉。在经常出错的服务上做隔离、降级、断路处理。**
+　　白话就是：**防止在微服务系统中，多个服务之间相互调用产生的一系列错误问题。正确的处理掉这些问题，不能让问题从底层服务一直传递到顶层。比如：A -> B -> C -> D，这样一条服务调用链，如果D出问题了，不能让这个问题一直传递到A去，在C服务上就给处理掉。在经常出错的服务上做隔离、降级、断路处理。**
 
 ## 目标
 
@@ -76,7 +74,7 @@ public class HystrixIntroductionController {
 
 1. 测试类
 
-&emsp;&emsp;消费者 Controller
+　　消费者 Controller
 
 ```
 /**
@@ -101,7 +99,7 @@ public class HystrixAndFeignController {
 }
 ```
 
-&emsp;&emsp;消费者 Feign
+　　消费者 Feign
 
 ```
 /**
@@ -118,7 +116,7 @@ public interface HystrixAndFeignFeign {
 }
 ```
 
-&emsp;&emsp;消费者 Hystrix
+　　消费者 Hystrix
 
 ```
 /**
@@ -139,7 +137,7 @@ public class HystrixAndFeignHystrix implements HystrixAndFeignFeign {
 }
 ```
 
-&emsp;&emsp;提供者 Controller
+　　提供者 Controller
 
 ```
 /**

@@ -1,10 +1,8 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Ribbon,入门,TestTemplate
 [toc]
 
 # Ribbon 简介
 
-&emsp;&emsp;Ribbon 是一个客户端负载均衡器（Nginx 为服务端负载均衡），它赋予了应用一些支配 HTTP 与 TCP 行为的能力，可以得知，这里的客户端负载均衡也是进程内负载均衡的一种。它在 Spring Cloud 生态内是一个不可缺少的组件，少了它，服务便不能横向扩展，这显然是有违云原生12要素的。此外 Feign 与 Zuul 中已经默认集成了 Ribbon，在我们的服务之间凡是涉及调用的，都可以集成它并应用，从而使我们的调用链具备良好的伸缩性。
+　　Ribbon 是一个客户端负载均衡器（Nginx 为服务端负载均衡），它赋予了应用一些支配 HTTP 与 TCP 行为的能力，可以得知，这里的客户端负载均衡也是进程内负载均衡的一种。它在 Spring Cloud 生态内是一个不可缺少的组件，少了它，服务便不能横向扩展，这显然是有违云原生12要素的。此外 Feign 与 Zuul 中已经默认集成了 Ribbon，在我们的服务之间凡是涉及调用的，都可以集成它并应用，从而使我们的调用链具备良好的伸缩性。
 
 # 入门案例
 
@@ -60,12 +58,12 @@ public class RibbonRestTemplateController {
 }
 ```
 
-&emsp;&emsp;通过以下命令启动两个提供者：
+　　通过以下命令启动两个提供者：
 
 * **spring-boot:run -Dserver.port=11200**
 * **spring-boot:run -Dserver.port=11201**
 
-&emsp;&emsp;访问查看结果：
+　　访问查看结果：
 
 ![负载结果](http://img.lynchj.com/1e32ebfc1e1e4a55b9e88f2cb40f1451.png)
 

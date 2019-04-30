@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Config Server,自动刷新
-&emsp;&emsp;在一些特殊的服务上，可能不需要服务端推送刷新，而是客户端本身需要每隔一段时间就去刷新一下最新的配置。
+　　在一些特殊的服务上，可能不需要服务端推送刷新，而是客户端本身需要每隔一段时间就去刷新一下最新的配置。
 
-&emsp;&emsp;在 Config Client 端通过配合 Actuator 访问 `/refresh` 接口可以进行刷新配置，最终是调用了 `RefreshEndopint.refresh();` 方法。所以这里的实现原理就是通过定时任务，直接调用 `refresh()` 方法进行定时刷新配置。
+　　在 Config Client 端通过配合 Actuator 访问 `/refresh` 接口可以进行刷新配置，最终是调用了 `RefreshEndopint.refresh();` 方法。所以这里的实现原理就是通过定时任务，直接调用 `refresh()` 方法进行定时刷新配置。
 
 ## 新增自动刷新配置配置类
 

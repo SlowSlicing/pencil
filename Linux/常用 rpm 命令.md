@@ -1,5 +1,3 @@
-Linux
-RHEL,CentOS,rpm
 | 命令 | 说明  |
 | --- | --- |
 | rpm -ivh filename.rpm | 安装软件的命令格式 |

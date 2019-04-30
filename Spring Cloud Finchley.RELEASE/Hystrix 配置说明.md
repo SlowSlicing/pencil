@@ -1,10 +1,8 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Hystrix,配置参数
-@[toc]
+[toc]
 
 # 配置参数
 
-> &emsp;&emsp;Hystrix 配置项比较多，下面整理了一下常用的一些配置
+> 　　Hystrix 配置项比较多，下面整理了一下常用的一些配置
 
 | 配置项 | 默认值 | 推荐值 | 说明 |
 | --- | --- | --- | --- |

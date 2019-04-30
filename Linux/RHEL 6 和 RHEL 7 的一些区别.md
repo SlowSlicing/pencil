@@ -1,5 +1,3 @@
-Linux
-RHEL,CentOS,区别
 ### 运行级别概念的区分
 
 | System V init 运行级别 | systemd 目标名称 | 作用 |

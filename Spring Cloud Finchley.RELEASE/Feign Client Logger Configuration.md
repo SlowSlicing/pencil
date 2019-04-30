@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,Logger
 [toc]
 
 # 针对每一个 Feign 配置日志级别
@@ -14,7 +12,7 @@ logging:
 
 # 增加 Logger.Level Bean
 
-&emsp;&emsp;两种方式
+　　两种方式
 
 1. 可以在启动类上提供如下代码：
 
@@ -45,7 +43,7 @@ public class FeignClientLoggerConfiguration {
 }
 ```
 
-&emsp;&emsp;至此，当使用 `GoodsFeign` 进行访问时，就会出现类似如下日志：
+　　至此，当使用 `GoodsFeign` 进行访问时，就会出现类似如下日志：
 
 ![Feign 日志](http://img.lynchj.com/5ef78b15bd564a31badfaea78f259ebe.png)
 

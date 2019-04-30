@@ -1,6 +1,4 @@
-Spring Boot
-Redis Cluster,Redis,Spring Boot,Redis Cache
-[TOC]
+[toc]
 
 > 此篇笔记是以上篇笔记为基础：[Spring Boot 结合 Redis Cluster RedisTemplate](https://blog.csdn.net/wo18237095579/article/details/80925586)
 
@@ -56,7 +54,7 @@ public class RedisCacheConfig {
 
 # @EnableCaching 注解
 
-&emsp;&emsp;在 Spring Boot 启动类上方开启 Redis 缓存支持
+　　在 Spring Boot 启动类上方开启 Redis 缓存支持
 
 ```
 @SpringBootApplication
@@ -73,7 +71,7 @@ public class RedisClusterApplication {
 
 # @Cacheable 注解
 
-&emsp;&emsp;作用在方法上，指定可以缓存调用的方法。大白话就是：在哪个方法上面就针对哪个做缓存调用。
+　　作用在方法上，指定可以缓存调用的方法。大白话就是：在哪个方法上面就针对哪个做缓存调用。
 
 ### cacheNames
 
@@ -212,7 +210,7 @@ public Book queryBookCacheableWithUnless(String id) {
 
 # @CacheEvict 注解
 
-&emsp;&emsp;删除缓存
+　　删除缓存
 
 ### allEntries
 
@@ -244,7 +242,7 @@ public void updateBook(String id, String name){
 
 # @CachePut 注解
 
-&emsp;&emsp;每次执行都会执行方法，无论缓存里是否有值，同时使用新的返回值的替换缓存中的值。这里不同于`@Cacheable`；`@Cacheable`如果缓存没有值，则执行方法并缓存数据，如果缓存有值，则从缓存中获取值
+　　每次执行都会执行方法，无论缓存里是否有值，同时使用新的返回值的替换缓存中的值。这里不同于`@Cacheable`；`@Cacheable`如果缓存没有值，则执行方法并缓存数据，如果缓存有值，则从缓存中获取值
 
 ```
 @CachePut(cacheNames = "book1", key = "#id")
@@ -256,7 +254,7 @@ public Book queryBookCachePut(String id){
 
 # @CacheConfig
 
-&emsp;&emsp;**类级别的注解：**如果我们在此注解中定义 `cacheNames`，则此类中的所有方法上 `@Cacheable` 的`cacheNames` 默认都是此值。当然 `@Cacheable` 也可以重定义 `cacheNames` 的值
+　　**类级别的注解：**如果我们在此注解中定义 `cacheNames`，则此类中的所有方法上 `@Cacheable` 的`cacheNames` 默认都是此值。当然 `@Cacheable` 也可以重定义 `cacheNames` 的值
 
 ```
 @Component

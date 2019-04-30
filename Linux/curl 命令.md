@@ -1,10 +1,8 @@
-Linux
-curl,Linux
-[TOC]
+[toc]
 
 ### `-X/--request <command>` 参数
 
-&emsp;&emsp;指定什么命令，如 `GET`、`POST`。
+　　指定什么命令，如 `GET`、`POST`。
 
 * 例：
 
@@ -18,9 +16,9 @@ curl -H "Content-Type:application/json" -X POST --data '{"message": "sunshine"}'
 
 ### `-d/--data <data>` 参数
 
-&emsp;&emsp;HTTP POST方式传送数据。
+　　HTTP POST方式传送数据。
 
-&emsp;&emsp;`-d` 选项是以使用 POST 方式向 Server 发送数据，因此在使用 -d 的时候，可以省略 `-X POST`。**请注意，使用 -d 时，将使用 `Content-type:application/x-www-form-urlencoded` 方式发送数据。**如果想使用 JSON 形式 post 数据，可以使用 `-H` 指定头部类型。如：
+　　`-d` 选项是以使用 POST 方式向 Server 发送数据，因此在使用 -d 的时候，可以省略 `-X POST`。**请注意，使用 -d 时，将使用 `Content-type:application/x-www-form-urlencoded` 方式发送数据。**如果想使用 JSON 形式 post 数据，可以使用 `-H` 指定头部类型。如：
 
 ```
 curl -H "Content-Type:application/json" -d '{"data":"123","key":"456"}' http://localhost:8080/search
@@ -28,7 +26,7 @@ curl -H "Content-Type:application/json" -d '{"data":"123","key":"456"}' http://l
 
 ### `-H/--header <line>` 参数
 
-&emsp;&emsp;	自定义头信息传递给服务器。
+　　	自定义头信息传递给服务器。
 
 * 例：
 
@@ -38,7 +36,7 @@ curl -H "Host:192.168.0.1" -H "accept-language:zh-cn" URL
 
 ### `-c/--cookie-jar <file>` 参数
 
-&emsp;&emsp;操作结束后把 `cookie` 写入到这个文件中。
+　　操作结束后把 `cookie` 写入到这个文件中。
 
 * 例：
 
@@ -48,7 +46,7 @@ curl -d "name=zhangsan&password=123" http://localhost:8080/login -c ./cookie
 
 ### `-b/--cookie <name=string/file>`	参数
 
-&emsp;&emsp;`cookie` 字符串或文件读取位置
+　　`cookie` 字符串或文件读取位置
 
 * 例：
 
@@ -61,7 +59,7 @@ curl --cookie "name=zhangsan" http://localhost:8080/login
 
 ### `-F/--form <name=content>/--form-string <name=string>`	参数
 
-&emsp;&emsp;模拟 http 表单提交数据，curl 可以通过`-F`命令来以`Content-Type:multipart/form-data`的形式向 server post 数据，该命令允许提交二进制文件等。可以使用`@`前缀来制定提交的内容为一个文件，也可以使用`<`符号来提交文件中的内容。
+　　模拟 http 表单提交数据，curl 可以通过`-F`命令来以`Content-Type:multipart/form-data`的形式向 server post 数据，该命令允许提交二进制文件等。可以使用`@`前缀来制定提交的内容为一个文件，也可以使用`<`符号来提交文件中的内容。
 
 * 例：
 
@@ -72,7 +70,7 @@ curl -F prefile=@portrait.jpg https://example.com/upload
 
 ### `-O/--remote-name`
 
-&emsp;&emsp;把输出写到该文件中，保留远程文件的文件名。
+　　把输出写到该文件中，保留远程文件的文件名。
 
 * 例：
 
@@ -82,7 +80,7 @@ curl http://man.linuxde.net/text.iso --silent -O
 
 ### `-o/--output`
 
-&emsp;&emsp;把输出写到指定文件中。
+　　把输出写到指定文件中。
 
 * 例：
 
@@ -94,7 +92,7 @@ curl http://man.linuxde.net/test.iso -o filename.iso --progress
 
 ### `-s/--silent` 命令
 
-&emsp;&emsp;静默模式，不输出任何东西。
+　　静默模式，不输出任何东西。
 
 ```
 curl http://man.linuxde.net/text.iso --silent -O
@@ -102,7 +100,7 @@ curl http://man.linuxde.net/text.iso --silent -O
 
 ### `-i/--include`
 
-&emsp;&emsp;输出时包括 response 头信息
+　　输出时包括 response 头信息
 
 * 例：
 
@@ -112,7 +110,7 @@ curl -i https://www.baidu.com
 
 ### `-I/--head`
 
-&emsp;&emsp;只显示请求头信息
+　　只显示请求头信息
 
 * 例：
 

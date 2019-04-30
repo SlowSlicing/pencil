@@ -1,9 +1,7 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,入门
 [toc]
 
-> &emsp;&emsp;Zuul is the front door for all requests from devices and web sites to the backend of the Netflix streaming application.
-> &emsp;&emsp;Zuul 是从设备和网站到后端应用程序所有请求的前门，为内部服务提供可配置的对外 URL 到服务的映射关系，基于 JVM 的后端路由器。
+> 　　Zuul is the front door for all requests from devices and web sites to the backend of the Netflix streaming application.
+> 　　Zuul 是从设备和网站到后端应用程序所有请求的前门，为内部服务提供可配置的对外 URL 到服务的映射关系，基于 JVM 的后端路由器。
 
 # 功能简介
 
@@ -15,9 +13,9 @@ Spring Cloud,Zuul,入门
 * **静态响应处理**
 * **主动流量管理**
 
-&emsp;&emsp;其底层基于 Servlet，本质组件是一系列 Filter 所构成的责任链，并且 Zuul 的逻辑引擎与 Filter 可用其他基于JVM 的语言编写比如：Groovy。
+　　其底层基于 Servlet，本质组件是一系列 Filter 所构成的责任链，并且 Zuul 的逻辑引擎与 Filter 可用其他基于JVM 的语言编写比如：Groovy。
 
-&emsp;&emsp;Spring Cloud Finchley 继续沿用 Netfix Zuul1.x 版本，不是已经出现了 2.x 版本了吗?为什么不用？还是因为 Zuul 2.x 版本改动相较 1.x 还是较大，考虑到整个生态的稳定性，以及使用者升级版本会遇到的种种问题，虽然 2.x 底层使用 Netty 性能更好，Finchley 版还是继续使用 1.x 版本。另外，由于 Spring Cloud Gateway 已经孵化成功，相较 Zuul在功能以及性能上都有明显提升。
+　　Spring Cloud Finchley 继续沿用 Netfix Zuul1.x 版本，不是已经出现了 2.x 版本了吗?为什么不用？还是因为 Zuul 2.x 版本改动相较 1.x 还是较大，考虑到整个生态的稳定性，以及使用者升级版本会遇到的种种问题，虽然 2.x 底层使用 Netty 性能更好，Finchley 版还是继续使用 1.x 版本。另外，由于 Spring Cloud Gateway 已经孵化成功，相较 Zuul在功能以及性能上都有明显提升。
 
 # 入门案例
 
@@ -76,7 +74,7 @@ zuul:
   retryable: true
 ```
 
-&emsp;&emsp;启动即可：
+　　启动即可：
 
 ![访问网关](http://img.lynchj.com/a4f9ec3925f54b2a8575d1ae71830e02.gif)
 

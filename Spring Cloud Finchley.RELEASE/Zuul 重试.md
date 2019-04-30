@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,重试
-> &emsp;&emsp;在生产环境中，总会因为种种原因（无论是网络、性能等）导致档次请求的失败，这时候就需要使用到重试了，Zuul 可以结合 Ribbon（默认集成）进行重试。
+> 　　在生产环境中，总会因为种种原因（无论是网络、性能等）导致档次请求的失败，这时候就需要使用到重试了，Zuul 可以结合 Ribbon（默认集成）进行重试。
 
 1. 引入依赖
 
@@ -91,6 +89,6 @@ zuul:
   retryable: true
 ```
 
-&emsp;&emsp;⬆️上方的配置，首先配置了 Ribbon 的重试、超时机制，下面接着配置了断路器的参数。
+　　⬆️上方的配置，首先配置了 Ribbon 的重试、超时机制，下面接着配置了断路器的参数。
 
 > 源码：https://github.com/SlowSlicing/demo-spring-cloud-finchley/tree/Zuul%E9%87%8D%E8%AF%95

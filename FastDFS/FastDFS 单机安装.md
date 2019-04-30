@@ -1,5 +1,3 @@
-FastDFS
-FastDFS,单机
 [toc]
 
 # 环境准备
@@ -17,7 +15,7 @@ FastDFS,单机
 
 ![文件](http://img.lynchj.com/aaf6395e4cdf4aaab0d4081ef5f04ce8.png)
 
-> &emsp;&emsp;FastDFS 详解：http://www.ityouknow.com/fastdfs/2018/01/06/distributed-file-system-fastdfs.html
+> 　　FastDFS 详解：http://www.ityouknow.com/fastdfs/2018/01/06/distributed-file-system-fastdfs.html
 
 # 安装 FastDFS
 
@@ -29,14 +27,14 @@ yum -y install gcc-c++ perl
 
 ## 安装 libfastcommon 类库
 
-&emsp;&emsp;FastDFS 从 5.x 开始取消了对 `libevent` 的依赖，添加了对 `libfastcommon` 的依赖，安装 FastDFS 必须安装 libfastcommon 类库。
+　　FastDFS 从 5.x 开始取消了对 `libevent` 的依赖，添加了对 `libfastcommon` 的依赖，安装 FastDFS 必须安装 libfastcommon 类库。
 
 ```
 [root@host202 tmp]# cd libfastcommon-1.0.39/
 [root@host202 libfastcommon-1.0.39]# ./make.sh && ./make.sh install
 ```
 
-&emsp;&emsp;如果没有出现错误信息，说明安装完成，如下：
+　　如果没有出现错误信息，说明安装完成，如下：
 
 ```
 *****************以上省略******************
@@ -57,7 +55,7 @@ if [ ! -e /usr/lib/libfastcommon.so ]; then ln -s /usr/lib64/libfastcommon.so /u
 [root@host202 fastdfs-5.11]# ./make.sh && ./make.sh install
 ```
 
-&emsp;&emsp;如果没有出现错误信息，说明安装完成，如下：
+　　如果没有出现错误信息，说明安装完成，如下：
 
 ```
 *****************以上省略******************
@@ -95,7 +93,7 @@ if [ ! -f /etc/fdfs/client.conf.sample ]; then cp -f ../conf/client.conf /etc/fd
 
 ### 命令工具
 
-&emsp;&emsp;都在 `/usr/bin/` 目录下。
+　　都在 `/usr/bin/` 目录下。
 
 ```
 fdfs_appender_test
@@ -118,7 +116,7 @@ restart.sh
 
 # 配置 FastDFS 跟踪器（Tracker）
 
-&emsp;&emsp;复制一份配置文件
+　　复制一份配置文件
 
 ```
 [root@host202 fdfs]# cp tracker.conf.sample tracker.conf
@@ -137,7 +135,7 @@ port=22122
 base_path=/data/fdfs/tracker
 ```
 
-> &emsp;&emsp;其他参数默认配置即可（[配置详解](http://bbs.chinaunix.net/thread-1941456-1-1.html)），最终配置完毕，使用无误之后可根据不同情况再调试参数。**注意，目录要提前创建好。可以先关闭防火墙。**
+> 　　其他参数默认配置即可（[配置详解](http://bbs.chinaunix.net/thread-1941456-1-1.html)），最终配置完毕，使用无误之后可根据不同情况再调试参数。**注意，目录要提前创建好。可以先关闭防火墙。**
 
 ## 启动 Tracker
 
@@ -152,7 +150,7 @@ root      80677  70386  0 17:03 pts/1    00:00:00 grep --color=auto fdfs
 
 ## 开机自启
 
-&emsp;&emsp;如果不想每次重启系统之后都要去启动一下服务的话，可以使用如下方式进行开机自启。
+　　如果不想每次重启系统之后都要去启动一下服务的话，可以使用如下方式进行开机自启。
 
 ```
 [root@host202 fdfs]# vim /etc/rc.d/rc.loca
@@ -160,11 +158,11 @@ root      80677  70386  0 17:03 pts/1    00:00:00 grep --color=auto fdfs
 /etc/init.d/fdfs_trackerd start
 ```
 
-> &emsp;&emsp;由于在 CentOS 7中，`/etc/rc.d/rc.local` 文件的权限被降低了，没有执行权限，需要给它添加可执行权限：`chmod +x /etc/rc.d/rc.local`。
+> 　　由于在 CentOS 7中，`/etc/rc.d/rc.local` 文件的权限被降低了，没有执行权限，需要给它添加可执行权限：`chmod +x /etc/rc.d/rc.local`。
 
 # 配置 FastDFS 存储器（Storage）
 
-&emsp;&emsp;复制一份配置文件
+　　复制一份配置文件
 
 ```
 [root@host202 fdfs]# cp storage.conf.sample storage.conf
@@ -191,7 +189,7 @@ tracker_server=192.168.1.241:22122
 http.server_port=8888
 ```
 
-> &emsp;&emsp;其他参数默认配置即可（[配置详解](http://bbs.chinaunix.net/thread-1941456-1-1.html)），最终配置完毕，使用无误之后可根据不同情况再调试参数。**注意，目录要提前创建好。可以先关闭防火墙。**
+> 　　其他参数默认配置即可（[配置详解](http://bbs.chinaunix.net/thread-1941456-1-1.html)），最终配置完毕，使用无误之后可根据不同情况再调试参数。**注意，目录要提前创建好。可以先关闭防火墙。**
 
 ## 启动 Storage
 
@@ -206,7 +204,7 @@ root      80767  70386  0 17:13 pts/1    00:00:00 grep --color=auto fdfs
 
 ## 开机自启
 
-&emsp;&emsp;如果不想每次重启系统之后都要去启动一下服务的话，可以使用如下方式进行开机自启。
+　　如果不想每次重启系统之后都要去启动一下服务的话，可以使用如下方式进行开机自启。
 
 ```
 [root@host202 fdfs]# vim /etc/rc.d/rc.loca
@@ -214,11 +212,11 @@ root      80767  70386  0 17:13 pts/1    00:00:00 grep --color=auto fdfs
 /etc/init.d/fdfs_storaged start
 ```
 
-> &emsp;&emsp;由于在 CentOS 7中，`/etc/rc.d/rc.local` 文件的权限被降低了，没有执行权限，需要给它添加可执行权限：`chmod +x /etc/rc.d/rc.local`。
+> 　　由于在 CentOS 7中，`/etc/rc.d/rc.local` 文件的权限被降低了，没有执行权限，需要给它添加可执行权限：`chmod +x /etc/rc.d/rc.local`。
 
 # 测试上传文件
 
-&emsp;&emsp;复制一份 Client 配置文件
+　　复制一份 Client 配置文件
 
 ```
 [root@host202 fdfs]# cp client.conf.sample client.conf
@@ -240,7 +238,7 @@ tracker_server=192.168.1.241:22122
 group1/M00/00/00/wKgB8Vvz0eqAPAuRADFGNNKBSqw218.png
 ```
 
-&emsp;&emsp;返回了一个存储路径。第一个参数为 Client 配置文件，第二个参数为需要上传的文件。能返回以上文件 ID， 说明文件上传成功。
+　　返回了一个存储路径。第一个参数为 Client 配置文件，第二个参数为需要上传的文件。能返回以上文件 ID， 说明文件上传成功。
 
 ```
 [root@host202 fdfs]# ll /data/fdfs/storage/data/00/00/
@@ -271,7 +269,7 @@ yum -y install openssl openssl-devel gcc gcc-c++
 [root@host202 nginx-1.15.1]# make && make install
 ```
 
-&emsp;&emsp;出错了，简要错误如下：
+　　出错了，简要错误如下：
 
 ```
 /usr/include/fastdfs/fdfs_define.h:15:27: 致命错误：common_define.h：没有那个文件或目录
@@ -283,7 +281,7 @@ make[1]: 离开目录“/usr/local/tmp/nginx-1.15.1”
 make: *** [build] 错误 2
 ```
 
-&emsp;&emsp;这个问题在官方的 [Issue](https://github.com/happyfish100/fastdfs-nginx-module/issues/31) 上找到了解决办法：
+　　这个问题在官方的 [Issue](https://github.com/happyfish100/fastdfs-nginx-module/issues/31) 上找到了解决办法：
 
 * 使用 v5.12版本
 * 修改 `fastdfs-nginx-module-1.20/src/config` 文件，修改如下：
@@ -293,11 +291,11 @@ ngx_module_incs="/usr/include/fastdfs /usr/include/fastcommon/"
 CORE_INCS="$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/"
 ```
 
-&emsp;&emsp;然后重新 configure、make、make install，就可以了。
+　　然后重新 configure、make、make install，就可以了。
 
 ## 配置 fastdfs-nginx-module
 
-&emsp;&emsp;复制 fastdfs-nginx-module 源码中的配置文件到/etc/fdfs 目录， 并修改：
+　　复制 fastdfs-nginx-module 源码中的配置文件到/etc/fdfs 目录， 并修改：
 
 ```
 [root@host202 fastdfs-nginx-module-1.20]# cp src/mod_fastdfs.conf /etc/fdfs/
@@ -316,9 +314,9 @@ url_have_group_name = true
 store_path0=/data/fdfs/storage #存储器存储地址
 ```
 
-> &emsp;&emsp;**注意，目录要提前创建好。**
+> 　　**注意，目录要提前创建好。**
 
-&emsp;&emsp;复制 FastDFS 的部分配置文件到 `/etc/fdfs` 目录
+　　复制 FastDFS 的部分配置文件到 `/etc/fdfs` 目录
 
 ```
 [root@host202 fastdfs-5.11]# cd /usr/local/tmp/fastdfs-5.11/conf/
@@ -353,6 +351,6 @@ root      92465  70386  0 17:45 pts/1    00:00:00 grep --color=auto nginx
 
 # 访问
 
-&emsp;&emsp;本地电脑的 host 更改成对应的 `192.168.1.241 fdfs.com`。
+　　本地电脑的 host 更改成对应的 `192.168.1.241 fdfs.com`。
 
 ![访问成功](http://img.lynchj.com/19c2160d8584494c808f5c2dbd145447.png)

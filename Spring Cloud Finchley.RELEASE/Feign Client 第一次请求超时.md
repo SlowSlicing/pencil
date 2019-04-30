@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,超时,fallback
-&emsp;&emsp;有时，在项目启动之后，第一次进行 Feign 请求时，会超时。这是因为，Hystrix 开启之后的默认超时时间是 1 秒，如果在这一秒内还没有做出响应那么就会超时，进入 fallback 代码。由于 Bean 装配和懒加载机制等，Feign 在首次请求的时候相对较慢。下面三种方法可以解决 1 秒问题：
+　　有时，在项目启动之后，第一次进行 Feign 请求时，会超时。这是因为，Hystrix 开启之后的默认超时时间是 1 秒，如果在这一秒内还没有做出响应那么就会超时，进入 fallback 代码。由于 Bean 装配和懒加载机制等，Feign 在首次请求的时候相对较慢。下面三种方法可以解决 1 秒问题：
 
 1. 将 Hystrix 的超时时间调高，如：
 

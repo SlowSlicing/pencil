@@ -1,15 +1,13 @@
-Maven
-私服,Docker,Maven,Nexus
 [toc]
 
-> &emsp;&emsp;`Apache Maven` 是当 Java 技术栈前最流行的项目管理工具，它提供了一系列方便快捷的命令帮助程序员们进行Java工程的开发工作。Maven 服务器位于美国，由于出国带宽和众多因素，在国内直接使用 Maven 的体验并不好。同时，国内还有很多公司的程序员开发机器无法直接连接互联网，鉴于这种情况，在公司区域网架设一部Maven私服能大大提高开发效率。
-> &emsp;&emsp;Apache Maven的私服有很多开源提供商，目前用的最多的就是 `Sonatype Nexus Repository`。
+> 　　`Apache Maven` 是当 Java 技术栈前最流行的项目管理工具，它提供了一系列方便快捷的命令帮助程序员们进行Java工程的开发工作。Maven 服务器位于美国，由于出国带宽和众多因素，在国内直接使用 Maven 的体验并不好。同时，国内还有很多公司的程序员开发机器无法直接连接互联网，鉴于这种情况，在公司区域网架设一部Maven私服能大大提高开发效率。
+> 　　Apache Maven的私服有很多开源提供商，目前用的最多的就是 `Sonatype Nexus Repository`。
 
 ## 安装环境
 
 * ContOS 7.4
 * Docker 环境
-&emsp;&emsp;可参考：[Docker CE 安装](https://blog.csdn.net/wo18237095579/article/details/80481030)
+　　可参考：[Docker CE 安装](https://blog.csdn.net/wo18237095579/article/details/80481030)
 
 ## 安装
 
@@ -31,7 +29,7 @@ Maven
 
 ![访问](http://img.lynchj.com/6ab303a9e2fb4c4e9c931294f1a19ade.png)
 
->&emsp;&emsp;默认用户名：`admin`，默认密码：`admin123`
+>　　默认用户名：`admin`，默认密码：`admin123`
 
 ## HTTPS 配置
 
@@ -115,12 +113,12 @@ server {
 
 ![仓库列表](http://img.lynchj.com/ff6802193a624e58ab15a58d3ec5bb97.png)
 
-&emsp;&emsp;打开 Repositories 这个页面可能有点懵，怎么这么多？其实常用的只有四个：`maven-central`、`maven-public`、`maven-releases`、`maven-snapshots`。这里说明如下：
+　　打开 Repositories 这个页面可能有点懵，怎么这么多？其实常用的只有四个：`maven-central`、`maven-public`、`maven-releases`、`maven-snapshots`。这里说明如下：
 
-&emsp;&emsp;**maven-central：**主要负责拉取公共仓库镜像，供平常使用，如：Apache Commons 系列、Spring 系列。
-&emsp;&emsp;**maven-public：**我们项目中配置的仓库地址，它其中包含了`maven-central`、`maven-releases`、`maven-snapshots`中的内容（可配置），其实它本身是没有内容的。
-&emsp;&emsp;**maven-releases：**我们使用私服就是因为团队内部有自己的工具包、私密包等之类的原因，而这些包如果来回 Copy 这用太不方便，所以最后 `releases` 版的包部署之后就在此仓库下。
-&emsp;&emsp;**maven-snapshots：**同上，只是版本为 `snapshots` 版
+　　**maven-central：**主要负责拉取公共仓库镜像，供平常使用，如：Apache Commons 系列、Spring 系列。
+　　**maven-public：**我们项目中配置的仓库地址，它其中包含了`maven-central`、`maven-releases`、`maven-snapshots`中的内容（可配置），其实它本身是没有内容的。
+　　**maven-releases：**我们使用私服就是因为团队内部有自己的工具包、私密包等之类的原因，而这些包如果来回 Copy 这用太不方便，所以最后 `releases` 版的包部署之后就在此仓库下。
+　　**maven-snapshots：**同上，只是版本为 `snapshots` 版
 
 ## Maven 项目配置
 

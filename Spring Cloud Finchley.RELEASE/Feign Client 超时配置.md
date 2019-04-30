@@ -1,16 +1,14 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,Timeout
 [toc]
 
-> &emsp;&emsp;Feign 其实是一种包装，把复杂的 Http 请求包装成我们只需写一两个注解就可以搞定的地步。他底层使用的还是 Ribbon。
+> 　　Feign 其实是一种包装，把复杂的 Http 请求包装成我们只需写一两个注解就可以搞定的地步。他底层使用的还是 Ribbon。
 
-&emsp;&emsp;Feign 的调用，总共分为两层，即 Ribbon 的调用和 Hystrix（熔断处理） 的调用，高版本的 Hystrix 默认是关闭的。
+　　Feign 的调用，总共分为两层，即 Ribbon 的调用和 Hystrix（熔断处理） 的调用，高版本的 Hystrix 默认是关闭的。
 
 # Ribbon 超时配置
 
 ![Feign 超时异常](http://img.lynchj.com/222e69b11dd44c36a0b2c1aa596fe5bb.png)
 
-&emsp;&emsp;如果出现上图的信息，说明是 Ribbon 超时了，需要在配置文件中进行控制处理：
+　　如果出现上图的信息，说明是 Ribbon 超时了，需要在配置文件中进行控制处理：
 
 ```
 ### Ribbon 配置
@@ -33,15 +31,15 @@ feign:
     enabled: true
 ```
 
-&emsp;&emsp;此时，如果超时，汇报一下错误：
+　　此时，如果超时，汇报一下错误：
 
 ![在这里插入图片描述](http://img.lynchj.com/f042a28c90e140248ce5833bea2deb7d.png)
 
-&emsp;&emsp;默认 Hystrix 超时配置：
+　　默认 Hystrix 超时配置：
 
 ![默认 Hystrix 超时配置](http://img.lynchj.com/e896e3c663e942d3a17369a5df7e0244.png)
 
-&emsp;&emsp;为了避免超时，我们可以根据业务情况来配置自己的超时时间，此处配置熔断时间为：5000/毫秒。**注意：建议 Ribbon 的超时时间不要大于 Hystrix 的超时时间**
+　　为了避免超时，我们可以根据业务情况来配置自己的超时时间，此处配置熔断时间为：5000/毫秒。**注意：建议 Ribbon 的超时时间不要大于 Hystrix 的超时时间**
 
 ```
 ### Hystrix 配置

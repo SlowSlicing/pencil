@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Config,Security
 * 引入依赖
 
 ```

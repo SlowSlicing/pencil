@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Ribbon,Timeout
-> &emsp;&emsp;在 Spring Cloud Finchley 版 Ribbon 的重试机制是默认开启的，默认重试一次。
+> 　　在 Spring Cloud Finchley 版 Ribbon 的重试机制是默认开启的，默认重试一次。
 
 * 针对单个服务的重试与超时配置：
 

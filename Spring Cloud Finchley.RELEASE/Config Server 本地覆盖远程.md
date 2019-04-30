@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Config,本地覆盖远程
-&emsp;&emsp;在开发阶段，常常会使用本地参数覆盖掉远程参数，就需要进行一下配置：
+　　在开发阶段，常常会使用本地参数覆盖掉远程参数，就需要进行一下配置：
 
 ```
 spring:

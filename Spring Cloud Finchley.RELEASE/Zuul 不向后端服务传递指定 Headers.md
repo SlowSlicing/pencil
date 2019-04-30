@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,Header
 ```
 ### 网关配置
 zuul:

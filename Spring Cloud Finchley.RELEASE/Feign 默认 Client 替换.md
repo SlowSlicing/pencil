@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,HttpClient,OkHttp
-@[toc]
+[toc]
 
-> &emsp;&emsp;Feign 在默认情况下使用的是 JDK 原生的 URLConnection 发送HTTP请求，没有连接池，但是对每个地址会保持一个长连接，即利用 HTTP 的 persistence connection。我们可以用 Apache 的 `HttpClient` 替换 Feign 原始的 HTTP Client，通过设置连接池、超时时间等对服务之间的调用调优。 Spring Cloud 从 Brixton.SR5 版本开始支持这种替换，接下来看看如何用 HTTP Client 和 OKHttp 去替换 Feign 默认的 Client。
+> 　　Feign 在默认情况下使用的是 JDK 原生的 URLConnection 发送HTTP请求，没有连接池，但是对每个地址会保持一个长连接，即利用 HTTP 的 persistence connection。我们可以用 Apache 的 `HttpClient` 替换 Feign 原始的 HTTP Client，通过设置连接池、超时时间等对服务之间的调用调优。 Spring Cloud 从 Brixton.SR5 版本开始支持这种替换，接下来看看如何用 HTTP Client 和 OKHttp 去替换 Feign 默认的 Client。
 
 # 使用 HTTP Client 替换掉 Feign 默认 Client
 
@@ -24,7 +22,7 @@ Spring Cloud,Feign,HttpClient,OkHttp
 
 2. 配置文件开启使用 Apache HTTP Client
 
-&emsp;&emsp;相关类：
+　　相关类：
 
 * **org.springframework.cloud.openfeign.ribbon.HttpClientFeignLoadBalancedConfiguration**
 * **org.springframework.cloud.openfeign.support.FeignHttpClientProperties**
@@ -47,11 +45,11 @@ feign:
 #    timeToLiveUnit: SECONDS
 ```
 
-&emsp;&emsp;到此，替换完毕。
+　　到此，替换完毕。
 
 # 使用 OKHttp 替换掉 Feign 默认 Client
 
-&emsp;&emsp;OKHttp 是现在比较常用的一个 HTTP 客户端访问工具，具有以下特点：
+　　OKHttp 是现在比较常用的一个 HTTP 客户端访问工具，具有以下特点：
 
 * 支持 SPDY，可以合并多个到同一个主机的请求。
 * 使用连接池技术减少请求的延迟（如果SPDY是可用的话）。
@@ -70,7 +68,7 @@ feign:
 
 2. 增加配置
 
-&emsp;&emsp;相关类：
+　　相关类：
 
 * **org.springframework.cloud.openfeign.FeignAutoConfiguration.OkHttpFeignConfiguration**
 

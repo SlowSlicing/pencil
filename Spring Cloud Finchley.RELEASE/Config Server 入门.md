@@ -1,10 +1,8 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Config Server,入门
 [toc]
 
 # 简介
 
-&emsp;&emsp;Spring Cloud Config 是一个集中化外部配置的分布式系统，由服务端和客户端组成。它不依赖于注册中心，是一个独立的配置中心。Spring Cloud Config 支持多种存储配置信息的形式，目前主要有 jdbc、Vault、Native、Svn、Git，其中默认为 Git。
+　　Spring Cloud Config 是一个集中化外部配置的分布式系统，由服务端和客户端组成。它不依赖于注册中心，是一个独立的配置中心。Spring Cloud Config 支持多种存储配置信息的形式，目前主要有 jdbc、Vault、Native、Svn、Git，其中默认为 Git。
 
 # 入门
 
@@ -115,22 +113,22 @@ management:
 ![添加内容](http://img.lynchj.com/fd1ab97c271e4ee5b8e3ba4f582769d2.png)
 
 
-&emsp;&emsp;访问地址：`http://localhost:8887/demo-spring-cloud/dev`
+　　访问地址：`http://localhost:8887/demo-spring-cloud/dev`
 
 ![结果](http://img.lynchj.com/34418371c5fa4e1eb190539f1bb3e783.png)
 
-&emsp;&emsp;可用访问地址：
+　　可用访问地址：
 
 ![可用访问地址](http://img.lynchj.com/4673ec6cb2294627934226240f2bf239.png)
 
-&emsp;&emsp;查看程序打印日志信息，发现会有一个缓存目录：
+　　查看程序打印日志信息，发现会有一个缓存目录：
 
 ```
 [2018-11-01 16:56:34.495 XNIO-2 task-10] INFO  demo-config-server-o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: file:/var/folders/_g/81ctkv854j9733sd4nt20bvc0000gn/T/config-repo-5622067012624863717/demo-config-info/demo-spring-cloud-dev.yml
 [2018-11-01 16:56:34.495 XNIO-2 task-10] INFO  demo-config-server-o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@2da19df3: startup date [Thu Nov 01 16:56:34 CST 2018]; root of context hierarchy
 ```
 
-&emsp;&emsp;去指定目录查看：
+　　去指定目录查看：
 
 ![缓存目录](http://img.lynchj.com/33a7805dc3ad4815bf4a3ed48fd0d4cb.png)
 
@@ -170,7 +168,7 @@ spring:
 
 ### 注入属性
 
-&emsp;&emsp;创建一个属性类，直接从 Config Server 获取属性注入到其中
+　　创建一个属性类，直接从 Config Server 获取属性注入到其中
 
 ```
 @Data
@@ -185,7 +183,7 @@ public class ConfigServerInfoProperties {
 }
 ```
 
-&emsp;&emsp;创建一个 Controller 来引用上方的属性
+　　创建一个 Controller 来引用上方的属性
 
 ```
 /**
@@ -213,7 +211,7 @@ public class ConfigServerInfoController {
 }
 ```
 
-&emsp;&emsp;启动项目访问查看：
+　　启动项目访问查看：
 
 ```
 [2018-11-01 17:23:37.935 main] INFO  demo-order-o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8887

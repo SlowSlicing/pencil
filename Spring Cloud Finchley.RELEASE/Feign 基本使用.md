@@ -1,16 +1,14 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,原理,基本使用
 [toc]
 
-> &emsp;&emsp;在开发 Spring Cloud 微服务的时候，我们知道，服务之间都是以 HTTP 接口的形式对外提供服务的，因此消费者在进行调用的时候，底层就是通过 HTTP Client 的这种方式进行访问。当然我们可以使用JDK原生的 URLConnection、Apache 的 HTTP Client、Netty 异步 Http Client，Spring 的 RestTemplate 去实现服务间的调用。但是最方便、最优雅的方式是通过 Spring Cloud Open Feign 进行服务间的调用 Spring Cloud 对 Feign 进行了增强，使 Feign 支持 Spring Mvc 的注解，并整合了 Ribbon 等，从而让 Feign 的使用更加方便。
+> 　　在开发 Spring Cloud 微服务的时候，我们知道，服务之间都是以 HTTP 接口的形式对外提供服务的，因此消费者在进行调用的时候，底层就是通过 HTTP Client 的这种方式进行访问。当然我们可以使用JDK原生的 URLConnection、Apache 的 HTTP Client、Netty 异步 Http Client，Spring 的 RestTemplate 去实现服务间的调用。但是最方便、最优雅的方式是通过 Spring Cloud Open Feign 进行服务间的调用 Spring Cloud 对 Feign 进行了增强，使 Feign 支持 Spring Mvc 的注解，并整合了 Ribbon 等，从而让 Feign 的使用更加方便。
 
 # Feign 概述
 
 ## 什么是 Feign
 
-&emsp;&emsp;Feign 是一个声明式的 Web Service 客户端。它的出现使开发 Web Service 客户端变得很简单。使用 Feign 只需要创建一个接口加上对应的注解，比如：`@FeignClient` 注解。 Feign 有可插拔的注解，包括 Feign 注解和 AX-RS 注解。Feign 也支持编码器和解码器，Spring Cloud Open Feign 对 Feign 进行增强支持 Spring Mvc 注解，可以像 Spring Web 一样使用 HttpMessageConverters 等。
+　　Feign 是一个声明式的 Web Service 客户端。它的出现使开发 Web Service 客户端变得很简单。使用 Feign 只需要创建一个接口加上对应的注解，比如：`@FeignClient` 注解。 Feign 有可插拔的注解，包括 Feign 注解和 AX-RS 注解。Feign 也支持编码器和解码器，Spring Cloud Open Feign 对 Feign 进行增强支持 Spring Mvc 注解，可以像 Spring Web 一样使用 HttpMessageConverters 等。
 
-&emsp;&emsp;Feign 是一种声明式、模板化的 HTTP 客户端。在 Spring Cloud 中使用 Feign，可以做到使用 HTTP 请求访问远程服务，就像调用本地方法一样的，开发者完全感知不到这是在调用远程方法，更感知不到在访问 HTTP 请求。接下来介绍一下 Feign 的特性，具体如下：
+　　Feign 是一种声明式、模板化的 HTTP 客户端。在 Spring Cloud 中使用 Feign，可以做到使用 HTTP 请求访问远程服务，就像调用本地方法一样的，开发者完全感知不到这是在调用远程方法，更感知不到在访问 HTTP 请求。接下来介绍一下 Feign 的特性，具体如下：
 
 * 可插拔的注解支持，包括 Feign 注解和AX-RS注解。
 * 支持可插拔的 HTTP 编码器和解码器。
@@ -20,7 +18,7 @@ Spring Cloud,Feign,原理,基本使用
 
 # Feign 入门案例
 
-&emsp;&emsp;此处以调用 Github API 查询服务为例。
+　　此处以调用 Github API 查询服务为例。
 
 ## 引入依赖
 
@@ -31,7 +29,7 @@ Spring Cloud,Feign,原理,基本使用
 </dependency>
 ```
 
-&emsp;&emsp;启动类加入如下注解：
+　　启动类加入如下注解：
 
 ```
 /** 开启 Feign 扫描支持 */

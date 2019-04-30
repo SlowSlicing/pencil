@@ -1,5 +1,3 @@
-Nginx
-Nginx,重定向,HTTP 到 HTTPS
 ```
 server {
 

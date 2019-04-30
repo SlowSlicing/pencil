@@ -1,8 +1,6 @@
-Spring Cloud Finchley.RELEASE
-Spring Boot,Admin
 [toc]
-> &emsp;&emsp;Spring Boot Admin 主要是用来监控基于 Spring Boot 的项目，在 Actuator 的基础上封装了一层 UI。
-> &emsp;&emsp;相应的也提供了许多功能，如：服务监控、日志级别管理、运行信息查看、环境参数配置等。
+> 　　Spring Boot Admin 主要是用来监控基于 Spring Boot 的项目，在 Actuator 的基础上封装了一层 UI。
+> 　　相应的也提供了许多功能，如：服务监控、日志级别管理、运行信息查看、环境参数配置等。
 
 # 服务端
 
@@ -39,7 +37,7 @@ public class DemoAdminServerApplication {
 }
 ```
 
-&emsp;&emsp;启动即可：
+　　启动即可：
 
 ![Admin Server](http://img.lynchj.com/2e8250955540426fbf44f1d9c1136edc.png)
 
@@ -75,7 +73,7 @@ management:
         include: '*'
 ```
 
-&emsp;&emsp;启动即可：
+　　启动即可：
 
 ![Admin Server](http://img.lynchj.com/a27fac503105458f95d8d1766bd01a66.png)
 

@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,路由配置
-@[toc]
+[toc]
 
 # 单实例 serviceId 映射
 
@@ -25,7 +23,7 @@ zuul:
       sensitiveHeaders: Cookie,Set-Cookie,Authorization
 ```
 
-&emsp;&emsp;⤴️上面是一种比较全面、手动指定的配置方式。
+　　⤴️上面是一种比较全面、手动指定的配置方式。
 
 * 简单配置，只抒写映射规则，默认 serviceId 就是：`demo-order`
 
@@ -38,7 +36,7 @@ zuul:
     demo-order: /do/**
 ```
 
-&emsp;&emsp;与`详细配置`等价。
+　　与`详细配置`等价。
 
 * 极简配置，映射规则都没有，默认规则为：`/demo-order/**`，默认 serviceId 就是：`demo-order`
 
@@ -54,7 +52,7 @@ zuul:
 
 # 单实例 url 映射
 
-&emsp;&emsp;处理使用 serviceId 之外，还可以使用指定 url 的方式：
+　　处理使用 serviceId 之外，还可以使用指定 url 的方式：
 
 ```
 ### 网关配置
@@ -71,7 +69,7 @@ zuul:
 
 # 使用 Ribbon 的负载均衡路由
 
-&emsp;&emsp;在默认情况下，Zuul 会使用 Eureka 中集成的基本负载均衡功能，如果想要使用 Ribbon 的负载均衡功能，就需要指定一个 serviceId，此操作需要禁止 Ribbon 使用 Eureka，在 E 版之后，新增了负载均衡策略的配置，如下配置：
+　　在默认情况下，Zuul 会使用 Eureka 中集成的基本负载均衡功能，如果想要使用 Ribbon 的负载均衡功能，就需要指定一个 serviceId，此操作需要禁止 Ribbon 使用 Eureka，在 E 版之后，新增了负载均衡策略的配置，如下配置：
 
 ```
 ### 网关配置
@@ -105,7 +103,7 @@ demo-order:
 
 # forward 本地跳转
 
-&emsp;&emsp;网关 Controller 代码：
+　　网关 Controller 代码：
 
 ```
 /**
@@ -130,7 +128,7 @@ public class LocalController {
 }
 ```
 
-&emsp;&emsp;通过 `/local` 来访问配置：
+　　通过 `/local` 来访问配置：
 
 ```
 ### 网关配置
@@ -148,7 +146,7 @@ zuul:
 
 ## 加载顺序
 
-&emsp;&emsp;如下配置：
+　　如下配置：
 
 ```
 ### 网关配置
@@ -165,7 +163,7 @@ zuul:
       stripPrefix: true
 ```
 
-&emsp;&emsp;这种情况下，全部都会路由到 `demo-goods` 服务上，在 yml 解析时，会把后边的覆盖掉前面的。
+　　这种情况下，全部都会路由到 `demo-goods` 服务上，在 yml 解析时，会把后边的覆盖掉前面的。
 
 ## 通配符
 

@@ -1,9 +1,7 @@
-Spring Boot
-Redis Cluster,Spring Boot,Template
-[TOC]
+[toc]
 
 > Redis Cluster 搭建：[Redis Cluster 从零安装并详解](https://blog.csdn.net/wo18237095579/article/details/80895413)
-> &emsp;&emsp;此篇笔记以上放这篇笔记为基础
+> 　　此篇笔记以上放这篇笔记为基础
 
 # pom 依赖
 
@@ -1395,7 +1393,7 @@ public class BaseRedisDao implements BaseRedisDaoInter<String, Object> {
 
 # 调用
 
-&emsp;&emsp;在需要使用的类中注入 RedisTemplate 的包装 Dao 即可，如下：
+　　在需要使用的类中注入 RedisTemplate 的包装 Dao 即可，如下：
 
 ```
 @Resource

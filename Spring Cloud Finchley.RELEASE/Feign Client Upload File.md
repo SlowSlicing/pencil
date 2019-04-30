@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Feign,Upload File
-> &emsp;&emsp;早期的 Feign 是不支持文件上传的，后来支持了，但是有部分缺陷，需要一次性读取到内存中再编码发送。
+> 　　早期的 Feign 是不支持文件上传的，后来支持了，但是有部分缺陷，需要一次性读取到内存中再编码发送。
 
 1. 引入 Feign Client 文件上传依赖
 

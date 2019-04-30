@@ -1,5 +1,3 @@
-MySQL
-CentOS,MySQL
 #### 卸载自带MariaDB
 ```
 [root@root tmp]# rpm -qa | grep mariadb

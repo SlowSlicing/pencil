@@ -1,6 +1,4 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Zuul,上传文件
-&emsp;&emsp;Zuul 的上传文件功能是从 Spring Boot 及成果来的，所以直接进行 Spring Boot 的相关配置即可
+　　Zuul 的上传文件功能是从 Spring Boot 及成果来的，所以直接进行 Spring Boot 的相关配置即可
 
 ```
 spring:
@@ -18,7 +16,7 @@ spring:
       location: /
 ```
 
-> &emsp;&emsp;这里是以 Spring Boot 2.x 之后的版本为例。
+> 　　这里是以 Spring Boot 2.x 之后的版本为例。
 
 * Spring Boot 1.4.x 版之前：
 

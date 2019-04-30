@@ -1,5 +1,3 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Ribbon,脱离 Eureka
 > 在一些特殊的情况下，我们可能并不希望 Ribbon 直接使用 Eureka 的注册列表进行负载，想要手动指定一个或者多个注册服务，从而使用另外的一个或者多个注册列表进行负载。
 
 * 先禁用 Ribbon 的 Eureka 功能：
@@ -13,7 +11,7 @@ ribbon:
     enabled: false
 ```
 
-&emsp;&emsp;再次访问会出现错误：
+　　再次访问会出现错误：
 
 ```
 2018-10-26 17:54:55.950 DEBUG 8029 --- [ix-demo-goods-1] com.lynchj.demoorder.feign.GoodsFeign    : [GoodsFeign#getPortByPost] ---> POST http://demo-goods/goods/getPort HTTP/1.1
@@ -200,7 +198,7 @@ Caused by: com.netflix.client.ClientException: Load balancer does not have avail
 	... 32 common frames omitted
 ```
 
-> &emsp;&emsp;上方错误很容易理解，应为找不到要负载的服务了。
+> 　　上方错误很容易理解，应为找不到要负载的服务了。
 
 * 手动指定服务列表：
 
@@ -212,6 +210,6 @@ demo-goods:
     listOfServers: http://localhost:11200,http://localhost:11201
 ```
 
-&emsp;&emsp;结果：
+　　结果：
 
 ![结果](http://img.lynchj.com/53dedb6a4fc94f80968c9c74a2eef82e.gif)

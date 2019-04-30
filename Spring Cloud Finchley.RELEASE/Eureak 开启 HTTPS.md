@@ -1,12 +1,10 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Eureka HTTPS,SSL
-@[toc]
+[toc]
 
-> &emsp;&emsp;上节说到，开启 HTTP Basic 认证，但是这种基于 Base64 编码的认证方式，如果被人截获实在是太不安全了（如果是内网环境基本无所谓了）。这几说说如何开启 HTTPS 请求。
+> 　　上节说到，开启 HTTP Basic 认证，但是这种基于 Base64 编码的认证方式，如果被人截获实在是太不安全了（如果是内网环境基本无所谓了）。这几说说如何开启 HTTPS 请求。
 
 # 生成证书
 
-&emsp;&emsp;这里是利用 JDK 自带的工具生成证书文件
+　　这里是利用 JDK 自带的工具生成证书文件
 
 ## 生成服务端证书
 
@@ -130,7 +128,7 @@ KeyIdentifier [
 
 # Eureka Server 配置
 
-&emsp;&emsp;把生成的 EurekaServer.p12 Copy 到 resources 下
+　　把生成的 EurekaServer.p12 Copy 到 resources 下
 
 ## 配置文件
 
@@ -208,11 +206,11 @@ eureka:
     leaseRenewalIntervalInseconds: 10
 ```
 
-&emsp;&emsp;启动即可
+　　启动即可
 
 # Eureka Client 配置
 
-&emsp;&emsp;把生成的 EurekaClient.p12 Copy 到 resources 下
+　　把生成的 EurekaClient.p12 Copy 到 resources 下
 
 ## 引入依赖
 
@@ -259,13 +257,13 @@ eureka:
     registry-fetch-interval-seconds: 30
 ```
 
-&emsp;&emsp;这里的配置是通过几个自定义的参数来进行配置的证书信息，并没有做全局的 HTTPS 启用操作。
+　　这里的配置是通过几个自定义的参数来进行配置的证书信息，并没有做全局的 HTTPS 启用操作。
 
 * eureka.client.secure-port-enabled：是否开启安全端口访问
 * eureka.client.ssl.key-store：证书文件
 * eureka.client.ssl.key-password：证书密码
 
-&emsp;&emsp;接下来在代码中进行配置 HTTPS
+　　接下来在代码中进行配置 HTTPS
 
 ```
 /**
@@ -308,6 +306,6 @@ public class EurekaHttpsClientConfiguration {
 }
 ```
 
-&emsp;&emsp;启动即可
+　　启动即可
 
 > 源码：https://github.com/SlowSlicing/demo-spring-cloud-finchley/tree/EurekaHttps

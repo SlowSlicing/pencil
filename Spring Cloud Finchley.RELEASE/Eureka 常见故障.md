@@ -1,12 +1,10 @@
-Spring Cloud Finchley.RELEASE
-Spring Cloud,Eureka,故障,高可用
-@[toc]
+[toc]
 
 # Eureka Server 全部不可用
 
 ## Eureka Client 启动前 Eureka Server 全部不可用
 
-&emsp;&emsp;如果 Eureka Server 在应用服务启动之前挂掉或者没有启动的话，那么应用可以正常启动,但是会有报错信息。如下：
+　　如果 Eureka Server 在应用服务启动之前挂掉或者没有启动的话，那么应用可以正常启动,但是会有报错信息。如下：
 
 ```
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
@@ -100,7 +98,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 ```
 
-&emsp;&emsp;由于连不上 Eureka Server，自然访问不了 service registry 的服务注册信息，不能与其他服务交互。针对这种情况，Eureka Server 设计了一个 `eureka.client.backup-registry-impl` 属性，可以配置在启动时 Eureka Server 访问不到的情况下，从这个 back registry 读取服务注册信息，作为 fallback。该 `backup-registry-impl` 比较适合服务端提供负载均衡或者服务 ip 地址相对固定的场景。实例如下：
+　　由于连不上 Eureka Server，自然访问不了 service registry 的服务注册信息，不能与其他服务交互。针对这种情况，Eureka Server 设计了一个 `eureka.client.backup-registry-impl` 属性，可以配置在启动时 Eureka Server 访问不到的情况下，从这个 back registry 读取服务注册信息，作为 fallback。该 `backup-registry-impl` 比较适合服务端提供负载均衡或者服务 ip 地址相对固定的场景。实例如下：
 
 ```
 /**
@@ -157,7 +155,7 @@ public class StaticBackupServiceRegistry implements BackupRegistry {
 }
 ```
 
-&emsp;&emsp;配置文件需增加如下：
+　　配置文件需增加如下：
 
 ```
 ### 注册中心配置
@@ -171,13 +169,13 @@ eureka:
 
 ## Eureka Client 运行时 Eureka Server 不可用
 
-&emsp;&emsp;Eureka Client 在本地内存中有个 `AtomicReference<Applications>` 类型的 `localRegionApps` 变量，来维护从 Eureka Server 拉取回来的注册信息。 Client 端有定时任务 `CacheRefreshThread`，会定时从 Server 端拉取注册信息更新到本地如果 Eureka Server 在应用服务运行时挂掉的话，本地的 `CacheRefreshThread` 会抛出异常，本地的 `localRegionApps` 变量不会得到更新。
+　　Eureka Client 在本地内存中有个 `AtomicReference<Applications>` 类型的 `localRegionApps` 变量，来维护从 Eureka Server 拉取回来的注册信息。 Client 端有定时任务 `CacheRefreshThread`，会定时从 Server 端拉取注册信息更新到本地如果 Eureka Server 在应用服务运行时挂掉的话，本地的 `CacheRefreshThread` 会抛出异常，本地的 `localRegionApps` 变量不会得到更新。
 
 # Eureka Server 部分不可用
 
 ## Client 端
 
-&emsp;&emsp;Client 端有个定时任务 `AsyncResolver.updateTask` 去拉取 serviceUrl 的变更，如果配置文件有改动，运行时可以动态变更。拉取完之后，Client 端会随机化 Server 的 list。例如：
+　　Client 端有个定时任务 `AsyncResolver.updateTask` 去拉取 serviceUrl 的变更，如果配置文件有改动，运行时可以动态变更。拉取完之后，Client 端会随机化 Server 的 list。例如：
 
 ```
 eureka:
@@ -187,12 +185,12 @@ eureka:
 ```
 
 
-&emsp;&emsp;第一次拉取的时候可能是按配置的顺序，如 host1、host2、host3 这样，之后定时任务更新会随机化一次，变为 host2、host1、host3 这样。
+　　第一次拉取的时候可能是按配置的顺序，如 host1、host2、host3 这样，之后定时任务更新会随机化一次，变为 host2、host1、host3 这样。
 
-&emsp;&emsp;而 Client 端在请求 Server 的时候，维护了一个不可用的 Eureka Server 列表 `quarantineSet`，在 `Connection error` 或者 `5xx` 的情况下会被列入该列表，当该列表的大小超过指定阈值则会重新清空；对可用的 Server 列表（一般为拉取回来的 Server 列表剔除不可用的列表，如果剔除之后为空，则不会做剔除处理），采用 RetryableEurekaHttpClient 进行请求，`numberOfRetries` 为 3。也就是说，如果 Eureka Server 有一台挂掉，则会被纳入不可用列表。那么这个时候获取的服务注册信息是来自健康的 Eureka Server。
+　　而 Client 端在请求 Server 的时候，维护了一个不可用的 Eureka Server 列表 `quarantineSet`，在 `Connection error` 或者 `5xx` 的情况下会被列入该列表，当该列表的大小超过指定阈值则会重新清空；对可用的 Server 列表（一般为拉取回来的 Server 列表剔除不可用的列表，如果剔除之后为空，则不会做剔除处理），采用 RetryableEurekaHttpClient 进行请求，`numberOfRetries` 为 3。也就是说，如果 Eureka Server 有一台挂掉，则会被纳入不可用列表。那么这个时候获取的服务注册信息是来自健康的 Eureka Server。
 
 ## Server 端
 
-&emsp;&emsp;Eureka Server 之间相互成为 `peer node`，如果 Eureka Server 有一台挂了 Eureka Server 之间的 replication 会受影响。
+　　Eureka Server 之间相互成为 `peer node`，如果 Eureka Server 有一台挂了 Eureka Server 之间的 replication 会受影响。
 
-&emsp;&emsp; `PeerEurekaNodes` 有个定时任务 `peersUpdateTask`，会去从配置文件拉取 `availabilityZones` 及 `serviceUrl` 信息，然后在运行时更新 `peerEurekaNodes` 信息。如果在一台 Eureka Server 挂掉的时候，人工介入更改 Eureka Server 的 serviceUrl 信息，则可以主动剔除挂掉的 peerNode。
+　　 `PeerEurekaNodes` 有个定时任务 `peersUpdateTask`，会去从配置文件拉取 `availabilityZones` 及 `serviceUrl` 信息，然后在运行时更新 `peerEurekaNodes` 信息。如果在一台 Eureka Server 挂掉的时候，人工介入更改 Eureka Server 的 serviceUrl 信息，则可以主动剔除挂掉的 peerNode。
