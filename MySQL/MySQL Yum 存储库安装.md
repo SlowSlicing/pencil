@@ -1,5 +1,3 @@
-[toc]
-
 # 全新安装MySQL的步骤
 
 > 　　请按照以下步骤使用MySQL Yum存储库安装最新的GA版本的MySQL。

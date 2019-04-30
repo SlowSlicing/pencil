@@ -1,5 +1,3 @@
-[toc]
-
 > 　　Feign 在默认情况下使用的是 JDK 原生的 URLConnection 发送HTTP请求，没有连接池，但是对每个地址会保持一个长连接，即利用 HTTP 的 persistence connection。我们可以用 Apache 的 `HttpClient` 替换 Feign 原始的 HTTP Client，通过设置连接池、超时时间等对服务之间的调用调优。 Spring Cloud 从 Brixton.SR5 版本开始支持这种替换，接下来看看如何用 HTTP Client 和 OKHttp 去替换 Feign 默认的 Client。
 
 # 使用 HTTP Client 替换掉 Feign 默认 Client

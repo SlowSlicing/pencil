@@ -1,5 +1,3 @@
-[toc]
-
 ### `-X/--request <command>` 参数
 
 　　指定什么命令，如 `GET`、`POST`。

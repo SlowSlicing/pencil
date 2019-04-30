@@ -1,5 +1,3 @@
-[toc]
-
 > 此篇笔记是以上篇笔记为基础：[Spring Boot 结合 Redis Cluster RedisTemplate](https://blog.csdn.net/wo18237095579/article/details/80925586)
 
 # 关于 Redis Cache Manager 的微小修改

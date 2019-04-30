@@ -1,5 +1,3 @@
-[toc]
-
 # REST API 介绍
 
 　　Eureka 在 GitHub 的 wiki 上专门写了一篇[《 Eureka REST operations》](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)来介绍 Eureka Server 的 REST API 接口，Spring Cloud Netfix Eureka 跟 Spring Boot 适配之后，提供的 REST API 与原始的 REST API 有一点点不同，其路径中的 `{version}` 值固定为 `eureka`，其他的变化不大，如下图所示：

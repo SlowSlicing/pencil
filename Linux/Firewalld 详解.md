@@ -1,5 +1,3 @@
-[toc]
-
 # Firewalld
 
 　　Linux 上新的防火墙软件，和原来的 Iptables 作用差不多。

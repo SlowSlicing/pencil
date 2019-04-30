@@ -1,5 +1,3 @@
-[toc]
-
 ### 问题描述
 
 　　前段时间使用 Docker 装了 GitLab，SSH 配置都已经配置完毕，容器端口和宿主机端口也映射完毕。Firewall 和 SELinux 也已经关闭。

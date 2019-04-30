@@ -1,5 +1,3 @@
-[toc]
-
 > 　　官方说：For servlet stack applications, the spring-boot-starter-web includes Tomcat by including spring-boot-starter-tomcat, but you can use spring-boot-starter-jetty or spring-boot-starter-undertow instead
 > 　　When switching to a different HTTP server, you need to exclude the default dependencies in addition to including the one you need. Spring Boot provides separate starters for HTTP servers to help make this process as easy as possible.
 >> 　　对于 servlet 栈应用程序，`spring-boot-starter-web` 包括 Tomcat `spring-boot-starter-tomcat`，但您可以使用 `spring-boot-starter-jetty` 或 `spring-boot-starter-undertow` 替代

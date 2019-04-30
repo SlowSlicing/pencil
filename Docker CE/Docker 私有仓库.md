@@ -1,5 +1,3 @@
-[toc]
-
 > 　　有时候使用 Docker Hub 这样的公共仓库可能不方便，用户可以创建一个本地仓库供私人使用。[docker-registry](https://github.com/docker/distribution)是官方提供的工具，可以用于构建私有的镜像仓库。本文内容基于[docker-registry](https://github.com/docker/distribution) v2.x 版本。
 
 # 安装运行 docker-registry

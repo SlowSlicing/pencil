@@ -1,5 +1,3 @@
-[toc]
-
 # 错误类型
 
 　　Hystrix 的异常处理中，有5种出错的情况下会被 fallback 所截获，从而触发 fallback，这些情况是：

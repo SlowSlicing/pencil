@@ -1,5 +1,3 @@
-[toc]
-
 > 　　Dashboard 工具就像 RabbitMQ 的 WEB 管理界面、Dubbo 的 WEB 管理界面一样，是用来给我们提供一个更好的可视化界面管理工具。
 
 # 获取安装 yml

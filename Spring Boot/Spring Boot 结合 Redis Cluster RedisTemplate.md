@@ -1,5 +1,3 @@
-[toc]
-
 > Redis Cluster 搭建：[Redis Cluster 从零安装并详解](https://blog.csdn.net/wo18237095579/article/details/80895413)
 > 　　此篇笔记以上放这篇笔记为基础
 

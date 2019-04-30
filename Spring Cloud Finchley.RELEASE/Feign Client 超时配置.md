@@ -1,5 +1,3 @@
-[toc]
-
 > 　　Feign 其实是一种包装，把复杂的 Http 请求包装成我们只需写一两个注解就可以搞定的地步。他底层使用的还是 Ribbon。
 
 　　Feign 的调用，总共分为两层，即 Ribbon 的调用和 Hystrix（熔断处理） 的调用，高版本的 Hystrix 默认是关闭的。

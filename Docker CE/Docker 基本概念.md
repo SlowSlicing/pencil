@@ -3,8 +3,6 @@
 >> 容器（ Container ）
 >> 仓库（ Repository ）
 
-[toc]
-
 # Docker 镜像
 
 　　我们都知道，操作系统分为`内核`和`用户空间`。对于 Linux 而言，内核启动后，会挂载 root文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu 16.04 最小系统的 root 文件系统。

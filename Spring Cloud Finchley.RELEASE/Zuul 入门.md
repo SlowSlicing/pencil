@@ -1,5 +1,3 @@
-[toc]
-
 > 　　Zuul is the front door for all requests from devices and web sites to the backend of the Netflix streaming application.
 > 　　Zuul 是从设备和网站到后端应用程序所有请求的前门，为内部服务提供可配置的对外 URL 到服务的映射关系，基于 JVM 的后端路由器。
 

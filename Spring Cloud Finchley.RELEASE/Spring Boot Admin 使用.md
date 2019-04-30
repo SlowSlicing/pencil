@@ -1,5 +1,3 @@
-[toc]
-> 　　Spring Boot Admin 主要是用来监控基于 Spring Boot 的项目，在 Actuator 的基础上封装了一层 UI。
 > 　　相应的也提供了许多功能，如：服务监控、日志级别管理、运行信息查看、环境参数配置等。
 
 # 服务端

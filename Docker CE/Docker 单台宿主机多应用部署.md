@@ -1,4 +1,3 @@
-[toc]
 　　以下是实验所要达到的一个目的：
 
 ![两个容器相连](http://img.lynchj.com/b5c4a9b0b63e446d9d09b57cfed8d417.png)

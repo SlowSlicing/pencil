@@ -1,5 +1,3 @@
-[toc]
-
 > 　　Eureka Server 的高可用就是通过启动多个 Eureka Server 注册中心，让他们之间进行相互注册，达到共享注册信息的目的。这样就会都持有一份注册信息，即使其中一台挂掉了，其他的 Eureka Server 还在正常工作
 
 # Eureka Server 配置

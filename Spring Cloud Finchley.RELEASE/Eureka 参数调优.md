@@ -1,5 +1,3 @@
-[toc]
-
 > 　　主要说明一下比较重要、常用的 Server 和 Client 的参数。
 
 # Client 端

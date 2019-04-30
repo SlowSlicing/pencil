@@ -1,5 +1,3 @@
-[toc]
-
 # 简介
 
 　　Spring Cloud Config 是一个集中化外部配置的分布式系统，由服务端和客户端组成。它不依赖于注册中心，是一个独立的配置中心。Spring Cloud Config 支持多种存储配置信息的形式，目前主要有 jdbc、Vault、Native、Svn、Git，其中默认为 Git。
