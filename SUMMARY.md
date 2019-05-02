@@ -128,7 +128,7 @@
     * [使用 Undertow 替换掉 Tomcat](Spring%20Boot/使用%20Undertow%20替换掉%20Tomcat.md)
     * [Spring Boot 结合 Redis Cluster RedisTemplate](Spring%20Boot/Spring%20Boot%20结合%20Redis%20Cluster%20RedisTemplate.md)
     * [Spring Boot 结合 Redis Cluster 简单使用.md](Spring%20Boot/Spring%20Boot%20结合%20Redis%20Cluster%20简单使用.md)
-* [](Spring%20Cloud%20Finchley.RELEASE/readme.md)
+* [Spring Cloud Finchley.RELEASE](Spring%20Cloud%20Finchley.RELEASE/readme.md)
     * [Hystrix 异常处理机制](Spring%20Cloud%20Finchley.RELEASE/Hystrix%20异常处理机制.md)
     * [Feign Client 第一次请求超时](Spring%20Cloud%20Finchley.RELEASE/Feign%20Client%20第一次请求超时.md)
     * [Zuul 入门](Spring%20Cloud%20Finchley.RELEASE/Zuul%20入门.md)
