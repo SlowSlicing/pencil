@@ -7,6 +7,7 @@
 ## 笔记
 
 * [Kubenetes](Kubernetes/readme.md)
+    * [使用代理 ssr 也无法 pull k8s 的镜像问题](Kubernetes/使用代理%20ssr%20也无法%20pull%20k8s%20的镜像问题.md)
     * [Kubernetes 1.14 开启 IPVS](Kubernetes/Kubernetes%201.14%20开启%20IPVS.md)
     * [Kubernetes 1.14 kubeadm 集群安装](Kubernetes/Kubernetes%201.14%20kubeadm%20集群安装.md)
     * [Kubernetes 1.6.1 kubeadm 集群安装](Kubernetes/Kubernetes%201.6.1%20kubeadm%20集群安装.md)
@@ -15,6 +16,7 @@
     * [问题 - kubectl create 一直处于 ContainerCreating 状态](Kubernetes/问题%20-%20kubectl%20create%20一直处于%20ContainerCreating%20状态.md)
     * [kubeadm 安装 k8s 集群](Kubernetes/kubeadm%20安装%20k8s%20集群.md)
 * [Docker CE](Docker%20CE/readme.md)
+    * [使用代理 ssr 也无法 pull k8s 的镜像问题](Docker%20CE/使用代理%20ssr%20也无法%20pull%20k8s%20的镜像问题.md)
     * [Docker 网络深入理解](Docker%20CE/Docker%20网络深入理解.md)
     * [问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口](Docker%20CE/问题%20-%20Linux%20下%20Docker%20端口映射到宿主机后%20外部无法访问对应宿主机端口.md)
     * [Docker 容器](Docker%20CE/Docker%20容器.md)
