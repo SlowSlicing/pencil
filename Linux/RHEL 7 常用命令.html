@@ -1,0 +1,4299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RHEL 7 常用命令</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            RHEL 7 常用命令
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">常用系统工作命令</a>
+<ul>
+<li>
+<a href="#toc_1">1.echo 命令</a>
+</li>
+<li>
+<a href="#toc_2">2.date 命令</a>
+</li>
+<li>
+<a href="#toc_3">3.reboot 命令</a>
+</li>
+<li>
+<a href="#toc_4">4.poweroff 命令</a>
+</li>
+<li>
+<a href="#toc_5">5.wget 命令</a>
+</li>
+<li>
+<a href="#toc_6">6.ps 命令</a>
+</li>
+<li>
+<a href="#toc_7">7.top 命令</a>
+</li>
+<li>
+<a href="#toc_8">8.pidof 命令</a>
+</li>
+<li>
+<a href="#toc_9">9.kill 命令</a>
+</li>
+<li>
+<a href="#toc_10">10.killall 命令</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">系统状态检测命令</a>
+<ul>
+<li>
+<a href="#toc_12">1.ifconfig 命令</a>
+</li>
+<li>
+<a href="#toc_13">2.uname 命令</a>
+</li>
+<li>
+<a href="#toc_14">3.uptime 命令</a>
+</li>
+<li>
+<a href="#toc_15">4.free 命令</a>
+</li>
+<li>
+<a href="#toc_16">5.who 命令</a>
+</li>
+<li>
+<a href="#toc_17">6.last 命令</a>
+</li>
+<li>
+<a href="#toc_18">7.history 命令</a>
+</li>
+<li>
+<a href="#toc_19">8.sosreport 命令</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">工作目录切换命令</a>
+<ul>
+<li>
+<a href="#toc_21">1.pwd 命令</a>
+</li>
+<li>
+<a href="#toc_22">2.cd 命令</a>
+</li>
+<li>
+<a href="#toc_23">3.ls 命令</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_24">文本文件编辑命令</a>
+<ul>
+<li>
+<a href="#toc_25">1.cat 命令</a>
+</li>
+<li>
+<a href="#toc_26">2.more 命令</a>
+</li>
+<li>
+<a href="#toc_27">3.head 命令</a>
+</li>
+<li>
+<a href="#toc_28">4.tail 命令</a>
+</li>
+<li>
+<a href="#toc_29">5.wc 命令</a>
+</li>
+<li>
+<a href="#toc_30">6.stat 命令</a>
+</li>
+<li>
+<a href="#toc_31">7.cut 命令</a>
+</li>
+<li>
+<a href="#toc_32">8.diff 命令</a>
+</li>
+<li>
+<a href="#toc_33">9.awk 命令</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_34">常见的使用：</a>
+</li>
+<li>
+<a href="#toc_35">运算符</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_36">文件目录管理命令</a>
+<ul>
+<li>
+<a href="#toc_37">1.touch 命令</a>
+</li>
+<li>
+<a href="#toc_38">2.mkdir 命令</a>
+</li>
+<li>
+<a href="#toc_39">3.cp 命令</a>
+</li>
+<li>
+<a href="#toc_40">4.mv 命令</a>
+</li>
+<li>
+<a href="#toc_41">5.rm 命令</a>
+</li>
+<li>
+<a href="#toc_42">6.file 命令</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_43">打包压缩与搜索命令</a>
+<ul>
+<li>
+<a href="#toc_44">1.tar 命令</a>
+</li>
+<li>
+<a href="#toc_45">2.grep 命令</a>
+</li>
+<li>
+<a href="#toc_46">3.find 命令</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div><span class="md_repeated_n md_repeated_n_1"></span><h2 id="toc_0" class="h16 md_first_h">常用系统工作命令</h2>
+
+<hr>
+<h3 id="toc_1" class="h16">1.echo 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>echo</code> 命令用于在终端输出字符串或变量提取后的值，格式为<code>echo [字符串 | $变量]</code>。例如，把指定字符串“测试”输出到终端屏幕的命令为：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# echo "测试"
+测试</code></pre>
+
+<!--block_code_end-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+<th>样例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>echo 内容</td>
+<td>打印输入的内容</td>
+<td>echo &quot;测试&quot;</td>
+</tr>
+<tr>
+<td>echo 变量</td>
+<td>打印变量信息</td>
+<td>echo $SHELL</td>
+</tr>
+<tr>
+<td>echo 内容 &gt; text.txt</td>
+<td>新建文件，并输入内容。如果文件已存在，则覆盖文件内容</td>
+<td>echo &quot;新建文件&quot; &gt; text.txt</td>
+</tr>
+<tr>
+<td>echo 内容 &gt;&gt; text.txt</td>
+<td>新启一行，追加内容</td>
+<td>echo &quot;追加内容&quot; &gt;&gt; text.txt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_2" class="h16">2.date 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>date</code> 命令用于显示及设置系统的时间或日期，格式为<code>date [选项] [+指定的格式]</code>。<br /></span>
+    <span class="md_line">　　只需在强大的 <code>date</code> 命令中输入以<code>+</code>号开头的参数，即可按照指定格式来输出系统的时间或日期，这样在日常工作时便可以把备份数据的命令与指定格式输出的时间信息结合到一起。例如，把打包后的文件自动按照<code>年-月-日</code>的格式打包成<code>backup-2017-9-1.tar.gz</code>，用户只需要看一眼文件名称就能大概了解到每个文件的备份时间了。<code>date</code> 命令常见的参数格式及作用如下所示：<br /></span>
+    <span class="md_line">| 参数 | 作用 |<br /></span>
+    <span class="md_line">| --- | --- |<br /></span>
+    <span class="md_line">| %t | 跳格[Tab 键] |<br /></span>
+    <span class="md_line">| %Y | 年（2017、2018） |<br /></span>
+    <span class="md_line">| %m | 月（1～12）|<br /></span>
+    <span class="md_line">| %d | 日（1～31）|<br /></span>
+    <span class="md_line">| %H | 小时（00～23）|<br /></span>
+    <span class="md_line">| %M | 分钟（00～59）|<br /></span>
+    <span class="md_line">| %S | 秒（00～59）|<br /></span>
+    <span class="md_line">| %I | 小时（00～12）|<br /></span>
+    <span class="md_line md_line_end">| %j | 今年中的第几天 |</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　按照默认格式查看当前系统时间的date 命令如下所示：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# date
+Mon May 14 13:35:26 CST 2018</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　按照“年-月-日 小时:分钟:秒”的格式查看当前系统时间的date 命令如下所示：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# date "+%Y-%m-%d %H:%M:%S"
+2018-05-14 13:35:56</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　将系统的当前时间设置为2017 年9 月1 日8 点30 分的date 命令如下所示：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# date -s "20180514 13:37:00"
+Mon May 14 13:37:00 CST 2018</code></pre>
+
+<!--block_code_end--><h3 id="toc_3" class="h16">3.reboot 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>reboot</code> 命令用于重启系统，其格式为<code>reboot</code>。<br /></span>
+    <span class="md_line md_line_end">　　由于重启计算机这种操作会涉及硬件资源的管理权限，因此默认只能使用 <code>root 管理员</code> 来重启，其命令如下：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# reboot</code></pre>
+
+<!--block_code_end--><h3 id="toc_4" class="h16">4.poweroff 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>poweroff</code>命令用于关闭系统，其格式为 <code>poweroff</code>。<br /></span>
+    <span class="md_line md_line_end">　　该命令与 <code>reboot</code> 命令相同，都会涉及硬件资源的管理权限，因此默认只有 <code>root 管理员</code> 才可以关闭电脑，其命令如下：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# poweroff</code></pre>
+
+<!--block_code_end--><h3 id="toc_5" class="h16">5.wget 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>wget</code> 命令用于在终端中下载网络文件，格式为<code>wget [参数] 下载地址</code>。<br /></span>
+    <span class="md_line md_line_end">　　如果您没有Linux 系统的管理经验，当前只需了解一下<code>wget</code>命令的<code>参数</code>以及作用，然后看一下下面的演示实验即可，切记不要急于求成。以下为简单命令参数说明：</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-b</td>
+<td>后台下载模式</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>下载到指定目录</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>最大尝试次数</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>断点续传</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>下载页面内所有资源，包括图片、视频等</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归下载</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面以下载Notepad++为例：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# wget -c https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.exe
+--2018-05-14 13:53:29--  https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.exe
+Resolving notepad-plus-plus.org (notepad-plus-plus.org)... 37.59.28.236
+Connecting to notepad-plus-plus.org (notepad-plus-plus.org)|37.59.28.236|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4299968 (4.1M) [application/x-msdos-program]
+Saving to: ‘npp.7.5.6.Installer.exe’
+
+100%[===========================================================================================================================================================&gt;] 4,299,968    541KB/s   in 12s
+
+2018-05-14 13:53:42 (363 KB/s) - ‘npp.7.5.6.Installer.exe’ saved [4299968/4299968]</code></pre>
+
+<!--block_code_end--><h3 id="toc_6" class="h16">6.ps 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>ps</code> 命令用于查看系统中的进程状态，格式为<code>ps [参数]</code>。<br /></span>
+    <span class="md_line">　　估计在第一次执行这个命令时都要惊呆一下—怎么会有这么多输出值，这可怎么看得过来？其实，我们通常会将<code>ps</code> 命令与<code>管道符技术</code>搭配使用，用来抓取与某个指定服务进程相对应的<code>PID 号码</code>。<code>ps</code> 命令的常见参数以及作用如下所示：<br /></span>
+    <span class="md_line">| 参数 | 作用 |<br /></span>
+    <span class="md_line">| --- | --- |<br /></span>
+    <span class="md_line">| -a | 显示所有进程（包括其他用户的进程）|<br /></span>
+    <span class="md_line">| -u | 用户以及其他详细信息 |<br /></span>
+    <span class="md_line md_line_end">| -x | 显示没有控制终端的进程 |</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Linux 系统中时刻运行着许多进程，如果能够合理地管理它们，则可以优化系统的性能。在Linux 系统中，有5 种常见的进程状态，分别为运行、中断、不可中断、僵死与停止，其各自含义如下所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>R（运行）：进程正在运行或在运行队列中等待。</strong><br /></span>
+    <span class="md_line">　　<strong>S（中断）：进程处于休眠中，当某个条件形成后或者接收到信号时，则脱离该状态。</strong><br /></span>
+    <span class="md_line">　　<strong>D（不可中断）：进程不响应系统异步信号，即便用kill 命令也不能将其中断。</strong><br /></span>
+    <span class="md_line">　　<strong>Z（僵死）：进程已经终止，但进程描述符依然存在，直到父进程调用<code>wait4()</code>系统函数后将进程释放。</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>T（停止）：进程收到停止信号后停止运行。</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　当执行<code>ps aux</code> 命令后通常会看到如下所示的进程状态，仅部分例子，而且正常的输出值中不包括中文注释。</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>USER</th>
+<th>PID</th>
+<th>%CPU</th>
+<th>%MEM</th>
+<th>VSZ</th>
+<th>RSS</th>
+<th>TTY</th>
+<th>STAT</th>
+<th>START</th>
+<th>TIME</th>
+<th>COMMAND</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>进程的所有者</td>
+<td>进程 ID 号</td>
+<td>运算器占用率</td>
+<td>内存占用率</td>
+<td>虚拟内存使用量（单位是KB）</td>
+<td>占用的固定内存量（单位是KB）</td>
+<td>所在终端</td>
+<td>进程状态</td>
+<td>被启动的时间</td>
+<td>实际使用CPU的时间</td>
+<td>命令名称与参数</td>
+</tr>
+<tr>
+<td>root</td>
+<td>1</td>
+<td>0.1</td>
+<td>0.3</td>
+<td>52840</td>
+<td>6664</td>
+<td>?</td>
+<td>Ss</td>
+<td>13:48</td>
+<td>0:02</td>
+<td>/usr/lib/systemd/systemd --switched-root --system --deserialize 23</td>
+</tr>
+<tr>
+<td>root</td>
+<td>2</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[kthreadd]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>3</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[ksoftirqd/0]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S&lt;</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[kworker/0:0H]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>7</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[migration/0]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[rcu_bh]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[rcuob/0]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[rcuob/1]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>11</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[rcuob/2]</td>
+</tr>
+<tr>
+<td>root</td>
+<td>12</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+<td>S</td>
+<td>13:48</td>
+<td>0:00</td>
+<td>[rcuob/3]</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>------------------------------------------------------------------------省略...------------------------------------------------------------------------</strong></span>
+</p>
+
+
+<hr>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在Linux系统中的命令参数有<code>长短格式之分</code>，长格式和长格式 之间不能合并，长格式和短格式之间也不能合并，但短格式和短格式之间是可以合并 的，合并后仅保留一个<code>-</code>(减号）即可。另外ps命令可<code>允许参数不加减号</code>（-)，因此 可直接写成<code>ps aux</code>的样子。</span>
+</p>
+
+</blockquote>
+<h3 id="toc_7" class="h16">7.top 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>top</code> 命令用于动态地监视进程活动与系统负载等信息，其格式为<code>top</code>。<br /></span>
+    <span class="md_line">　　<code>top</code> 命令相当强大，能够动态地查看系统运维状态，完全将它看作Linux 中的<code>强化版的Windows 任务管理器</code>。top 命令的运行界面如图所示：<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="http://img.lynchj.com/f3c8c5515b51481aa73574bc811635fb.png" alt="top视图" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">在上图中，top 命令执行结果的前5 行为系统整体的统计信息，其所代表的含义如下：</span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start">　　<strong>第1 行：系统时间、运行时间、登录终端数、系统负载（三个数值分别为1 分钟、5分钟、15 分钟内的平均值，数值越小意味着负载越低）。</strong><br /></span>
+    <span class="md_line">　　<strong>第2 行：进程总数、运行中的进程数、睡眠中的进程数、停止的进程数、僵死的进程数。</strong><br /></span>
+    <span class="md_line">　　<strong>第3 行：用户占用资源百分比、系统内核占用资源百分比、改变过优先级的进程资源百分比、空闲的资源百分比等。</strong><br /></span>
+    <span class="md_line">　　<strong>第4 行：物理内存总量、内存使用量、内存空闲量、作为内核缓存的内存量。</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>第5 行：虚拟内存总量、虚拟内存使用量、虚拟内存空闲量、已被提前加载的内存量。</strong></span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　第3行中的数据均为CPU数据并以百分比格式显示，例如<code>99.6%id</code>意味着有 99.6%的CPU处理器资源处于空闲。</span>
+</p>
+
+</blockquote>
+<h3 id="toc_8" class="h16">8.pidof 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>pidof</code> 命令用于查询某个指定服务进程的PID 值，格式为<code>pidof [参数] [服务名称]</code>。<br /></span>
+    <span class="md_line md_line_end">　　每个进程的进程号码值（PID）是唯一的，因此可以通过PID 来区分不同的进程。例如，可以使用如下命令来查询本机上<code>top</code>服务程序的PID：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# pidof top
+3517</code></pre>
+
+<!--block_code_end--><h3 id="toc_9" class="h16">9.kill 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>kill</code> 命令用于终止某个指定PID 的服务进程，格式为<code>kill [参数] [进程PID]</code>。<br /></span>
+    <span class="md_line md_line_end">　　接下来，我们使用<code>kill</code> 命令把上面用pidof 命令查询到的PID 所代表的进程终止掉，其命令如下所示。这种操作的效果等同于强制停止<code>top</code> 服务。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# kill 3517</code></pre>
+
+<!--block_code_end--><h3 id="toc_10" class="h16">10.killall 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>killall</code> 命令用于终止某个指定名称的服务所对应的全部进程，格式为：<code>killall [参数] [进<br /></span>
+    <span class="md_line">程名称]</code>。<br /></span>
+    <span class="md_line md_line_end">　　通常来讲，复杂软件的服务程序会有多个进程协同为用户提供服务，如果逐个去结束这些进程会比较麻烦，此时可以使用<code>killall</code> 命令来批量结束某个服务程序带有的全部进程。下面以<code>sshd</code> 服务程序为例，来结束其全部进程。</span>
+</p>
+
+
+<pre><code>[root@lynchj ~]# pidof sshd
+3457 3453 2704 2700 1695
+[root@lynchj ~]# killall sshd</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果我们在系统终端中执行一个命令后想立即停止它，可以同时按下<code>Ctrl + c</code>组合键（生产环境中比较常用的一个快捷键），这样将立即终止该命令的进程。或者，如果有些命令在执行时不断地在屏幕上输出信息，影响到后续命令的输入，则可 以在执行命令时在末尾添加上一个<code>&amp;</code>符号，这样命令将进入系统后台来执行。</span>
+</p>
+
+</blockquote>
+
+<hr>
+<h2 id="toc_11" class="h16">系统状态检测命令</h2>
+
+<hr>
+<h3 id="toc_12" class="h16">1.ifconfig 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>ifconfig</code> 命令用于获取网卡配置与网络状态等信息，格式为<code>ifconfig [网络设备] [参数]</code>。<br /></span>
+    <span class="md_line md_line_end">　　使用<code>ifconfig</code>命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就是网卡名称、inet 参数后面的IP 地址、ether 参数后面的网卡物理地址（又称为MAC 地址），以及RX、TX 的接收数据包与发送数据包的个数及累计流量：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ifconfig
+eno16777728: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.175  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::20c:29ff:fed4:9f4  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:0c:29:d4:09:f4  txqueuelen 1000  (Ethernet)
+        RX packets 18407  bytes 11388467 (10.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4151  bytes 372628 (363.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 6  bytes 560 (560.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6  bytes 560 (560.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></pre>
+
+<!--block_code_end--><h3 id="toc_13" class="h16">2.uname 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>uname</code> 命令用于查看系统内核与系统版本等信息，格式为<code>uname [-a]</code>。<br /></span>
+    <span class="md_line md_line_end">　　在使用<code>uname</code> 命令时，一般会固定搭配上<code>-a 参数</code>来完整地查看当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# uname -a
+Linux lynchj.com 3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　顺带一提，如果要查看当前系统版本的详细信息，则需要查看redhat-release 文件，其命令以及相应的结果如下：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# cat /etc/redhat-release
+Red Hat Enterprise Linux Server release 7.0 (Maipo)</code></pre>
+
+<!--block_code_end--><h3 id="toc_14" class="h16">3.uptime 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>uptime</code> 用于查看系统的负载信息，格式为<code>uptime</code>。<br /></span>
+    <span class="md_line md_line_end">　　<code>uptime</code> 命令真的很棒，它可以显示<code>当前系统时间</code>、<code>系统已运行时间</code>、<code>启用终端数量</code>以及<code>平均负载值</code>等信息。<code>平均负载值</code>指的是系统在最近<code>1 分钟</code>、<code>5 分钟</code>、<code>15 分钟</code>内的压力情况；负载值越低越好，尽量不要长期超过1，在生产环境中不要超过5。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# uptime
+15:06:43 up  1:17,  2 users,  load average: 0.00, 0.01, 0.05</code></pre>
+
+<!--block_code_end--><h3 id="toc_15" class="h16">4.free 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>free</code> 用于显示当前系统中内存的使用量信息，格式为<code>free [-h]</code>。<br /></span>
+    <span class="md_line md_line_end">　　为了保证Linux 系统不会因资源耗尽而突然宕机，运维人员需要时刻关注内存的使用量。在使用<code>free</code> 命令时，可以结合使用<code>-h 参数</code>以更人性化的方式输出当前内存的实时使用量信息。下表所示为执行<code>free -h</code> 命令之后的输出信息。需要注意的是，输出信息中的中文注释是自行添加的内容，实际输出时没有相应的参数解释。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# free -h</code></pre>
+
+<!--block_code_end-->
+<table>
+<thead>
+<tr>
+<th><code></code></th>
+<th>total</th>
+<th>used</th>
+<th>free</th>
+<th>shared</th>
+<th>buffers</th>
+<th>cached</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>内存总量</td>
+<td>已用量</td>
+<td>可用量</td>
+<td>进程共享的内存量</td>
+<td>磁盘缓存的内存量</td>
+<td>缓存的内存量</td>
+</tr>
+<tr>
+<td>Mem:</td>
+<td>1.9G</td>
+<td>924M</td>
+<td>1.0G</td>
+<td>9.8M</td>
+<td>884K</td>
+<td>317M</td>
+</tr>
+<tr>
+<td>-/+ buffers/cache:</td>
+<td></td>
+<td>605M</td>
+<td>1.4G</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Swap:</td>
+<td>2.0G</td>
+<td>0B</td>
+<td>2.0G</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_16" class="h16">5.who 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>who</code> 用于查看当前登入主机的用户终端信息，格式为<code>who [参数]</code>。<br /></span>
+    <span class="md_line md_line_end">　　这三个简单的字母可以快速显示出所有正在登录本机的用户的名称以及他们正在开启的终端信息。代码示例为：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# who
+root     :0           2018-05-14 13:50 (:0)
+root     pts/1        2018-05-14 13:52 (192.168.1.177)</code></pre>
+
+<!--block_code_end--><h3 id="toc_17" class="h16">6.last 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>last</code> 命令用于查看所有系统的登录记录，格式为<code>last [参数]</code>。<br /></span>
+    <span class="md_line md_line_end">　　使用<code>last</code> 命令可以查看本机的登录记录。但是，由于这些信息都是以日志文件的形式保存在系统中，因此黑客可以很容易地对内容进行篡改。千万不要单纯以该命令的输出信息而判断系统有无被恶意入侵！</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# last
+root     pts/2        192.168.1.177    Mon May 14 15:25   still logged in
+root     pts/0        192.168.1.177    Mon May 14 15:22   still logged in
+root     pts/0        192.168.1.177    Mon May 14 14:52 - 15:06  (00:14)
+root     pts/1        192.168.1.177    Mon May 14 13:52   still logged in
+root     pts/0        :0               Mon May 14 13:50 - 13:53  (00:02)
+root     :0           :0               Mon May 14 13:50   still logged in
+(unknown :0           :0               Mon May 14 13:49 - 13:50  (00:00)
+reboot   system boot  3.10.0-123.el7.x Mon May 14 21:49 - 15:25  (-6:-24)
+root     pts/3        :1               Mon May 14 11:08 - 13:48  (02:40)
+root     pts/2        :1               Mon May 14 11:07 - 11:08  (00:00)
+root     :1           :1               Mon May 14 11:07 - 13:48  (02:41)
+(unknown :1           :1               Mon May 14 11:06 - 11:07  (00:00)
+guoqings pts/1        192.168.158.1    Sat May 12 16:04 - 13:48 (1+21:44)
+guoqings pts/0        :0               Sat May 12 16:03 - 13:48 (1+21:45)
+guoqings :0           :0               Sat May 12 16:02 - 13:48 (1+21:46)
+(unknown :0           :0               Sat May 12 16:00 - 16:02  (00:01)
+reboot   system boot  3.10.0-123.el7.x Sun May 13 00:00 - 13:48 (1+13:48)
+reboot   system boot  3.10.0-123.el7.x Sat May 12 23:59 - 13:48 (1+13:49)
+guoqings pts/0        :0               Sat May 12 15:53 - 15:53  (00:00)
+guoqings pts/0        :0               Sat May 12 15:53 - 15:53  (00:00)
+guoqings :0           :0               Sat May 12 15:52 - 15:55  (00:02)
+(unknown :0           :0               Sat May 12 15:51 - 15:52  (00:01)
+reboot   system boot  3.10.0-123.el7.x Sat May 12 23:47 - 13:48 (1+14:01)
+
+wtmp begins Sat May 12 23:47:41 2018</code></pre>
+
+<!--block_code_end--><h3 id="toc_18" class="h16">7.history 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>history</code> 命令用于显示历史执行过的命令，格式为<code>history [-c]</code>。<br /></span>
+    <span class="md_line md_line_end">　　<code>history</code> 命令应该是作者最喜欢的命令。执行<code>history 命令</code>能显示出当前用户在本地计算机中执行过的<code>最近1000 条命令记录</code>。如果觉得1000 不够用，还可以自定义<code>/etc/profile</code> 文件中的<code>HISTSIZE 变量值</code>。在使用<code>history</code> 命令时，如果使用<code>-c 参数</code>则会清空所有的命令历史记录。还可以使用<code>!编码数字</code>的方式来重复执行某一次的命令。总之，history 命令有很多有趣的玩法等待您去开发。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# history
+    1  history
+[root@lynchj tmp]# !1
+history
+    1  history</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　历史命令会被保存到用户家目录中的<code>.bash_history</code> 文件中。Linux 系统中以点（.）开头的文件均代表隐藏文件，这些文件大多数为系统服务文件，可以用<code>cat</code> 命令查看其文件内容。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# cat /root/.bash_history
+man
+man man
+poweroff
+cd /
+echo "测试"
+echo $SHELL
+cd /usr/local/
+mkdir tmp
+cd tmp/
+echo "新建文件" &gt; text.txt
+ll
+vim text.txt
+echo fdsf &gt; text.txt
+vim text.txt
+echo fdsffjdklsfjl &gt;&gt; text.txt
+vim text.txt
+echo "追加内容" &gt;&gt; text.txt
+echo "测试"
+date
+date "+%Y-%m-%d %H:%M:%S"
+date -s "20180514 13:37:00"
+wget -C https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.exe
+wget -c https://notepad-plus-plus.org/repository/7.x/7.5.6/npp.7.5.6.Installer.exe
+ip addr
+top
+pidof sshd</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　要清空当前用户在本机上执行的Linux 命令历史记录信息，可执行如下命令：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# history -c</code></pre>
+
+<!--block_code_end--><h3 id="toc_19" class="h16">8.sosreport 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>sosreport</code>命令用于收集系统配置及架构信息并输出诊断文档，格式为<code>sosreport</code>。<br /></span>
+    <span class="md_line md_line_end">　　当Linux 系统出现故障需要联系技术支持人员时，大多数时候都要先使用这个命令来简单收集系统的运行状态和服务配置信息，以便让技术支持人员能够远程解决一些小问题，亦或让他们能提前了解某些复杂问题。如下所示：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# sosreport
+
+sosreport (version 3.0)
+
+This command will collect diagnostic and configuration information from
+this Red Hat Enterprise Linux system and installed applications.
+
+An archive containing the collected information will be generated in
+/var/tmp and may be provided to a Red Hat support representative.
+
+Any information provided to Red Hat will be treated in accordance with
+the published support policies at:
+
+  https://access.redhat.com/support/
+
+The generated archive may contain data considered sensitive and its
+content should be reviewed by the originating organization before being
+passed to any third party.
+
+No changes will be made to system configuration.
+
+Press ENTER to continue, or CTRL-C to quit. // 此处回车来确认收集信息
+
+Please enter your first initial and last name [lynchj.com]:此处回车来确认主机编号
+Please enter the case number that you are generating this report for:此处回车来确认主机编号
+
+ Running plugins. Please wait ...
+
+  Running 69/69: yum...
+Creating compressed archive...
+
+Your sosreport has been generated and saved in:
+  // 收集好的压缩文件
+  /var/tmp/sosreport-lynchj.com-20180514154217.tar.xz
+// 校验码
+The checksum is: f09ed896c1db2cf8381a1db4e699e362
+
+Please send this file to your support representative.</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h2 id="toc_20" class="h16">工作目录切换命令</h2>
+
+<hr>
+<h3 id="toc_21" class="h16">1.pwd 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>pwd</code> 命令用于显示用户当前所处的工作目录，格式为<code>pwd [选项]</code>。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# pwd
+/usr/local/tmp</code></pre>
+
+<!--block_code_end--><h3 id="toc_22" class="h16">2.cd 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>cd</code> 命令用于切换工作路径，格式为<code>cd [目录名称]</code>。<br /></span>
+    <span class="md_line md_line_end">　　这个命令应该是最常用的一个Linux 命令了。可以通过cd 命令迅速、灵活地切换到不同的工作目录。除了常见的切换目录方式，还可以使用<code>cd -</code>命令返回到上一次所处的目录，使用<code>cd ..</code>命令进入上级目录，以及使用<code>cd ~</code>命令切换到当前用户的家目录，亦或使用<code>cd ~username</code>切换到其他用户的家目录。例如，可以使用<code>cd 路径</code>的方式切换进/etc 目录中：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# cd /etc</code></pre>
+
+<!--block_code_end--><h3 id="toc_23" class="h16">3.ls 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>ls</code>命令用于显示目录中的文件信息，格式为<code>ls [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　所处的工作目录不同，当前工作目录下的文件肯定也不同。使用<code>ls</code> 命令的<code>-a</code>参数看到全部文件（包括隐藏文件），使用<code>-l</code>参数可以查看文件的属性、大小等详细信息。将这两个参数整合之后，再执行<code>ls</code> 命令即可查看当前目录中的所有文件并输出这些文件的属性信息：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ls -al
+total 4208
+drwxr-xr-x.  2 root root      51 May 14 15:56 .
+drwxr-xr-x. 13 root root    4096 May 14 11:24 ..
+-rw-r--r--.  1 root root 4299968 Mar 19 07:51 npp.7.5.6.Installer.exe
+-rw-r--r--.  1 root root       7 May 14 15:56 text.txt</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果想要查看目录属性信息，则需要额外添加一个<code>-d 参数</code>。例如，可使用如下命令查看<code>/etc</code> 目录的权限与属性信息：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ls -ld /etc
+drwxr-xr-x. 132 root root 8192 May 14 13:50 /etc</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h2 id="toc_24" class="h16">文本文件编辑命令</h2>
+
+<hr>
+<h3 id="toc_25" class="h16">1.cat 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>cat</code> 命令用于查看纯文本文件（内容较少的），格式为<code>cat [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　Linux 系统中有多个用于查看文本内容的命令，每个命令都有自己的特点，比如这个<code>cat</code>命令就是用于查看内容较少的纯文本文件的。<code>cat</code> 这个命令也很好记，因为<code>cat</code> 在英语中是<code>猫</code>的意思，小猫咪是不是给您一种娇小、可爱的感觉呢？如果在查看文本内容时还想顺便显示行号的话，不妨在cat 命令后面追加一个<code>-n</code> 参数：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# cat -n text.txt
+     1  哈哈</code></pre>
+
+<!--block_code_end--><h3 id="toc_26" class="h16">2.more 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>more</code> 命令用于查看纯文本文件（内容较多的），格式为<code>more [选项]文件</code>。<br /></span>
+    <span class="md_line md_line_end">　　如果需要阅读长篇小说或者非常长的配置文件，那么<code>小猫咪</code>可就真的不适合了。因为一旦使用<code>cat 命令</code>阅读长篇的文本内容，信息就会在屏幕上快速翻滚，导致自己还没有来得及看到，内容就已经翻篇了。因此对于长篇的文本内容，推荐使用<code>more 命令</code>来查看。<code>more 命令</code>会在最下面使用百分比的形式来提示您已经阅读了多少内容。您还可以使用空格键或回车键向下翻页：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# more text.txt
+哈哈
+1
+1
+23
+23
+
+234
+32
+43
+2
+5
+43
+5
+435
+4
+3
+6
+3
+5
+43
+5
+43
+5
+43
+5
+4
+3
+54
+3
+5
+43
+5
+23
+43
+24
+
+324
+32
+
+54
+35
+43
+
+435
+43
+543
+5
+435
+43
+5
+df
+sfd
+s
+fd
+a
+gfd
+fda
+f
+e
+w
+--More--(85%)</code></pre>
+
+<!--block_code_end--><h3 id="toc_27" class="h16">3.head 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>head</code> 命令用于查看纯文本文档的前N 行，格式为<code>head [选项] [文件]</code>。<br /></span>
+    <span class="md_line">　　在阅读文本内容时，谁也难以保证会按照从头到尾的顺序往下看完整个文件。如果只想<br /></span>
+    <span class="md_line md_line_end">查看文本中前20 行的内容，该怎么办呢？head 命令可以派上用场了：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# head -n 20 text.txt
+哈哈
+1
+1
+23
+23
+
+234
+32
+43
+2
+5
+43
+5
+435
+4
+3
+6
+3
+5
+43</code></pre>
+
+<!--block_code_end--><h3 id="toc_28" class="h16">4.tail 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>tail</code> 命令用于查看纯文本文档的后N 行或持续刷新内容，格式为<code>tail [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　我们可能还会遇到另外一种情况，比如需要查看文本内容的最后20 行，这时就需要用到<code>tail 命令</code>了。<code>tail 命令</code>的操作方法与<code>head 命令</code>非常相似，只需要执行<code>tail -n 20 文件名</code>命令就可以达到这样的效果。<code>tail 命令</code>最强悍的功能是可以持续刷新一个文件的内容，当想要实时查看最新日志文件时，这特别有用，此时的命令格式为<code>tail -f 文件名</code>：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# tail -f text.txt
+w
+
+fd
+afd
+saf
+ds
+af
+dsf
+ds
+f</code></pre>
+
+<!--block_code_end--><h3 id="toc_29" class="h16">5.wc 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>wc</code> 命令用于统计指定文本的行数、字数、字节数，格式为<code>wc [参数] 文本</code>。<br /></span>
+    <span class="md_line">　　这可不是一种公共设施，其实这两者毫无关联。Linux系统中的<code>wc 命令</code>用于统计文本的行数、字数、字节数等。如果为了方便自己记住这个命令的作用，也可以联想到上厕所时好无聊，无聊到数完了手中的如厕读物上有多少行字。<code>wc</code> 的参数以及相应的作用如下表所示：<br /></span>
+    <span class="md_line">| 参数 | 作用 |<br /></span>
+    <span class="md_line">| --- | --- |<br /></span>
+    <span class="md_line">| -l | 只显示行数 |<br /></span>
+    <span class="md_line">| -w | 只显示单词数 |<br /></span>
+    <span class="md_line md_line_end">| -c | 只显示字节数 |</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　在Linux 系统中，<code>/etc/passwd</code> 是用于保存系统账户信息的文件，要统计当前系统中有多少个<br /></span>
+    <span class="md_line md_line_end">用户，可以使用下面的命令来进行查询，是不是很神奇：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# wc -l /etc/passwd
+38 /etc/passwd</code></pre>
+
+<!--block_code_end--><h3 id="toc_30" class="h16">6.stat 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>stat</code> 命令用于查看文件的具体存储信息和时间等信息，格式为<code>stat 文件名称</code>。<br /></span>
+    <span class="md_line md_line_end">　　<code>stat 命令</code>可以用于查看文件的存储信息和时间等信息，命令<code>stat text.txt</code> 会显示出文件的三种时间状态：<code>Access</code>、<code>Modify</code>、<code>Change</code>。这三种时间的区别将在下面的touch命令中详细详解：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# stat text.txt
+  File: ‘text.txt’
+  Size: 187             Blocks: 8          IO Block: 4096   regular file
+Device: fd00h/64768d    Inode: 102795020   Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: unconfined_u:object_r:usr_t:s0
+Access: 2018-05-14 16:19:27.347660644 +0800
+Modify: 2018-05-14 16:19:26.138723458 +0800
+Change: 2018-05-14 16:19:26.139723388 +0800
+ Birth: -</code></pre>
+
+<!--block_code_end--><h3 id="toc_31" class="h16">7.cut 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>cut</code> 命令用于按“列”提取文本字符，格式为<code>cut [参数] 文本</code>。<br /></span>
+    <span class="md_line md_line_end">　　在Linux 系统中，如何准确地提取出最想要的数据，这也是我们应该重点学习的内容。一般而言，按基于“行”的方式来提取数据是比较简单的，只需要设置好要搜索的关键词即可。但是如果按列搜索，不仅要使用<code>-f 参数</code>来设置需要看的列数，还需要使用<code>-d 参数</code>来设置间隔符号。<code>/etc/passwd</code> 在保存用户数据信息时，用户信息的每一项值之间是采用冒号来间隔的，接下来我们使用下述命令尝试提取出<code>/etc/passwd</code> 文件中的用户名信息，即提取以冒号（：）为间隔符号的第一列内容：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# head -n 10 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+[root@lynchj tmp]# cut -d: -f1 /etc/passwd
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+operator
+games
+ftp
+nobody
+dbus
+polkitd
+unbound
+colord
+usbmuxd
+avahi
+avahi-autoipd
+libstoragemgmt
+saslauth
+qemu
+rpc
+rpcuser
+nfsnobody
+rtkit
+radvd
+ntp
+chrony
+abrt
+pulse
+gdm
+gnome-initial-setup
+postfix
+sshd
+tcpdump
+guoqingsong</code></pre>
+
+<!--block_code_end--><h3 id="toc_32" class="h16">8.diff 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>diff</code> 命令用于比较多个文本文件的差异，格式为<code>diff [参数] 文件</code>。<br /></span>
+    <span class="md_line md_line_end">　　在使用<code>diff 命令</code>时，不仅可以使用<code>--brief 参数</code>来确认两个文件是否不同，还可以使用<code>-c 参数</code>来详细比较出多个文件的差异之处，这绝对是判断文件是否被篡改的有力神器。例如，先使用<code>cat 命令</code>分别查看<code>diff_A.txt</code>和<code>diff_B.txt</code> 文件的内容，然后进行比较：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# cat diff_A.txt
+Welcome to linuxprobe.com
+Red Hat certified
+Free Linux Lessons
+Professional guidance
+Linux Course
+[root@linuxprobe ~]# cat diff_B.txt
+Welcome tooo linuxprobe.com
+Red Hat certified
+Free Linux LeSSonS
+////////.....////////
+Professional guidance
+Linux Course</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　接下来使用<code>diff --brief 命令</code>显示比较后的结果，判断文件是否相同：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# diff --brief diff_A.txt diff_B.txt
+Files diff_A.txt and diff_B.txt differ</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　最后使用带有<code>-c 参数</code>的<code>diff 命令</code>来描述文件内容具体的不同：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# diff -c diff_A.txt diff_B.txt
+*** diff_A.txt 2017-08-30 18:07:45.230864626 +0800
+--- diff_B.txt 2017-08-30 18:08:52.203860389 +0800
+***************
+*** 1,5 ****
+! Welcome to linuxprobe.com
+Red Hat certified
+! Free Linux Lessons
+Professional guidance
+Linux Course
+--- 1,7 ----
+! Welcome tooo linuxprobe.com
+!
+Red Hat certified
+! Free Linux LeSSonS
+! ////////.....////////
+Professional guidance
+Linux Course</code></pre>
+
+<!--block_code_end--><h3 id="toc_33" class="h16">9.awk 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>awk</code> 命令是一种处理文本文件的语言，是一个强大的文本分析工具，格式为<code>awk [选项参数] &#39;script&#39; var=value file(s)</code>。<br /></span>
+    <span class="md_line md_line_end">　　结合管道符使用可以让我们快速的获取到想要的某一列（如<code>端口号</code>，<code>进程号</code>）数据。在文本文件的筛选过滤也有着强大的处理功能。</span>
+</p>
+
+<h5 id="toc_34" class="h16">常见的使用：</h5>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>log.txt</code>测试文本：</span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# vim log.txt
+2 this is a test
+3 Are you like awk
+This's a test
+10 There are orange,apple,mongo</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>用法一：</strong></span>
+</p>
+
+
+<pre><code>awk '{[pattern] action}' {filenames}   # 行匹配语句 awk '' 只能用单引号</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>实例：</strong></span>
+</p>
+
+
+<pre><code># 每行按空格或TAB分割，输出文本中的1、4项
+[root@localhost tmp]# awk '{print $1,$4}' log.txt
+2 a
+3 like
+This's
+10 orange,apple,mongo
+# 格式化输出
+[root@localhost tmp]# awk '{printf "%-8s %-10s\n",$1,$4}' log.txt
+2        a
+3        like
+This's
+10       orange,apple,mongo</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>用法二：</strong></span>
+</p>
+
+
+<pre><code>awk -v  # 设置变量</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>实例：</strong></span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# awk -va=1 '{print $1,$1+a}' log.txt
+2 3
+3 4
+This's 1
+10 11
+[root@localhost tmp]# awk -va=1 -vb=s '{print $1,$1+a,$1b}' log.txt
+2 3 2s
+3 4 3s
+This's 1 This'ss
+10 11 10s</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>用法三：</strong></span>
+</p>
+
+
+<pre><code>awk -f {awk脚本} {文件名}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>实例：</strong></span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# vim cal.awk
+{print $1,$4}
+[root@localhost tmp]# awk -f cal.awk log.txt
+2 a
+3 like
+This's
+10 orange,apple,mongo</code></pre>
+
+<!--block_code_end--><h5 id="toc_35" class="h16">运算符</h5>
+
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>= += -= *= /= %= ^= **=</code></td>
+<td>赋值</td>
+</tr>
+<tr>
+<td><code>?:</code></td>
+<td>C条件表达式</td>
+</tr>
+<tr>
+<td><code>\|\|</code></td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td><code>~ ~!</code></td>
+<td>匹配正则表达式和不匹配正则表达式</td>
+</tr>
+<tr>
+<td><code>&lt; &lt;= &gt; &gt;= != ==</code></td>
+<td>关系运算符</td>
+</tr>
+<tr>
+<td><code>空格</code></td>
+<td>连接</td>
+</tr>
+<tr>
+<td><code>+ -</code></td>
+<td>加，减</td>
+</tr>
+<tr>
+<td><code>* / %</code></td>
+<td>乘，除与求余</td>
+</tr>
+<tr>
+<td><code>+ - !</code></td>
+<td>一元加，减和逻辑非</td>
+</tr>
+<tr>
+<td><code>^ ***</code></td>
+<td>求幂</td>
+</tr>
+<tr>
+<td><code>++ --</code></td>
+<td>增加或减少，作为前缀或后缀</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>字段引用</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>数组成员</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>过滤第一列大于2的行：</strong></span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# awk '$1&gt;2' log.txt
+3 Are you like awk
+This's a test
+10 There are orange,apple,mongo</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>过滤第一列等于2的行：</strong></span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# awk '$1==2 {print $1,$4}' log.txt
+2 a</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<strong>过滤第一列大于2并且第二列等于<code>Are</code>的行：</strong></span>
+</p>
+
+
+<pre><code>[root@localhost tmp]# awk '$1&gt;2 &amp;&amp; $2=="Are" {print $1,$4}' log.txt
+3 like</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h2 id="toc_36" class="h16">文件目录管理命令</h2>
+
+<hr>
+<h3 id="toc_37" class="h16">1.touch 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>touch</code> 命令用于创建空白文件或设置文件的时间，格式为<code>touch [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　在创建空白的文本文件方面，这个<code>touch 命令</code>相当简捷，简捷到没有必要铺开去讲。比如，<code>touch text.txt</code> 命令可以创建出一个名为<code>text.txt</code> 的空白文本文件。对<code>touch 命令</code>来讲，有难度的操作主要是体现在设置文件内容的修改时间（mtime）、文件权限或属性的更改时间（ctime）与文件的读取时间（atime）上面。touch 命令的参数及其作用如下表所示：</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-a</td>
+<td>仅修改“读取时间”（atime）</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>仅修改“修改时间”（mtime）</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>同时修改atime 与mtime</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　接下来，我们先使用<code>ls 命令</code>查看一个文件的修改时间，然后修改这个文件，最后再通过<code>touch 命令</code>把修改后的文件时间设置成修改之前的时间（很多黑客就是这样做的呢）：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ls -l
+total 4204
+-rw-r--r--. 1 root root 4299968 Mar 19 07:51 npp.7.5.6.Installer.exe
+-rw-r--r--. 1 root root     196 May 14 16:19 text.txt
+[root@lynchj tmp]# vim text.txt
+[root@lynchj tmp]# ls -l
+total 4204
+-rw-r--r--. 1 root root 4299968 Mar 19 07:51 npp.7.5.6.Installer.exe
+-rw-r--r--. 1 root root     204 May 14 16:49 text.txt
+[root@lynchj tmp]# touch -d "2018-05-14 16:19" text.txt
+[root@lynchj tmp]# ls -l
+total 4204
+-rw-r--r--. 1 root root 4299968 Mar 19 07:51 npp.7.5.6.Installer.exe
+-rw-r--r--. 1 root root     204 May 14 16:19 text.txt</code></pre>
+
+<!--block_code_end--><h3 id="toc_38" class="h16">2.mkdir 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>mkdir</code> 命令用于创建空白的目录，格式为<code>mkdir [选项] 目录</code>。<br /></span>
+    <span class="md_line">　　在Linux 系统中，文件夹是最常见的文件类型之一。除了能创建单个空白目录外，<code>mkdir<br /></span>
+    <span class="md_line md_line_end">命令</code>还可以结合<code>-p 参数</code>来递归创建出具有嵌套叠层关系的文件目录。</span>
+</p>
+
+<h3 id="toc_39" class="h16">3.cp 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>cp 命令</code>用于复制文件或目录，格式为<code>cp [选项] 源文件 目标文件</code>。<br /></span>
+    <span class="md_line">　　大家对文件复制操作应该不陌生，在Linux 系统中，复制操作具体分为3 种情况：<br /></span>
+    <span class="md_line">　　<strong>如果目标文件是目录，则会把源文件复制到该目录中；</strong><br /></span>
+    <span class="md_line">　　<strong>如果目标文件也是普通文件，则会询问是否要覆盖它；</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>如果目标文件不存在，则执行正常的复制操作；</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>cp 命令</code>的参数及其作用如下表所示：</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-p</td>
+<td>保留原始文件的属性</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>若对象为<code>链接文件</code>，则保留该<code>链接文件</code>的属性</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归持续复制（用于目录）</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>若目标文件存在则询问是否覆盖</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>相当于-pdr（p、d、r 为上述参数）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_40" class="h16">4.mv 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>mv 命令</code>用于剪切文件或将文件重命名，格式为<code>mv [选项] 源文件 [目标路径|目标文件名]</code>。<br /></span>
+    <span class="md_line md_line_end">　　剪切操作不同于复制操作，因为它会默认把源文件删除掉，只保留剪切后的文件。如果在同一个目录中对一个文件进行剪切操作，其实也就是对其进行重命名。</span>
+</p>
+
+<h3 id="toc_41" class="h16">5.rm 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>rm 命令</code>用于删除文件或目录，格式为<code>rm [选项] 文件</code>。<br /></span>
+    <span class="md_line md_line_end">　　在Linux 系统中删除文件时，系统会默认向您询问是否要执行删除操作，如果不想总是看到这种反复的确认信息，可在<code>rm 命令</code>后跟上<code>-f 参数</code>来强制删除。另外，想要删除一个目录，需要在<code>rm 命令</code>后面一个<code>-r 参数</code>才可以，否则删除不掉。</span>
+</p>
+
+<h3 id="toc_42" class="h16">6.file 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>file</code> 命令用于查看文件的类型，格式为<code>file 文件名</code>。<br /></span>
+    <span class="md_line md_line_end">　　在 Linux 系统中，由于文本、目录、设备等所有这些一切都统称为文件，而我们又不能单凭后缀就知道具体的文件类型，这时就需要使用 file 命令来查看文件类型了。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# file text.txt
+text.txt: UTF-8 Unicode text
+[root@lynchj tmp]# file /dev/sda
+/dev/sda: block special</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h2 id="toc_43" class="h16">打包压缩与搜索命令</h2>
+
+<hr>
+<h3 id="toc_44" class="h16">1.tar 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>tar</code> 命令用于对文件进行打包压缩或解压，格式为<code>tar [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　在 Linux 系统中，常见的文件格式比较多，其中主要使用的是<code>.tar</code> 或<code>.tar.gz</code> 或<code>.tar.bz2</code> 格式，我们不用担心格式太多而记不住，其实这些格式大部分都是由 tar 命令来生成的。下面列举一下常用命令参数：</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-c</td>
+<td>创建压缩文件</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>解开压缩文件</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>查看压缩包内有哪些文件</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>用Gzip 压缩或解压</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>用bzip2 压缩或解压</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示压缩或解压的过程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>目标文件名</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>保留原始的权限与属性</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>使用绝对路径来压缩</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>指定解压到的目录</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　首先，<code>-c 参数</code>用于创建压缩文件，<code>-x 参数</code>用于解压文件，因此这两个参数不能同时使用。其次，<code>-z 参数</code>指定使用Gzip 格式来压缩或解压文件，<code>-j 参数</code>指定使用bzip2 格式来压缩或解压文件。用户使用时则是根据文件的后缀来决定应使用何种格式参数进行解压。在执行某些压缩或解压操作时，可能需要花费数个小时，如果屏幕一直没有输出，您一方面不好判断打包的进度情况，另一方面也会怀疑电脑死机了，因此非常推荐使用<code>-v 参数</code>向用户不断显示压缩或解压的过程。<code>-C 参数</code>用于指定要解压到哪个指定的目录。<code>-f 参数</code>特别重要，它必须放到参数的最后一位，代表要压缩或解压的软件包名称。一般使用<code>tar -czvf 压缩包名称.tar.gz 要打包的目录</code>命令把指定的文件进行打包压缩；相应的解压命令为<code>tar -xzvf 压缩包名称.tar.gz</code>。下面我们来逐个演示下打包压缩与解压的操作。先使用<code>tar 命令</code>把<code>/etc</code> 目录通过<code>gzip 格式</code>进行打包压缩，并把文件命名为<code>etc.tar.gz</code>：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# tar -czvf etc.tar.gz /etc
+tar: Removing leading `/' from member names
+/etc/
+/etc/fstab
+/etc/crypttab
+/etc/mtab
+/etc/fonts/
+/etc/fonts/conf.d/
+/etc/fonts/conf.d/65-0-madan.conf
+/etc/fonts/conf.d/59-liberation-sans.conf
+/etc/fonts/conf.d/90-ttf-arphic-uming-embolden.conf
+/etc/fonts/conf.d/59-liberation-mono.conf
+/etc/fonts/conf.d/66-sil-nuosu.conf
+………………省略部分压缩过程信息………………</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">　　接下来将打包后的压缩包文件指定解压到/root/etc 目录中（先使用mkdir 命令来创建<br /></span>
+    <span class="md_line md_line_end">/root/etc 目录）：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# mkdir /root/etc
+[root@lynchj tmp]# tar -xzvf etc.tar.gz -C /root/etc/
+etc/
+etc/fstab
+etc/crypttab
+etc/mtab
+etc/fonts/
+etc/fonts/conf.d/
+etc/fonts/conf.d/65-0-madan.conf
+etc/fonts/conf.d/59-liberation-sans.conf
+etc/fonts/conf.d/90-ttf-arphic-uming-embolden.conf
+etc/fonts/conf.d/59-liberation-mono.conf
+etc/fonts/conf.d/66-sil-nuosu.conf
+etc/fonts/conf.d/65-1-vlgothic-gothic.conf
+etc/fonts/conf.d/65-0-lohit-bengali.conf
+etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf
+………………省略部分解压过程信息………………</code></pre>
+
+<!--block_code_end--><h3 id="toc_45" class="h16">2.grep 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>grep</code> 命令用于在文本中执行关键词搜索，并显示匹配的结果，格式为<code>grep [选项] [文件]</code>。<br /></span>
+    <span class="md_line md_line_end">　　<code>grep 命令</code>的参数及其作用如下表所示。</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>命令</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-b</td>
+<td>将可执行文件（binary）当作文本文件（text）来搜索</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>仅显示找到的行数</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>反向选择—仅列出没有“关键词”的行</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>grep 命令</code>是用途最广泛的文本搜索匹配工具，虽然有很多参数，但是大多数基本上都用不到。我们在这里只讲两个最最常用的参数：<code>-n 参数</code>用来显示搜索到信息的行号；<code>-v 参数</code>用于反选信息（即没有包含关键词的所有信息行）。这两个参数几乎能完成您日后80%的工作需要，至于其他上百个参数，即使以后在工作期间遇到了，再使用<code>man grep 命令</code>查询也来得及。在Linux 系统中，<code>/etc/passwd</code> 文件是保存着所有的用户信息，而一旦用户的登录终端被设置成<code>/sbin/nologin</code>，则不再允许登录系统，因此可以使用<code>grep 命令</code>来查找出当前系统中不允许登录系统的所有用户信息：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# grep /sbin/nologin /etc/passwd
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+………………省略部分输出过程信息………………</code></pre>
+
+<!--block_code_end--><h3 id="toc_46" class="h16">3.find 命令</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<code>find</code> 命令用于按照指定条件来查找文件，格式为<code>find [查找路径] 寻找条件 寻找关键字</code>。<br /></span>
+    <span class="md_line md_line_end">　　大家都知道<code>Linux 系统中的一切都是文件</code>，接下来就要见证这句话的分量了。在Linux 系统中，搜索工作一般都是通过<code>find 命令</code>来完成的，它可以使用不同的文件特性作为寻找条件（如文件名、大小、修改时间、权限等信息），一旦匹配成功则默认将信息显示到屏幕上。<code>find 命令</code>的参数以及作用下表所示。</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-name</td>
+<td>匹配名称</td>
+</tr>
+<tr>
+<td>-perm</td>
+<td>匹配权限（mode 为完全匹配，-mode 为包含即可）</td>
+</tr>
+<tr>
+<td>-user</td>
+<td>匹配所有者</td>
+</tr>
+<tr>
+<td>-group</td>
+<td>匹配所有组</td>
+</tr>
+<tr>
+<td>-mtime -n +n</td>
+<td>匹配修改内容的时间（-n 指n 天以内，+n 指n 天以前）</td>
+</tr>
+<tr>
+<td>-atime -n +n</td>
+<td>匹配访问文件的时间（-n 指n 天以内，+n 指n 天以前）</td>
+</tr>
+<tr>
+<td>-ctime -n +n</td>
+<td>匹配修改文件权限的时间（-n 指n 天以内，+n 指n 天以前）</td>
+</tr>
+<tr>
+<td>-nouser</td>
+<td>匹配无所有者的文件</td>
+</tr>
+<tr>
+<td>-nogroup</td>
+<td>匹配无所有组的文件</td>
+</tr>
+<tr>
+<td>-newer f1 !f2</td>
+<td>匹配比文件f1 新但比f2 旧的文件</td>
+</tr>
+<tr>
+<td><code>--type b/d/c/p/l/f</code></td>
+<td>匹配文件类型（后面的字母参数依次表示块设备、目录、字符设备、管道、链接文件、文本文件）</td>
+</tr>
+<tr>
+<td>-size</td>
+<td>匹配文件的大小（+50KB 为查找超过50KB 的文件，而-50KB 为查找小于50KB 的文件）</td>
+</tr>
+<tr>
+<td>-prune</td>
+<td>忽略某个目录</td>
+</tr>
+<tr>
+<td>-exec …… {}\;</td>
+<td>后面可跟用于进一步处理搜索结果的命令（下文会有演示）</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　这里需要重点讲解一下<code>-exec 参数</code>重要的作用。这个参数用于把<code>find 命令</code>搜索到的结果交由紧随其后的命令作进一步处理，它十分类似于管道符技术，并且由于<code>find 命令</code>对参数的特殊要求，因此虽然<code>exec</code> 是长格式形式，但依然只需要一个减号（-）。<br /></span>
+    <span class="md_line md_line_end">　　根据文件系统层次标准（Filesystem Hierarchy Standard）协议，Linux 系统中的配置文件会保存到<code>/etc 目录</code>中。如果要想获取到该目录中所有以<code>host 开头</code>的文件列表，可以执行如下命令：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# find /etc -name "host*" -print
+/etc/avahi/hosts
+/etc/host.conf
+/etc/hosts
+/etc/hosts.allow
+/etc/hosts.deny
+/etc/selinux/targeted/modules/active/modules/hostname.pp
+/etc/hostname</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果要在整个系统中搜索权限中包括<code>SUID 权限</code>的所有文件，只需使用<code>-4000</code> 即可：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# find / -perm -4000
+find: ‘/proc/19864/task/19864/fd/6’: No such file or directory
+find: ‘/proc/19864/task/19864/fdinfo/6’: No such file or directory
+find: ‘/proc/19864/fd/6’: No such file or directory
+find: ‘/proc/19864/fdinfo/6’: No such file or directory
+/usr/bin/fusermount
+/usr/bin/su
+/usr/bin/chage
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/mount
+/usr/bin/umount
+/usr/bin/passwd
+/usr/bin/pkexec
+/usr/bin/crontab
+/usr/bin/Xorg
+/usr/bin/staprun
+/usr/bin/at
+/usr/bin/sudo
+/usr/sbin/pam_timestamp_check
+/usr/sbin/unix_chkpwd
+/usr/sbin/userhelper
+/usr/sbin/usernetctl
+/usr/sbin/mount.nfs
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib64/dbus-1/dbus-daemon-launch-helper
+/usr/libexec/spice-gtk-x86_64/spice-client-glib-usb-acl-helper
+/usr/libexec/pulse/proximity-helper
+/usr/libexec/qemu-bridge-helper
+/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　进阶实验：在整个文件系统中找出<code>SUID 权限</code>的文件并复制到 <code>/user/local/tmp</code> 目录。</span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　该实验的重点是<code>-exec {} \;</code> 参数，其中的<code>{}</code>表示find命令搜索出的每一个文件，并且命令的结尾必须是<code>\;</code>，完成该实验的具体命令如下：</span>
+</p>
+
+
+<pre><code>[root@linuxprobe 〜]# find / -perm -4000 -exec cp -a {} /usr/local/tmp/ \;</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_2">
+<p class="md_block">
+    <span class="md_line md_line_start">参考资料：《Linux就该这么学》<br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
+</p>
+
+</blockquote>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

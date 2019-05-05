@@ -1,0 +1,3008 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galera Cluster For MySQL</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            Galera Cluster For MySQL
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <p class="md_block">
+
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">简介</a>
+<ul>
+<li>
+<a href="#toc_1">何谓Galera Cluster</a>
+</li>
+<li>
+<a href="#toc_2">为什么需要 Galera Cluster</a>
+</li>
+<li>
+<a href="#toc_3">Galera Cluster 如何解决上述问题</a>
+</li>
+<li>
+<a href="#toc_4">注意点</a>
+</li>
+<li>
+<a href="#toc_5">有很多坑?</a>
+</li>
+<li>
+<a href="#toc_6">适用场景</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">集群搭建</a>
+<ul>
+<li>
+<a href="#toc_8">搭建环境</a>
+</li>
+<li>
+<a href="#toc_9">安装依赖包</a>
+</li>
+<li>
+<a href="#toc_10">安装 Galera Cluster For MySQL</a>
+<ul>
+<li>
+<a href="#toc_11">先去官网下载</a>
+</li>
+<li>
+<a href="#toc_12">下载到服务器中</a>
+</li>
+<li>
+<a href="#toc_13">安装</a>
+</li>
+<li>
+<a href="#toc_14">配置</a>
+</li>
+<li>
+<a href="#toc_15">初始化数据库</a>
+</li>
+<li>
+<a href="#toc_16">初次启动数据库</a>
+</li>
+<li>
+<a href="#toc_17">修改密码</a>
+</li>
+<li>
+<a href="#toc_18">查看集群状态</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+    <span class="md_line md_line_end">　　上一次纪录了一篇《<a class="md_compiled" href="https://blog.csdn.net/wo18237095579/article/details/80944800">MySQL 主主复制 高可用负载均衡集群</a>》，这个看似不会有问题的主主复制其实存在了两个大问题</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　1、事务不统一，造成数据的不统一。<br /></span>
+    <span class="md_line md_line_end">　　多线程环境下，如果线程之间分负载到不同的后端数据库中，那么事务就是不统一的，都能获取锁，都能<code>FOR UPDATE</code>，都可以提交。然后再通过主从复制交换数据，其实有可能已经是垃圾数据。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　2、主从复制延迟问题。<br /></span>
+    <span class="md_line md_line_end">　　由于主从复制是一个异步操作，也就是说当一条线程在A数据库中操作完数据库并提交事务之后，这个时候数据可能还没有同步到B数据库，但是第二条线程就已经连接上B数据库进行操作了。这样就尝试了脏数据。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这次记录下使用 <code>Galera Cluster</code> 的一些笔记，<code>Galera Cluster</code> 在使用过程中就可以很好的避免上述问题。</span>
+</p>
+
+<h1 id="toc_0" class="h16 md_first_h">简介</h1>
+<h2 id="toc_1" class="h16">何谓Galera Cluster</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　就是集成了 <code>Galera插件</code> 的MySQL集群，是一种新型的，数据不共享的，高度冗余的高可用方案，目前 <code>Galera Cluster</code>有两个版本，分别是 <code>Percona Xtradb Cluster</code>及 <code>MariaDB Cluster</code>，都是基于 Galera 的，所以这里都统称为 Galera Cluster 了，因为 Galera 本身是具有多主特性的，所以 Galera Cluster 也就是 <code>multi-master</code> 的集群架构，如图1所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/b497802cb5f542f0b6b384e2ad5fa583.png" alt="架构图" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/e0f17d9813f8413ebe346b6352e33a25.png" alt="架构图" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　上图中有三个实例，组成了一个集群，而这三个节点与普通的主从架构不同，它们都可以作为主节点，三个节点是对等的，这种一般称为 <code>multi-master</code> 架构，当有客户端要写入或者读取数据时，随便连接哪个实例都是一样的，读到的数据是相同的，写入某一个节点之后，集群自己会将新数据同步到其它节点上面，这种架构不共享任何数据，是一种<code>高冗余架构</code>。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　一般的使用方法是：在这个集群上面，再搭建一个中间层，这个中间层的功能包括建立连接、管理连接池，负责使三个实例的负载基本平衡，负责在客户端与实例的连接断开之后重连，也可以负责读写分离（在机器性能不同的情况下可以做这样的优化）等等，使用这个中间层之后，由于这三个实例的架构在客户端方面是透明的，客户端只需要指定这个集群的数据源地址，连接到中间层即可，中间层会负责客户端与服务器实例连接的传递工作，由于这个架构支持多点写入，所以完全避免了主从复制经常出现的数据不一致的问题，从而可以做到主从读写切换的高度优雅，在不影响用户的情况下，离线维护等工作，MySQL 的高可用，从此开始，非常完美。</span>
+</p>
+
+<h2 id="toc_2" class="h16">为什么需要 Galera Cluster</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　MySQL 在互联网时代，可谓是深受世人瞩目的。给社会创造了无限价值，随之而来的是，在 MySQL 基础之上，产生了形形色色的使用方法、架构及周边产品。在这方面，已经有很多成熟的被人熟知的产品，比如 MHA、MMM 等传统组织架构，而这些架构是每个需要数据库高可用服务方案的入门必备选型。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　不幸的是，传统架构的使用，一直被人们所诟病，因为 MySQL 的主从模式，天生的不能完全保证数据一致，很多大公司会花很大人力物力去解决这个问题，而效果却一般，可以说，只能是通过牺牲性能，来获得数据一致性，但也只是在降低数据不一致性的可能性而已。所以现在就急需一种新型架构，从根本上解决这样的问题，天生的摆脱掉主从复制模式这样的<code>美中不足</code>之处了。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　幸运的是，MySQL 的福音来了，Galera Cluster 就是我们需要的——从此变得完美的架构。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　相比传统的主从复制架构，Galera Cluster 解决的最核心问题是，在三个实例（节点）之间，它们的关系是对等的，<code>multi-master</code> 架构的，在多节点同时写入的时候，能够保证整个集群数据的一致性，完整性与正确性。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在传统 MySQL 的使用过程中，也不难实现一种 <code>multi-master</code> 架构，但是一般需要上层应用来配合，比如先要约定每个表必须要有自增列，并且如果是2个节点的情况下，一个节点只能写偶数的值，而另一个节点只能写奇数的值，同时2个节点之间互相做复制，因为2个节点写入的东西不同，所以复制不会冲突，在这种约定之下，可以基本实现多master的架构，也可以保证数据的完整性与一致性。但这种方式使用起来还是有限制，同时还会出现复制延迟，并且不具有扩展性，不是真正意义上的集群。</span>
+</p>
+
+<h2 id="toc_3" class="h16">Galera Cluster 如何解决上述问题</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　现在已经知道，Galera Cluster 是 MySQL 封装了具有高一致性，支持多点写入的同步通信模块 Galera 而做的，它是建立在 MySQL 同步基础之上的，使用 Galera Cluster 时，应用程序可以直接读、写某个节点的最新数据，并且可以在不影响应用程序读写的情况下，下线某个节点，因为支持多点写入，使得 <code>Failover</code> 变得非常简单。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　所有的 Galera Cluster，都是对 Galera 所提供的接口 API 做了封装，这些 API 为上层提供了丰富的状态信息及回调函数，通过这些回调函数，做到了真正的多主集群，多点写入及同步复制，这些 API 被称作是 Write-Set Replication API，简称为 <code>wsrep API</code>。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　通过这些 API，Galera Cluster 提供了基于验证的复制，是一种乐观的同步复制机制，一个将要被复制的事务（称为写集），不仅包括被修改的数据库行，还包括了这个事务产生的所有<code>Binlog</code>，每一个节点在复制事务时，都会拿这些写集与正在 APPLY 队列的写集做比对，如果没有冲突的话，这个事务就可以继续提交，或者是 APPLY，这个时候，这个事务就被认为是提交了，然后在数据库层面，还需要继续做事务上的提交操作。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这种方式的复制，也被称为是<code>虚拟同步复制</code>，实际上是一种逻辑上的同步，因为每个节点的写入和提交操作还是独立的，更准确的说是<code>异步</code>的，Galera Cluster 是建立在一种乐观复制的基础上的，假设集群中的每个节点都是同步的，那么加上在写入时，都会做验证，那么理论上是不会出现不一致的，当然也不能这么乐观，如果出现不一致了，比如主库（相对）插入成功，而从库则出现主键冲突，那说明此时数据库已经不一致，这种时候 Galera Cluster 采取的方式是将出现不一致数据的节点踢出集群，其实是自己 shutdown 了。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　而通过使用 Galera，它在里面通过判断键值的冲突方式实现了真正意义上的 multi-master，Galera Cluster 在 MySQL 生态中，在高可用方面实现了非常重要的提升，目前 Galera Cluster 具备的功能包括如下几个方面：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>多主架构：</strong>真正的多点读写的集群，在任何时候读写数据，都是最新的。
+</span></li>
+<li class="md_li"><span><strong>同步复制：</strong>集群不同节点之间数据同步，没有延迟，在数据库挂掉之后，数据不会丢失。
+</span></li>
+<li class="md_li"><span><strong>并发复制：</strong>从节点在 APPLY 数据时，支持并行执行，有更好的性能表现。
+</span></li>
+<li class="md_li"><span><strong>故障切换：</strong>在出现数据库故障时，因为支持多点写入，切的非常容易。
+</span></li>
+<li class="md_li"><span><strong>热插拔：</strong>在服务期间，如果数据库挂了，只要监控程序发现的够快，不可服务时间就会非常少。在节点故障期间，节点本身对集群的影响非常小。
+</span></li>
+<li class="md_li"><span><strong>自动节点克隆：</strong>在新增节点，或者停机维护时，增量数据或者基础数据不需要人工手动备份提供，Galera Cluster 会自动拉取在线节点数据，最终集群会变为一致。
+</span></li>
+<li class="md_li"><span><strong>对应用透明：</strong>集群的维护，对应用程序是透明的，几乎感觉不到。 以上几点，足以说明 Galera Cluster 是一个既稳健，又在数据一致性、完整性及高性能方面有出色表现的高可用解决方案。
+</span></li>
+</ul>
+<h2 id="toc_4" class="h16">注意点</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在运维过程中，有些技术特点还是需要注意的，这样才能做到知此知彼，百战百胜，因为现在 MySQL 主从结构的集群已经都是被大家所熟知的了，而 Galera Cluster 是一个新的技术，是一个在不断成熟的技术，所以很多想了解这个技术的同学，能够得到的资料很少，除了官方的手册之外，基本没有一些讲得深入的，用来传道授业解惑的运维资料，这无疑为很多同学设置了不低的门槛，最终有很多人因为一些特性，导致最终放弃了 Galera Cluster 的选择。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　目前熟知的一些特性，或者在运维中需要注意的一些特性，有以下几个方面：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><strong>Galera Cluster 写集内容：</strong> Galera Cluster 复制的方式，还是基于 Binlog 的，这个问题，也是一直被人纠结的，因为目前 Percona Xtradb Cluster 所实现的版本中，在将 Binlog 关掉之后，还是可以使用的，这误导了很多人，其实关掉之后，只是不落地了，表象上看上去是没有使用 Binlog 了，实际上在内部还是悄悄的打开了的。除此之外，写集中还包括了事务影响的所有行的主键，所有主键组成了写集的 KEY，而 Binlog 组成了写集的 DATA，这样一个 KEY-DATA 就是写集。KEY 和 DATA 分别具有不同的作用的，KEY 是用来验证的，验证与其它事务没有冲突，而 DATA 是用来在验证通过之后，做 APPLY 的。</span>
+</p>
+
+</span></li>
+<li class="md_li"><span>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><strong>Galera Cluster 的并发控制：</strong>现在都已经知道，Galera Cluster 可以实现集群中，数据的高度一致性，并且在每个节点上，生成的 Binlog 顺序都是一样的，这与 Galera 内部，实现的并发控制机制是分不开的。所有的上层到下层的同步、复制、执行、提交都是通过并发控制机制来管理的。这样才能保证上层的逻辑性，下层数据的完整性等。</span>
+</p>
+
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/09e880ad0b004d8eade2a239a741163f.png" alt="Galera 原理图" title="" ></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>上图是从官方手册中截取的，从图中可以大概看出，从事务执行开始，到本地执行，再到写集发送，再到写集验证，再到写集提交的整个过程，以及从节点（相对）收到写集之后，所做的写集验证、写集 APPLY 及写集提交操作，通过对比这个图，可以很好的理解每一个阶段的意义及性能等，下面就每一个阶段以及其并发控制行为做一个简单的介绍：
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　a、<strong>本地执行：</strong>这个阶段，是事务执行的最初阶段，可以说，这个阶段的执行过程，与单点 MySQL 执行没什么区别，并发控制当然就是数据库的并发控制了，而不是 Galera Cluster 的并发控制了。<br /></span>
+    <span class="md_line">　　b、<strong>写集发送：</strong>在执行完之后，就到了提交阶段，提交之前首先将产生的写集广播出去，而为了保证全局数据的一致性，在写集发送时，需要串行，这个就属于 Galera Cluster 并发控制的一部分了。<br /></span>
+    <span class="md_line">　　c、<strong>写集验证：</strong>这个阶段，就是我们通常说的 Galera Cluster 的验证了，验证是将当前的事务，与本地写集验证缓存集来做验证，通过比对写集中被影响的数据库 KEYS，来发现有没有相同的，来确定是不是可以验证通过，那么这个过程，也是串行的。<br /></span>
+    <span class="md_line">　　d、<strong>写集提交：</strong>这个阶段，是一个事务执行时的最后一个阶段了，验证完成之后，就可以进入提交阶段了，因为些时已经执行完了的，而提交操作的并发控制，是可以通过参数来控制其行为的，即参数 <code>repl.commit_order</code>，如果设置为3，表示提交就是串行的了，而这也是推荐的（默认值）的一种设置，因为这样的结果是，集群中不同节点产生的 Binlog 是完全一样的，运维中带来了不少好处和方便。其它值的解释，以后有机会再做讲解。<br /></span>
+    <span class="md_line md_line_end">　　e、<strong>写集APPLY：</strong>这个阶段，与上面的几个在流程上不太一样，这个阶段是从节点做的事情，从节点只包括两个阶段，即写集验证和写集 APPLY，写集 APPLY 的并发控制，是与参数 <code>wsrep_slave_threads</code> 有关系的，本身在验证之后，确定了相互的依赖关系之后，如果确定没有关系的，就可以并行了，而并行度，就是参数 <code>wsrep_slave_threads</code> 的事情了。<code>wsrep_slave_threads</code> 可以参照参数 <code>wsrep_cert_deps_distance</code> 来设置。</span>
+</p>
+
+<h2 id="toc_5" class="h16">有很多坑?</h2>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　有很多同学，在使用过 Galera Cluster 之后，发现很多问题，最大的比如 DDL 的执行，大事务等，从而导致服务的不友好，这也是导致很多人放弃的原因。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><strong>DDL执行卡死传说：</strong>使用过的同学可能知道，在 Galera Cluster 中执行一个大的改表操作，会导致整个集群在一段时间内，是完全写入不了任何事务的，都卡死在那里，这个情况确实很严重，导致线上完全不可服务了，原因还是并发控制，因为提交操作设置为串行的，DDL 执行是一个提交的过程，那么串行执行改表，当然执行多久，就卡多久，直到改表执行完，其它事务也就可以继续操作了，这个问题现在没办法解决，但我们长期使用下来发现，小表可以这样直接操作，大一点或者更大的，都是通过 <code>osc（pt-online-schema-change）</code> 来做，这样就很好的避免了这个问题。</span>
+</p>
+
+</span></li>
+<li class="md_li"><span>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><strong>挡我者死：</strong>由于 Galera Cluster 在执行 DDL 时，是 <code>Total Ordered Isolation（wsrep_OSU_method=TOI）</code> 的，所以必须要保证每个节点都是同时执行的，当然对于不是 DDL 的，也是 <code>Total Order</code> 的，因为每一个事务都具有同一个 <code>GTID</code> 值，DDL 也不例外，而 DDL 涉及到的是表锁，<code>MDL</code> 锁（Meta Data Lock），只要在执行过程中，遇到了 MDL 锁的冲突，所有情况下，都是 DDL 优先，将所有的使用到这个对象的事务，统统杀死，不管是读事务，还是写事务，被杀的事务都会报出死锁的异常，所以这也是一个 Galera Cluster 中，关于 DDL 的闻名遐迩的坑。不过这个现在确实没有办法解决，也没办法避免，不过这个的影响还算可以接受，先可以忍忍。</span>
+</p>
+
+</span></li>
+<li class="md_li"><span>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><strong>不死之身：</strong>继上面的<code>挡我者死</code>，如果集群真的被一个 DDL 卡死了，导致整个集群都动不了了，所有的写请求都 Hang 住了，那么可能会有人想一个妙招，说赶紧杀死，直接在每个节点上面输入 <code>kill connection_id</code>，等等类似的操作，那么此时，很不愿意看到的信息报了出来：<code>You are not owner of thread connection_id</code>。此时可能有些同学要哭了，不过这种情况下，确实没有什么好的解决方法（其实这个时候，一个故障已经发生了，一年的 KPI 也许已经没有了，就看敢不敢下狠手了），要不就等 DDL 执行完成（所有这个数据库上面的业务都处于不可服务状态），要不就将数据库直接 Kill 掉，快速重启，赶紧恢复一个节点提交线上服务，然后再考虑集群其它节点的数据增量的同步等，这个坑非常大，也是在 Galera Cluster 中，最大的一个坑，需要非常小心，避免出现这样的问题。</span>
+</p>
+
+</span></li>
+</ul>
+<h2 id="toc_6" class="h16">适用场景</h2>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　现在对 Galera Cluster 已经有了足够了解，但这样的“完美”架构，在什么场景下才可以使用呢？或者说，哪种场景又不适合使用这样的架构呢？针对它的缺点，及优点，我们可以扬其长，避其短。可以通过下面几个方面，来了解其适用场景。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>数据强一致性：</strong>因为 Galera Cluster，可以保证数据强一致性的，所以它更适合应用于对数据一致性和完整性要求特别高的场景，比如交易，正是因为这个特性，去哪儿网才会成为使用 Galera Cluster 的第一大户。
+</span></li>
+<li class="md_li"><span><strong>多点写入：</strong>这里要强调多点写入的意思，不是要支持以多点写入的方式提供服务，更重要的是，因为有了多点写入，才会使得在 DBA 正常维护数据库集群的时候，才会不影响到业务，做到真正的无感知，因为只要是主从复制，就不能出现多点写入，从而导致了在切换时，必然要将老节点的连接断掉，然后齐刷刷的切到新节点，这是没办法避免的，而支持了多点写入，在切换时刻允许有短暂的多点写入，从而不会影响老的连接，只需要将新连接都路由到新节点即可。这个特性，对于交易型的业务而言，也是非常渴求的。
+</span></li>
+<li class="md_li"><span><strong>性能：</strong>Galera Cluster，能支持到强一致性，毫无疑问，也是以牺牲性能为代价，争取了数据一致性，但要问：”性能牺牲了，会不会导致性能太差，这样的架构根本不能满足需求呢？”这里只想说的是，这是一个权衡过程，有多少业务，QPS 大到 Galera Cluster 不能满足的？我想是不多的（当然也是有的，可以自行做一些测试），在追求非常高的极致性能情况下，也许单个的 Galera Cluster 集群是不能满足需求的，但毕竟是少数了，所以够用就好，Galera Cluster 必然是 MySQL 方案中的佼佼者。
+</span></li>
+</ul>
+<h1 id="toc_7" class="h16">集群搭建</h1>
+<h2 id="toc_8" class="h16">搭建环境</h2>
+
+<ul>
+<li class="md_li"><span>CentOS 7.4
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　192.168.117.142<br /></span>
+    <span class="md_line">　　192.168.117.145<br /></span>
+    <span class="md_line md_line_end">　　192.168.117.146</span>
+</p>
+
+<h2 id="toc_9" class="h16">安装依赖包</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　建议使用<a class="md_compiled" href="https://blog.csdn.net/csdn_kou/article/details/81096744">阿里云</a> yum 源</span>
+</p>
+
+
+<pre><code>yum -y install gcc gcc-c++ openssl openssl-devel lsof socat perl boost-devel rsync jemalloc libaio libaio-devel</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>jemalloc</code> 找不到的话安装一下数据源：rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</span>
+</p>
+
+</blockquote>
+<h2 id="toc_10" class="h16">安装 Galera Cluster For MySQL</h2>
+<h3 id="toc_11" class="h16">先去官网下载</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<a class="md_compiled" href="http://galeracluster.com/downloads/">下载地址</a>，全部下载下来。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/6b6b30ca1385416babfd4267336a7951.png" alt="下载步骤" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　还有 Galera 3 主从复制支持库，<a class="md_compiled" href="http://galeracluster.com/downloads/">下载地址</a></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/018f86885e1d49b2aa355f1c92b25bde.png" alt="下载步骤" title="" ></span>
+</p>
+
+<h3 id="toc_12" class="h16">下载到服务器中</h3>
+
+<pre><code>wget http://releases.galeracluster.com/galera-3/centos/7/x86_64/galera-3-25.3.23-2.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-client-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-common-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-devel-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-libs-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-libs-compat-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-server-5.7-5.7.21-25.14.el7.x86_64.rpm
+wget http://releases.galeracluster.com/mysql-wsrep-5.7/centos/7/x86_64/mysql-wsrep-test-5.7-5.7.21-25.14.el7.x86_64.rpm</code></pre>
+
+<!--block_code_end--><h3 id="toc_13" class="h16">安装</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　先关闭 SELinux 和 防火墙：<code>setenforce 0 &amp;&amp; systemctl stop firewalld</code></span>
+</p>
+
+
+<pre><code>rpm -ivh mysql-wsrep-common-5.7-5.7.21-25.14.el7.x86_64.rpm
+rpm -ivh mysql-wsrep-libs-5.7-5.7.21-25.14.el7.x86_64.rpm
+rpm -ivh mysql-wsrep-client-5.7-5.7.21-25.14.el7.x86_64.rpm
+rpm -ivh mysql-wsrep-server-5.7-5.7.21-25.14.el7.x86_64.rpm
+rpm -ivh mysql-wsrep-libs-compat-5.7-5.7.21-25.14.el7.x86_64.rpm
+rpm -ivh galera-3-25.3.23-2.el7.x86_64.rpm</code></pre>
+
+<!--block_code_end--><h3 id="toc_14" class="h16">配置</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　1、编辑  <code>vim /etc/my.cnf</code>，其中内容全部注释掉，增加：<code>!includedir /etc/my.cnf.d/</code>，然后创建 wsrep.cnf 文件。</span>
+</p>
+
+
+<pre><code>mkdir /etc/my.cnf.d
+vim /etc/my.cnf.d/wsrep.cnf
+
+[mysqld]
+user=mysql
+log_timestamps=SYSTEM                                  # 这个是我们自己加的，防止日志时间和系统时间不一样
+port=3306
+server_id=11                                           # MySQL服务器的ID，必须是唯一的，集群各个节点也不同
+explicit_defaults_for_timestamp=true
+basedir=/usr/local/mysql
+datadir=/usr/local/mysql/data                     
+socket=/usr/local/mysql/data/mysql.sock
+pid_file=/run/mysqld/mysqld.pid
+log_error=/var/log/mysql.error
+wsrep_cluster_name='cs_cluster'                       # galera集群的名字，必须是统一的
+wsrep-provider=/usr/lib64/galera-3/libgalera_smm.so   # wsrep提供者,必须配置(.so文件的路径在哪，就配置成哪,一般安装好后都是在这个目录下)
+wsrep_node_name = node1                               # wsrep节点的ID，必须是唯一的，集群各个节点也不同
+wsrep_cluster_address=gcomm://192.168.117.142:4567,192.168.117.145:4567,192.168.117.146:4567   # 集群中的其他节点地址，可以使用主机名或IP
+wsrep_node_address='192.168.117.142'                 # 本机节点地址，可以使用主机名或IP
+wsrep_provider_options ="gmcast.listen_addr=tcp://192.168.117.142:4567"   # 指定wsrep启动端口号,4567为默认值
+wsrep_sst_donor='node1,node2,node3'                    # 一个逗号分割的节点串作为状态转移源，比如 wsrep_sst_donor=node1,node2,node3 如果node1可用，用node2,如果node2不可用，用node3，最后的逗号表明让提供商自己选择一个最优的。
+wsrep_sst_method=rsync                              # 集群同步方式，我的系统没有可以用yum安装一下这个远程连接 yum -y install  rsync
+wsrep_sst_auth=test:123456                         # 集群同步的用户名密码
+slow_query_log=on
+[client]
+default-character-set=utf8
+socket=/usr/local/mysql/data/mysql.sock
+[mysql]
+default-character-set=utf8
+socket=/usr/local/mysql/data/mysql.sock
+[mysqldump]
+max_allowed_packet = 512M
+[mysqld_safe]
+malloc-lib=/usr/lib64/libjemalloc.so.1             # 这个我的系统里也没有可以用yum安装一下  yum -y install jemalloc  如果获取不到的话，下载一个数据源 rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</code></pre>
+
+<!--block_code_end--><h3 id="toc_15" class="h16">初始化数据库</h3>
+
+<pre><code>[root@node1 tmp]# mysqld --initialize
+mysqld: Can't create directory '/usr/local/mysql/data/' (Errcode: 2 - No such file or directory)
+2018-07-29T01:30:51.187574-05:00 0 [ERROR] Can't find error-message file '/usr/local/mysql/share/mysql/errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-07-29T01:30:51.188583-05:00 0 [ERROR] Aborting</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　出错了，可以看到是没有文件夹，创建并授权</span>
+</p>
+
+
+<pre><code>[root@node1 tmp]# mkdir -p /usr/local/mysql/data/
+[root@node1 tmp]# chmod -R 777 /usr/local/mysql
+[root@node1 tmp]# mysqld --initialize</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　查看数据库初始化的密码</span>
+</p>
+
+
+<pre><code>[root@node1 tmp]# grep 'temporary password' /var/log/mysql.error
+2018-07-29T01:31:52.768493-05:00 1 [Note] A temporary password is generated for root@localhost: yxhGizyhW1,u</code></pre>
+
+<!--block_code_end--><h3 id="toc_16" class="h16">初次启动数据库</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　初次启动集群的第一个数据库时需要注意</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>1、wsrep.cnf 配置中的 <code>wsrep_cluster_address</code> 需要如此配置 <code>wsrep_cluster_address=gcomm://</code> ，以后再启动的话需要配置完整。
+</span></li>
+</ul>
+
+<pre><code>[root@node1 tmp]# vim /etc/my.cnf.d/wsrep.cnf
+wsrep_cluster_address=gcomm://</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>2、要使用 <code>/usr/bin/mysqld_bootstrap</code> 进行启动，如果出线权限问题，自行更改权限
+</span></li>
+</ul>
+
+<pre><code>[root@node1 tmp]# bash /usr/bin/mysqld_bootstrap</code></pre>
+
+<!--block_code_end--><h3 id="toc_17" class="h16">修改密码</h3>
+
+<pre><code>[root@node1 /]# mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.21-log
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; set password=PASSWORD('123456');    # 重置 root 密码
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'test'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION; # 设置 复制 账号
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql&gt; FLUSH PRIVILEGES;    # 授予权限
+Query OK, 0 rows affected (0.00 sec)</code></pre>
+
+<!--block_code_end--><h3 id="toc_18" class="h16">查看集群状态</h3>
+
+<pre><code>mysql&gt; show status like "wsrep%";
++------------------------------+--------------------------------------+
+| Variable_name                | Value                                |
++------------------------------+--------------------------------------+
+| wsrep_local_state_uuid       | 5f2c5bbf-92f8-11e8-ac89-73a38f0c69ed |
+| wsrep_protocol_version       | 8                                    |
+| wsrep_last_committed         | 3                                    |
+| wsrep_replicated             | 3                                    |
+| wsrep_replicated_bytes       | 712                                  |
+| wsrep_repl_keys              | 4                                    |
+| wsrep_repl_keys_bytes        | 104                                  |
+| wsrep_repl_data_bytes        | 407                                  |
+| wsrep_repl_other_bytes       | 0                                    |
+| wsrep_received               | 2                                    |
+| wsrep_received_bytes         | 144                                  |
+| wsrep_local_commits          | 0                                    |
+| wsrep_local_cert_failures    | 0                                    |
+| wsrep_local_replays          | 0                                    |
+| wsrep_local_send_queue       | 0                                    |
+| wsrep_local_send_queue_max   | 1                                    |
+| wsrep_local_send_queue_min   | 0                                    |
+| wsrep_local_send_queue_avg   | 0.000000                             |
+| wsrep_local_recv_queue       | 0                                    |
+| wsrep_local_recv_queue_max   | 1                                    |
+| wsrep_local_recv_queue_min   | 0                                    |
+| wsrep_local_recv_queue_avg   | 0.000000                             |
+| wsrep_local_cached_downto    | 1                                    |
+| wsrep_flow_control_paused_ns | 0                                    |
+| wsrep_flow_control_paused    | 0.000000                             |
+| wsrep_flow_control_sent      | 0                                    |
+| wsrep_flow_control_recv      | 0                                    |
+| wsrep_cert_deps_distance     | 1.000000                             |
+| wsrep_apply_oooe             | 0.000000                             |
+| wsrep_apply_oool             | 0.000000                             |
+| wsrep_apply_window           | 1.000000                             |
+| wsrep_commit_oooe            | 0.000000                             |
+| wsrep_commit_oool            | 0.000000                             |
+| wsrep_commit_window          | 1.000000                             |
+| wsrep_local_state            | 4                                    |
+| wsrep_local_state_comment    | Synced                               |
+| wsrep_cert_index_size        | 2                                    |
+| wsrep_causal_reads           | 0                                    |
+| wsrep_cert_interval          | 0.000000                             |
+| wsrep_incoming_addresses     | 192.168.117.142:3306                 |
+| wsrep_desync_count           | 0                                    |
+| wsrep_evs_delayed            |                                      |
+| wsrep_evs_evict_list         |                                      |
+| wsrep_evs_repl_latency       | 0/0/0/0/0                            |
+| wsrep_evs_state              | OPERATIONAL                          |
+| wsrep_gcomm_uuid             | 5f2be7cd-92f8-11e8-8d80-8bdecaa9b672 |
+| wsrep_cluster_conf_id        | 1                                    |
+| wsrep_cluster_size           | 1                                    |
+| wsrep_cluster_state_uuid     | 5f2c5bbf-92f8-11e8-ac89-73a38f0c69ed |
+| wsrep_cluster_status         | Primary                              |
+| wsrep_connected              | ON                                   |
+| wsrep_local_bf_aborts        | 0                                    |
+| wsrep_local_index            | 0                                    |
+| wsrep_provider_name          | Galera                               |
+| wsrep_provider_vendor        | Codership Oy &lt;info@codership.com&gt;    |
+| wsrep_provider_version       | 3.23(rac090bc)                       |
+| wsrep_ready                  | ON                                   |
++------------------------------+--------------------------------------+
+57 rows in set (0.01 sec)</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这时候可以把配置文件 <code>wsrep.cnf</code> 中的参数 <code>wsrep_cluster_address</code> 修改回来。</span>
+</p>
+
+
+<pre><code>mysql&gt; quit
+Bye
+[root@node1 /]# vim /etc/my.cnf.d/wsrep.cnf
+wsrep_cluster_address=gcomm://192.168.117.142:4567,192.168.117.145:4567,192.168.117.146:4567</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　可以使用 systemctl 查看 mysql 状态</span>
+</p>
+
+
+<pre><code>[root@node1 /]# systemctl status mysqld
+● mysqld.service - MySQL Server
+   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sun 2018-07-29 02:26:48 EDT; 6min ago
+     Docs: man:mysqld(8)
+           http://dev.mysql.com/doc/refman/en/using-systemd.html
+  Process: 53014 ExecStartPost=/usr/bin/mysqld_pre_systemd --post (code=exited, status=0/SUCCESS)
+  Process: 52978 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS $MYSQLD_RECOVER_START (code=exited, status=0/SUCCESS)
+  Process: 52922 ExecStartPre=/usr/bin/mysqld_pre_systemd --pre (code=exited, status=0/SUCCESS)
+ Main PID: 52981 (mysqld)
+   CGroup: /system.slice/mysqld.service
+           └─52981 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid --wsrep_start_position=00000000-0000-0000-0000-000000000000:-1
+
+Jul 29 02:26:45 node1 systemd[1]: Starting MySQL Server...
+Jul 29 02:26:48 node1 systemd[1]: Started MySQL Server.</code></pre>
+
+<!--block_code_end-->
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　剩下两台机群如此配置即可，注意几点：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>1、初次启动不需要使用启动脚本：<code>/usr/bin/mysqld_bootstrap</code>，因为这个脚本中带有一个参数：<code>--wsrep-new-cluster</code>，代表新集群。
+</span></li>
+<li class="md_li"><span>2、配置文件 <code>wsrep.cnf</code> 中的参数 <code>wsrep_cluster_address</code>，一开始就要配置好了，不能为空。
+</span></li>
+<li class="md_li"><span>3、类似配置文件 <code>wsrep.cnf</code> 中的 <code>wsrep_node_address</code> 这种参数要配置成自己当前及其所在的信息。
+</span></li>
+<li class="md_li"><span>4、正式环境情况下，我们不要把防火墙关闭掉，把需要使用的端口开放给指定 IP 即可，更加安全。
+</span></li>
+</ul>
+
+<blockquote class="blockquote_lines_3">
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">参考：</span>
+</p>
+
+
+<blockquote class="blockquote_lines_2">
+<p class="md_block">
+    <span class="md_line md_line_start">https://www.sohu.com/a/147032902_505779<br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
+</p>
+
+</blockquote>
+</blockquote>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

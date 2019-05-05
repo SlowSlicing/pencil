@@ -1,0 +1,4003 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Compose 使用</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            Docker Compose 使用
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">安装</a>
+<ul>
+<li>
+<a href="#toc_1">Mac</a>
+</li>
+<li>
+<a href="#toc_2">Linux</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">简单使用</a>
+<ul>
+<li>
+<a href="#toc_4">说明</a>
+</li>
+<li>
+<a href="#toc_5">样例</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">命令说明</a>
+<ul>
+<li>
+<a href="#toc_7">命令对象与格式</a>
+<ul>
+<li>
+<a href="#toc_8">docker-compose Options 命令</a>
+</li>
+<li>
+<a href="#toc_9">docker-compose Commands 命令</a>
+<ul>
+<li>
+<a href="#toc_10">build</a>
+</li>
+<li>
+<a href="#toc_11">config</a>
+</li>
+<li>
+<a href="#toc_12">down</a>
+</li>
+<li>
+<a href="#toc_13">exec</a>
+</li>
+<li>
+<a href="#toc_14">help</a>
+</li>
+<li>
+<a href="#toc_15">images</a>
+</li>
+<li>
+<a href="#toc_16">kill</a>
+</li>
+<li>
+<a href="#toc_17">logs</a>
+</li>
+<li>
+<a href="#toc_18">pause</a>
+</li>
+<li>
+<a href="#toc_19">unpause</a>
+</li>
+<li>
+<a href="#toc_20">port</a>
+</li>
+<li>
+<a href="#toc_21">ps</a>
+</li>
+<li>
+<a href="#toc_22">pull</a>
+</li>
+<li>
+<a href="#toc_23">push</a>
+</li>
+<li>
+<a href="#toc_24">restart</a>
+</li>
+<li>
+<a href="#toc_25">rm</a>
+</li>
+<li>
+<a href="#toc_26">run</a>
+</li>
+<li>
+<a href="#toc_27">scale</a>
+</li>
+<li>
+<a href="#toc_28">start</a>
+</li>
+<li>
+<a href="#toc_29">stop</a>
+</li>
+<li>
+<a href="#toc_30">top</a>
+</li>
+<li>
+<a href="#toc_31">up</a>
+</li>
+<li>
+<a href="#toc_32">version</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_33">Compose 模板文件</a>
+<ul>
+<li>
+<a href="#toc_34">指令说明</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_35">common.env: Set development environment</a>
+</li>
+<li>
+<a href="#toc_36">支持 # 号注释</a>
+</li>
+</ul>
+</div>
+</div>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Docker Compose 是官方的开源项目，主要用来解决多个容器集群的快速编排。是一个用来<strong>定义和运行多个 Docker 容器的应用</strong>。</span>
+</p>
+
+<h1 id="toc_0" class="h16 md_first_h">安装</h1>
+<h2 id="toc_1" class="h16">Mac</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　只需安装 <a class="md_compiled" href="https://download.docker.com/mac/stable/Docker.dmg">Docker CE Desktop</a></span>
+</p>
+
+<h2 id="toc_2" class="h16">Linux</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　1. 下载 Compose</span>
+</p>
+
+
+<pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　2. 授权</span>
+</p>
+
+
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　3. 测试</span>
+</p>
+
+
+<pre><code>$ docker-compose --version
+docker-compose version 1.23.1, build 1719ceb</code></pre>
+
+<!--block_code_end--><h1 id="toc_3" class="h16">简单使用</h1>
+<h2 id="toc_4" class="h16">说明</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的（缓存）数据库服务容器，甚至还包括负载均衡容器等。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Compose 就是用来满足这样需求的一个<code>工具</code>。它允许用户通过一个单独的 <code>docker-compose.yml</code> 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　Compose 中有两个重要的概念：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>服务 ( service )</strong>：一个应用的容器，一个 docker-compose.yml 文件中的 <code>service</code>，实际上可以包括若干运行相同镜像的容器实例。
+</span></li>
+<li class="md_li"><span><strong>项目 ( project )</strong>：由一组关联的应用容器组成的一个完整业务单元，在 <code>docker-compose.yml</code> 文件中定义。
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Compose 的默认管理对象是项目，通过子命令对项目中的一组容器进行便捷地生命周期管理。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Compose 项目由 Python 编写，实现上调用了 Docker 服务提供的 API 来对容器进行管理。因此，只要所操作的平台支持 Docker API，就可以在其上利用 Compose 来进行编排管理。</span>
+</p>
+
+<h2 id="toc_5" class="h16">样例</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这里有一个简单的 Spring Boot 项目，连接 Redis 每次自增。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/a1ac2430c73d4efba5a573a22db19c4e.png" alt="自增" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这个服务放在容器中是没办法单独运行的，需要另一个容器 Redis。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　首先看把上面的服务打包成镜像的 Dockerfile 如下：</span>
+</p>
+
+
+<pre><code>FROM java:8
+COPY . /jar
+WORKDIR /jar
+CMD ["java", "-jar", "spring-boot-demo-0.0.1-SNAPSHOT.jar"]</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　打包成镜像之后也是无法提供服务的。需要一个 Redis 的容器提前启动好，但是如果手动去先启动一个在启动另一个，这样是极其不好的行为，所以就需要使用 Docker Compose 来进行多容器快速编排管理，下面是 <code>docker-compose.yml</code> 的内容：</span>
+</p>
+
+
+<pre><code>version: '3'
+
+services:
+    web:
+      build: .
+      ports:
+      - "8080:8080"
+
+    redis-test:
+      image: "redis"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　启动：<code>docker-compose up</code></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　访问查看</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/822cac7f321046a59c474731ebdfce0e.gif" alt="访问" title="" ></span>
+</p>
+
+<h1 id="toc_6" class="h16">命令说明</h1>
+<h2 id="toc_7" class="h16">命令对象与格式</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　对于 Compose 来说，大部分命令的对象既可以是项目本身，也可以指定为项目中的服务或者容器。如果没有特别的说明，命令对象将是项目，这意味着项目中所有的服务都会受到命令影响。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　执行 <code>docker-compose --help</code> 可以查看具有哪些命令。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　执行 <code>docker-compose [COMMAND] --help</code> 或者 <code>docker-compose help [COMMAND]</code> 可以查看具体某个命令的使用格式。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　docker-compose 命令的基本的使用格式是：</span>
+</p>
+
+
+<pre><code>docker-compose [-f=&lt;arg&gt;...] [options] [COMMAND] [ARGS...]</code></pre>
+
+<!--block_code_end--><h3 id="toc_8" class="h16">docker-compose Options 命令</h3>
+
+<ul>
+<li class="md_li"><span><strong>-f, --file FILE</strong>：指定使用的 Compose 模板文件，默认为 docker-compose.yml ，可以多次指定。
+</span></li>
+<li class="md_li"><span><strong>-p, --project-name NAME</strong>：指定项目名称，默认将使用所在目录名称作为项目名。
+</span></li>
+<li class="md_li"><span><strong>--x-networking</strong>：使用 Docker 的可拔插网络后端特性。
+</span></li>
+<li class="md_li"><span><strong>--x-network-driver DRIVER</strong>：指定网络后端的驱动，默认为 bridge。
+</span></li>
+<li class="md_li"><span><strong>--verbose</strong>：输出更多调试信息。
+</span></li>
+<li class="md_li"><span><strong>-v, --version</strong>：打印版本并退出。
+</span></li>
+</ul>
+<h3 id="toc_9" class="h16">docker-compose Commands 命令</h3>
+<h4 id="toc_10" class="h16">build</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　格式为 <code>docker-compose build [options] [SERVICE...]</code> 。<br /></span>
+    <span class="md_line md_line_end">　　构建（重新构建）项目中的服务容器。服务容器一旦构建后，将会带上一个标记名，例如对于 web 项目中的一个 db 容器，可能是 web_db。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　可以随时在项目目录下运行 <code>docker-compose build</code> 来重新构建服务。选项包括：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>--force-rm</strong>：删除构建过程中的临时容器。
+</span></li>
+<li class="md_li"><span><strong>--no-cache</strong>：构建镜像过程中不使用 cache（这将加长构建过程）。
+</span></li>
+<li class="md_li"><span><strong>--pull</strong>： 始终尝试通过 pull 来获取更新版本的镜像。
+</span></li>
+</ul>
+<h4 id="toc_11" class="h16">config</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　验证 Compose 文件格式是否正确，若正确则显示配置，若格式错误显示错误原因。</span>
+</p>
+
+<h4 id="toc_12" class="h16">down</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　此命令将会停止 up 命令所启动的容器，并移除网络。</span>
+</p>
+
+<h4 id="toc_13" class="h16">exec</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　进入指定的容器。</span>
+</p>
+
+<h4 id="toc_14" class="h16">help</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　获得一个命令的帮助。</span>
+</p>
+
+<h4 id="toc_15" class="h16">images</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　列出 Compose 文件中包含的镜像。</span>
+</p>
+
+<h4 id="toc_16" class="h16">kill</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose kill [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　通过发送 <code>SIGKILL</code> 信号来强制停止服务容器。支持通过 <code>-s</code> 参数来指定发送的信号，例如通过如下指令发送 SIGINT 信号。</span>
+</p>
+
+
+<pre><code>$ docker-compose kill -s SIGINT</code></pre>
+
+<!--block_code_end--><h4 id="toc_17" class="h16">logs</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　格式为 <code>docker-compose logs [options] [SERVICE...]</code> 。<br /></span>
+    <span class="md_line md_line_end">　　查看服务容器的输出。默认情况下，docker-compose 将对不同的服务输出使用不同的颜色来区分。可以通过 <code>--no-color</code> 来关闭颜色。该命令在调试问题的时候十分有用。</span>
+</p>
+
+<h4 id="toc_18" class="h16">pause</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose pause [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　暂停一个服务容器。</span>
+</p>
+
+<h4 id="toc_19" class="h16">unpause</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose unpause [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　恢复处于暂停状态中的服务。</span>
+</p>
+
+<h4 id="toc_20" class="h16">port</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose port [options] SERVICE PRIVATE_PORT</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　打印某个容器端口所映射的公共端口。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>--protocol=proto</strong>：指定端口协议，tcp（默认值）或者 udp。
+</span></li>
+<li class="md_li"><span><strong>--index=index</strong>：如果同一服务存在多个容器，指定命令对象容器的序号（默认为 1）。
+</span></li>
+</ul>
+<h4 id="toc_21" class="h16">ps</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose ps [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　列出项目中目前的所有容器。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-q</strong>：只打印容器的 ID 信息。
+</span></li>
+</ul>
+<h4 id="toc_22" class="h16">pull</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose pull [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　拉取服务依赖的镜像。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>--ignore-pull-failures</strong>：忽略拉取镜像过程中的错误。
+</span></li>
+</ul>
+<h4 id="toc_23" class="h16">push</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　推送服务依赖的镜像到 Docker 镜像仓库。</span>
+</p>
+
+<h4 id="toc_24" class="h16">restart</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose restart [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　重启项目中的服务。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-t, --timeout TIMEOUT</strong>：指定重启前停止容器的超时（默认为 10 秒）。
+</span></li>
+</ul>
+<h4 id="toc_25" class="h16">rm</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose rm [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　删除所有（停止状态的）服务容器。推荐先执行 docker-compose stop 命令来停止容器。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-f, --force</strong>：强制直接删除，包括非停止状态的容器。一般尽量不要使用该选项。
+</span></li>
+<li class="md_li"><span><strong>-v</strong>：删除容器所挂载的数据卷。
+</span></li>
+</ul>
+<h4 id="toc_26" class="h16">run</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose run [options] [-p PORT...] [-e KEY=VAL...] SERVICE [COMMAND] [ARGS...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在指定服务上执行一个命令。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　例如：</span>
+</p>
+
+
+<pre><code>$ docker-compose run ubuntu ping docker.com</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　将会启动一个 ubuntu 服务容器，并执行 <code>ping docker.com</code> 命令。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　默认情况下，如果存在关联，则所有关联的服务将会自动被启动，除非这些服务已经在运行中。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　该命令类似启动容器后运行指定的命令，相关卷、链接等等都将会按照配置自动创建。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　两个不同点：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>给定命令将会覆盖原有的自动运行命令；
+</span></li>
+<li class="md_li"><span>不会自动创建端口，以避免冲突。
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果不希望自动启动关联的容器，可以使用 <code>--no-deps</code> 选项，例如</span>
+</p>
+
+
+<pre><code>$ docker-compose run --no-deps web python manage.py shell</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　将不会启动 web 容器所关联的其它容器。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-d</strong>：后台运行容器。
+</span></li>
+<li class="md_li"><span><strong>--name NAME</strong>：为容器指定一个名字。
+</span></li>
+<li class="md_li"><span><strong>--entrypoint CMD</strong>：覆盖默认的容器启动指令。
+</span></li>
+<li class="md_li"><span><strong>-e KEY=VAL</strong>：设置环境变量值，可多次使用选项来设置多个环境变量。
+</span></li>
+<li class="md_li"><span><strong>-u, --user=&quot;&quot;</strong>：指定运行容器的用户名或者 uid。
+</span></li>
+<li class="md_li"><span><strong>--no-deps</strong>：不自动启动关联的服务容器。
+</span></li>
+<li class="md_li"><span><strong>--rm</strong>：运行命令后自动删除容器， d 模式下将忽略。
+</span></li>
+<li class="md_li"><span><strong>-p, --publish=[]</strong>：映射容器端口到本地主机。
+</span></li>
+<li class="md_li"><span><strong>--service-ports</strong>：配置服务端口并映射到本地主机。
+</span></li>
+<li class="md_li"><span><strong>-T</strong>：不分配伪 tty，意味着依赖 tty 的指令将无法运行。
+</span></li>
+</ul>
+<h4 id="toc_27" class="h16">scale</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose scale [options] [SERVICE=NUM...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　设置指定服务运行的容器个数。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　通过 <code>service=num</code> 的参数来设置数量。例如：</span>
+</p>
+
+
+<pre><code>$ docker-compose scale web=3 db=2</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　将启动 3 个容器运行 web 服务，2 个容器运行 db 服务。一般的，当指定数目多于该服务当前实际运行容器，将新创建并启动容器；反之，将停止容器。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-t, --timeout TIMEOUT</strong>：停止容器时候的超时（默认为 10 秒）。
+</span></li>
+</ul>
+<h4 id="toc_28" class="h16">start</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose start [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　启动已经存在的服务容器。</span>
+</p>
+
+<h4 id="toc_29" class="h16">stop</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose stop [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　停止已经处于运行状态的容器，但不删除它。通过 docker-compose start 可以再次启动这些容器。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-t, --timeout TIMEOUT</strong>：停止容器时候的超时（默认为 10 秒）。
+</span></li>
+</ul>
+<h4 id="toc_30" class="h16">top</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　查看各个服务容器内运行的进程。</span>
+</p>
+
+<h4 id="toc_31" class="h16">up</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose up [options] [SERVICE...]</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　该命令十分强大，它将尝试自动完成包括构建镜像，（重新）创建服务，启动服务，并关联服务相关容器的一系列操作。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　链接的服务都将会被自动启动，除非已经处于运行状态。可以说，大部分时候都可以直接通过该命令来启动一个项目。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　默认情况， <code>docker-compose up</code> 启动的容器都在前台，控制台将会同时打印所有容器的输出信息，可以很方便进行调试。当通过 Ctrl-C 停止命令时，所有容器将会停止。如果使用 <code>docker-compose up -d</code>，将会在后台启动并运行所有的容器。一般推荐生产环境下使用该选项。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　默认情况，如果服务容器已经存在， docker-compose up 将会尝试停止容器，然后重新创建（保持使用 volumes-from 挂载的卷），以保证新启动的服务匹配 docker-compose.yml 文件的最新内容。如果用户不希望容器被停止并重新创建，可以使用 <code>docker-compose up --norecreate</code>。这样将只会启动处于停止状态的容器，而忽略已经运行的服务。如果用户只想重新部署某个服务，可以使用 <code>docker-compose up --no-deps -d &lt;SERVICE_NAME&gt;</code> 来重新创建服务并后台停止旧服务，启动新服务，并不会影响到其所依赖的服务。</span>
+</p>
+
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　选项：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>-d</strong>：在后台运行服务容器。
+</span></li>
+<li class="md_li"><span><strong>--no-color</strong>：不使用颜色来区分不同的服务的控制台输出。
+</span></li>
+<li class="md_li"><span><strong>--no-deps</strong>：不启动服务所链接的容器。
+</span></li>
+<li class="md_li"><span><strong>--force-recreate</strong>：强制重新创建容器，不能与 --no-recreate 同时使用。
+</span></li>
+<li class="md_li"><span><strong>--no-recreate</strong>：如果容器已经存在了，则不重新创建，不能与 --force-recreate 同时使用。
+</span></li>
+<li class="md_li"><span><strong>--no-build</strong>：不自动构建缺失的服务镜像。
+</span></li>
+<li class="md_li"><span><strong>-t, --timeout TIMEOUT</strong>：停止容器时候的超时（默认为 10 秒）。
+</span></li>
+</ul>
+<h4 id="toc_32" class="h16">version</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　格式为 <code>docker-compose version</code> 。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　打印版本信息。</span>
+</p>
+
+<h1 id="toc_33" class="h16">Compose 模板文件</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　模板文件是使用 Compose 的核心，涉及到的指令关键字也比较多。这里面大部分指令跟 <code>docker run</code> 相关参数的含义都是类似的。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">默认的模板文件名称为 <code>docker-compose.yml</code> ，格式为 YAML 格式。</span>
+</p>
+
+
+<pre><code>version: "3"
+
+services:
+
+    webapp:
+        image: examples/web
+        ports:
+            - "80:80"
+        volumes:
+            - "/data"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　注意每个服务都必须通过 image 指令指定镜像或 build 指令（需要 Dockerfile）等来自动构建生成镜像。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果使用 build 指令，在 Dockerfile 中设置的选项（例如：CMD，EXPOSE，VOLUME，ENV等）将会自动被获取，无需在 docker-compose.yml 中再次设置。</span>
+</p>
+
+<h2 id="toc_34" class="h16">指令说明</h2>
+
+<ul>
+<li class="md_li"><span><strong>build：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　指定 Dockerfile 所在文件夹的路径（可以是绝对路径，或者相对 docker-compose.yml 文件的路径）。 Compose 将会利用它自动构建这个镜像，然后使用这个镜像。</span>
+</p>
+
+
+<pre><code>version: '3'
+services:
+
+    webapp:
+        build: ./dir</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　你也可以使用 context 指令指定 Dockerfile 所在文件夹的路径。使用 dockerfile 指令指定 Dockerfile 文件名。使用 arg 指令指定构建镜像时的变量。</span>
+</p>
+
+
+<pre><code>version: '3'
+services:
+
+    webapp:
+        build:
+            context: ./dir
+            dockerfile: Dockerfile-alternate
+            args:
+                buildno: 1</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　使用 cache_from 指定构建镜像的缓存</span>
+</p>
+
+
+<pre><code>build:
+    context: .
+    cache_from:
+        - alpine:latest
+        - corp/web_app:3.14</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>cap_add, cap_drop：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　指定容器的内核能力（capacity）分配。例如，让容器拥有所有能力可以指定为：</span>
+</p>
+
+
+<pre><code>cap_add:
+    - ALL</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　去掉 NET_ADMIN 能力可以指定为：</span>
+</p>
+
+
+<pre><code>cap_drop:
+    - NET_ADMIN</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>command：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　覆盖容器启动后默认执行的命令。</span>
+</p>
+
+
+<pre><code>command: echo "hello world"</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>configs：</strong>
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　仅用于 Swarm mode。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>cgroup_parent：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　指定父 cgroup 组，意味着将继承该组的资源限制。例如，创建了一个 cgroup 组名称为 cgroups_1 。</span>
+</p>
+
+
+<pre><code>cgroup_parent: cgroups_1</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>container_name：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　指定容器名称。默认将会使用 <code>项目名称_服务名称_序号</code> 这样的格式。</span>
+</p>
+
+
+<pre><code>container_name: docker-web-container</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　注意: 指定容器名称后，该服务将无法进行扩展（scale），因为 Docker 不允许多个容器具有相同的名称。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>deploy：</strong>
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　仅用于 Swarm mode。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>devices：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　指定设备映射关系。</span>
+</p>
+
+
+<pre><code>devices:
+    - "/dev/ttyUSB1:/dev/ttyUSB0"</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>depends_on：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　解决容器的依赖、启动先后的问题。以下例子中会先启动 redis db 再启动 web。</span>
+</p>
+
+
+<pre><code>version: '3'
+
+    services:
+        web:
+            build: .
+            depends_on:
+                - db
+                - redis
+        redis:
+            image: redis
+        db:
+            image: postgres</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　注意： web 服务不会等待 redis db 「完全启动」之后才启动。</span>
+</p>
+
+</blockquote>
+
+<ul>
+<li class="md_li"><span><strong>dns：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start">&nbsp;<br /></span>
+    <span class="md_line md_line_end">　　自定义 DNS 服务器。可以是一个值，也可以是一个列表。</span>
+</p>
+
+
+<pre><code>dns: 8.8.8.8
+
+dns:
+    - 8.8.8.8
+    - 114.114.114.114</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>dns_search：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　配置 DNS 搜索域。可以是一个值，也可以是一个列表。</span>
+</p>
+
+
+<pre><code>dns_search: example.com
+
+dns_search:
+    - domain1.example.com
+    - domain2.example.com</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span><strong>tmpfs：</strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　挂载一个 tmpfs 文件系统到容器。</span>
+</p>
+
+
+<pre><code>tmpfs: /run
+
+tmpfs:
+    - /run
+    - /tmp
+ ```
+
+* **env_file：**
+
+　　从文件中获取环境变量，可以为单独的文件路径或列表。如果通过 `docker-compose -f FILE` 方式来指定 Compose 模板文件，则 env_file 中变量的路径会基于模板文件路径。
+
+　　如果有变量名称与 environment 指令冲突，则按照惯例，以后者为准。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">env_file: .env</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">env_file:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - ./common.env<br /></span>
+    <span class="md_line">    - ./apps/web.env<br /></span>
+    <span class="md_line md_line_end">    - /opt/secrets.env</span>
+</p>
+
+
+<pre><code>　　环境变量文件中每一行必须符合格式，支持 # 开头的注释行。</code></pre>
+
+<!--block_code_end--><h1 id="toc_35" class="h16">common.env: Set development environment</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">PROG_ENV=development</span>
+</p>
+
+
+<pre><code>* **environment：**
+
+　　设置环境变量。你可以使用数组或字典两种格式。只给定名称的变量会自动获取运行 Compose 主机上对应变量的值，可以用来防止泄露不必要的数据。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">environment:<br /></span>
+    <span class="md_line">    RACK_ENV: development<br /></span>
+    <span class="md_line md_line_end">    SESSION_SECRET:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">environment:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - RACK_ENV=development<br /></span>
+    <span class="md_line md_line_end">    - SESSION_SECRET</span>
+</p>
+
+
+<pre><code>　　如果变量名称或者值中用到 `true|false`，`yes|no` 等表达 布尔 含义的词汇，最好放到引号里，避免 YAML 自动解析某些内容为对应的布尔语义。这些特定词汇，包括：</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">y|Y|yes|Yes|YES|n|N|no|No|NO|true|True|TRUE|false|False|FALSE|on|On|ON|off|Off|OFF</span>
+</p>
+
+
+<pre><code>* **expose：**
+ 
+　　暴露端口，但不映射到宿主机，只被连接的服务访问。仅可以指定内部端口为参数。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">expose:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - &quot;3000&quot;<br /></span>
+    <span class="md_line md_line_end">    - &quot;8000&quot;</span>
+</p>
+
+
+<pre><code>* **external_links：**
+
+&gt; 　　注意：不建议使用该指令。
+
+　　链接到 docker-compose.yml 外部的容器，甚至并非 Compose 管理的外部容器。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">external_links:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - redis_1<br /></span>
+    <span class="md_line">    - project_db_1:mysql<br /></span>
+    <span class="md_line md_line_end">    - project_db_1:postgresql</span>
+</p>
+
+
+<pre><code>* **extra_hosts：**
+
+　　类似 Docker 中的 --add-host 参数，指定额外的 host 名称映射信息。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">extra_hosts:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - &quot;googledns:8.8.8.8&quot;<br /></span>
+    <span class="md_line md_line_end">    - &quot;dockerhub:52.1.157.61&quot;</span>
+</p>
+
+
+<pre><code>　　会在启动后的服务容器中 /etc/hosts 文件中添加如下两条条目。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">8.8.8.8 googledns<br /></span>
+    <span class="md_line md_line_end">52.1.157.61 dockerhub</span>
+</p>
+
+
+<pre><code>* **healthcheck：**
+
+　　通过命令检查容器是否健康运行。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">healthcheck:<br /></span>
+    <span class="md_line">    test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http://localhost&quot;]<br /></span>
+    <span class="md_line">    interval: 1m30s<br /></span>
+    <span class="md_line">    timeout: 10s<br /></span>
+    <span class="md_line md_line_end">    retries: 3</span>
+</p>
+
+
+<pre><code>* **image：**
+
+　　指定为镜像名称或镜像 ID。如果镜像在本地不存在， Compose 将会尝试拉取这个镜像。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">image: ubuntu</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">image: orchardup/postgresql</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">image: a4bc65fd</span>
+</p>
+
+
+<pre><code>* **labels：**
+
+　　为容器添加 Docker 元数据（metadata）信息。例如可以为容器添加辅助说明信息。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">labels:<br /></span>
+    <span class="md_line">    com.startupteam.description: &quot;webapp for a startup team&quot;<br /></span>
+    <span class="md_line">    com.startupteam.department: &quot;devops department&quot;<br /></span>
+    <span class="md_line md_line_end">    com.startupteam.release: &quot;rc3 for v1.0&quot;</span>
+</p>
+
+
+<pre><code>* **links：**
+
+&gt; 　　注意：不推荐使用该指令。
+
+　　同 `docker run` 命令里的 `--link` 相同。
+
+* **logging：**
+
+　　配置日志选项。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">logging:<br /></span>
+    <span class="md_line">    driver: syslog<br /></span>
+    <span class="md_line">    options:<br /></span>
+    <span class="md_line md_line_end">        syslog-address: &quot;tcp://192.168.0.42:123&quot;</span>
+</p>
+
+
+<pre><code>　　目前支持三种日志驱动类型。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">driver: &quot;json-file&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">driver: &quot;syslog&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">driver: &quot;none&quot;</span>
+</p>
+
+
+<pre><code>　　options 配置日志驱动的相关参数。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">options:<br /></span>
+    <span class="md_line">    max-size: &quot;200k&quot;<br /></span>
+    <span class="md_line md_line_end">    max-file: &quot;10&quot;</span>
+</p>
+
+
+<pre><code>* **network_mode：**
+
+　　设置网络模式。使用和 docker run 的 --network 参数一样的值。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">network_mode: &quot;bridge&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">network_mode: &quot;host&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">network_mode: &quot;none&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">network_mode: &quot;service:[service name]&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">network_mode: &quot;container:[container name/id]&quot;</span>
+</p>
+
+
+<pre><code>* **networks：**
+
+　　配置容器连接的网络。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">version: &quot;3&quot;<br /></span>
+    <span class="md_line md_line_end">services:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    some-service:<br /></span>
+    <span class="md_line md_line_end">        networks:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">            - some-network<br /></span>
+    <span class="md_line md_line_end">            - other-network</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">networks:<br /></span>
+    <span class="md_line">    some-network:<br /></span>
+    <span class="md_line md_line_end">    other-network:</span>
+</p>
+
+
+<pre><code>* **pid：**
+
+　　跟主机系统共享进程命名空间。打开该选项的容器之间，以及容器和宿主机系统之间可以通过进程 ID 来相互访问和操作。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">pid: &quot;host&quot;</span>
+</p>
+
+
+<pre><code>* **ports：**
+
+　　暴露端口信息。`使用宿主端口:容器端口` (HOST:CONTAINER) 格式，或者仅仅指定容器的端口（宿主将会随机选择端口）都可以。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">ports:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - &quot;3000&quot;<br /></span>
+    <span class="md_line">    - &quot;8000:8000&quot;<br /></span>
+    <span class="md_line">    - &quot;49100:22&quot;<br /></span>
+    <span class="md_line md_line_end">    - &quot;127.0.0.1:8001:8001&quot;</span>
+</p>
+
+
+<pre><code>&gt; 　　注意：当使用 `HOST:CONTAINER` 格式来映射端口时，如果你使用的容器端口小于 60 并且没放到引号里，可能会得到错误结果，因为 YAML 会自动解析 xx:yy 这种数字格式为 60 进制。为避免出现这种问题，建议数字串都采用引号包括起来的字符串格式。
+
+* **secrets：**
+
+　　存储敏感数据，例如 mysql 服务密码。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">version: &quot;3.1&quot;<br /></span>
+    <span class="md_line">services:<br /></span>
+    <span class="md_line">    mysql:<br /></span>
+    <span class="md_line">        image: mysql<br /></span>
+    <span class="md_line">        environment:<br /></span>
+    <span class="md_line">            MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password<br /></span>
+    <span class="md_line md_line_end">        secrets:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">            - db_root_password<br /></span>
+    <span class="md_line md_line_end">            - my_other_secret</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">secrets:<br /></span>
+    <span class="md_line">    my_secret:<br /></span>
+    <span class="md_line">        file: ./my_secret.txt<br /></span>
+    <span class="md_line">    my_other_secret:<br /></span>
+    <span class="md_line md_line_end">        external: true</span>
+</p>
+
+
+<pre><code>* **security_opt：**
+
+　　指定容器模板标签（label）机制的默认属性（用户、角色、类型、级别等）。例如配置标签的用户名和角色名。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">security_opt:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - label:user:USER<br /></span>
+    <span class="md_line md_line_end">    - label:role:ROLE</span>
+</p>
+
+
+<pre><code>* **stop_signal：**
+
+　　设置另一个信号来停止容器。在默认情况下使用的是 SIGTERM 停止容器。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">stop_signal: SIGUSR1</span>
+</p>
+
+
+<pre><code>* **sysctls：**
+
+　　配置容器内核参数。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">sysctls:<br /></span>
+    <span class="md_line">    net.core.somaxconn: 1024<br /></span>
+    <span class="md_line md_line_end">    net.ipv4.tcp_syncookies: 0</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">sysctls:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - net.core.somaxconn=1024<br /></span>
+    <span class="md_line md_line_end">    - net.ipv4.tcp_syncookies=0</span>
+</p>
+
+
+<pre><code>* **ulimits：**
+
+　　指定容器的 ulimits 限制值。例如，指定最大进程数为 65535，指定文件句柄数为 20000（软限制，应用可以随时修改，不能超过硬限制） 和 40000（系统硬限制，只能 root 用户提高）。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">ulimits:<br /></span>
+    <span class="md_line">    nproc: 65535<br /></span>
+    <span class="md_line">    nofile:<br /></span>
+    <span class="md_line">        soft: 20000<br /></span>
+    <span class="md_line md_line_end">        hard: 40000</span>
+</p>
+
+
+<pre><code>* **volumes：**
+
+　　数据卷所挂载路径设置。可以设置宿主机路径 （ HOST:CONTAINER ） 或加上访问模式（ HOST:CONTAINER:ro ）。该指令中路径支持相对路径。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">volumes:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    - /var/lib/mysql<br /></span>
+    <span class="md_line">    - cache/:/tmp/cache<br /></span>
+    <span class="md_line md_line_end">    - ~/configs:/etc/configs/:ro</span>
+</p>
+
+
+<pre><code>## 其它指令
+
+　　此外，还有包括 domainname, entrypoint, hostname, ipc, mac_address, privileged, read_only, shm_size, restart, stdin_open, tty, user, working_dir 等指令，基本跟 docker run 中对应参数的功能一致。
+
+　　指定服务容器启动后执行的入口文件。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">entrypoint: /code/entrypoint.sh</span>
+</p>
+
+
+<pre><code>　　指定容器中运行应用的用户名。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">user: nginx</span>
+</p>
+
+
+<pre><code>　　指定容器中工作目录。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">working_dir: /code</span>
+</p>
+
+
+<pre><code>　　指定容器中搜索域名、主机名、mac 地址等。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">domainname: your_website.com<br /></span>
+    <span class="md_line">hostname: test<br /></span>
+    <span class="md_line md_line_end">mac_address: 08-00-27-00-0C-0A</span>
+</p>
+
+
+<pre><code>　　允许容器中运行一些特权命令。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">privileged: true</span>
+</p>
+
+
+<pre><code>　　指定容器退出后的重启策略为始终重启。该命令对保持服务始终运行十分有效，在生产环境中推荐配置为 always 或者 unless-stopped 。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">restart: always</span>
+</p>
+
+
+<pre><code>　　以只读模式挂载容器的 root 文件系统，意味着不能对容器内容进行修改。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">read_only: true</span>
+</p>
+
+
+<pre><code>　　打开标准输入，可以接受外部输入。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">stdin_open: true</span>
+</p>
+
+
+<pre><code>　　模拟一个伪终端。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">tty: true</span>
+</p>
+
+
+<pre><code>## 读取变量
+
+　　Compose 模板文件支持动态读取主机的系统环境变量和当前目录下的 .env 文件中的变量。例如，下面的 Compose 文件将从运行它的环境中读取变量 `${MONGO_VERSION}` 的值，并写入执行的指令中。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">version: &quot;3&quot;<br /></span>
+    <span class="md_line">services:<br /></span>
+    <span class="md_line">    db:<br /></span>
+    <span class="md_line md_line_end">        image: &quot;mongo:${MONGO_VERSION}&quot;</span>
+</p>
+
+
+<pre><code>　　如果执行 `MONGO_VERSION=3.2 docker-compose up` 则会启动一个 `mongo:3.2` 镜像的容器；如果执行 `MONGO_VERSION=2.8 docker-compose up` 则会启动一个 `mongo:2.8` 镜像的容器。
+
+　　若当前目录存在 .env 文件，执行 docker-compose 命令时将从该文件中读取变量。在当前目录新建 .env 文件并写入以下内容。</code></pre>
+
+<!--block_code_end--><h1 id="toc_36" class="h16">支持 # 号注释</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">MONGO_VERSION=3.6</span>
+</p>
+
+
+<pre><code>　　执行 `docker-compose up` 则会启动一个 `mongo:3.6` 镜像的容器。
+
+# 样例
+
+　　这里做一个 WordPress 集合 MySQL 的模板文件。</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">version: &quot;3&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">services:<br /></span>
+    <span class="md_line">    db:<br /></span>
+    <span class="md_line">        image: mysql:5.7<br /></span>
+    <span class="md_line md_line_end">        volumes:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">            - db_data:/var/lib/mysql</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;restart: always<br /></span>
+    <span class="md_line">        environment:<br /></span>
+    <span class="md_line">            MYSQL_ROOT_PASSWORD: somewordpress<br /></span>
+    <span class="md_line">            MYSQL_DATABASE: wordpress<br /></span>
+    <span class="md_line">            MYSQL_USER: wordpress<br /></span>
+    <span class="md_line md_line_end">            MYSQL_PASSWORD: wordpress</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">    wordpress:<br /></span>
+    <span class="md_line md_line_end">        depends_on:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">            - db</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image: wordpress:latest<br /></span>
+    <span class="md_line md_line_end">        ports:</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">            - &quot;8000:80&quot;</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;restart: always<br /></span>
+    <span class="md_line">        environment:<br /></span>
+    <span class="md_line">            WORDPRESS_DB_HOST: db:3306<br /></span>
+    <span class="md_line">            WORDPRESS_DB_USER: wordpress<br /></span>
+    <span class="md_line md_line_end">            WORDPRESS_DB_PASSWORD: wordpress</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">volumes:<br /></span>
+    <span class="md_line md_line_end">    db_data:</span>
+</p>
+
+
+<pre><code></code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　运行 <code>docker-compose up -d</code> Compose 就会拉取镜像再创建我们所需要的镜像，然后启动 wordpress 和数据库容器。 接着在浏览器中访问宿主机的 8000 端口就能看到 WordPress 安装界面了。</span>
+</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

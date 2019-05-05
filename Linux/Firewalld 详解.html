@@ -1,0 +1,3287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firewalld 详解</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            Firewalld 详解
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">Firewalld</a>
+<ul>
+<li>
+<a href="#toc_1">好处</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_2">详解</a>
+<ul>
+<li>
+<a href="#toc_3">zone</a>
+<ul>
+<li>
+<a href="#toc_4">网络请求如何判断使用哪个 zone 的</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">service</a>
+</li>
+<li>
+<a href="#toc_6">rich langulage rule</a>
+<ul>
+<li>
+<a href="#toc_7">理解多规则命令</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_8">常用命令收集</a>
+<ul>
+<li>
+<a href="#toc_9">关于 zone</a>
+<ul>
+<li>
+<a href="#toc_10">配置文件</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">关于 source</a>
+</li>
+<li>
+<a href="#toc_12">关于 interface（网卡）</a>
+</li>
+<li>
+<a href="#toc_13">关于 port</a>
+</li>
+<li>
+<a href="#toc_14">关于服务</a>
+<ul>
+<li>
+<a href="#toc_15">配置文件</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_16">关于伪装 ip</a>
+</li>
+<li>
+<a href="#toc_17">关于转发</a>
+</li>
+<li>
+<a href="#toc_18">关于 rich language rule</a>
+</li>
+<li>
+<a href="#toc_19">其他配置</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">特殊说明</a>
+</li>
+</ul>
+</div>
+</div><h1 id="toc_0" class="h16 md_first_h">Firewalld</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　Linux 上新的防火墙软件，和原来的 Iptables 作用差不多。<br /></span>
+    <span class="md_line">　　<code>firewall-cmd</code> 是 <code>firewalld</code> 的命令行管理工具，firewalld 是 CentOS 7 的一大特性。<br /></span>
+    <span class="md_line md_line_end">　　firewalld 自身并不具备防火墙的功能，而是和 iptables 一样需要通过内核的 <code>netfilter</code> 来实现，也就是说 firewalld 和 iptables 一样，他们的作用都是用于维护规则，而真正使用规则干活的是内核的 netfilter，只不过 firewalld 和 iptables 的结构以及使用方法不一样罢了。</span>
+</p>
+
+<h2 id="toc_1" class="h16">好处</h2>
+
+<ul>
+<li class="md_li"><span>支持动态更新，不用重启服务；
+</span></li>
+<li class="md_li"><span>加入了防火墙的 <code>zone</code> 概念；
+</span></li>
+</ul>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>firewalld</code> 可以动态修改单条规则，而不需要像 <code>iptables</code> 那样，在修改了规则后必须得全部刷新才可以生效。<code>firewalld</code> 在使用上要比 <code>iptables</code> 人性化很多，即使不明白<strong>五张表五条链</strong>而且对 <code>TCP/IP</code> 协议也不理解也可以实现大部分功能。</span>
+</p>
+
+</blockquote>
+<h1 id="toc_2" class="h16">详解</h1>
+<h2 id="toc_3" class="h16">zone</h2>
+
+<ul>
+<li class="md_li"><span>网络区域简介
+</span></li>
+</ul>
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end">　　通过将网络划分成不同的区域（通常情况下称为 <code>zones</code>），制定出不同区域之间的访问控制策略来控制不同任程度区域间传送的数据流。例如互联网是不可信任的区域，而内部网络是高度信任的区域。以避免安全策略中禁止的一些通信。它有控制信息基本的任务在不同信任的区域。典型信任的区域包括互联网 ( 一个没有信任的区域 ) 和一个内部网络 ( 一个高信任的区域 )。最终目标是提供受控连通性在不同水平的信任区域通过安全政策的运行和连通性模型之间根据最少特权原则。例如：公共 WIFI 网络连接应该不信任，而家庭有线网络连接就应该完全信任。网络安全模型可以在安装、初次启动和首次建立网络连接时选择初始化。该模型描述了主机所联的整个网络环境的可信级别，并定义了新连接的处理方式。在 <code>/etc/firewalld/</code> 的区域设定是一系列可以被快速执行到网络接口的预设定。有几种不同的初始化区域：</span>
+</p>
+
+
+<ol>
+<li class="md_li"><span><strong>drop（丢弃）：</strong>任何接收的网络数据包都被丢弃，没有任何回复。仅能有发送出去的网络连接。
+</span></li>
+<li class="md_li"><span><strong>block（限制）：</strong>任何接收的网络连接都被 IPv4 的 icmp-host-prohibited 信息和 IPv6 的 icmp6-adm-prohibited 信息所拒绝。
+</span></li>
+<li class="md_li"><span><strong>public（公共）：</strong>在公共区域内使用，不能相信网络内的其他计算机不会对您的计算机造成危害，只能接收经过选取的连接。
+</span></li>
+<li class="md_li"><span><strong>external（外部）：</strong>特别是为路由器启用了伪装功能的外部网。您不能信任来自网络的其他计算，不能相信它们不会对您的计算机造成危害，只能接收经过选择的连接。
+</span></li>
+<li class="md_li"><span><strong>dmz（非军事区）：</strong>用于您的非军事区内的电脑，此区域内可公开访问，可以有限地进入您的内部网络，仅仅接收经过选择的连接。
+</span></li>
+<li class="md_li"><span><strong>work（工作）：</strong>用于工作区。您可以基本相信网络内的其他电脑不会危害您的电脑。仅仅接收经过选择的连接。
+</span></li>
+<li class="md_li"><span><strong>home（家庭）：</strong>用于家庭网络。您可以基本信任网络内的其他计算机不会危害您的计算机。仅仅接收经过选择的连接。
+</span></li>
+<li class="md_li"><span><strong>internal（内部）：</strong>用于内部网络。您可以基本上信任网络内的其他计算机不会威胁您的计算机。仅仅接受经过选择的连接。
+</span></li>
+<li class="md_li"><span><strong>trusted（信任）：</strong>可接受所有的网络连接。
+</span></li>
+</ol>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　说明：firewalld 的默认区域是 public。</span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　显示所有支持的分区：</span>
+</p>
+
+
+<pre><code>$ firewall-cmd --get-zones 
+block drop work internal external home dmz public trusted</code></pre>
+
+<!--block_code_end--><h3 id="toc_4" class="h16">网络请求如何判断使用哪个 zone 的</h3>
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　firewalld 是如何规定一个网络请求使用的时哪个 zone 上的规则呢？首先会根据 zone 上绑定的 source 进行判断，然后再根据 interface 进行判断。比如：我现在有两台机器，一台我本机（192.168.1.188），另一个是虚拟机（192.168.1.61）。以下操作未说明的情况下都是在虚拟机上：</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>查看两个 zone 的信息
+</span></li>
+</ul>
+
+<pre><code>$ firewall-cmd --list-all --zone=work
+work (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: eth1
+  sources:
+  services: ssh dhcpv6-client
+  ports:
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+
+$ firewall-cmd --list-all --zone=home
+home
+  target: default
+  icmp-block-inversion: no
+  interfaces:
+  sources:
+  services: ssh mdns samba-client dhcpv6-client
+  ports:
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　可以看到网卡绑定在 <code>zone work</code> 上面，而 <code>zone home</code> 基本没什么东西</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>在 <code>zone home</code> 绑定 <code>source 192.168.1.188</code>
+</span></li>
+</ul>
+
+<pre><code>$ firewall-cmd --add-source=192.168.1.188 --zone=home
+success
+
+$ firewall-cmd --list-all --zone=home
+home (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces:
+  sources: 192.168.1.188
+  services: ssh mdns samba-client dhcpv6-client
+  ports:
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>这里想做的是：在我本机上（192.168.1.188）上面启动一个 tomcat 服务，监听 8080 端口，从本机上向虚拟机（192.168.1.61）的 8093 端口发起请求，在虚拟机上配置端口转发到 192.168.1.188 的 8080 端口上面，访问看效果
+</span></li>
+</ul>
+
+<pre><code># 先开启伪装 ip，支持转发
+$ firewall-cmd --add-masquerade --zone=home
+success
+$ firewall-cmd --add-masquerade --zone=work
+success
+# 在 zone home 中添加转发
+[root@localhost ~]# firewall-cmd --add-forward-port=port=8093:proto=tcp:toport=8080:toaddr=192.168.1.188 --zone=home
+success
+[root@localhost ~]# firewall-cmd --list-all --zone=home
+home (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces:
+  sources: 192.168.1.188
+  services: ssh mdns samba-client dhcpv6-client
+  ports:
+  protocols:
+  masquerade: yes
+  forward-ports: port=8093:proto=tcp:toport=8080:toaddr=192.168.1.188
+  source-ports:
+  icmp-blocks:
+  rich rules:</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　从本机访问 <code>http://192.168.1.61:8093</code> 看结果：</span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://img.lynchj.com/20190306114701.png" alt="访问结果" title="" ></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>继续在 <code>zone work</code> 中添加转发规则
+</span></li>
+</ul>
+
+<pre><code>$ firewall-cmd --add-forward-port=port=8093:proto=tcp:toport=8081:toaddr=192.168.1.188 --zone=work
+success
+$ firewall-cmd --list-all --zone=work
+work (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: eth1
+  sources:
+  services: ssh dhcpv6-client
+  ports:
+  protocols:
+  masquerade: yes
+  forward-ports: port=8093:proto=tcp:toport=8081:toaddr=192.168.1.188
+  source-ports:
+  icmp-blocks:
+  rich rules:</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这里转发到的是我本地的一个并没有提供服务的端口 <code>8081</code>，再次从本机访问 <code>http://192.168.1.61:8093</code> 看结果：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://img.lynchj.com/20190306114933.png" alt="访问结果" title="" ></span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">　　已经凉了。。。。</span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这里得出的结论是，会根据 source 和 interface 选择对应的 zone，经过顺序为 source、interface，但是后经过的规则会覆盖掉前面的规则。不对之处还请指出。</span>
+</p>
+
+</blockquote>
+<h2 id="toc_5" class="h16">service</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　服务就是把一组规则包装成模块。FirewallD 已经预先定义了一些服务，让客户更容易被允许或者被禁止进入服务。与对开放端口截然不同，使用预先定义服务或者用户自定服务，能够让管理更容易。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　获取所有支持的服务：</span>
+</p>
+
+
+<pre><code>$ firewall-cmd --get-services
+RH-Satellite-6 amanda-client amanda-k5-client bacula bacula-client bitcoin bitcoin-rpc bitcoin-testnet bitcoin-testnet-rpc ceph ceph-mon cfengine condor-collector ctdb dhcp dhcpv6 dhcpv6-client dns docker-registry dropbox-lansync elasticsearch freeipa-ldap freeipa-ldaps freeipa-replication freeipa-trust ftp ganglia-client ganglia-master high-availability http https imap imaps ipp ipp-client ipsec iscsi-target kadmin kerberos kibana klogin kpasswd kshell ldap ldaps libvirt libvirt-tls managesieve mdns mosh mountd ms-wbt mssql mysql nfs nfs3 nrpe ntp openvpn ovirt-imageio ovirt-storageconsole ovirt-vmconsole pmcd pmproxy pmwebapi pmwebapis pop3 pop3s postgresql privoxy proxy-dhcp ptp pulseaudio puppetmaster quassel radius rpc-bind rsh rsyncd samba samba-client sane sip sips smtp smtp-submission smtps snmp snmptrap spideroak-lansync squid ssh synergy syslog syslog-tls telnet tftp tftp-client tinc tor-socks transmission-client vdsm vnc-server wbem-https xmpp-bosh xmpp-client xmpp-local xmpp-server</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　查看服务相信信息：</span>
+</p>
+
+
+<pre><code>$ firewall-cmd --info-service=ssh
+ssh
+  ports: 22/tcp
+  protocols:
+  source-ports:
+  modules:
+  destination:</code></pre>
+
+<!--block_code_end--><h2 id="toc_6" class="h16">rich langulage rule</h2>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　通过 <code>rich language</code> 语法，可以用比使用 <code>直接接口</code> （iptables 的那种配置方式）方式更易理解的方法建立复杂防火墙规则。此外，还能永久保留设置。这种语言使用关键字，是 iptables 工具的抽象表示。这种语言可以用来配置分区，也仍然支持现行的配置方式。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>语法
+</span></li>
+</ul>
+
+<pre><code>$ firewall-cmd --add-rich-rule="rule [family='&lt;rule family&gt;'] [ source address='&lt;address&gt;' [invert='True'] ] [ destination address='&lt;address&gt;' [invert='True'] ] [ &lt;element&gt; ] [ log [prefix='&lt;prefix text&gt;'] [level='&lt;log level&gt;'] [limit value='rate/duration'] ] [ audit ] [ accept|reject|drop ]"</code></pre>
+
+<!--block_code_end--><h3 id="toc_7" class="h16">理解多规则命令</h3>
+
+<ul>
+<li class="md_li"><span>Rule
+</span></li>
+</ul>
+
+<pre><code>rule [family="ipv4|ipv6"]</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　一个规则是关联某个特定分区的，一个分区可以有几个规则。如果几个规则互相影响或者冲突，则执行和数据包相匹配的第一个规则。如果提供了规则系列，它可以是 ipv4 或者 ipv6 。规则系列把规则限定在 IPv4 或 IPv6 。如果没有提供规则系列， 将为 IPv4 和 IPv6 增加规则。如果源地址或者目标地址在一个规则中被使用，那么必须提供规则系列。端口转发也存在这种情况。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Source
+</span></li>
+</ul>
+
+<pre><code>source [not] address="address[/mask]"|mac="mac-address"|ipset="ipset"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　通过指定源地址，一个尝试连接的源头可以被限制在源地址中。一个源地址或者地址范围是一个为 IPv4 或者 IPv6 地址。不支持使用主机名。可以通过增加 <code>invert=&quot;true&quot;</code> 或 <code>invert=&quot;yes&quot;</code> 来颠倒源地址命令的意思。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Destination
+</span></li>
+</ul>
+
+<pre><code>destination [not] address="address[/mask]"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　指定目的地址，与 source 相似，在服务器为多网卡的前提下。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Service
+</span></li>
+</ul>
+
+<pre><code>service name="service name"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　针对服务名的一种配置方式。服务名称是 <code>firewalld</code> 提供的其中一种服务。要获得被支持的服务的列表，输入以下命令： <code>firewall-cmd --get-services</code>。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Port
+</span></li>
+</ul>
+
+<pre><code>port port="port value" protocol="tcp|udp"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　端口既可以是一个独立端口数字，又或者端口范围，例如，5060-5062。协议可以指定为 tcp 或 udp 。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Protocol
+</span></li>
+</ul>
+
+<pre><code>protocol value="protocol value"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　协议值可以是一个协议 ID 数字，或者一个协议名。预设的一些可用协议，请查阅 <code>/etc/protocols</code>。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Masquerade
+</span></li>
+</ul>
+
+<pre><code>masquerade</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　开启规则伪装，如果在一个配置规则里开启转发服务的话。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Forward-Port
+</span></li>
+</ul>
+
+<pre><code>forward-port port="port value" protocol="tcp|udp" to-port="port value" to-addr="address"</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　从一个带有指定为 tcp 或 udp 协议的本地端口转发数据包到另一个本地端口，或另一台机器，或另一台机器上的另一个端口。 port 和 to-port 可以是一个单独的端口数字，或一个端口范围。而目的地址是一个简单的 IP 地址。forward-port 命令使用内部动作 accept（允许的）。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>Action
+</span></li>
+</ul>
+
+<pre><code>accept|reject|drop|mark</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　特殊使用方式：</span>
+</p>
+
+
+<pre><code>accept [limit value="rate/duration"]
+reject [type="reject type"] [limit value="rate/duration"]
+drop [limit value="rate/duration"]
+mark set="mark[/mask]" [limit value="rate/duration"]　</code></pre>
+
+<!--block_code_end-->
+<ol>
+<li class="md_li"><span><strong>accept：</strong>允许指定规则。
+</span></li>
+<li class="md_li"><span><strong>reject：</strong>拒绝指定规则，给与拒绝响应。
+</span></li>
+<li class="md_li"><span><strong>drop：</strong>丢弃指定规则，不给任何响应。
+</span></li>
+<li class="md_li"><span><strong>mark：</strong>所有数据都将在 mangle 表的 PREROUTING 链中标记，并且带哟偶标记和掩码组合。可以使用 <code>limit</code> 参数限流。
+</span></li>
+</ol>
+<h1 id="toc_8" class="h16">常用命令收集</h1>
+<h2 id="toc_9" class="h16">关于 zone</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --get-default-zone</td>
+<td>获取默认分区</td>
+</tr>
+<tr>
+<td>firewall-cmd --set-default-zone=<code>&lt;zone&gt;</code></td>
+<td>设置默认分区。<code>&lt;zone&gt;</code>：分区名称，如：public、home</td>
+</tr>
+<tr>
+<td>firewall-cmd --get-zones</td>
+<td>获取所有的分区名称</td>
+</tr>
+<tr>
+<td>firewall-cmd --get-active-zones</td>
+<td>获取活动的分区信息</td>
+</tr>
+<tr>
+<td>firewall-cmd --new-zone=<code>&lt;zone&gt;</code></td>
+<td>创建一个分区</td>
+</tr>
+<tr>
+<td>firewall-cmd --delete-zone=<code>&lt;zone&gt;</code></td>
+<td>删除一个分区</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=<code>&lt;zone&gt;</code></td>
+<td>选择这个分区，同行命令后边指定端口、ip 等规则都会作用在这个分区上</td>
+</tr>
+<tr>
+<td>firewall-cmd --list-all</td>
+<td>列出指定分区的所有已添加或已启用的信息</td>
+</tr>
+<tr>
+<td>firewall-cmd --info-zone=<code>&lt;zone&gt;</code></td>
+<td>查看指定分区的信息</td>
+</tr>
+<tr>
+<td>firewall-cmd --path-zone=<code>&lt;zone&gt;</code> --permanent</td>
+<td>查看分区对应的配置文件路径</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_10" class="h16">配置文件</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　可以通过以下目录更改分区信息：</span>
+</p>
+
+
+<pre><code>$ ll /usr/lib/firewalld/zones/
+总用量 36
+-rw-r--r--. 1 root root 299 4月  11 2018 block.xml
+-rw-r--r--. 1 root root 293 4月  11 2018 dmz.xml
+-rw-r--r--. 1 root root 291 4月  11 2018 drop.xml
+-rw-r--r--. 1 root root 304 4月  11 2018 external.xml
+-rw-r--r--. 1 root root 369 4月  11 2018 home.xml
+-rw-r--r--. 1 root root 384 4月  11 2018 internal.xml
+-rw-r--r--. 1 root root 315 4月  11 2018 public.xml
+-rw-r--r--. 1 root root 162 4月  11 2018 trusted.xml
+-rw-r--r--. 1 root root 311 4月  11 2018 work.xml</code></pre>
+
+<!--block_code_end-->
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"> 　　如果目录 <code>/etc/firewalld/zones</code> 下有同名文件，则 <code>/etc/firewalld/zones</code> 下文件生效。</span>
+</p>
+
+</blockquote>
+<h2 id="toc_11" class="h16">关于 source</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --list-sources</td>
+<td>列出默认分区所有绑定的源 ip</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-source=<code>&lt;source&gt;</code></td>
+<td>绑定源 ip 到默认分区</td>
+</tr>
+<tr>
+<td>firewall-cmd --remove-source=<code>&lt;source&gt;</code></td>
+<td>从默认分区删除绑定的源 ip</td>
+</tr>
+<tr>
+<td>firewall-cmd --query-source=<code>&lt;source&gt;</code></td>
+<td>查询默认分区绑定的源 ip</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_12" class="h16">关于 interface（网卡）</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --list-interfaces</td>
+<td>获取当前区域所有接口</td>
+</tr>
+<tr>
+<td>firewall-cmd --get-zone-of-interface=<code>&lt;interface&gt;</code></td>
+<td>根据接口名称获取其所在区域</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=<code>&lt;zone&gt;</code> --add-interface=<code>&lt;interface&gt;</code></td>
+<td>把指定接口移动（添加）到指定分区。<code>--zone=&lt;zone&gt;</code>，不指定此参数将使用默认分区。<code>&lt;interface&gt;</code>：指定的接口（网卡）</td>
+</tr>
+<tr>
+<td>firewall-cmd --change-interface=<code>&lt;interface&gt;</code></td>
+<td>更改接口到当前区域</td>
+</tr>
+<tr>
+<td>firewall-cmd --query-interface=<code>&lt;interface&gt;</code></td>
+<td>查询指定接口是否属当前区域</td>
+</tr>
+<tr>
+<td>firewall-cmd --remove-interface=<code>&lt;interface&gt;</code></td>
+<td>从当前区域删除指定接口</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_13" class="h16">关于 port</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --zone=public --list-ports</td>
+<td>获取指定分区暴露的端口信息</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=public --add-port=<code>&lt;port&gt;</code>/<code>&lt;protocol&gt;</code></td>
+<td>添加暴露的端口规则。<code>&lt;port&gt;</code>：端口，如：8080、22、3306。<code>&lt;protocol&gt;</code>：协议，如：tcp、udp</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=public --remove-port=<code>&lt;port&gt;</code>/<code>&lt;protocol&gt;</code></td>
+<td>删除暴露的端口规则</td>
+</tr>
+<tr>
+<td>firewall-cmd --query-port=<code>&lt;port&gt;</code>/<code>&lt;protocol&gt;</code></td>
+<td>查询指定端口/协议是否已经开启</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_14" class="h16">关于服务</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　类似于端口的可视化服务，如果你添加 ssh 服务，那么就是开放了 22 端口。就是 firewalld 默认的把一些系统服务与端口对应了起来，开启服务，即为开启端口。</span>
+</p>
+
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --get-services</td>
+<td>获取支持的服务列表</td>
+</tr>
+<tr>
+<td>firewall-cmd --list-services</td>
+<td>列出当前 zone 提供的所有服务</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=home --add-service=ssh</td>
+<td>添加一个服务</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=home --remove-service=ssh</td>
+<td>删除一个服务</td>
+</tr>
+<tr>
+<td>firewall-cmd --query-service=ssh</td>
+<td>查询一个服务是否开启</td>
+</tr>
+<tr>
+<td>firewall-cmd --info-service=ssh</td>
+<td>查询一个服务对应的信息，如：端口号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_15" class="h16">配置文件</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　可以通过以下目录更改服务信息：</span>
+</p>
+
+
+<pre><code>$ ll /usr/lib/firewalld/services/
+总用量 432
+-rw-r--r--. 1 root root 412 4月  11 2018 amanda-client.xml
+-rw-r--r--. 1 root root 447 4月  11 2018 amanda-k5-client.xml
+-rw-r--r--. 1 root root 320 4月  11 2018 bacula-client.xml
+-rw-r--r--. 1 root root 346 4月  11 2018 bacula.xml
+-rw-r--r--. 1 root root 275 4月  11 2018 bitcoin-rpc.xml
+-rw-r--r--. 1 root root 307 4月  11 2018 bitcoin-testnet-rpc.xml
+-rw-r--r--. 1 root root 281 4月  11 2018 bitcoin-testnet.xml
+-rw-r--r--. 1 root root 244 4月  11 2018 bitcoin.xml
+......</code></pre>
+
+<!--block_code_end--><h2 id="toc_16" class="h16">关于伪装 ip</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --zone=public --query-masquerade</td>
+<td>查询是否已经开启了伪装 ip。开启伪装 ip 才具把原有请求转发到其他服务器上的能力</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=external --add-masquerade</td>
+<td>开启伪装 ip</td>
+</tr>
+<tr>
+<td>firewall-cmd --zone=external --remove-masquerade</td>
+<td>禁用伪装 ip</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"> 　　如果目录 <code>/etc/firewalld/services</code> 下有同名文件，则 <code>/etc/firewalld/services</code> 下文件生效。</span>
+</p>
+
+</blockquote>
+<h2 id="toc_17" class="h16">关于转发</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --list-forward-ports</td>
+<td>转发的规则列表</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-forward-port=<code>port=&lt;portid&gt;[-&lt;portid&gt;]:proto=&lt;protocol&gt;[:toport=&lt;portid&gt;[-&lt;portid&gt;]][:toaddr=&lt;address&gt;[/&lt;mask&gt;]]</code></td>
+<td>添加转发规则，注意：<code>仅支持 IPV4</code>，需要开启 firewalld 伪装 ip 功能</td>
+</tr>
+<tr>
+<td>firewall-cmd --remove-forward-port=<code>port=&lt;portid&gt;[-&lt;portid&gt;]:proto=&lt;protocol&gt;[:toport=&lt;portid&gt;[-&lt;portid&gt;]][:toaddr=&lt;address&gt;[/&lt;mask&gt;]]</code></td>
+<td>移除转发规则，<code>仅支持 IPV4</code></td>
+</tr>
+<tr>
+<td>firewall-cmd --query-forward-port=<code>port=&lt;portid&gt;[-&lt;portid&gt;]:proto=&lt;protocol&gt;[:toport=&lt;portid&gt;[-&lt;portid&gt;]][:toaddr=&lt;address&gt;[/&lt;mask&gt;]]</code></td>
+<td>查询转发规则，<code>仅支持 IPV4</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_18" class="h16">关于 rich language rule</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --add-rich-rule=&quot;rule family=&#39;ipv4&#39; port protocol=&#39;<code>&lt;protocol&gt;</code>&#39; port=&#39;<code>&lt;port&gt;</code>&#39; accept&quot;</td>
+<td>允许任意 ip 访问指定的端口，反之把 <code>accept</code> 换成 <code>reject</code> 即可</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-rich-rule=&quot;rule family=&#39;ipv4&#39; service name=&#39;<code>&lt;service name&gt;</code>&#39; accept&quot;</td>
+<td>允许任意 ip 访问指定的服务对应的端口（获取所有预设支持的服务信息：<code>firewall-cmd --get-services</code>），反之把 <code>accept</code> 换成 <code>reject</code> 即可</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-rich-rule=&quot;rule family=&#39;ipv4&#39; source address=&#39;<code>&lt;ip&gt;</code>&#39; port protocol=&#39;<code>&lt;protocol&gt;</code>&#39; port=&#39;<code>&lt;port&gt;</code>&#39; accept&quot;</td>
+<td>允许指定的源 ip 访问指定的端口，反之把 <code>accept</code> 换成 <code>reject</code> 即可</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-rich-rule=&quot;rule family=&#39;ipv4&#39; source address=&#39;<code>&lt;ip&gt;</code>&#39; destination address=&#39;<code>&lt;ip&gt;</code>&#39; port protocol=&#39;<code>&lt;protocol&gt;</code>&#39; port=&#39;<code>&lt;port&gt;</code>&#39; accept&quot;</td>
+<td>允许指定的源 ip 访问指定 ip 的指定端口，反之把 <code>accept</code> 换成 <code>reject</code> 即可</td>
+</tr>
+<tr>
+<td>firewall-cmd --add-rich-rule=&quot;rule family=&#39;ipv4&#39; forward-port port=&#39;<code>&lt;port&gt;</code>&#39; protocol=&#39;<code>&lt;protocol&gt;</code>&#39; to-port=&#39;<code>&lt;port&gt;</code>&#39; to-addr=&#39;<code>&lt;ip&gt;</code>&quot;</td>
+<td>转发请求你流量到另一台服务器。<code>记得开启伪装</code></td>
+</tr>
+<tr>
+<td>firewall-cmd --permanent --add-rich-rule=&#39;rule protocol value=&#39;<code>&lt;protocol&gt;</code>&#39; reject&#39;</td>
+<td>拒绝某种协议服务，如：icmp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_19" class="h16">其他配置</h2>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>firewall-cmd --reload</td>
+<td>重新加载配置，不会中断用户连接，不会丢失状态</td>
+</tr>
+<tr>
+<td>firewall-cmd --complete-reload</td>
+<td>重新加载配置，会中断用户连接，会丢失状态（只是在重启的时候丢失状态、中断用户连接，之后恢复正常）。通常在防火墙出现严重问题时，这个命令才会被使用。比如，防火墙规则是正确的，但却出现状态信息问题和无法建立连接。</td>
+</tr>
+<tr>
+<td>firewall-cmd --panic-on</td>
+<td>终止所有输入和输出的数据包</td>
+</tr>
+<tr>
+<td>firewall-cmd --panic-off</td>
+<td>开启你所有输入和输出的数据包</td>
+</tr>
+<tr>
+<td>firewall-cmd --query-panic</td>
+<td>查询 panic 是否开启。<code>yes</code>：开启，<code>no</code>：未开启</td>
+</tr>
+</tbody>
+</table>
+<h1 id="toc_20" class="h16">特殊说明</h1>
+
+<ul>
+<li class="md_li"><span><strong>--permanent</strong>
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end">　　为了让一个规则永久生效，需要向所有命令添加 <code>--permanent</code> 选项。注意，这不只是意味着永久更改，而且<strong>更改将仅仅在防火墙重新加载、服务器重启或者系统重启之后生效</strong>。用 <code>firewall-cmd</code> 更改规则如果没有加 <code>--permanent</code> 选项的设定能立即生效，但是它<strong>仅仅在下次防火墙重新加载、系统启动或者 <code>firewalld</code> 服务重启之前可用</strong>。防火墙不会在断开连接时重新加载，而会提示您通过重新加载，放弃临时更改。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span><strong>--timeout=<code>&lt;timeval&gt;</code></strong>
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　在原有设置规则的基础上，最后还可以在加上这个参数，意指：这特规则在指定时间之后过期。<br /></span>
+    <span class="md_line md_line_end">　　timeval 是一个数字（默认：秒）或在数字后跟一个字符 <code>s</code>（秒）、<code>m</code>（分钟）、<code>h</code>（小时）的数字，例如 <code>20m</code> 或 <code>1h</code>。</span>
+</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

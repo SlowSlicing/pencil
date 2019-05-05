@@ -1,0 +1,3074 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编写高质量代码 - Java</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            编写高质量代码 - Java
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">参考：编写高质量代码：改善Java程序的151个建议</span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><code>持续更新</code>、<code>Java</code>、<code>笔记</code></span>
+</p>
+
+<div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">1.使用 <code>long</code> 类型时注意使用 <code>大写L</code></a>
+</li>
+<li>
+<a href="#toc_1">2.三元表达式类型务必一致</a>
+</li>
+<li>
+<a href="#toc_2">3.避免 instanceof 非预期结果</a>
+</li>
+<li>
+<a href="#toc_3">4.奇偶判断，用偶判断，不要用奇判断</a>
+</li>
+<li>
+<a href="#toc_4">5.不要让类型默默转换</a>
+</li>
+<li>
+<a href="#toc_5">6.边界，边界，还是边界</a>
+</li>
+<li>
+<a href="#toc_6">7.不要让四舍五入亏了一方</a>
+</li>
+<li>
+<a href="#toc_7">8.在接口中不要存在实现代码</a>
+</li>
+<li>
+<a href="#toc_8">9.避免在构造函数中初始化其他类</a>
+</li>
+<li>
+<a href="#toc_9">10.让工具类不可实例化</a>
+</li>
+<li>
+<a href="#toc_10">11.</a>
+</li>
+</ul>
+</div>
+</div>
+<hr>
+<h4 id="toc_0" class="h16 md_first_h">1.使用 <code>long</code> 类型时注意使用 <code>大写L</code></h4>
+
+<pre><code>// 错误的
+long i = 1l;
+// 正确的
+long i = 1L;</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h4 id="toc_1" class="h16">2.三元表达式类型务必一致</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　三元操作符是if-else的简化写法，在项目中使用它的地方很多，也非常好用，但是好用 又简单的东西并不表示就可以随便用，我们来看看下面这段代码：</span>
+</p>
+
+
+<pre><code>public static void main(String[] args) { 
+        int i = 80;
+        String s = String.valueOf(i&lt;100 ? 90 : 100);
+        String si = String.valueOf(i&lt;100 ? 90 : 100.0);
+        System.out.println("两者是否相等："+s.equals(si));
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　分析一下这段程序：i是80，那它当然小于100，两者的返回值肯定都是90，再转成 String类型，其值也绝对相等，毋庸置疑的。恩，分析得有点道理，但是变量s中三元操作符的第二个操作数是100，而si的第二个操作数是100.0，难道没有影响吗？不可能有影响吧，三元操作符的条件都为真了，只返回第一个值嘛，与第二个值有一毛钱的关系吗？貌似有道理。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　果真如此吗？我们通过结果来验证一下，运行结果是：“两者是否相等：false”，什么？ 不相等，Why?</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　问题就出在了 100和100.0这两个数字上，在变量s中，三元操作符中的第一个操作数 (90)和第二个操作数（100)都是int类型，类型相同，返回的结果也就是int类型的90，而变量si的情况就有点不同了，第一个操作数是90 (int类型），第二个操作数却是100.0，而这是个浮点数，也就是说两个操作数的类型不一致，可三元操作符必须要返回一个数据，而且类型要确定，不可能条件为真时返回int类型，条件为假时返回float类型，编译器是不允许如此的，所以它就会进行类型转换了，int型转换为浮点数90.0，也就是说三元操作符的返回值是浮点数90.0，那这当然与整型的90不相等了。这里可能会有疑惑了：为什么是整型转为浮点，而不是浮点转为整型呢？这就涉及三元操作符类型的转换规则：<br /></span>
+    <span class="md_line">　　<strong>若两个操作数不可转换，则不做转换，返回值为Object类型。</strong><br /></span>
+    <span class="md_line">　　<strong>若两个操作数是明确类型的表达式（比如变量），則按照正常的二进制数字来转换，int类型转换为long类型，long类型转换为float类型等。</strong><br /></span>
+    <span class="md_line">　　<strong>若两个操作数中有一个是数字S，另外一个是表达式，且其类型标示为T，那么，若数字S在T的范围内，则转换为T类型；若S超出了T类型的范围，则T转换为S类型。</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>若两个操作数都是直接量数字（Literal、字面量)，则返回值类型为范围较大者。</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　知道是什么原因了，相应的解决办法也就有了 ：保证三元操作符中的两个操作数类型一致，即可减少可能错误的发生。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_2" class="h16">3.避免 instanceof 非预期结果</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　instanceof是一个简单的二元操作符，它是用来判断一个对象是否是一个类实例的，其 操作类似于 &gt;=、==，非常简单，我们来看段程序，代码如下：</span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {
+        // String对象是否是Object的实例 
+        boolean b1 = "Sting" instanceof Object;
+        // String对象是否是String的实例
+        boolean b2 = new String() instanceof String;
+        // Object对象是否是String的实例
+        boolean b3 = new Object() instanceof String;
+        // 拆箱类型是否是装箱矣型的实例
+        boolean b4 = 'A' instanceof Character;
+            // 空对象是否是String的实例
+        boolean b5 = null instanceof String;
+        // 类负转換后的空对象是否是String的实例 
+        boolean b6 = (String) null instanceof String;
+        //Date对象是否是String的实例
+        boolean b7 = new Date() instanceof String;
+        boolean b8 = new GenericClass&lt;String&gt;().isDateInstance("");
+}
+
+class GenericClass&lt;T&gt; {
+        // 判断是否是Date类型
+        public boolean isDateInstance(T t) {
+                return t instanceof  Date;
+        }
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　就这么一段程序，instanceof的所有应用场景都出现了，同时问题也产生了：这段程序中哪些语句会编译通不过？我们一个一个地来解说。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>&quot;Sting&quot; instanceof Object</strong><br /></span>
+    <span class="md_line md_line_end">　　返回值是true，这很正常，&quot;String&quot;是一个字符串，字符串又继承了 Object，那当然是返回true了。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>new String() instanceof String</strong><br /></span>
+    <span class="md_line md_line_end">　　返回值是true,没有任何问题，一个类的对象当然是它的实例了。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>new Object() instanceof String</strong><br /></span>
+    <span class="md_line md_line_end">　　返回值是false，Object是父类，其对象当然不是String类的实例了。要注意的是，这句话其实完全可以编译通过，只要instanceof关键字的左右两个操作数有继承或实现关系，就可以编译通过。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>&#39;A&#39; instanceof Character</strong><br /></span>
+    <span class="md_line md_line_end">　　这句话可能有读者会猜错，事实上它编译不通过，为什么呢？因为是一个char类型，也就是一个基本类型，不是一个对象，instanceof只能用于对象的判断，不能用于基本类型的判断。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>null instanceof String</strong><br /></span>
+    <span class="md_line md_line_end">　　返回值是false，这是instanceof特有的规则：若左操作数是null，结果就直接返回 false，不再运算右操作数是什么类。这对我们的程序非常有利，在使用instanceof操作符时, 不用关心被判断的类（也就是左操作数）是否为null，这与我们经常用到的equals、toString方法不同。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>(String)null instanceof String</strong><br /></span>
+    <span class="md_line md_line_end">　　返回值是false，不要看这里有个强制类型转换就认为结果是true，不是的，null是一个万用类型，也可以说它没类型，即使做类型转换还是个null。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>new Date() instanceof String</strong><br /></span>
+    <span class="md_line md_line_end">　　编译通不过，因为Date类和String没有继承或实现关系，所以在编译时直接就报错了，instanceof操作符的左右操作数必须有继承或实现关系，否则编译会失败。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>new GenericClass<String>().isDateInstance(&quot;&quot;)</strong><br /></span>
+    <span class="md_line md_line_end">　　编译通不过？非也，编译通过了，返回值是false, T是个String类型，与Date之间没有继承或实现关系，为什么&quot;t instanceof Date&quot;会编译通过呢？那是因为Java的泛型是为编码服务的，在编译成字节码时，T已经是Object类型了，传递的实参是String类型，也就是说T的表面类型是Object，实际类型是String，那<code>t instanceof Date</code>这句话就等价于 <code>Object instance of Date</code>了，所以返回 false 就很正常了。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_3" class="h16">4.奇偶判断，用偶判断，不要用奇判断</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　判断一个数是奇数还是偶数是小学里学的基本知识，能够被2整除的整数是偶数，不能被2整除的是奇数，这规则简单又明了，还有什么好考虑的？好，我们来看一个例f,代码 如下：</span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {
+        //接收键盘输入参数
+        Scanner input = new Scanner(System.in);
+        System.out.print("请输入多个数字判断奇偶：");
+        while(input.hasNextlnt()) {
+                int i = input.nextInt();
+                String str  = i + "-&gt;" + (i % 2 == 1 ? "奇数" : "偶数");
+                System.out.println(str);
+        }
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　输入多个数字，然后判断每个数字的奇偶性，不能被2整除就是奇数，其他的都是偶数，完全是根据奇偶数的定义编写的程序，我们来看看打印的结果：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">请输入多个数字利断奇偶：<code>1 2 0 -1 -2</code></span>
+</p>
+
+
+<pre><code>1 -&gt; 奇数
+2 -&gt; 偶数
+0 -&gt; 偶数
+-1 -&gt; 偶数
+-2 -&gt; 偶数</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　前三个还很靠谱，第四个参数怎么可能会是偶数呢，这Java也太差劲了，如此简单的计算也会错！別忙着下结论，我们先来了解一下Java中的取余（％标示符）算法，模拟代码如下：</span>
+</p>
+
+
+<pre><code>// 橫拟取余计算，dividend被除数，divisor除数
+public static int remainder(int dividend, int divisor) {
+        return dividend - dividend / divisor * divisor;
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　看到这段程序，相信大家都会心地笑了，原来Java是这么处理取余计算的呀。根据上面的模拟取余可知，当输入<code>-1</code>的时候，运算结果是<code>-1</code>，当然不等于1 了，所以它就被判定为偶数了，也就是说是我们的判断失误了。问题明白了，修正也很简单，改为判断是否是偶数即可，代码如下：</span>
+</p>
+
+
+<pre><code>i % 2 == 0 ? "偶数" : "奇数";</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h4 id="toc_4" class="h16">5.不要让类型默默转换</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">看以下代码</span>
+</p>
+
+
+<pre><code>public static final int LIGHT_SPEED = 30 * 10000 * 1000;
+
+public static void main(String[] args) {
+        long dis = LIGHT_SPEED * 60 * 8;
+        System.out.println(dis);
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>结果：</strong></span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">-2028888064</span>
+</p>
+
+</blockquote>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>　　这是应为Java是先运算然后再进行类型转换的，具体地说就是因为disc的三个运算参数都是int类型，三者相乘的结果虽然也是int类型，但是已经超过了int的最大值，所以其值就是负值了（为什么是负值？因为过界了就会从头开始），再转换成long型，结果还是负值。</strong></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>问题知道了，解决问题也很简单，只需一个小小的<code>L</code>
+</span></li>
+</ul>
+
+<pre><code>long dis = LIGHT_SPEED * 60L * 8;</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>在实际开发中，更通用的做法，是主动声明类型转化</strong></span>
+</p>
+
+
+<pre><code>long dis = 1L * LIGHT_SPEED * 60 * 8;</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">意思是：<code>嗨，我已经是长整型了，你们都跟着我一起转为长整型吧</code></span>
+</p>
+
+
+<hr>
+<h4 id="toc_5" class="h16">6.边界，边界，还是边界</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　某商家生产的电子产品非常畅销，需要提前30天预订才能抢到手，同时它还规定了一 个会员可拥有的最多产品数量，目的是防止囤积压货肆意加价。会员的预定过程是这样的： 先登录官方网站，选择产品型号，然后设置需要预订的数量，提交，符合规则即提示下单成功，不符合规则提示下单失败。后台的处理逻辑模拟如下：</span>
+</p>
+
+
+<pre><code>// 一个会员拥有产品的最多数量
+public final static int LIMIT = 2000;
+public static void main(String[] args) {
+
+        // 会员当前拥有的产品数量 
+        int cur = 1000;
+        Scanner input = new Scanner(System.in);
+        System.out.print("请输入需要预定的数量：");
+        while (input.hasNextInt()) {
+                int order = input.nextInt()；
+                // 当前拥有的与准备订购的产品数量之和 
+                if (order &gt; 0 &amp;&amp; order + cur &lt;= LIMIT) {
+                        System.out .println ("你已经成功定的" + order + "个产品！");
+                } else {
+                        System.out.print("超出限额，预定失败！");
+                }
+        }
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这是一个简易的订单处理程序，其中cur代表的是会员已经拥有的产品数LIMIT是一个会员最多拥有的产品数置（现实中这两个参数当然是从数据库中获得的，不过这里是一 个模拟程序），如果当前预订数置与拥有数之和超过了最大数量，则预订失败，否则下单成功。业务逻辑很简单，同时在Web界面上对订单数量做了严格的校验，比如不能是负值、 不能超过最大数量等，但是人算不如天算，运行不到两小时数据库中就出现了异常数据：某会员拥有产品的数址与预订数量之和远远大于限额。怎么会这样？程序逻辑上不可能有问题呀，这是如何产生的呢？我们来模拟一下，第一次输入：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>请褕入需要预定的致量：<code>800</code></strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>你己经成功预定的<code>800</code>个产品！</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这完全满足条件，没有任何问题，继续输入：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>请输入需要预定的数量：<code>2147483647</code></strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>你已径成功預定的<code>2147483647</code>个产品！</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　看到没，这个数字远远超过了 2000的限额，但是竞然预订成功了，真是神奇！</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　看着<code>2147483647</code>这个数字很眼熟？那就对了，它是int类型的最大值，没错，有人输入 了一个最大值，使校验条件失效了，Why？我们来看程序，order的值是<code>2147483647</code>，那再加上1000就超出int的范围了，其结果是<code>-21W482649</code>，那当然是小于正数<code>2000</code>了！一句话可归结其原因：<code>数字越界使检验条件失效</code>。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在单元测试中，有一项测试叫做边界测试（也有叫做临界测试），如果一个方法接收的是int类型的参数，那以下三个值是必测的：<code>0、正最大、负最小</code>，其中正最大和负最小是边界值，如果这三个值都没有问题，方法才是比较安全可靠的。我们的例子就是因为缺少边界测试，致使生产系统产生了严重的偏差。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　也许你要疑惑了，Web界面既然已经做了严格的校验，为什么还能输入<code>2147483647</code>这么大的数字呢？是否说明Web校验不严格？错了，不是这样的，Web校验都是在页面上通过JavaScript实现的，只能限制普通用户（这里的普通用户是指不懂HTML、不懂HTTP、不懂Java的简单使用者），而对干高手，这些校验基本上就是摆设，HTTP是明文传输的，将其拦截几次，分析一下数据结构，然后再写一个模拟器，一切前端校验就都成了浮云！想往后台提交个什么数据那还不是信手拈来？</span>
+</p>
+
+
+<hr>
+<h4 id="toc_6" class="h16">7.不要让四舍五入亏了一方</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　本建议还是来重温一个小学数学问题：四舍五入。四舍五入是一种近似精确的计算方法，在Java 5之前，我们一般是通过使用Math.round来获得指定精度的整数或小数的，这种方法使用非常广泛，代码如下： </span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {  
+        System.out.println("10.5近似值：" + Math.round(10.5));  
+        System.out.println("-10.5近似值："+ Math.round(-10.5));  
+} </code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">　　输出结果为： </span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>10.5近似值:11</strong></span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>-10.5近似值:-10</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这是四舍五入的经典案例，也是初级面试官很乐意选择的考题，绝对值相同的两个数字，近似值为什么就不同了呢？这是由<code>Math.round</code>采用的舍入规则所决定的（采用的是正无穷方向舍入规则，后面会讲解）。我们知道四舍五入是有误差的：其误差值是舍入位的一半。我们以舍入运用最频繁的银行利息计算为例来阐述该问题。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　我们知道银行的盈利渠道主要是利息差，从储户手里收拢资金，然后放贷出去，其间的利息差额便是所获得的利润。对一个银行来说，对付给储户的利息的计算非常频繁，人民银行规定每个季度末月的20日为银行结息日，一年有4次的结息日。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　场景介绍完毕，我们回过头来看四舍五入，小于5的数字被舍去，大于等于5的数字进位后舍去，由于所有位上的数字都是自然计算出来的，按照概率计算可知，被舍入的数字均匀分布在0到9之间，下面以10笔存款利息计算作为模型，以银行家的身份来思考这个算法。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　四舍。舍弃的数值：0.000、0.001、0.002、0.003、0.004，因为是舍弃的，对银行家来说，就不用付款给储户了，那每舍弃一个数字就会赚取相应的金额：0.000、0.001、0.002、0.003、0.004。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　五入。进位的数值：0.005、0.006、0.007、0.008、0.009，因为是进位，对银行家来说，每进一位就会多付款给储户，也就是亏损了，那亏损部分就是其对应的10进制补数：0.005、0.004、0.003、0.002、0.001。 </span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">　　因为舍弃和进位的数字是在0到9之间均匀分布的，所以对于银行家来说，每10笔存款的利息因采用四舍五入而获得的盈利是：</span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><code>0.000+0.001+0.002+0.003+0.004-0.005-0.004-0.003-0.002-0.001 = -0.005</code></span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　也就是说，每10笔的利息计算中就损失0.005元，即每笔利息计算损失0.0005元，这对一家有5千万储户的银行来说（对国内的银行来说，5千万是个很小的数字），每年仅仅因为四舍五入的误差而损失的金额是： </span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {  
+        // 银行账户数量，5千万  
+        int accountNum = 5000 * 10000;  
+        //按照人行的规定，每个季度末月的20日为银行结息日  
+        double cost = 0.0005 * accountNum * 4 ;
+        System.out.println("银行每年损失的金额：" + cost);  
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　输出的结果是：“银行每年损失的金额：100000.0”。即，每年因为一个算法误差就损失了10万元，事实上以上的假设条件都是非常保守的，实际情况可能损失得更多。那各位可能要说了，银行还要放贷呀，放出去这笔计算误差不就抵消掉了吗？不会抵销，银行的贷款数量是非常有限的，其数量级根本没有办法和存款相比。 </span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start">　　这个算法误差是由美国银行家发现的（那可是私人银行，钱是自己的，白白损失了可不行），并且对此提出了一个修正算法，叫做银行家舍入（Banker&#39;s Round）的近似算法，其规则如下： <br /></span>
+    <span class="md_line">　　<strong>舍去位的数值小于5时，直接舍去；</strong><br /></span>
+    <span class="md_line">　　<strong>舍去位的数值大于等于6时，进位后舍去；</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>当舍去位的数值等于5时，分两种情况：5后面还有其他数字（非0），则进位后舍去；若5后面是0（即5是最后一个数字），则根据5前一位数的奇偶性来判断是否需要进位，奇数进位，偶数舍去。</strong></span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">以上规则汇总成一句话：四舍六入五考虑，五后非零就进一，五后为零看奇偶，五前为偶应舍去，五前为奇要进一。</span>
+</p>
+
+</blockquote>
+
+<ul>
+<li class="md_li"><span>我们举例说明，取2位精度：
+</span></li>
+</ul>
+
+<pre><code>round(10.5551) = 10.56
+round(10.555) = 10.56
+round(10.545) = 10.54</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　要在Java 5以上的版本中使用银行家的舍入法则非常简单，直接使用RoundingMode类提供的Round模式即可，示例代码如下：</span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {  
+        // 存款  
+        BigDecimal d = new BigDecimal(888888);  
+        // 月利率，乘3计算季利率
+        BigDecimal r = new BigDecimal(0.001875 * 3);
+        //计算利息
+        BigDecimal i = d.multiply(r).setScale(2, RoundingMode.HALF_EVEN); 
+        System.out.println("季利息是：" + i);  
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start">　　在上面的例子中，我们使用了BigDecimal类，并且采用setScale方法设置了精度，同时传递了一个<code>RoundingMode.HALF_EVEN</code>参数表示使用银行家舍入法则进行近似计算，BigDecimal和<code>RoundingMode</code>是一个绝配，想要采用什么舍入模式使用RoundingMode设置即可。目前Java支持以下七种舍入方式： <br /></span>
+    <span class="md_line">　　<strong>ROUND_UP：远离零方向舍入。 向远离0的方向舍入，也就是说，向绝对值最大的方向舍入，只要舍弃位非0即进位。</strong><br /></span>
+    <span class="md_line">　　<strong>ROUND_DOWN：趋向零方向舍入。 向0方向靠拢，也就是说，向绝对值最小的方向输入，注意：所有的位都舍弃，不存在进位情况。</strong><br /></span>
+    <span class="md_line">　　<strong>ROUND_CEILING：向正无穷方向舍入。 向正最大方向靠拢，如果是正数，舍入行为类似于ROUND_UP；如果为负数，则舍入行为类似于ROUND_DOWN。注意：Math.round方法使用的即为此模式。</strong><br /></span>
+    <span class="md_line">　　<strong>ROUND_FLOOR：向负无穷方向舍入。 向负无穷方向靠拢，如果是正数，则舍入行为类似于ROUND_DOWN；如果是负数，则舍入行为类似于ROUND_UP。</strong><br /></span>
+    <span class="md_line">　　<strong>HALF_UP：最近数字舍入（5进）。这就是我们最最经典的四舍五入模式。</strong><br /></span>
+    <span class="md_line">　　<strong>HALF_DOWN：最近数字舍入（5舍）。 在四舍五入中，5是进位的，而在HALF_DOWN中却是舍弃不进位。</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>HALF_EVEN：银行家算法。</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在普通的项目中舍入模式不会有太多影响，可以直接使用Math.round方法，但在大量与货币数字交互的项目中，一定要选择好近似的计算模式，尽量减少因算法不同而造成的损失。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　注意 根据不同的场景，慎重选择不同的舍入模式，以提高项目的精准度，减少算法损失。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_7" class="h16">8.在接口中不要存在实现代码</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　看到这样的标题读者可能会纳闷：接口中有实现代码？这怎么可能呢？确实，接口中可以声明常量，声明抽象方法，也可以继承父接口，但就是不能有具体实现，因为接口是一种契约（<code>Contract</code>），是一种框架性协议，这表明它的实现类都是同一种类型，或者是具备相似特征的一个集合体。对于一般程序，接口确实没有任何实现，但是在那些特殊的程序中就例外了，阅读如下代码： </span>
+</p>
+
+
+<pre><code>public static void main(String[] args) {  
+        // 调用接口的实现  
+        B.s.doSomething();  
+}
+
+// 在接口中存在实现代码 
+interface B { 
+        public static final S s = new S() {  
+                public void doSomething() {  
+                        System.out.println("我在接口中实现了");  
+                }  
+        }; 
+} 
+
+// 被实现的接口 
+interface S {  
+        public void doSomething(); 
+} </code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　仔细看main方法，注意那个B接口。它调用了接口常量，在没有任何显式实现类的情况下，它竟然打印出了结果，那B接口中的s常量（接口是S）是在什么地方被实现的呢？答案是在B接口中。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在B接口中声明了一个静态常量s，其值是一个匿名内部类（<code>Anonymous Inner Class</code>）的实例对象，就是该匿名内部类（当然，可以不用匿名，直接在接口中实现内部类也是允许的）实现了S接口。你看，在接口中存在着实现代码吧！ </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这确实很好，很强大，但是在一般的项目中，此类代码是严禁出现的，原因很简单：这是一种不好的编码习惯，接口是用来干什么的？接口是一个契约，不仅仅约束着实现者，同时也是一个保证，保证提供的服务（常量、方法）是稳定、可靠的，如果把实现代码写到接口中，那接口就绑定了可能变化的因素，这就会导致实现不再稳定和可靠，是随时都可能被抛弃、被更改、被重构的。所以，接口中虽然可以有实现，但应避免使用。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　注意 <code>接口中不能存在实现代码</code>。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_8" class="h16">9.避免在构造函数中初始化其他类</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　构造函数是一个类初始化必须执行的代码，它决定着类的初始化效率，如果构造函数比较复杂，而且还关联了其他类，则可能产生意想不到的问题，我们来看如下代码： </span>
+</p>
+
+
+<pre><code>public class Client {  
+        public static void main(String[] args) {  
+                Son s = new Son();  s.doSomething();  
+        } 
+} 
+// 父类 
+class Father {  
+        Father() {  
+                new Other();  
+        } 
+}
+// 子类 
+class Son extends Father {  
+        public void doSomething() {  
+                System.out.println("Hi,show me something");  
+        } 
+} 
+// 相关类
+class Other {  
+        public Other() {  
+                new Son();  
+        } 
+} </code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这段代码并不复杂，只是在构造函数中初始化了其他类，想想看这段代码的运行结果是什么？是打印&quot;<code>Hi, show me something</code>&quot;吗？ </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　答案是这段代码不能运行，报<code>StackOverflowError</code>异常，<code>栈（Stack）内存溢出</code>。这是因为声明s变量时，调用了Son的无参构造函数，JVM又默认调用了父类Father的无参构造函数，接着Father类又初始化了Other类，而Other类又调用了Son类，于是一个死循环就诞生了，直到栈内存被消耗完毕为止。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　可能有读者会觉得这样的场景不可能在开发中出现，那我们来思考这样的场景：Father是由框架提供的，Son类是我们自己编写的扩展代码，而Other类则是框架要求的拦截类（<code>Interceptor类或者Handle类或者Hook方法</code>），再来看看该问题，这种场景不可能出现吗？ </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　那有人可能要说了，这种问题只要系统一运行就会发现，不可能对项目产生影响。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　那是因为我们在这里展示的代码比较简单，很容易一眼洞穿，一个项目中的构造函数可不止一两个，类之间的关系也不会这么简单的，要想瞥一眼就能明白是否有缺陷这对所有人员来说都是不可能完成的任务，解决此类问题的最好办法就是：不要在构造函数中声明初始化其他类，养成良好的习惯。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_9" class="h16">10.让工具类不可实例化</h4>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Java项目中使用的工具类非常多，比如JDK自己的工具类<code>java.lang.Math、java.util.Collections</code>等都是我们经常用到的。工具类的方法和属性都是静态的，不需要生成实例即可访问，而且JDK也做了很好的处理，由于不希望被初始化，于是就设置构造函数为private访问权限，表示除了类本身外，谁都不能产生一个实例，我们来看一下java.lang.Math代码： </span>
+</p>
+
+
+<pre><code>public final class Math {  
+        /**  
+         * Don't let anyone instantiate this class.  
+         */  
+        private Math() {} 
+} </code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　之所以要将&quot;<code>Don&#39;t let anyone instantiate this class.</code>&quot;留下来，是因为Math的构造函数设置为private了：我就是一个工具类，我只想要其他类通过类名来访问，我不想你通过实例对象访问。这在平台型或框架型项目中已经足够了。但是如果已经告诉你不能这么做了，你还要生成一个Math实例来访问静态方法和属性（Java的反射是如此的发达，修改个构造函数的访问权限易如反掌），那我就不保证正确性了，隐藏问题随时都有可能爆发！那我们在项目开发中有没有更好的限制办法呢？有，即不仅仅设置成private访问权限，还抛异常，代码如下： </span>
+</p>
+
+
+<pre><code>public class UtilsClass {  
+        private UtilsClass() {  
+                throw new Error("不要实例化我！");  
+        }
+} </code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如此做才能保证一个工具类不会实例化，并且保证所有的访问都是通过类名来进行的。需要注意一点的是，此工具类最好不要做继承的打算，因为如果子类可以实例化的话，那就要调用父类的构造函数，可是父类没有可以被访问的构造函数，于是问题就会出现。 </span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　注意 如果一个类不允许实例化，就要保证“平常”渠道都不能实例化它。</span>
+</p>
+
+
+<hr>
+<h4 id="toc_10" class="h16">11.</h4>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,3081 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shell 脚本入门</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            Shell 脚本入门
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <p class="md_block">
+    <span class="md_line md_line_start md_line_end">可以将Shell 终端解释器当作人与计算机硬件之间的<code>翻译官</code>，它作为用户与Linux 系统内部的通信媒介，除了能够支持各种变量与参数外，还提供了诸如循环、分支等高级编程语言才有的控制结构特性。要想正确使用Shell 中的这些功能特性，准确下达命令尤为重要。Shell 脚本命令的工作方式有两种：交互式和批处理。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">　　<strong>交互式（<code>Interactive</code>）：用户每输入一条命令就立即执行。</strong><br /></span>
+    <span class="md_line md_line_end">　　<strong>批处理（<code>Batch</code>）：由用户事先编写好一个完整的Shell 脚本，Shell 会一次性执行脚本中诸多的命令。</strong></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在Shell 脚本中不仅会用到前面学习过的很多Linux 命令以及正则表达式、管道符、数据流重定向等语法规则，还需要把内部功能模块化后通过逻辑语句进行处理，最终形成日常所见的Shell 脚本。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　查看SHELL 变量可以发现当前系统已经默认使用Bash 作为命令行终端解释器了：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# echo $SHELL
+/bin/bash</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h3 id="toc_0" class="h16 md_first_h">编写简单的脚本</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　估计读者在看完上文中有关Shell 脚本的复杂描述后，会累觉不爱吧。但是，上文指的是一个高级Shell 脚本的编写原则，其实使用Vim 编辑器把Linux 命令按照顺序依次写入到一个文件中，这就是一个简单的脚本了。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　例如，如果想查看当前所在工作路径并列出当前目录下所有的文件及属性信息，实现这个功能的脚本应该类似于下面这样：</span>
+</p>
+
+
+<pre><code>[root@lynchj ~]# vim example.sh
+#!/bin/bash
+#我的简单脚本
+pwd
+ls -al</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>Shell 脚本</code>文件的名称可以任意，但为了避免被误以为是普通文件，建议将<code>.sh 后缀</code>加上，以表示是一个脚本文件。在上面的这个<code>example.sh 脚本</code>中实际上出现了三种不同的元素：第一行的脚本声明（<code>#!</code>）用来告诉系统使用哪种Shell 解释器来执行该脚本；第二行的注释信息（<code>#</code>）是对脚本功能和某些命令的介绍信息，使得自己或他人在日后看到这个脚本内容时，可以快速知道该脚本的作用或一些警告信息；第三、四行的可执行语句也就是我们平时执行的Linux 命令了。什么？！你们不相信这么简单就编写出来了一个脚本程序，那我们来执行一下看看结果：</span>
+</p>
+
+
+<pre><code>[root@lynchj ~]# bash base.sh
+/usr/local/tmp
+total 16
+drwxr-xr-x.  2 root root   51 May 16 13:53 .
+drwxr-xr-x. 13 root root 4096 May 14 11:24 ..
+-rwxr--r--.  1 root root   38 May 16 13:39 base.sh
+-rwxr--r--.  1 root root  134 May 16 13:53 example.sh
+-rw-r--r--.  1 root root   54 May 16 13:37 tmp.txt</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　除了上面用<code>bash</code> 解释器命令直接运行Shell 脚本文件外，第二种运行脚本程序的方法是通过输入完整路径的方式来执行。但默认会因为权限不足而提示报错信息，此时只需要为脚本文件增加执行权限即可（<code>chmod u+x 脚本名称</code>）：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ./base.sh
+-bash: ./base.sh: Permission denied
+[root@lynchj tmp]# chmod u+x base.sh
+[root@lynchj tmp]# ./base.sh
+/usr/local/tmp
+total 16
+drwxr-xr-x.  2 root root   51 May 16 13:53 .
+drwxr-xr-x. 13 root root 4096 May 14 11:24 ..
+-r-x------.  1 root root   38 May 16 13:39 base.sh
+-rwxr--r--.  1 root root  134 May 16 13:53 example.sh
+-rw-r--r--.  1 root root   54 May 16 13:37 tmp.txt</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h3 id="toc_1" class="h16">接收用户的参数</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　但是，像上面这样的脚本程序只能执行一些预先定义好的功能，未免太过死板了。为了让Shell 脚本程序更好地满足用户的一些实时需求，以便灵活完成工作，必须要让脚本程序能够像之前执行命令时那样，接收用户输入的参数。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　其实，Linux 系统中的Shell 脚本语言早就考虑到了这些，已经内设了用于接收参数的变量，变量之间可以使用空格间隔。例如<code>$0</code> 对应的是当前Shell 脚本程序的名称，<code>$#</code>对应的是总共有几个参数，<code>$*</code>对应的是所有位置的参数值，<code>$?</code>对应的是显示上一次命令的执行返回值，而<code>$1、$2、$3……</code>则分别对应着第N 个位置的参数值，如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/f12d511093114245b02cfa48efc95b06.png" alt="Shell 脚本程序中的参数位置变量" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　理论过后我们来练习一下。尝试编写一个脚本程序示例，通过引用上面的变量参数来看下真实效果：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim example.sh
+#!/bin/bash
+echo "当前脚本名称为$0"
+echo "总共有$#个参数，分别是$*。"
+echo "第1 个参数为$1，第5 个为$5。"
+[root@lynchj tmp]# sh example.sh one two haha 呵呵 哦哦 hello
+当前脚本名称为example.sh
+总共有6个参数，分别是one two haha 呵呵 哦哦 hello。
+第1 个参数为one，第5 个为哦哦。</code></pre>
+
+<!--block_code_end-->
+<hr>
+<h3 id="toc_2" class="h16">判断用户的参数</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　学习是一个登堂入室、由浅入深的过程。在学习完Linux 命令、掌握Shell 脚本语法变量和接收用户输入的信息之后，就要踏上新的高度—能够进一步处理接收到的用户参数。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　系统在执行<code>mkdir 命令</code>时会判断用户输入的信息，即判断用户指定的文件夹名称是否已经存在，如果存在则提示报错；反之则自动创建。<code>Shell 脚本</code>中的<code>条件测试语法</code>可以判断表达式是否成立，若条件成立则返回数字<code>0</code>，否则便返回<code>其他随机数值</code>。条件测试语法的执行格式如下图所示。切记，条件表达式两边均应有一个空格。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/184b6a32fff3445fa1d2d49d23038976.png" alt="条件测试语句的执行格式" title="" ></span>
+</p>
+
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start">　　按照测试对象来划分，条件测试语句可以分为4 种：<br /></span>
+    <span class="md_line">　　➢ <strong>文件测试语句；</strong><br /></span>
+    <span class="md_line">　　➢ <strong>逻辑测试语句；</strong><br /></span>
+    <span class="md_line">　　➢ <strong>整数值比较语句；</strong><br /></span>
+    <span class="md_line md_line_end">　　➢ <strong>字符串比较语句；</strong></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>文件测试即使用指定条件来判断文件是否存在或权限是否满足等情况的运算符，具体的参数如下表所示：
+</span></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-d</td>
+<td>测试文件是否为目录类型</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>测试文件是否存在</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>判断是否为一般文件</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>测试当前用户是否有权限读取</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>测试当前用户是否有权限写入</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>测试当前用户是否有权限执行</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面使用文件测试语句来判断<code>/usr/local/tmp</code> 是否为一个目录类型的文件，然后通过<code>Shell 解释器</code>的内设<code>$?</code>变量显示上一条命令执行后的返回值。如果返回值为<code>0</code>，则目录存在；如果返回值为<code>非零的值</code>，则意味着目录不存在：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# [ -d /usr/local/tmp ]
+[root@lynchj tmp]# echo $?
+0</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　再使用文件测试语句来判断<code>/usr/local/tmp</code> 是否为一般文件，如果返回值为<code>0</code>，则代表文件存在，且为一般文件：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# [ -f /usr/local/tmp ]
+[root@lynchj tmp]# echo $?
+1</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>逻辑语句用于对测试结果进行逻辑分析，根据测试结果可实现不同的效果。例如在Shell终端中逻辑<code>与</code>的运算符号是<code>&amp;&amp;</code>，它表示当前面的命令执行成功后才会执行它后面的命令，因此可以用来判断<code>/usr/local/tmp</code> 文件是否存在，若存在则输出Exist 字样。
+</span></li>
+</ul>
+
+<pre><code>[root@lynchj tmp]# [ -e /usr/local/tmp/ ] &amp;&amp; echo "Exist"
+Exist</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　除了逻辑<code>与</code>外，还有逻辑<code>或</code>，它在Linux 系统中的运算符号为<code>||</code>，表示当前面的命令执行失败后才会执行它后面的命令，因此可以用来结合系统环境变量<code>USER</code> 来判断当前登录的用户是否为非管理员身份：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# echo $USER
+root
+[root@lynchj tmp]# [ $USER = root ] || echo "user"
+[root@lynchj tmp]# su - guoqingsong
+Last login: Wed May 16 10:58:08 CST 2018 on pts/0
+[guoqingsong@lynchj ~]$ [ $USER = root ] || echo "user"
+user</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　第三种逻辑语句是<code>非</code>，在Linux 系统中的运算符号是一个叹号（<code>!</code>），它表示把条件测试中的判断结果取相反值。也就是说，如果原本测试的结果是正确的，则将其变成错误的；原本测试错误的结果则将其变成正确的。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">我们现在切换到一个普通用户的身份，再判断当前用户是否为一个非管理员的用户。由于判断结果因为两次否定而变成正确，因此会正常地输出预设信息：</span>
+</p>
+
+
+<pre><code>[guoqingsong@lynchj ~]$ exit
+logout
+[root@lynchj tmp]# [ ! $USER = root ] || echo "administrator"
+administrator</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>整数比较运算符仅是对数字的操作，不能将数字与字符串、文件等内容一起操作，而且不能想当然地使用日常生活中的等号、大于号、小于号等来判断。因为等号与赋值命令符冲突，大于号和小于号分别与输出重定向命令符和输入重定向命令符冲突。因此一定要使用规范的整数比较运算符来进行操作。可用的整数比较运算符如下表所示。
+</span></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-eq</td>
+<td>是否等于</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>是否不等于</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>是否大于</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>是否大于或等于</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>是否小于</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>是否等于或小于</td>
+</tr>
+</tbody>
+</table>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　接下来小试牛刀。我们先测试一下10 是否大于10 以及10 是否等于10（通过输出的返回值内容来判断）：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# [ 10 -gt 10 ]
+[root@lynchj tmp]# echo $?
+1
+[root@lynchj tmp]# [ 10 -ge 10 ]
+[root@lynchj tmp]# echo $?
+0</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　我们使用<code>free 命令</code>，它可以用来获取当前系统正在使用及可用的内存量信息。接下来先使用<code>free -m 命令</code>查看内存使用量情况（单位为MB），然后通过<code>grep Mem:</code>命令过滤出剩余内存量的行，再用<code>awk &#39;{print $4}&#39;</code>命令只保留第四列，最后用<code>FreeMem=</code>语句``的方式把语句内执行的结果赋值给变量。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# free -m
+             total       used       free     shared    buffers     cached
+Mem:          1987       1790        197         14          9        716
+-/+ buffers/cache:       1064        923
+Swap:         2047          0       2047
+[root@lynchj tmp]# free -m | grep Mem:
+Mem:          1987       1790        197         14          9        716
+[root@lynchj tmp]# free -m | grep Mem: | awk '{print $4}'
+197
+[root@lynchj tmp]# FreeMen=`free -m | grep Mem: | awk '{print $4}'`
+[root@lynchj tmp]# echo $FreeMen
+196
+[root@lynchj tmp]# [ $FreeMen -lt 1024 ] &amp;&amp; echo "内存快炸了"
+内存快炸了</code></pre>
+
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>字符串比较语句用于判断测试字符串是否为空值，或两个字符串是否相同。它经常用来判断某个变量是否未被定义（即内容为空值），理解起来也比较简单。字符串比较中常见的运算符如下表所示：
+</span></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>=</td>
+<td>比较字符串内容是否相同</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>比较字符串内容是否不同</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>判断字符串内容是否为空</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+<h3 id="toc_3" class="h16">流程控制语句</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">　　尽管此时可以通过使用Linux 命令、管道符、重定向以及条件测试语句来编写最基本的Shell 脚本，但是这种脚本并不适用于生产环境。原因是它不能根据真实的工作需求来调整具体的执行命令，也不能根据某些条件实现自动循环执行。例如，我们需要批量创建1000位用户，首先要判断这些用户是否已经存在；若不存在，则通过循环语句让脚本自动且依次创建他们。</span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　接下来我们通过if、for、while、case 这4 种流程控制语句来学习编写难度更大、功能更强的Shell 脚本。</span>
+</p>
+
+</blockquote>
+<h5 id="toc_4" class="h16">if 条件测试语句</h5>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>if 条件</code>测试语句可以让脚本根据实际情况自动执行相应的命令。从技术角度来讲，if 语句分为单分支结构、双分支结构、多分支结构；其复杂度随着灵活度一起逐级上升。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　if 条件语句的单分支结构由<code>if</code>、<code>then</code>、<code>fi</code> 关键词组成，而且只在条件成立后才执行预设的命令，相当于口语的<code>如果……那么……</code>。单分支的if 语句属于最简单的一种条件判断结构，语法格式如下图所示：<img class="md_compiled " src="http://img.lynchj.com/4bf863f289a840a28dfef5aa00f8b070.png" alt="单分支的if 语句" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面使用单分支的if 条件语句来判断<code>/usr/local/tmp</code> 文件是否存在，若存在就结束条件判断和整个Shell 脚本，反之则去创建这个目录：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim example.sh
+#!/bin/bash
+DIR="/usr/local/tmp"
+if [ ! -e $DIR ]
+then
+mkdir -p $DIR
+fi
+[root@lynchj tmp]# ./example.sh</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>if 条件语句</code>的双分支结构由<code>if</code>、<code>then</code>、<code>else</code>、<code>fi</code> 关键词组成，它进行一次条件匹配判断，如果与条件匹配，则去执行相应的预设命令；反之则去执行不匹配时的预设命令，相当于口语的<code>如果……那么……或者……那么……</code>。if 条件语句的双分支结构也是一种很简单的判断结构，语法格式如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/5e42c1dfef974b78aa64ea195ebf1b15.png" alt="双分支的if 语句" title="" ></span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim example.sh
+#!/bin/bash
+DIR="/usr/local/tmp"
+if [ ! -e $DIR ]
+then
+mkdir -p $DIR
+else
+echo "已经存在了"
+fi
+[root@lynchj tmp]# ./example.sh
+已经存在了</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>if 条件</code>语句的多分支结构由<code>if</code>、<code>then</code>、<code>else</code>、<code>elif</code>、<code>fi</code> 关键词组成，它进行多次条件匹配判断，这多次判断中的任何一项在匹配成功后都会执行相应的预设命令，相当于口语的<code>如果……那么……如果……那么……</code>。if 条件语句的多分支结构是工作中最常使用的一种条件判断结构，尽管相对复杂但是更加灵活，语法格式如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/8063ed3f04bc4b2796d8b2581d6ac400.png" alt="多分支的if 语句" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面使用多分支的if 条件语句来判断用户输入的分数在哪个成绩区间内，然后输出如<code>Excellent</code>、<code>Pass</code>、<code>Fail</code> 等提示信息。在Linux 系统中，<code>read</code> 是用来<code>读取用户输入信息</code>的命令，能够把接收到的用户输入信息赋值给后面的指定变量，<code>-p 参数</code>用于向用户显示一定的提示信息。在下面的脚本示例中，只有当用户输入的分数大于等于85 分且小于等于100 分，才输出Excellent 字样；若分数不满足该条件（即匹配不成功），则继续判断分数是否大于等于70 分且小于等于84 分，如果是，则输出Pass 字样；若两次都落空（即两次的匹配操作都失败了），则输出Fail 字样：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim example.sh
+#!/bin/bash
+read -p "Enter your score（0-100）：" GRADE
+if [ $GRADE -ge 85 ] &amp;&amp; [ $GRADE -le 100 ] ; then
+echo "$GRADE is Excellent"
+elif [ $GRADE -ge 70 ] &amp;&amp; [ $GRADE -le 84 ] ; then
+echo "$GRADE is Pass"
+else
+echo "$GRADE is Fail"
+fi
+[root@lynchj ~]# bash chkscore.sh
+Enter your score（0-100）：88
+88 is Excellent
+[root@lynchj ~]# bash chkscore.sh
+Enter your score（0-100）：80
+80 is Pass</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面执行该脚本。当用户输入的分数分别为30 和200 时，其结果如下：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ./example.sh
+Enter your score（0-100）：30
+30 is Fail
+[root@lynchj tmp]# ./example.sh
+Enter your score（0-100）：200
+200 is Fail</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　为什么输入的分数为200 时，依然显示Fail 呢？原因很简单—没有成功匹配脚本中的两个条件判断语句，因此自动执行了最终的<code>兜底策略</code>。可见，这个脚本还不是很完美，读者可自行完善这个脚本，使得用户在输入大于100 或小于0 的分数时，给予Error 报错字样的提示。</span>
+</p>
+
+<h5 id="toc_5" class="h16">for 条件循环语句</h5>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>for</code> 循环语句允许脚本一次性读取多个信息，然后逐一对信息进行操作处理，当要处理的数据有范围时，使用for 循环语句再适合不过了。for 循环语句的语法格式如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/e794bd9429bf4b30b63c14f8b80f1a47.png" alt="for 循环语句的语法格式" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面使用for 循环语句从列表文件中读取多个用户名，然后为其逐一创建用户账户并设置密码。首先创建用户名称的列表文件<code>users.txt</code>，每个用户名称单独一行。读者可以自行决定具体的用户名称和个数：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim users.txt
+andy
+barry
+carl
+duke
+eric
+george
+[root@lynchj tmp]# vim example.sh
+#!/bin/bash
+read -p "Enter The Users Password : " PASSWD
+for UNAME in `cat users.txt`
+do
+id $UNAME &amp;&gt; /dev/null
+if [ $? -eq 0 ]
+then
+echo "Already exists"
+else
+useradd $UNAME &amp;&gt; /dev/null
+echo "$PASSWD" | passwd --stdin $UNAME &amp;&gt; /dev/null
+if [ $? -eq 0 ]
+then
+echo "$UNAME , Create success"
+else
+echo "$UNAME , Create failure"
+fi
+fi
+done</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　执行批量创建用户的Shell 脚本example.sh，在输入为账户设定的密码后将由脚本自动检查并创建这些账户。由于已经将多余的信息通过输出重定向符转移到了<code>/dev/null 黑洞</code>文件中，因此在正常情况下屏幕窗口除了<code>用户账户创建成功</code>（Create success）的提示后不会有其他内容。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在Linux 系统中，<code>/etc/passwd</code> 是用来保存用户账户信息的文件。如果想确认这个脚本是否成功创建了用户账户，可以打开这个文件，看其中是否有这些新创建的用户信息。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　还记得在学习双分支<code>if 条件</code>语句时，用到的那个测试主机是否在线的脚本，既然我们现在已经掌握了<code>for 循环</code>语句，不妨做些更酷的事情，比如尝试让脚本从文本中自动读取主机列表，然后自动逐个测试这些主机是否在线。</span>
+</p>
+
+
+<pre><code>[root@linuxprobe ~]# vim ipadds.txt
+192.168.1.10
+192.168.1.11
+192.168.1.12</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　前面的双分支<code>if 条件</code>语句与<code>for 循环</code>语句相结合，让脚本从主机列表文件<code>ipadds.txt</code>中自动读取IP 地址（用来表示主机）并将其赋值给<code>HLIST 变量</code>，从而通过判断<code>ping 命令</code>执行后的返回值来逐个测试主机是否在线。脚本中出现的<code>$（命令）</code>是一种完全类似于转义字符中反引号<strong>`命令`</strong>的Shell 操作符，效果同样是执行括号或双引号括起来的字符串中的命令。大家在编写脚本时，多学习几种类似的新方法，可在工作中大显身手：</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim CheckHosts.sh
+#!/bin/bash
+HLIST=$(cat ~/ipadds.txt)
+for IP in $HLIST
+do
+ping -c 3 -i 0.2 -W 3 $IP &amp;&gt; /dev/null
+if [ $? -eq 0 ] ; then
+echo "Host $IP is On-line."
+else
+echo "Host $IP is Off-line."
+fi
+done
+[root@lynchj tmp]# ./CheckHosts.sh
+Host 192.168.1.10 is On-line.
+Host 192.168.1.11 is Off-line.
+Host 192.168.1.12 is Off-line.</code></pre>
+
+<!--block_code_end--><h5 id="toc_6" class="h16">while 条件循环语句</h5>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　<code>while 条件循环</code>语句是一种让脚本根据某些条件来重复执行命令的语句，它的循环结构往往在执行前并不确定最终执行的次数，完全不同于<code>for 循环</code>语句中有目标、有范围的使用场景。<code>while 循环</code>语句通过判断条件测试的真假来决定是否继续执行命令，若条件为真就继续执行，为假就结束循环。<code>while 语句</code>的语法格式如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/1125369c03154f12a596b0857e77ad0c.png" alt="while 循环语句的语法格式" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　接下来结合使用多分支的<code>if 条件</code>测试语句与<code>while 条件</code>循环语句，编写一个用来猜测数值大小的脚本<code>Guess.sh</code>。该脚本使用<code>$RANDOM 变量</code>来调取出一个随机的数值（范围为0～32767），将这个随机数对1000 进行取余操作，并使用<code>expr 命令</code>取得其结果，再用这个数值与用户通过<code>read命令</code>输入的数值进行比较判断。这个判断语句分为三种情况，分别是判断用户输入的数值是等于、大于还是小于使用<code>expr 命令</code>取得的数值。当前，现在这些内容不是重点，我们当前要关注的是<code>while 条件</code>循环语句中的条件测试始<code>终为true</code>，因此判断语句会无限执行下去，直到用户输入的数值<code>等于</code>expr 命令取得的数值后，这两者相等之后才运行<code>exit 0 命令</code>，终止脚本的执行。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim Guess.sh
+#!/bin/bash
+PRICE=$(expr $RANDOM % 1000)
+TIMES=0
+echo "商品实际价格为0-999 之间，猜猜看是多少？"
+while true
+do
+read -p "请输入您猜测的价格数目：" INT
+let TIMES++
+if [ $INT -eq $PRICE ] ; then
+echo "恭喜您答对了，实际价格是 $PRICE"
+echo "您总共猜测了 $TIMES 次"
+exit 0
+elif [ $INT -gt $PRICE ] ; then
+echo "太高了！"
+else
+echo "太低了！"
+fi
+done</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在这个Guess.sh 脚本中，我们添加了一些交互式的信息，从而使得用户与系统的互动性得以增强。而且每当循环到<code>let TIMES++</code>命令时都会让TIMES 变量内的数值加1，用来统计循环总计执行了多少次。这可以让用户得知总共猜测了多少次之后，才猜对价格。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# ./Guess.sh
+商品实际价格为0-999 之间，猜猜看是多少？
+请输入您猜测的价格数目：999
+太高了！
+请输入您猜测的价格数目：500
+太低了！
+请输入您猜测的价格数目：750
+太高了！
+请输入您猜测的价格数目：650
+太低了！
+请输入您猜测的价格数目：700
+太低了！
+请输入您猜测的价格数目：725
+太高了！
+请输入您猜测的价格数目：715
+太低了！
+请输入您猜测的价格数目：720
+太高了！
+请输入您猜测的价格数目：718
+太低了！
+请输入您猜测的价格数目：719
+恭喜您答对了，实际价格是 719
+您总共猜测了 10 次</code></pre>
+
+<!--block_code_end--><h5 id="toc_7" class="h16">case 条件测试语句</h5>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果您之前学习过C 语言，看到这一小节的标题肯定会会心一笑<code>这不就是switch 语句嘛！</code>是的，case 条件测试语句和switch 语句的功能非常相似！case 语句是在多个范围内匹配数据，若匹配成功则执行相关命令并结束整个条件测试；而如果数据不在所列出的范围内，则会去执行星号（<code>*</code>）中所定义的默认命令。case 语句的语法结构如下图所示：</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="http://img.lynchj.com/99b933f4e6aa4d65bc183a900d8f73e3.png" alt="case 条件测试语句的语法结构" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在前文介绍的Guess.sh 脚本中有一个致命的弱点—只能接受数字！您可以尝试输入一个字母，会发现脚本立即就崩溃了。原因是字母无法与数字进行大小比较，例如，<code>a 是否大于等于3</code>这样的命题是完全错误的。我们必须有一定的措施来判断用户的输入内容，当用户输入的内容不是数字时，脚本能予以提示，从而免于崩溃。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　通过在脚本中组合使用case 条件测试语句和通配符，完全可以满足这里的需求。接下来我们编写脚本<code>Checkkeys.sh</code>，提示用户输入一个字符并将其赋值给变量<code>KEY</code>，然后根据变量KEY 的值向用户显示其值是字母、数字还是其他字符。</span>
+</p>
+
+
+<pre><code>[root@lynchj tmp]# vim Checkkeys.sh
+#!/bin/bash
+read -p "请输入一个字符，并按Enter 键确认：" KEY
+case "$KEY" in
+[a-z]|[A-Z])
+echo "您输入的是 字母。"
+;;
+[0-9])
+echo "您输入的是 数字。"
+;;
+*)
+echo "您输入的是 空格、功能键或其他控制字符。"
+esac
+[root@lynchj tmp]# bash Checkkeys.sh
+请输入一个字符，并按Enter 键确认：5
+您输入的是 数字。
+[root@lynchj tmp]# bash Checkkeys.sh
+请输入一个字符，并按Enter 键确认：d
+您输入的是 字母。
+[root@lynchj tmp]# bash Checkkeys.sh
+请输入一个字符，并按Enter 键确认：fd^H^H
+您输入的是 空格、功能键或其他控制字符。</code></pre>
+
+<!--block_code_end-->
+<hr>
+
+<blockquote class="blockquote_lines_2">
+<p class="md_block">
+    <span class="md_line md_line_start">参考资料：《Linux就该这么学》<br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
+</p>
+
+</blockquote>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>
