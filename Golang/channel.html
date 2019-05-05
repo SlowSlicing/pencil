@@ -1,389 +1,2544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>channel</title>
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Golang · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
+    <meta charset="UTF-8"/>
 
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="channel.html" />
-    
-    
-    <link rel="prev" href="../Git/GitHub%20上同步%20Fork%20的代码.md" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
-    </head>
-    <body>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
         
-<div class="book">
-    <div class="book-summary">
-        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
+    </style>
 
-            
-                <nav role="navigation">
-                
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        <li class="header">前言</li>
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    前言
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">笔记</li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../Kubernetes/readme.html">
-            
-                <a href="../Kubernetes/readme.html">
-            
-                    
-                    Kubenetes
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../Kubernetes/Kubernetes%201.14%20开启%20IPVS.md">
-            
-                <span>
-            
-                    
-                    Kubernetes 1.14 开启 IPVS.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../Kubernetes/Kubernetes%201.14%20kubeadm%20集群安装.md">
-            
-                <span>
-            
-                    
-                    Kubernetes 1.14 kubeadm 集群安装.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../Kubernetes/Kubernetes%201.6.1%20kubeadm%20集群安装.md">
-            
-                <span>
-            
-                    
-                    Kubernetes 1.6.1 kubeadm 集群安装.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html">
-            
-                <a href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html">
-            
-                    
-                    《Kubernetes权威指南》1.3案例部署及问题解决.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../Kubernetes/安装%20Dashboard.md">
-            
-                <span>
-            
-                    
-                    安装 Dashboard.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../Kubernetes/问题%20-%20kubectl%20create%20一直处于%20ContainerCreating%20状态.md">
-            
-                <span>
-            
-                    
-                    问题 - kubectl create 一直处于 ContainerCreating 状态.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../Kubernetes/kubeadm%20安装%20k8s%20集群.md">
-            
-                <span>
-            
-                    
-                    kubeadm 安装 k8s 集群.md
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="../Git/GitHub%20上同步%20Fork%20的代码.md">
-            
-                <span>
-            
-                    
-                    Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.1" data-path="../Git/GitHub%20上同步%20Fork%20的代码.md">
-            
-                <span>
-            
-                    
-                    GitHub 上同步 Fork 的代码
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.3" data-path="channel.html">
-            
-                <a href="channel.html">
-            
-                    
-                    Golang
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="2.3.1" data-path="channel.html">
-            
-                <a href="channel.html">
-            
-                    
-                    channel
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
 
 
-                </nav>
-            
-        
-    </div>
+</head>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">大漠知秋的小秘密</a>
+                </li>
                 
                     
-
-<div class="book-header" role="navigation">
+                    
     
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Golang</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>1</b> Docker CE</a>
+        
+            
+                        
+                            <ul class="articles">
                                 
-                                <p>&#x3000;&#x3000;channel &#x662F; Go &#x8BED;&#x8A00;&#x5728;&#x8BED;&#x8A00;&#x7EA7;&#x522B;&#x63D0;&#x4F9B;&#x7684; goroutine &#x95F4;&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; channel &#x5728;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A; goroutine &#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x6D88;&#x606F;&#x3002;channel &#x662F;&#x8FDB;&#x7A0B;&#x5185;&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7; channel &#x4F20;&#x9012;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x548C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x65F6;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x884C;&#x4E3A;&#x6BD4;&#x8F83;&#x4E00;&#x81F4;&#xFF0C;&#x6BD4;&#x5982;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x6307;&#x9488;&#x7B49;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x8DE8;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C;&#x5EFA;&#x8BAE;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#xFF0C;&#x6BD4;&#x5982;&#x4F7F;&#x7528; Socket &#x6216;&#x8005; HTTP &#x7B49;&#x901A;&#x4FE1;&#x534F;&#x8BAE;&#x3002;Go &#x8BED;&#x8A00;&#x5BF9;&#x4E8E;&#x7F51;&#x7EDC;&#x65B9;&#x9762;&#x4E5F;&#x6709;&#x975E;&#x5E38;&#x5B8C;&#x5584;&#x7684;&#x652F;&#x6301;&#x3002;</p>
-<p>&#x3000;&#x3000;channel &#x662F;&#x7C7B;&#x578B;&#x76F8;&#x5173;&#x7684;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A; channel &#x53EA;&#x80FD;&#x4F20;&#x9012;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x9700;&#x8981;&#x5728;&#x58F0;&#x660E; channel &#x65F6;&#x6307;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x5BF9; Unix &#x7BA1;&#x9053;&#x6709;&#x6240;&#x4E86;&#x89E3;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4E0D;&#x96BE;&#x7406;&#x89E3; channel&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x7BA1;&#x9053;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x5728;&#x4E86;&#x89E3; channel &#x7684;&#x8BED;&#x6CD5;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E0B;&#x7528; channel &#x7684;&#x65B9;&#x5F0F;&#x91CD;&#x5199;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x5B50;&#x7684;&#xFF0C;&#x4EE5;&#x6B64;&#x5BF9; channel &#x5148;&#x6709;&#x4E00;&#x4E2A;&#x76F4;&#x611F;&#x7684;&#x8BA4;&#x8BC6;&#xFF0C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6E05;&#x5355;&#x6240;&#x793A;&#x3002;</p>
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Compose 使用.html" ><b>1.1</b> Docker Compose 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker Dockerfile 定制镜像.html" ><b>1.2</b> Docker Dockerfile 定制镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 仓库.html" ><b>1.3</b> Docker Hub</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 单台宿主机多应用部署.html" ><b>1.4</b> 实验环境</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本概念.html" ><b>1.5</b> Docker 基本概念</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 基本网络功能.html" ><b>1.6</b> Docker 基本网络功能</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 多台宿主机多应用部署.html" ><b>1.7</b> Docker 多台宿主机多应用部署</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 安装.html" ><b>1.8</b> Docker 安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 容器.html" ><b>1.9</b> Docker 容器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 数据管理.html" ><b>1.10</b> Docker 数据管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 私有仓库.html" ><b>1.11</b> 安装运行 docker-registry</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 简介.html" ><b>1.12</b> Docker 简介</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 网络深入理解.html" ><b>1.13</b> Docker 网络深入理解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像.html" ><b>1.14</b> Docker 镜像</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/Docker 镜像加速器.html" ><b>1.15</b> Docker 镜像加速器</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Docker CE/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>1.16</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> Elasticsearch</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Elasticsearch/问题 - Elasticsearch 问题收集.html" ><b>2.1</b> 问题 - Elasticsearch 问题收集</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>3</b> FastDFS</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../FastDFS/FastDFS 单机安装.html" ><b>3.1</b> FastDFS 单机安装</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>4</b> Git</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Git/GitHub 上同步 Fork 的代码.html" ><b>4.1</b> GitHub 上同步 Fork 的代码</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>5</b> GitLab</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker GitLab SSH 坑.html" ><b>5.1</b> Docker GitLab SSH 坑</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/Docker 安装 GitLab.html" ><b>5.2</b> Docker 安装 GitLab</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/如何查看 GitLab 版本号.html" ><b>5.3</b> 如何查看 GitLab 版本号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../GitLab/问题 - GitLab repositories 文件夹权限异常.html" ><b>5.4</b> 问题 - GitLab repositories 文件夹权限异常</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>6</b> Golang</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../Golang/channel.html" ><b>6.1</b> channel</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/goroutine.html" ><b>6.2</b> goroutine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/函数.html" ><b>6.3</b> 函数</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/匿名函数与闭包.html" ><b>6.4</b> 匿名函数与闭包</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/变量.html" ><b>6.5</b> 变量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/基础环境安装.html" ><b>6.6</b> 基础环境安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/常量.html" ><b>6.7</b> 常量</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/并发 - 同步.html" ><b>6.8</b> 并发 - 同步</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/数据类型.html" ><b>6.9</b> 数据类型</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/流程控制.html" ><b>6.10</b> 流程控制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/语言特性.html" ><b>6.11</b> 语言特性</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/错误处理.html" ><b>6.12</b> 错误处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 出让时间片.html" ><b>6.13</b> 问题 - 出让时间片</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/问题 - 多核并行化.html" ><b>6.14</b> 问题 - 多核并行化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 使用组合和定义别名.html" ><b>6.15</b> 面向对象 - 使用组合和定义别名</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 接口.html" ><b>6.16</b> 面向对象 - 接口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 类型系统.html" ><b>6.17</b> 面向对象 - 类型系统</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面向对象 - 结构体.html" ><b>6.18</b> 面向对象 - 结构体</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Golang/面型对象 - 包和封装.html" ><b>6.19</b> 命名规范</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>7</b> Http Client 4.5.2</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/为GET和POST请求添加请求参数和请求头.html" ><b>7.1</b> 为GET和POST请求添加请求参数和请求头</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Http Client 4.5.2/入门.html" ><b>7.2</b> 入门</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>8</b> Java</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/使用 Undertow 替换掉 Tomcat.html" ><b>8.1</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/编写高质量代码 - Java.html" ><b>8.2</b> 编写高质量代码 - Java</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Java/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>8.3</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>9</b> Kubernetes</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 kubeadm 集群安装.html" ><b>9.1</b> Kubernetes 1.14 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.14 开启 IPVS.html" ><b>9.2</b> Kubernetes 1.14 开启 IPVS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/Kubernetes 1.6.1 kubeadm 集群安装.html" ><b>9.3</b> Kubernetes 1.6.1 kubeadm 集群安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/kubeadm 安装 k8s 集群.html" ><b>9.4</b> kubeadm 安装 k8s 集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/《Kubernetes权威指南》1.3案例部署及问题解决.html" ><b>9.5</b> 《Kubernetes权威指南》1.3案例部署及问题解决</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/安装 Dashboard.html" ><b>9.6</b> 安装 Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Kubernetes/问题 - kubectl create 一直处于 ContainerCreating 状态.html" ><b>9.7</b> 问题 - kubectl create 一直处于 ContainerCreating 状态</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>10</b> Linux</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/CentOS 升级内核.html" ><b>10.1</b> CentOS 升级内核</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Firewalld 详解.html" ><b>10.2</b> Firewalld 详解</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 6 和 RHEL 7 的一些区别.html" ><b>10.3</b> RHEL 6 和 RHEL 7 的一些区别</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 7 常用命令.html" ><b>10.4</b> RHEL 7 常用命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/RHEL 的目录结构.html" ><b>10.5</b> RHEL 的目录结构</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP交换分区（虚拟内存）.html" ><b>10.6</b> SWAP交换分区（虚拟内存）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/SWAP虚拟内存配置.html" ><b>10.7</b> SWAP虚拟内存配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/Shell 脚本入门.html" ><b>10.8</b> Shell 脚本入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/curl 命令.html" ><b>10.9</b> curl 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/find 命令的使用.html" ><b>10.10</b> 常用命令组合</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/tar 命令.html" ><b>10.11</b> 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/一次服务器中病毒挖矿事件处理.html" ><b>10.12</b> 一次服务器中病毒挖矿事件处理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/使用 systemd 开机启动.html" ><b>10.13</b> 使用 systemd 开机启动</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 rpm 命令.html" ><b>10.14</b> 常用 rpm 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用 yum 命令.html" ><b>10.15</b> 常用 yum 命令</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/常用的转义字符.html" ><b>10.16</b> 常用的转义字符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/挂载硬件设备.html" ><b>10.17</b> 挂载硬件设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件权限与归属.html" ><b>10.18</b> 文件权限与归属</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/文件系统与数据资料.html" ><b>10.19</b> 文件系统与数据资料</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/添加硬盘设备.html" ><b>10.20</b> 添加硬盘设备</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/物理设备的命名规则.html" ><b>10.21</b> 物理设备的命名规则</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/环境变量和命令的执行步骤.html" ><b>10.22</b> 环境变量和命令的执行步骤</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/用户管理.html" ><b>10.23</b> 用户管理</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/磁盘容量配额.html" ><b>10.24</b> 磁盘容量配额</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/管道命令符.html" ><b>10.25</b> 管道命令符</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/计划任务服务程序（定时任务）.html" ><b>10.26</b> 计划任务服务程序（定时任务）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/软硬方式链接（快捷方式）.html" ><b>10.27</b> 软硬方式链接（快捷方式）</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/输入输出重定向.html" ><b>10.28</b> 输入输出重定向</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口.html" ><b>10.29</b> 问题 - Linux 下 Docker 端口映射到宿主机后 外部无法访问对应宿主机端口</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/问题 - Linux 项目输出日志中文变问号.html" ><b>10.30</b> 问题 - Linux 项目输出日志中文变问号</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - firewalld.html" ><b>10.31</b> 防火墙 - firewalld</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Linux/防火墙 - iptables.html" ><b>10.32</b> 防火墙 - iptables</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>11</b> Maven</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Maven/Docker 安装 Maven 私服 Nexus 3.12.1.html" ><b>11.1</b> Docker 安装 Maven 私服 Nexus 3.12.1</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>12</b> MySQL</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/ContOS7.4 + MySQL5.6.40安装.html" ><b>12.1</b> ContOS7.4 + MySQL5.6.40安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/Galera Cluster For MySQL.html" ><b>12.2</b> Galera Cluster For MySQL</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL Yum 存储库安装.html" ><b>12.3</b> MySQL Yum 存储库安装</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 主主复制 高可用负载均衡集群.html" ><b>12.4</b> MySQL 主主复制 高可用负载均衡集群</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../MySQL/MySQL 用户管理及授权.html" ><b>12.5</b> MySQL 用户管理及授权</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>13</b> Nginx</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 处理跨域问题.html" ><b>13.1</b> Nginx 处理跨域问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/Nginx 重定向 HTTP 到 HTTPS.html" ><b>13.2</b> Nginx 重定向 HTTP 到 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/在已安装的 Nginx 上追加 module.html" ><b>13.3</b> 在已安装的 Nginx 上追加 module</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Nginx/问题 - .斜杠Configure darwin64-x86_64-cc.html" ><b>13.4</b> 问题 - .斜杠Configure darwin64-x86_64-cc</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>14</b> Rabbit MQ</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Rabbit MQ/RabbitMQ + Keepalived + HAProxy 高可用镜像集群.html" ><b>14.1</b> RabbitMQ + Keepalived + HAProxy 高可用镜像集群</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>15</b> Redis</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Redis/Redis Cluster 从零安装并详解.html" ><b>15.1</b> Redis Cluster 从零安装并详解</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>16</b> Spring</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring/使用 ApplicationContextAware 获取 Spring 管理 Bean.html" ><b>16.1</b> 使用ApplicationContextAware接口</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>17</b> Spring Boot</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 制作一个自己的 Starter.html" ><b>17.1</b> Spring Boot 制作一个自己的 Starter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存.html" ><b>17.2</b> Spring Boot 在 Redis Cluster RedisTemplate 基础上做缓存</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster RedisTemplate.html" ><b>17.3</b> Spring Boot 结合 Redis Cluster RedisTemplate</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/Spring Boot 结合 Redis Cluster 简单使用.html" ><b>17.4</b> Spring Boot 结合 Redis Cluster 简单使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/使用 Undertow 替换掉 Tomcat.html" ><b>17.5</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Boot/问题 - Spring Boot 以流的方式读取配置文件.html" ><b>17.6</b> 问题 - Spring Boot 以流的方式读取配置文件</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>18</b> Spring Cloud Finchley.RELEASE</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Client 自动刷新.html" ><b>18.1</b> Config Client 自动刷新</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server refresh 端点.html" ><b>18.2</b> Config Server refresh 端点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 入门.html" ><b>18.3</b> Config Server 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 安全.html" ><b>18.4</b> Config Server 安全</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 本地覆盖远程.html" ><b>18.5</b> Config Server 本地覆盖远程</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Config Server 高可用.html" ><b>18.6</b> Config Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureak 开启 HTTPS.html" ><b>18.7</b> Eureak 开启 HTTPS</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server REST API.html" ><b>18.8</b> Eureka Server REST API</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka Server 高可用.html" ><b>18.9</b> Eureka Server 高可用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 入门.html" ><b>18.10</b> Eureka 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 参数调优.html" ><b>18.11</b> Eureka 参数调优</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 常见故障.html" ><b>18.12</b> Eureka 常见故障</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 开启 HTTP Basic 认证.html" ><b>18.13</b> Eureka 开启 HTTP Basic 认证</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Eureka 的设计理念.html" ><b>18.14</b> 概述</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Logger Configuration.html" ><b>18.15</b> Feign Client Logger Configuration</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client Upload File.html" ><b>18.16</b> Feign Client Upload File</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 第一次请求超时.html" ><b>18.17</b> Feign Client 第一次请求超时</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign Client 超时配置.html" ><b>18.18</b> Feign Client 超时配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign GET 多参数传递.html" ><b>18.19</b> Feign GET 多参数传递</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 基本使用.html" ><b>18.20</b> Feign 基本使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 开启 GZIP 压缩.html" ><b>18.21</b> 配置文件新增</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Feign 默认 Client 替换.html" ><b>18.22</b> Feign 默认 Client 替换</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Dashboard.html" ><b>18.23</b> Hystrix Dashboard</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix Turbine.html" ><b>18.24</b> Hystrix Turbine</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 入门.html" ><b>18.25</b> Hystrix 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 异常处理机制.html" ><b>18.26</b> Hystrix 异常处理机制</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Hystrix 配置说明.html" ><b>18.27</b> Hystrix 配置说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/OpenResty + Lua 动态增加 Zuul 节点.html" ><b>18.28</b> OpenResty + Lua 动态增加 Zuul 节点</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 入门.html" ><b>18.29</b> Ribbon 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 脱离 Eureka 进行负载.html" ><b>18.30</b> Ribbon 脱离 Eureka 进行负载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 负载均衡策略配置.html" ><b>18.31</b> Ribbon 负载均衡策略配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 超时与重试.html" ><b>18.32</b> Ribbon 超时与重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Ribbon 饥饿加载.html" ><b>18.33</b> Ribbon 饥饿加载</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Spring Boot Admin 使用.html" ><b>18.34</b> Spring Boot Admin 使用</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul Filter.html" ><b>18.35</b> Zuul Filter</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul serviceId 映射与 url 映射超时配置的不同.html" ><b>18.36</b> Zuul serviceId 映射与 url 映射超时配置的不同</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 上传文件.html" ><b>18.37</b> Zuul 上传文件</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 不向后端服务传递指定 Headers.html" ><b>18.38</b> Zuul 不向后端服务传递指定 Headers</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 使用 OKHttp 替换 HttpClient.html" ><b>18.39</b> Zuul 使用 OKHttp 替换 HttpClient</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 修改请求体内容.html" ><b>18.40</b> Zuul 修改请求体内容</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 入门.html" ><b>18.41</b> Zuul 入门</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 基于 Eureka 元数据的弧度发布.html" ><b>18.42</b> Zuul 基于 Eureka 元数据的弧度发布</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 对 Hystrix 的线程隔离模式选择.html" ><b>18.43</b> Zuul 对 Hystrix 的线程隔离模式选择</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 屏蔽服务和指定路径.html" ><b>18.44</b> Zuul 屏蔽服务和指定路径</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 添加 Header.html" ><b>18.45</b> Zuul 添加 Header</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由前缀.html" ><b>18.46</b> Zuul 路由前缀</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 路由配置.html" ><b>18.47</b> Zuul 路由配置</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重定向问题.html" ><b>18.48</b> Zuul 重定向问题</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/Zuul 重试.html" ><b>18.49</b> Zuul 重试</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../Spring Cloud Finchley.RELEASE/使用 Undertow 替换掉 Tomcat.html" ><b>18.50</b> 使用 Undertow 替换掉 Tomcat</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>19</b> 吉他</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/左右手指说明.html" ><b>19.1</b> 左右手指说明</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../吉他/调音.html" ><b>19.2</b> 初识定音</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>20</b> 开发软件问题</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../开发软件问题/问题 - iTerm2 中文输出显示问号.html" ><b>20.1</b> 问题 - iTerm2 中文输出显示问号</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            channel
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">基本语法</a>
+</li>
+<li>
+<a href="#toc_1">select</a>
+</li>
+<li>
+<a href="#toc_2">缓冲机制</a>
+</li>
+<li>
+<a href="#toc_3">超时机制</a>
+</li>
+<li>
+<a href="#toc_4">channel的传递</a>
+</li>
+<li>
+<a href="#toc_5">单向channel</a>
+</li>
+<li>
+<a href="#toc_6">关闭channel</a>
+</li>
+</ul>
+</div>
+</div>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　channel 是 Go 语言在语言级别提供的 goroutine 间的通信方式。我们可以使用 channel 在两个或多个 goroutine 之间传递消息。channel 是进程内的通信方式，因此通过 channel 传递对象的过程和调用函数时的参数传递行为比较一致，比如也可以传递指针等。如果需要跨进程通信，建议用分布式系统的方法来解决，比如使用 Socket 或者 HTTP 等通信协议。Go 语言对于网络方面也有非常完善的支持。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　channel 是类型相关的。也就是说，一个 channel 只能传递一种类型的值，这个类型需要在声明 channel 时指定。如果对 Unix 管道有所了解的话，就不难理解 channel，可以将其认为是一种类型安全的管道。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在了解 channel 的语法前，我们先看下用 channel 的方式重写上面的例子是什么样子的，以此对 channel 先有一个直感的认识，如下代码清单所示。</span>
+</p>
+
+
 <pre><code>package main
 
-import &quot;fmt&quot;
+import "fmt"
 
 func Count(ch chan int) {
     ch &lt;- 1
-    fmt.Println(&quot;Counting&quot;)
+    fmt.Println("Counting")
 }
 
 func main() {
-    chs := make([]chan int&#xFF0C; 10)
+    chs := make([]chan int， 10)
     for i := 0; i &lt; 10; i++ {
         chs[i] = make(chan int)
         go Count(chs[i])
     }
-
+    
     for _, ch := range(chs) {
         &lt;-ch
     }
-}
-</code></pre><p>&#x3000;&#x3000;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x542B;10&#x4E2A; channel &#x7684;&#x6570;&#x7EC4;&#xFF08;&#x540D;&#x4E3A; chs&#xFF09;&#xFF0C;&#x5E76;&#x628A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A; channel &#x5206;&#x914D;&#x7ED9;10&#x4E2A;&#x4E0D;&#x540C;&#x7684; goroutine&#x3002;&#x5728;&#x6BCF;&#x4E2A; goroutine &#x7684; Add() &#x51FD;&#x6570;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7; <code>ch &lt;- 1</code> &#x8BED;&#x53E5;&#x5411;&#x5BF9;&#x5E94;&#x7684; channel &#x4E2D;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x3002;&#x5728;&#x8FD9;&#x4E2A; channel &#x88AB;&#x8BFB;&#x53D6;&#x524D;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;&#x5728;&#x6240;&#x6709;&#x7684; goroutine &#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7; <code>&lt;-ch</code> &#x8BED;&#x53E5;&#x4ECE;10&#x4E2A; channel &#x4E2D;&#x4F9D;&#x6B21;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;&#x5728;&#x5BF9;&#x5E94;&#x7684; channel &#x5199;&#x5165;&#x6570;&#x636E;&#x524D;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x4E5F;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7528; channel &#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x9501;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FDB;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x6240;&#x6709; goroutine &#x5B8C;&#x6210;&#x540E;&#x4E3B;&#x51FD;&#x6570;&#x624D;&#x8FD4;&#x56DE;&#x3002;&#x662F;&#x4E0D;&#x662F;&#x6BD4;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x7684;&#x65B9;&#x5F0F;&#x66F4;&#x7B80;&#x5355;&#x3001;&#x4F18;&#x96C5;&#x5462;?</p>
-<p>&#x3000;&#x3000;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528; Go &#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x6761;&#x4EF6;&#x7B49;&#x5F85;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F; channel &#x53EF;&#x4EE5;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#x7684;&#x5730;&#x65B9;&#x3002;&#x5BF9; channel &#x7684;&#x719F;&#x7EC3;&#x4F7F;&#x7528;&#xFF0C;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x7406;&#x89E3;&#x548C;&#x638C;&#x63E1; Go &#x8BED;&#x8A00;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x3002;</p>
-<h1 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h1>
-<p>&#x3000;&#x3000;&#x4E00;&#x822C; channel &#x7684;&#x58F0;&#x660E;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;</p>
-<pre><code>var chanName chan ElementType
-</code></pre><p>&#x3000;&#x3000;&#x4E0E;&#x4E00;&#x822C;&#x7684;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x4EC5;&#x4EC5;&#x662F;&#x5728;&#x7C7B;&#x578B;&#x4E4B;&#x524D;&#x52A0;&#x4E86; chan &#x5173;&#x952E;&#x5B57;&#x3002;ElementType &#x6307;&#x5B9A;&#x8FD9;&#x4E2A; channel &#x6240;&#x80FD;&#x4F20;&#x9012;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4F20;&#x9012;&#x7C7B;&#x578B;&#x4E3A; int &#x7684; channel&#xFF1A;</p>
-<pre><code>var ch chan int
-</code></pre><p>&#x3000;&#x3000;&#x6216;&#x8005;&#xFF0C;&#x58F0;&#x660E;&#x4E00;&#x4E2A; map&#xFF0C;&#x5143;&#x7D20;&#x662F; bool &#x578B;&#x7684; channel:</p>
-<pre><code>var m map[string] chan bool
-</code></pre><p>&#x3000;&#x3000;&#x4E0A;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x90FD;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; channel &#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;&#x51FD;&#x6570; make() &#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code>ch := make(chan int)
-</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x5C31;&#x58F0;&#x660E;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x4E86;&#x4E00;&#x4E2A; int &#x578B;&#x7684;&#x540D;&#x4E3A; ch &#x7684; channel&#x3002;</p>
-<p>&#x3000;&#x3000;&#x5728; channel &#x7684;&#x7528;&#x6CD5;&#x4E2D;&#xFF0C;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5305;&#x62EC;&#x5199;&#x5165;&#x548C;&#x8BFB;&#x51FA;&#x3002;&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5199;&#x5165;&#xFF08;&#x53D1;&#x9001;&#xFF09;&#x81F3; channel &#x7684;&#x8BED;&#x6CD5;&#x5F88;&#x76F4;&#x89C2;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>ch &lt;- value
-</code></pre><p>&#x3000;&#x3000;&#x5411; channel &#x5199;&#x5165;&#x6570;&#x636E;&#x901A;&#x5E38;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x5176;&#x4ED6; goroutine &#x4ECE;&#x8FD9;&#x4E2A; channel &#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;&#x4ECE; channel &#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8BED;&#x6CD5;&#x662F;&#xFF1A;</p>
-<pre><code>value := &lt;-ch
-</code></pre><p>&#x3000;&#x3000;&#x5982;&#x679C; channel &#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x4ECE; channel &#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230; channel &#x4E2D;&#x88AB;&#x5199;&#x5165;&#x6570;&#x636E;&#x4E3A;&#x6B62;&#x3002;&#x4E4B;&#x540E;&#x8FD8;&#x4F1A;&#x63D0;&#x5230;&#x5982;&#x4F55;&#x63A7;&#x5236; channel &#x53EA;&#x63A5;&#x53D7;&#x5199;&#x6216;&#x8005;&#x53EA;&#x5141;&#x8BB8;&#x8BFB;&#x53D6;&#xFF0C;&#x5373;<code>&#x5355;&#x5411; channel</code>&#x3002;</p>
-<h1 id="select">select</h1>
-<p>&#x3000;&#x3000;&#x65E9;&#x5728; Unix &#x65F6;&#x4EE3;&#xFF0C;select &#x673A;&#x5236;&#x5C31;&#x5DF2;&#x7ECF;&#x88AB;&#x5F15;&#x5165;&#x3002;&#x901A;&#x8FC7;&#x8C03;&#x7528; select() &#x51FD;&#x6570;&#x6765;&#x76D1;&#x63A7;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#xFF0C;&#x4E00;&#x65E6;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x53D1;&#x751F;&#x4E86; IO &#x52A8;&#x4F5C;&#xFF0C;&#x8BE5; select() &#x8C03;&#x7528;&#x5C31;&#x4F1A;&#x88AB;&#x8FD4;&#x56DE;&#x3002;&#x540E;&#x6765;&#x8BE5;&#x673A;&#x5236;&#x4E5F;&#x88AB;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x9AD8;&#x5E76;&#x53D1;&#x7684; Socket &#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x3002;Go &#x8BED;&#x8A00;&#x76F4;&#x63A5;&#x5728;&#x8BED;&#x8A00;&#x7EA7;&#x522B;&#x652F;&#x6301; select &#x5173;&#x952E;&#x5B57;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5F02;&#x6B65; IO &#x95EE;&#x9898;&#x3002;</p>
-<p>&#x3000;&#x3000;select &#x7684;&#x7528;&#x6CD5;&#x4E0E; switch &#x8BED;&#x8A00;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x7531; select &#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x9009;&#x62E9;&#x5757;&#xFF0C;&#x6BCF;&#x4E2A;&#x9009;&#x62E9;&#x6761;&#x4EF6;&#x7531; case &#x8BED;&#x53E5;&#x6765;&#x63CF;&#x8FF0;&#x3002;&#x4E0E; switch &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4EFB;&#x4F55;&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x7B49;&#x6BD4;&#x8F83;&#x7684;&#x6761;&#x4EF6;&#x76F8;&#x6BD4;&#xFF0C;select &#x6709;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x4E00;&#x6761;&#x9650;&#x5236;&#x5C31;&#x662F;&#x6BCF;&#x4E2A; case &#x8BED;&#x53E5;&#x91CC;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A; IO &#x64CD;&#x4F5C;&#xFF0C;&#x5927;&#x81F4;&#x7684;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在这个例子中，定义了一个包含10个 channel 的数组（名为 chs），并把数组中的每个 channel 分配给10个不同的 goroutine。在每个 goroutine 的 Add() 函数完成后，我们通过 <code>ch &lt;- 1</code> 语句向对应的 channel 中写入一个数据。在这个 channel 被读取前，这个操作是阻塞的。在所有的 goroutine 启动完成后，我们通过 <code>&lt;-ch</code> 语句从10个 channel 中依次读取数据。在对应的 channel 写入数据前，这个操作也是阻塞的。这样，我们就用 channel 实现了类似锁的功能，进而保证了所有 goroutine 完成后主函数才返回。是不是比共享内存的方式更简单、优雅呢?</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　我们在使用 Go 语言开发时，经常会遇到需要实现条件等待的场景，这也是 channel 可以发挥作用的地方。对 channel 的熟练使用，才能真正理解和掌握 Go 语言并发编程。</span>
+</p>
+
+<h1 id="toc_0" class="h16 md_first_h">基本语法</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　一般 channel 的声明形式为：</span>
+</p>
+
+
+<pre><code>var chanName chan ElementType</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　与一般的变量声明不同的地方仅仅是在类型之前加了 chan 关键字。ElementType 指定这个 channel 所能传递的元素类型。举个例子，声明一个传递类型为 int 的 channel：</span>
+</p>
+
+
+<pre><code>var ch chan int</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　或者，声明一个 map，元素是 bool 型的 channel:</span>
+</p>
+
+
+<pre><code>var m map[string] chan bool</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　上面的语句都是合法的。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　定义一个 channel 也很简单，直接使用内置的函数 make() 即可：</span>
+</p>
+
+
+<pre><code>ch := make(chan int)</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这就声明并初始化了一个 int 型的名为 ch 的 channel。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在 channel 的用法中，最常见的包括写入和读出。将一个数据写入（发送）至 channel 的语法很直观，如下：</span>
+</p>
+
+
+<pre><code>ch &lt;- value</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　向 channel 写入数据通常会导致程序阻塞，直到有其他 goroutine 从这个 channel 中读取数据。从 channel 中读取数据的语法是：</span>
+</p>
+
+
+<pre><code>value := &lt;-ch</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　如果 channel 之前没有写入数据，那么从 channel 中读取数据也会导致程序阻塞，直到 channel 中被写入数据为止。之后还会提到如何控制 channel 只接受写或者只允许读取，即<code>单向 channel</code>。</span>
+</p>
+
+<h1 id="toc_1" class="h16">select</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　早在 Unix 时代，select 机制就已经被引入。通过调用 select() 函数来监控一系列的文件句柄，一旦其中一个文件句柄发生了 IO 动作，该 select() 调用就会被返回。后来该机制也被用于实现高并发的 Socket 服务器程序。Go 语言直接在语言级别支持 select 关键字，用于处理异步 IO 问题。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　select 的用法与 switch 语言非常类似，由 select 开始一个新的选择块，每个选择条件由 case 语句来描述。与 switch 语句可以选择任何可使用相等比较的条件相比，select 有比较多的限制，其中最大的一条限制就是每个 case 语句里必须是一个 IO 操作，大致的结构如下：</span>
+</p>
+
+
 <pre><code>select {
     case &lt;-chan1:
-        // &#x5982;&#x679C;chan1&#x6210;&#x529F;&#x8BFB;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x8FDB;&#x884C;&#x8BE5;case&#x5904;&#x7406;&#x8BED;&#x53E5;
+        // 如果chan1成功读到数据，则进行该case处理语句
     case chan2 &lt;- 1:
-        // &#x5982;&#x679C;&#x6210;&#x529F;&#x5411;chan2&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x8FDB;&#x884C;&#x8BE5;case&#x5904;&#x7406;&#x8BED;&#x53E5;
+        // 如果成功向chan2写入数据，则进行该case处理语句
     default:
-        // &#x5982;&#x679C;&#x4E0A;&#x9762;&#x90FD;&#x6CA1;&#x6709;&#x6210;&#x529F;&#xFF0C;&#x5219;&#x8FDB;&#x5165;default&#x5904;&#x7406;&#x6D41;&#x7A0B;
-}
-</code></pre><p>&#x3000;&#x3000;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;select &#x4E0D;&#x50CF; switch&#xFF0C;&#x540E;&#x9762;&#x5E76;&#x4E0D;&#x5E26;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x53BB;&#x67E5;&#x770B; case &#x8BED;&#x53E5;&#x3002;&#x6BCF;&#x4E2A; case &#x8BED;&#x53E5;&#x90FD;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x9762;&#x5411; channel &#x7684;&#x64CD;&#x4F5C;&#x3002;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A; case &#x8BD5;&#x56FE;&#x4ECE; chan1 &#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E76;&#x76F4;&#x63A5;&#x5FFD;&#x7565;&#x8BFB;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A; case &#x5219;&#x662F;&#x8BD5;&#x56FE;&#x5411; chan2 &#x4E2D;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570; 1&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E24;&#x8005;&#x90FD;&#x6CA1;&#x6709;&#x6210;&#x529F;&#xFF0C;&#x5219;&#x5230;&#x8FBE; default &#x8BED;&#x53E5;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x57FA;&#x4E8E;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+        // 如果上面都没有成功，则进入default处理流程
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　可以看出，select 不像 switch，后面并不带判断条件，而是直接去查看 case 语句。每个 case 语句都必须是一个面向 channel 的操作。比如上面的例子中，第一个 case 试图从 chan1 读取一个数据并直接忽略读到的数据，而第二个 case 则是试图向 chan2 中写入一个整型数 1，如果这两者都没有成功，则到达 default 语句。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　基于此功能，我们可以实现一个有趣的程序：</span>
+</p>
+
+
 <pre><code>ch := make(chan int, 1)
 
 for {
@@ -392,166 +2547,274 @@ for {
         case ch &lt;- 1:
     }
     i := &lt;-ch
-    fmt.Println(&quot;Value received:&quot;, i)
-}
-</code></pre><p>&#x3000;&#x3000;&#x80FD;&#x770B;&#x660E;&#x767D;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x542B;&#x4E49;&#x5417;&#xFF1F;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x5411; ch &#x4E2D;&#x5199;&#x5165;&#x4E00;&#x4E2A; 0 &#x6216;&#x8005; 1 &#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x662F;&#x4E2A;&#x6B7B;&#x5FAA;&#x73AF;&#x3002;</p>
-<h1 id="&#x7F13;&#x51B2;&#x673A;&#x5236;">&#x7F13;&#x51B2;&#x673A;&#x5236;</h1>
-<p>&#x3000;&#x3000;&#x4E4B;&#x524D;&#x793A;&#x8303;&#x521B;&#x5EFA;&#x7684;&#x90FD;&#x662F;&#x4E0D;&#x5E26;&#x7F13;&#x51B2;&#x7684; channel&#xFF0C;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x5BF9;&#x4E8E;&#x4F20;&#x9012;&#x5355;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x573A;&#x666F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x6301;&#x7EED;&#x4F20;&#x8F93;&#x5927;&#x91CF;&#x6570;&#x636E;&#x7684;&#x573A;&#x666F;&#x5C31;&#x6709;&#x4E9B;&#x4E0D;&#x5408;&#x9002;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x7ED9; channel &#x5E26;&#x4E0A;&#x7F13;&#x51B2;&#xFF0C;&#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x6D88;&#x606F;&#x961F;&#x5217;&#x7684;&#x6548;&#x679C;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E26;&#x7F13;&#x51B2;&#x7684; channel&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF1A;</p>
-<pre><code>c := make(chan int, 1024)
-</code></pre><p>&#x3000;&#x3000;&#x5728;&#x8C03;&#x7528; make() &#x65F6;&#x5C06;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5373;&#x53EF;&#xFF0C;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C31;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A; 1024 &#x7684; int &#x7C7B;&#x578B; channel&#xFF0C;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x8BFB;&#x53D6;&#x65B9;&#xFF0C;&#x5199;&#x5165;&#x65B9;&#x4E5F;&#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x5F80; channel &#x91CC;&#x5199;&#x5165;&#xFF0C;&#x5728;&#x7F13;&#x51B2;&#x533A;&#x88AB;&#x586B;&#x5B8C;&#x4E4B;&#x524D;&#x90FD;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x4ECE;&#x5E26;&#x7F13;&#x51B2;&#x7684; channel &#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0E;&#x5E38;&#x89C4;&#x975E;&#x7F13;&#x51B2; channel &#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; range &#x5173;&#x952E;&#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x4E3A;&#x7B80;&#x4FBF;&#x7684;&#x5FAA;&#x73AF;&#x8BFB;&#x53D6;&#xFF1A;</p>
+    fmt.Println("Value received:", i)
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　能看明白这段代码的含义吗？其实很简单，这个程序实现了一个随机向 ch 中写入一个 0 或者 1 的过程。当然，这是个死循环。</span>
+</p>
+
+<h1 id="toc_2" class="h16">缓冲机制</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　之前示范创建的都是不带缓冲的 channel，这种做法对于传递单个数据的场景可以接受，但对于需要持续传输大量数据的场景就有些不合适了。接下来介绍如何给 channel 带上缓冲，从而达到消息队列的效果。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　要创建一个带缓冲的 channel，其实也非常容易：</span>
+</p>
+
+
+<pre><code>c := make(chan int, 1024)</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在调用 make() 时将缓冲区大小作为第二个参数传入即可，比如上面这个例子就创建了一个大小为 1024 的 int 类型 channel，即使没有读取方，写入方也可以一直往 channel 里写入，在缓冲区被填完之前都不会阻塞。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　从带缓冲的 channel 中读取数据可以使用与常规非缓冲 channel 完全一致的方法，但我们也可以使用 range 关键来实现更为简便的循环读取：</span>
+</p>
+
+
 <pre><code>for i := range c {
-    fmt.Println(&quot;Received:&quot;, i)
-}
-</code></pre><h1 id="&#x8D85;&#x65F6;&#x673A;&#x5236;">&#x8D85;&#x65F6;&#x673A;&#x5236;</h1>
-<p>&#x3000;&#x3000;&#x5728;&#x4E4B;&#x524D;&#x5BF9; channel &#x7684;&#x4ECB;&#x7ECD;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x663E;&#x7136;&#x662F;&#x4E0D;&#x80FD;&#x88AB;&#x5FFD;&#x7565;&#x7684;&#x3002;&#x5728;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6700;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x5C31;&#x662F;&#x8D85;&#x65F6;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x5411; channel &#x5199;&#x6570;&#x636E;&#x65F6;&#x53D1;&#x73B0; channel &#x5DF2;&#x6EE1;&#xFF0C;&#x6216;&#x8005;&#x4ECE; channel &#x8BD5;&#x56FE;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x65F6;&#x53D1;&#x73B0; channel &#x4E3A;&#x7A7A;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6B63;&#x786E;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6574;&#x4E2A; goroutine &#x9501;&#x6B7B;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x867D;&#x7136; goroutine &#x662F; Go &#x8BED;&#x8A00;&#x5F15;&#x5165;&#x7684;&#x65B0;&#x6982;&#x5FF5;&#xFF0C;&#x4F46;&#x901A;&#x4FE1;&#x9501;&#x6B7B;&#x95EE;&#x9898;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5728;&#x4E4B;&#x524D;&#x7684; C/C++ &#x5F00;&#x53D1;&#x4E2D;&#x4E5F;&#x5B58;&#x5728;&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5728;&#x63D0;&#x4F9B;&#x6B64;&#x7C7B;&#x7CFB;&#x7EDF;&#x7EA7;&#x901A;&#x4FE1;&#x51FD;&#x6570;&#x65F6;&#x4E5F;&#x4F1A;&#x8003;&#x8651;&#x5165;&#x8D85;&#x65F6;&#x573A;&#x666F;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x90FD;&#x4F1A;&#x5E26;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8D85;&#x65F6;&#x53C2;&#x6570;&#x3002;&#x8D85;&#x8FC7;&#x8BBE;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x65F6;&#xFF0C;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x5904;&#x7406;&#x5B8C;&#x4EFB;&#x52A1;&#xFF0C;&#x5219;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#x5E76;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;&#x8D85;&#x65F6;&#x4FE1;&#x606F;&#x3002;&#x8D85;&#x65F6;&#x673A;&#x5236;&#x672C;&#x8EAB;&#x867D;&#x7136;&#x4E5F;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x8FD0;&#x884C;&#x6BD4;&#x8F83;&#x5FEB;&#x7684;&#x673A;&#x5668;&#x6216;&#x8005;&#x9AD8;&#x901F;&#x7684;&#x7F51;&#x7EDC;&#x4E0A;&#x8FD0;&#x884C;&#x6B63;&#x5E38;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5230;&#x4E86;&#x6162;&#x901F;&#x7684;&#x673A;&#x5668;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x4E0A;&#x8FD0;&#x884C;&#x5C31;&#x4F1A;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x800C;&#x51FA;&#x73B0;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x73B0;&#x8C61;&#xFF0C;&#x4F46;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x89E3;&#x51B3;&#x6B7B;&#x9501;&#x95EE;&#x9898;&#x7684;&#x4EF7;&#x503C;&#x8981;&#x8FDC;&#x5927;&#x4E8E;&#x6240;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x4F7F;&#x7528; channel &#x65F6;&#x9700;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x4E8E;&#x4EE5;&#x4E0B;&#x8FD9;&#x4E2A;&#x7528;&#x6CD5;&#xFF1A;</p>
-<pre><code>i := &lt;-ch
-</code></pre><p>&#x3000;&#x3000;&#x4E0D;&#x51FA;&#x95EE;&#x9898;&#x7684;&#x8BDD;&#x4E00;&#x5207;&#x90FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;&#x4F46;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x60C5;&#x51B5;&#xFF0C;&#x5373;&#x6C38;&#x8FDC;&#x90FD;&#x6CA1;&#x6709;&#x4EBA;&#x5F80; ch &#x91CC;&#x5199;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x4E0A;&#x8FF0;&#x8FD9;&#x4E2A;&#x8BFB;&#x53D6;&#x52A8;&#x4F5C;&#x4E5F;&#x5C06;&#x6C38;&#x8FDC;&#x65E0;&#x6CD5;&#x4ECE; ch &#x4E2D;&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x5BFC;&#x81F4;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6574;&#x4E2A; goroutine &#x6C38;&#x8FDC;&#x963B;&#x585E;&#x5E76;&#x6CA1;&#x6709;&#x633D;&#x56DE;&#x7684;&#x673A;&#x4F1A;&#x3002;&#x5982;&#x679C; channel &#x53EA;&#x662F;&#x88AB;&#x540C;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x6837;&#x51FA;&#x95EE;&#x9898;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8FD8;&#x4F4E;&#x4E00;&#x4E9B;&#x3002;&#x4F46;&#x5982;&#x679C;&#x4E00;&#x65E6;&#x5BF9;&#x5916;&#x516C;&#x5F00;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x8003;&#x8651;&#x5230;&#x6700;&#x5DEE;&#x7684;&#x60C5;&#x51B5;&#x5E76;&#x5BF9;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4FDD;&#x62A4;&#x3002;</p>
-<p>&#x3000;&#x3000;Go &#x8BED;&#x8A00;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x76F4;&#x63A5;&#x7684;&#x8D85;&#x65F6;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528; select &#x673A;&#x5236;&#x3002;&#x867D;&#x7136; select &#x673A;&#x5236;&#x4E0D;&#x662F;&#x4E13;&#x4E3A;&#x8D85;&#x65F6;&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x5374;&#x80FD;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x89E3;&#x51B3;&#x8D85;&#x65F6;&#x95EE;&#x9898;&#x3002;&#x56E0;&#x4E3A; select &#x7684;&#x7279;&#x70B9;&#x662F;&#x53EA;&#x8981;&#x5176;&#x4E2D;&#x4E00;&#x4E2A; case &#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x7A0B;&#x5E8F;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x8003;&#x8651;&#x5176;&#x4ED6; case &#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x57FA;&#x4E8E;&#x6B64;&#x7279;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x4E3A; channel &#x5B9E;&#x73B0;&#x8D85;&#x65F6;&#x673A;&#x5236;&#xFF1A;</p>
-<pre><code>// &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x7684;&#x8D85;&#x65F6;&#x7B49;&#x5F85;&#x51FD;&#x6570;
+    fmt.Println("Received:", i)
+}</code></pre>
+
+<!--block_code_end--><h1 id="toc_3" class="h16">超时机制</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在之前对 channel 的介绍中，我们完全没有提到错误处理的问题，而这个问题显然是不能被忽略的。在并发编程的通信过程中，最需要处理的就是超时问题，即向 channel 写数据时发现 channel 已满，或者从 channel 试图读取数据时发现 channel 为空。如果不正确处理这些情况，很可能会导致整个 goroutine 锁死。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　虽然 goroutine 是 Go 语言引入的新概念，但通信锁死问题已经存在很长时间，在之前的 C/C++ 开发中也存在。操作系统在提供此类系统级通信函数时也会考虑入超时场景，因此这些方法通常都会带一个独立的超时参数。超过设定的时间时，仍然没有处理完任务，则该方法会立即终止并返回对应的超时信息。超时机制本身虽然也会带来一些问题，比如在运行比较快的机器或者高速的网络上运行正常的程序，到了慢速的机器或者网络上运行就会出问题，从而出现结果不一致的现象，但从根本上来说，解决死锁问题的价值要远大于所带来的问题。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　使用 channel 时需要小心，比如对于以下这个用法：</span>
+</p>
+
+
+<pre><code>i := &lt;-ch</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　不出问题的话一切都正常运行。但如果出现了一个错误情况，即永远都没有人往 ch 里写数据，那么上述这个读取动作也将永远无法从 ch 中读取到数据，导致的结果就是整个 goroutine 永远阻塞并没有挽回的机会。如果 channel 只是被同一个开发者使用，那样出问题的可能性还低一些。但如果一旦对外公开，就必须考虑到最差的情况并对程序进行保护。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　Go 语言没有提供直接的超时处理机制，但我们可以利用 select 机制。虽然 select 机制不是专为超时而设计的，却能很方便地解决超时问题。因为 select 的特点是只要其中一个 case 已经完成，程序就会继续往下执行，而不会考虑其他 case 的情况。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　基于此特性，我们来为 channel 实现超时机制：</span>
+</p>
+
+
+<pre><code>// 首先，我们实现并执行一个匿名的超时等待函数
 timeout := make(chan bool, 1)
 
 go func() {
-    time.Sleep(1e9) // &#x7B49;&#x5F85;1&#x79D2;&#x949F;
+    time.Sleep(1e9) // 等待1秒钟
     timeout &lt;- true
 }()
 
-// &#x7136;&#x540E;&#x6211;&#x4EEC;&#x628A;timeout&#x8FD9;&#x4E2A;channel&#x5229;&#x7528;&#x8D77;&#x6765;
+// 然后我们把timeout这个channel利用起来
 select {
     case &lt;- ch:
-    // &#x4ECE;ch&#x4E2D;&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;
+    // 从ch中读取到数据
     case &lt;- timeout:
-    // &#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x4ECE;ch&#x4E2D;&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x4ECE;timeout&#x4E2D;&#x8BFB;&#x53D6;&#x5230;&#x4E86;&#x6570;&#x636E;
-}
-</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x6837;&#x4F7F;&#x7528; select &#x673A;&#x5236;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x6C38;&#x4E45;&#x7B49;&#x5F85;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x7A0B;&#x5E8F;&#x4F1A;&#x5728; timeout &#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x540E;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x65E0;&#x8BBA;&#x5BF9; ch &#x7684;&#x8BFB;&#x53D6;&#x662F;&#x5426;&#x8FD8;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x4ECE;&#x800C;&#x8FBE;&#x6210;1&#x79D2;&#x8D85;&#x65F6;&#x7684;&#x6548;&#x679C;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x770B;&#x8D77;&#x6765;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x6280;&#x5DE7;&#xFF0C;&#x4F46;&#x5374;&#x662F;&#x5728; Go &#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x4E2D;&#x907F;&#x514D; channel &#x901A;&#x4FE1;&#x8D85;&#x65F6;&#x7684;&#x6700;&#x6709;&#x6548;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4E5F;&#x9700;&#x8981;&#x88AB;&#x5408;&#x7406;&#x5229;&#x7528;&#x8D77;&#x6765;&#xFF0C;&#x4ECE;&#x800C;&#x6709;&#x6548;&#x5730;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x3002;</p>
-<h1 id="channel&#x7684;&#x4F20;&#x9012;">channel&#x7684;&#x4F20;&#x9012;</h1>
-<p>&#x3000;&#x3000;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728; Go &#x8BED;&#x8A00;&#x4E2D; channel &#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x539F;&#x751F;&#x7C7B;&#x578B;&#xFF0C;&#x4E0E; map &#x4E4B;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#x5730;&#x4F4D;&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x6B64; channel &#x672C;&#x8EAB;&#x5728;&#x5B9A;&#x4E49;&#x540E;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; channel &#x6765;&#x4F20;&#x9012;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x6765;&#x5B9E;&#x73B0; *nix &#x4E0A;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x7684;&#x7BA1;&#x9053;&#xFF08;pipe&#xFF09;&#x7279;&#x6027;&#x3002;&#x7BA1;&#x9053;&#x4E5F;&#x662F;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;&#x7684;&#x4E00;&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x5904;&#x7406;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7BA1;&#x9053;&#x8BBE;&#x8BA1;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x4EE5;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x589E;&#x52A0;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x4E0B;&#x9762;&#x5229;&#x7528; channel &#x53EF;&#x88AB;&#x4F20;&#x9012;&#x7684;&#x7279;&#x6027;&#x6765;&#x5B9E;&#x73B0;&#x6211;&#x4EEC;&#x7684;&#x7BA1;&#x9053;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8868;&#x8FBE;&#xFF0C;&#x5047;&#x8BBE;&#x5728;&#x7BA1;&#x9053;&#x4E2D;&#x4F20;&#x9012;&#x7684;&#x6570;&#x636E;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E2D;&#x8FD9;&#x901A;&#x5E38;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5757;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x9996;&#x5148;&#x9650;&#x5B9A;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
+    // 一直没有从ch中读取到数据，但从timeout中读取到了数据
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这样使用 select 机制可以避免永久等待的问题，因为程序会在 timeout 中获取到一个数据后继续执行，无论对 ch 的读取是否还处于等待状态，从而达成1秒超时的效果。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这种写法看起来是一个小技巧，但却是在 Go 语言开发中避免 channel 通信超时的最有效方法。在实际的开发过程中，这种写法也需要被合理利用起来，从而有效地提高代码质量。</span>
+</p>
+
+<h1 id="toc_4" class="h16">channel的传递</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　需要注意的是，在 Go 语言中 channel 本身也是一个原生类型，与 map 之类的类型地位一样，因此 channel 本身在定义后也可以通过 channel 来传递。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　我们可以使用这个特性来实现 *nix 上非常常见的管道（pipe）特性。管道也是使用非常广泛的一种设计模式，比如在处理数据时，可以采用管道设计，这样可以比较容易以插件的方式增加数据的处理流程。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面利用 channel 可被传递的特性来实现我们的管道。为了简化表达，假设在管道中传递的数据只是一个整型数，在实际的应用场景中这通常会是一个数据块。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　首先限定基本的数据结构：</span>
+</p>
+
+
 <pre><code>type PipeData struct {
     value int
     handler func(int) int
     next chan int
-}
-</code></pre><p>&#x3000;&#x3000;&#x7136;&#x540E;&#x5199;&#x4E00;&#x4E2A;&#x5E38;&#x89C4;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x53EA;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217; PipeData &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5E76;&#x4E00;&#x8D77;&#x4F20;&#x9012;&#x7ED9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x6D41;&#x5F0F;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x76EE;&#x7684;&#xFF1A;</p>
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　然后写一个常规的处理函数。只要定义一系列 PipeData 的数据结构并一起传递给这个函数，就可以达到流式处理数据的目的：</span>
+</p>
+
+
 <pre><code>func handle(queue chan *PipeData) {
     for data := range queue {
         data.next &lt;- data.handler(data.value)
     }
-}
-</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x91CC;&#x53EA;&#x6709;&#x5927;&#x6982;&#x7684;&#x6837;&#x5B50;&#x3002;&#x540C;&#x7406;&#xFF0C;&#x5229;&#x7528; channel &#x7684;&#x8FD9;&#x4E2A;&#x53EF;&#x4F20;&#x9012;&#x7279;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x3001;&#x7075;&#x6D3B;&#x7684;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x3002;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x5728; C++&#x3001;Java&#x3001;C# &#x4E2D;&#xFF0C;&#x8981;&#x8FBE;&#x6210;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x901A;&#x5E38;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8981;&#x8BBE;&#x8BA1;&#x4E00;&#x7CFB;&#x5217;&#x63A5;&#x53E3;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x4E0E; Go &#x8BED;&#x8A00;&#x63A5;&#x53E3;&#x7684;&#x975E;&#x4FB5;&#x5165;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF0C;channel &#x7684;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#x4E5F;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x5FC3;&#x667A;&#x6210;&#x672C;&#xFF0C;&#x7528;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x5374;&#x5B9E;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FBE;&#x6210;&#x5728;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4F17;&#x591A;&#x6280;&#x5DE7;&#x624D;&#x80FD;&#x8FBE;&#x6210;&#x7684;&#x6548;&#x679C;&#x3002;</p>
-<h1 id="&#x5355;&#x5411;channel">&#x5355;&#x5411;channel</h1>
-<p>&#x3000;&#x3000;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5355;&#x5411; channel &#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x53D1;&#x9001;&#x6216;&#x8005;&#x63A5;&#x6536;&#x6570;&#x636E;&#x3002;channel &#x672C;&#x8EAB;&#x5FC5;&#x7136;&#x662F;&#x540C;&#x65F6;&#x652F;&#x6301;&#x8BFB;&#x5199;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x6839;&#x672C;&#x6CA1;&#x6CD5;&#x7528;&#x3002;&#x5047;&#x5982;&#x4E00;&#x4E2A; channel &#x771F;&#x7684;&#x53EA;&#x80FD;&#x8BFB;&#xFF0C;&#x90A3;&#x4E48;&#x80AF;&#x5B9A;&#x53EA;&#x4F1A;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x6CA1;&#x673A;&#x4F1A;&#x5F80;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#x3002;&#x540C;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A; channel &#x53EA;&#x5141;&#x8BB8;&#x5199;&#xFF0C;&#x5373;&#x4F7F;&#x5199;&#x8FDB;&#x53BB;&#x4E86;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x4E1D;&#x6BEB;&#x610F;&#x4E49;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x673A;&#x4F1A;&#x8BFB;&#x53D6;&#x91CC;&#x9762;&#x7684;&#x6570;&#x636E;&#x3002;&#x6240;&#x8C13;&#x7684;&#x5355;&#x5411; channel &#x6982;&#x5FF5;&#xFF0C;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x5BF9; channel &#x7684;&#x4E00;&#x79CD;&#x4F7F;&#x7528;&#x9650;&#x5236;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x6211;&#x4EEC;&#x5728;&#x5C06;&#x4E00;&#x4E2A; channel &#x53D8;&#x91CF;&#x4F20;&#x9012;&#x5230;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x6307;&#x5B9A;&#x4E3A;&#x5355;&#x5411; channel &#x53D8;&#x91CF;&#xFF0C;&#x4ECE;&#x800C;&#x9650;&#x5236;&#x8BE5;&#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x5BF9;&#x6B64; channel &#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x53EA;&#x80FD;&#x5F80;&#x8FD9;&#x4E2A; channel &#x5199;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x80FD;&#x4ECE;&#x8FD9;&#x4E2A; channel &#x8BFB;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x5355;&#x5411; channel &#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>var ch1 chan int // ch1&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x7684;channel&#xFF0C;&#x4E0D;&#x662F;&#x5355;&#x5411;&#x7684;
-var ch2 chan&lt;- float64// ch2&#x662F;&#x5355;&#x5411;channel&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x5199;float64&#x6570;&#x636E;
-var ch3 &lt;-chan int // ch3&#x662F;&#x5355;&#x5411;channel&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x8BFB;&#x53D6;int&#x6570;&#x636E;
-</code></pre><p>&#x3000;&#x3000;&#x90A3;&#x4E48;&#x5355;&#x5411; channel &#x5982;&#x4F55;&#x521D;&#x59CB;&#x5316;&#x5462;&#xFF1F;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;channel &#x662F;&#x4E00;&#x4E2A;&#x539F;&#x751F;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4EC5;&#x652F;&#x6301;&#x88AB;&#x4F20;&#x9012;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;&#x53EA;&#x6709;&#x5728;&#x4E86;&#x89E3;&#x4E86;&#x5355;&#x5411; channel &#x7684;&#x6982;&#x5FF5;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x660E;&#x767D;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5BF9;&#x4E8E; channel &#x7684;&#x610F;&#x4E49;&#xFF1A;&#x5C31;&#x662F;&#x5728;&#x5355;&#x5411; channel &#x548C;&#x53CC;&#x5411; channel &#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　这里只有大概的样子。同理，利用 channel 的这个可传递特性，可以实现非常强大、灵活的系统架构。相比之下，在 C++、Java、C# 中，要达成这样的效果，通常就意味着要设计一系列接口。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　与 Go 语言接口的非侵入式类似，channel 的这些特性也可以大大降低开发者的心智成本，用一些比较简单却实用的方式来达成在其他语言中需要使用众多技巧才能达成的效果。</span>
+</p>
+
+<h1 id="toc_5" class="h16">单向channel</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　顾名思义，单向 channel 只能用于发送或者接收数据。channel 本身必然是同时支持读写的，否则根本没法用。假如一个 channel 真的只能读，那么肯定只会是空的，因为你没机会往里面写数据。同理，如果一个 channel 只允许写，即使写进去了，也没有丝毫意义，因为没有机会读取里面的数据。所谓的单向 channel 概念，其实只是对 channel 的一种使用限制。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　我们在将一个 channel 变量传递到一个函数时，可以通过将其指定为单向 channel 变量，从而限制该函数中可以对此 channel 的操作，比如只能往这个 channel 写，或者只能从这个 channel 读。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　单向 channel 变量的声明非常简单，如下：</span>
+</p>
+
+
+<pre><code>var ch1 chan int // ch1是一个正常的channel，不是单向的
+var ch2 chan&lt;- float64// ch2是单向channel，只用于写float64数据
+var ch3 &lt;-chan int // ch3是单向channel，只用于读取int数据</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　那么单向 channel 如何初始化呢？之前已经提到过，channel 是一个原生类型，因此不仅支持被传递，还支持类型转换。只有在了解了单向 channel 的概念后，才会明白类型转换对于 channel 的意义：就是在单向 channel 和双向 channel 之间进行转换。示例如下：</span>
+</p>
+
+
 <pre><code>ch4 := make(chan int)
-ch5 := &lt;-chan int(ch4) // ch5&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x5411;&#x7684;&#x8BFB;&#x53D6;channel
-ch6 := chan&lt;- int(ch4) // ch6 &#x662F;&#x4E00;&#x4E2A;&#x5355;&#x5411;&#x7684;&#x5199;&#x5165;channel
-</code></pre><p>&#x3000;&#x3000;&#x57FA;&#x4E8E; ch4&#xFF0C;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x521D;&#x59CB;&#x5316;&#x4E86;&#x4E24;&#x4E2A;&#x5355;&#x5411; channel&#xFF1A;&#x5355;&#x5411;&#x8BFB;&#x7684; ch5 &#x548C;&#x5355;&#x5411;&#x5199;&#x7684; ch6&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x9650;&#x5236;&#x5462;&#xFF1F;&#x4ECE;&#x8BBE;&#x8BA1;&#x7684;&#x89D2;&#x5EA6;&#x8003;&#x8651;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x90FD;&#x9075;&#x5FAA;&#x201C;&#x6700;&#x5C0F;&#x6743;&#x9650;&#x539F;&#x5219;&#x201D;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x6CA1;&#x5FC5;&#x8981;&#x5730;&#x4F7F;&#x7528;&#x6CDB;&#x6EE5;&#x95EE;&#x9898;&#xFF0C;&#x8FDB;&#x800C;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x5931;&#x63A7;&#x3002;&#x5199;&#x8FC7; C++ &#x7A0B;&#x5E8F;&#x7684;&#x4EBA;&#x80AF;&#x5B9A;&#x5C31;&#x4F1A;&#x8054;&#x60F3;&#x8D77; const &#x6307;&#x9488;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x975E; const &#x6307;&#x9488;&#x5177;&#x5907; const &#x6307;&#x9488;&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x8BBE;&#x5B9A;&#x4E3A; const &#x5C31;&#x662F;&#x660E;&#x786E;&#x544A;&#x8BC9;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x8005;&#x4E0D;&#x8981;&#x8BD5;&#x56FE;&#x5BF9;&#x8BE5;&#x6307;&#x9488;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;&#x5355;&#x5411; channel &#x4E5F;&#x662F;&#x8D77;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x79CD;&#x5951;&#x7EA6;&#x4F5C;&#x7528;&#x3002;</p>
-<p>&#x3000;&#x3000;&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5355;&#x5411; channel &#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+ch5 := &lt;-chan int(ch4) // ch5就是一个单向的读取channel
+ch6 := chan&lt;- int(ch4) // ch6 是一个单向的写入channel</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　基于 ch4，通过类型转换初始化了两个单向 channel：单向读的 ch5 和单向写的 ch6。为什么要做这样的限制呢？从设计的角度考虑，所有的代码应该都遵循“最小权限原则”，从而避免没必要地使用泛滥问题，进而导致程序失控。写过 C++ 程序的人肯定就会联想起 const 指针的用法。非 const 指针具备 const 指针的所有功能，将一个指针设定为 const 就是明确告诉函数实现者不要试图对该指针进行修改。单向 channel 也是起到这样的一种契约作用。</span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　下面来看一下单向 channel 的用法：</span>
+</p>
+
+
 <pre><code>func Parse(ch &lt;-chan int) {
     for value := range ch {
-        fmt.Println(&quot;Parsing value&quot;, value)
+        fmt.Println("Parsing value", value)
     }
-}
-</code></pre><p>&#x3000;&#x3000;&#x9664;&#x975E;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x8005;&#x65E0;&#x803B;&#x5730;&#x4F7F;&#x7528;&#x4E86;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x5404;&#x79CD;&#x539F;&#x56E0;&#x800C;&#x5BF9; ch &#x8FDB;&#x884C;&#x5199;&#xFF0C;&#x907F;&#x514D;&#x5728; ch &#x4E2D;&#x51FA;&#x73B0;&#x975E;&#x671F;&#x671B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x800C;&#x5F88;&#x597D;&#x5730;&#x5B9E;&#x8DF5;&#x6700;&#x5C0F;&#x6743;&#x9650;&#x539F;&#x5219;&#x3002;</p>
-<h1 id="&#x5173;&#x95ED;channel">&#x5173;&#x95ED;channel</h1>
-<p>&#x3000;&#x3000;&#x5173;&#x95ED; channel &#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528; Go &#x8BED;&#x8A00;&#x5185;&#x7F6E;&#x7684; close() &#x51FD;&#x6570;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code>close(ch)
-</code></pre><p>&#x3000;&#x3000;&#x5728;&#x4ECB;&#x7ECD;&#x4E86;&#x5982;&#x4F55;&#x5173;&#x95ED; channel &#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E00;&#x4E2A; channel &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x88AB;&#x5173;&#x95ED;&#xFF1F;&#x53EF;&#x4EE5;&#x5728;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x591A;&#x91CD;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code>x, ok := &lt;-ch
-</code></pre><p>&#x3000;&#x3000;&#x8FD9;&#x4E2A;&#x7528;&#x6CD5;&#x4E0E; map &#x4E2D;&#x7684;&#x6309;&#x952E;&#x83B7;&#x53D6; value &#x7684;&#x8FC7;&#x7A0B;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x770B;&#x7B2C;&#x4E8C;&#x4E2A; bool &#x8FD4;&#x56DE;&#x503C;&#x5373;&#x53EF;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x503C;&#x662F; false &#x5219;&#x8868;&#x793A; ch &#x5DF2;&#x7ECF;&#x88AB;&#x5173;&#x95ED;&#x3002;</p>
-<blockquote>
-<p>&#x3000;&#x3000;&#x53C2;&#x8003;&#xFF1A;&#x300A;Go&#x8BED;&#x8A00;&#x7F16;&#x7A0B;&#x300B;</p>
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　除非这个函数的实现者无耻地使用了类型转换，否则这个函数就不会因为各种原因而对 ch 进行写，避免在 ch 中出现非期望的数据，从而很好地实践最小权限原则。</span>
+</p>
+
+<h1 id="toc_6" class="h16">关闭channel</h1>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　关闭 channel 非常简单，直接使用 Go 语言内置的 close() 函数即可：</span>
+</p>
+
+
+<pre><code>close(ch)</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">　　在介绍了如何关闭 channel 之后，就多了一个问题：如何判断一个 channel 是否已经被关闭？可以在读取的时候使用多重返回值的方式：</span>
+</p>
+
+
+<pre><code>x, ok := &lt;-ch</code></pre>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end">　　这个用法与 map 中的按键获取 value 的过程比较类似，只需要看第二个 bool 返回值即可，如果返回值是 false 则表示 ch 已经被关闭。</span>
+</p>
+
+
+<blockquote class="blockquote_lines_2">
+<p class="md_block">
+    <span class="md_line md_line_start">　　参考：《Go语言编程》<br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
+</p>
+
 </blockquote>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
-                
             </div>
-
-            
-                
-                <a href="../Git/GitHub%20上同步%20Fork%20的代码.md" class="navigation navigation-prev " aria-label="Previous page: GitHub 上同步 Fork 的代码">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="channel.html" class="navigation navigation-next " aria-label="Next page: channel">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        </div>
         
+
     </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Golang","level":"2.3","depth":1,"next":{"title":"channel","level":"2.3.1","depth":2,"path":"Golang/channel.md","ref":"Golang/channel.md","articles":[]},"previous":{"title":"GitHub 上同步 Fork 的代码","level":"2.2.1","depth":2,"path":"Git/GitHub%20上同步%20Fork%20的代码.md","ref":"Git/GitHub%20上同步%20Fork%20的代码.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Golang/channel.md","mtime":"2019-04-30T10:09:15.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-30T10:09:34.951Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
 </div>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
 
-    </body>
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
 </html>
-
