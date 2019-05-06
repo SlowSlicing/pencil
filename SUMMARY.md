@@ -7,6 +7,8 @@
 ## 笔记
 
 * [Kubenetes](Kubernetes/readme.md)
+    * [k8s 1.14 安装 Metrics Server](Kubernetes/k8s%201.14%20安装%20Metrics%20Server.md)
+    * [k8s 1.14 安装 Dashboard](Kubernetes/k8s%201.14%20安装%20Dashboard.md)
     * [kubeadm join 使用的 token 过期之后，如何加入集群](Kubernetes/kubeadm%20join%20使用的%20token%20过期之后，如何加入集群.md)
     * [使用代理 ssr 也无法 pull k8s 的镜像问题](Kubernetes/使用代理%20ssr%20也无法%20pull%20k8s%20的镜像问题.md)
     * [Kubernetes 1.14 开启 IPVS](Kubernetes/Kubernetes%201.14%20开启%20IPVS.md)
