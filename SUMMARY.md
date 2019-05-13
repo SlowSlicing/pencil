@@ -18,6 +18,7 @@
     * [安装 Dashboard](Kubernetes/安装%20Dashboard.md)
     * [问题 - kubectl create 一直处于 ContainerCreating 状态](Kubernetes/问题%20-%20kubectl%20create%20一直处于%20ContainerCreating%20状态.md)
     * [kubeadm 安装 k8s 集群](Kubernetes/kubeadm%20安装%20k8s%20集群.md)
+    * [kubeadm 安装 k8s 集群](/Kubernetes/kubeadm 安装 k8s 集群.md)
 * [Docker CE](Docker%20CE/readme.md)
     * [使用代理 ssr 也无法 pull k8s 的镜像问题](Docker%20CE/使用代理%20ssr%20也无法%20pull%20k8s%20的镜像问题.md)
     * [Docker 网络深入理解](Docker%20CE/Docker%20网络深入理解.md)
