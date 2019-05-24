@@ -1,5 +1,3 @@
-[toc]
-
 # 端口的开放
 
 　　以下摘自[官方文档](https://kubernetes.io/docs/setup/independent/install-kubeadm/#master-node-s)：
