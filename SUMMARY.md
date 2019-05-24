@@ -7,6 +7,7 @@
 ## 笔记
 
 * [Kubenetes](/Kubernetes/readme.md)
+    * [开启 Firewalld（防火墙） 下需要注意的事](/Kubernetes/开启 Firewalld（防火墙） 下需要注意的事.md)
     * [k8s 1.14 安装 Metrics Server](/Kubernetes/k8s 1.14 安装 Metrics Server.md)
     * [k8s 1.14 安装 Dashboard](/Kubernetes/k8s 1.14 安装 Dashboard.md)
     * [kubeadm join 使用的 token 过期之后，如何加入集群](/Kubernetes/kubeadm join 使用的 token 过期之后，如何加入集群.md)
@@ -193,3 +194,5 @@
     * [调音](/吉他/调音.md)
 * [开发软件问题](开发软件问题/readme.md)
     * [问题 - iTerm2 中文输出显示问号](/开发软件问题/问题 - iTerm2 中文输出显示问号.md)
+* [Mac](/Mac/readme.md)
+    * [删除文件之后磁盘空间大小不变问题](/Mac/删除文件之后磁盘空间大小不变问题.md)
