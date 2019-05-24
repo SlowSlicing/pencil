@@ -26,6 +26,6 @@
 　　如果不开启此功能，那将无法进行 ip 转发，会导致 DNS 插件不起作用。
 
 ```
-$ firewall-cmd --zone=external --add-masquerade --permanent
+$ firewall-cmd --zone=public --add-masquerade --permanent
 $ firewall-cmd --reload
 ```
