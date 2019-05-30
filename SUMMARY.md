@@ -7,6 +7,8 @@
 ## 笔记
 
 * [Kubenetes](/Kubernetes/readme.md)
+    * [远程连接管理 k8s 集群](/Kubernetes/远程连接管理 k8s 集群.md)
+    * [k8s 单独调试某个 Pod 的方法](/Kubernetes/k8s 单独调试某个 Pod 的方法.md)
     * [开启 Firewalld（防火墙） 下需要注意的事](/Kubernetes/开启 Firewalld（防火墙） 下需要注意的事.md)
     * [k8s 1.14 安装 Metrics Server](/Kubernetes/k8s 1.14 安装 Metrics Server.md)
     * [k8s 1.14 安装 Dashboard](/Kubernetes/k8s 1.14 安装 Dashboard.md)
