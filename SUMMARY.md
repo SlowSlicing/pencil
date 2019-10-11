@@ -40,6 +40,8 @@
     * [Docker Dockerfile 定制镜像](/Docker CE/Docker Dockerfile 定制镜像.md)
     * [Docker 安装](/Docker CE/Docker 安装.md)
 * [Linux](/Linux/readme.md)
+    * [在 CentOS 7.6 上打包 Android Package APK](/Linux/在 CentOS 7.6 上打包 Android Package APK.md)
+    * [CentOS 7.6 SSR（学习使用）](/Linux/CentOS 7.6 SSR（学习使用）.md)
     * [使用 Google 两步验证](/Linux/使用 Google 两步验证.md)
     * [CentOS 升级内核](/Linux/CentOS 升级内核.md)
     * [Firewalld 详解](/Linux/Firewalld 详解.md)
