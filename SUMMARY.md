@@ -76,6 +76,7 @@
     * [tar 命令](/Linux/tar 命令.md)
     * [软硬方式链接（快捷方式）](/Linux/软硬方式链接（快捷方式）.md)
 * [Git](/Git/readme.md)
+    * [常用命令](/Git/常用命令.md)
     * [GitHub 上同步 Fork 的代码](/Git/GitHub 上同步 Fork 的代码.md)
 * [Elasticsearch](/Elasticsearch/readme.md)
     * [问题 - Elasticsearch 问题收集](/Elasticsearch/问题 - Elasticsearch 问题收集.md)
