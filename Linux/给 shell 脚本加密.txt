@@ -1,0 +1,26 @@
+[toc]
+
+# SHC
+
+　　使用 `shc` 对 `Linux shell` 脚本加密，shc 是一个专业的加密 `shell` 脚本的工具。它的作用是把 shell 脚本转换为一个可执行的二进制文件，这个办法很好的解决了脚本中含有 `IP`、`密码`等不希望公开的问题。来自[百度百科](https://baike.baidu.com/item/Shc)的介绍。
+
+　　下载源码进行编译安装：[Download](https://pencil-file.oss-cn-hangzhou.aliyuncs.com/blog/shc-3.8.9.tgz)
+
+## 安装
+
+```
+$ tar shc-3.8.9.tgz
+$ cd shc-3.8.9
+# 这步必须做，不然编译时报错
+$ mkdir -p /usr/local/man/man1
+$ make && make install
+```
+
+![帮助](https://pencil.file.lynchj.com/blog/20191028160544.png)
+
+```
+# 加密文件为二进制
+$ shc -f xxxx.sh
+# 比较宽松的加密方式，可以再发行的二进制文件
+$ shc -r -f xxxx.sh
+```

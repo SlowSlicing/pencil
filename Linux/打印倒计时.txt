@@ -1,0 +1,13 @@
+　　如下效果：
+
+![倒计时](https://pencil.file.lynchj.com/blog/20191028164402.gif)
+
+```
+#!/bin/bash
+
+for ((i=1; i<=10; i ++))
+do
+        echo -en " $i秒后开始执行\r";
+        sleep 1;
+done
+```

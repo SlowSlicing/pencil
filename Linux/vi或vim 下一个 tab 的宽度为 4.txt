@@ -1,0 +1,29 @@
+* 修改一个 tab 的宽度为 4
+
+```
+# 设定 tab 宽度为 4 个字符
+:set tabstop=4
+```
+
+　　修改前一个 tab 键效果：
+
+![](https://pencil.file.lynchj.com/blog/20191028170815.gif)
+
+　　修改后一个 tab 键效果：
+
+![](https://pencil.file.lynchj.com/blog/20191028171311.gif)
+
+* 使用 space 提单 tab 输入
+
+```
+# 用 space 替代 tab 的输入
+:set expandtab
+```
+
+　　修改前效果，左右移动一下是一个 tab 的距离：
+
+![左右移动一下是一个 tab 的距离](https://pencil.file.lynchj.com/blog/20191028171713.gif)
+
+　　修改前效果，左右移动一下是一个 space 的距离：
+
+![左右移动一下是一个 space 的距离](https://pencil.file.lynchj.com/blog/20191028171830.gif)
