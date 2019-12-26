@@ -40,6 +40,8 @@
     * [Docker Dockerfile 定制镜像](/Docker CE/Docker Dockerfile 定制镜像.md)
     * [Docker 安装](/Docker CE/Docker 安装.md)
 * [Linux](/Linux/readme.md)
+    * [Shell 中数组的使用](/Linux/Shell 中数组的使用.md)
+    * [Shell 中 Map 使用](/Linux/Shell 中 Map 使用.md)
     * [vi或vim 下一个 tab 的宽度为 4](/Linux/vi或vim 下一个 tab 的宽度为 4.txt)
     * [打印倒计时](/Linux/打印倒计时.txt)
     * [给 shell 脚本加密](/Linux/给 shell 脚本加密.txt)
